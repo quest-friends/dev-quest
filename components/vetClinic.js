@@ -1,7 +1,7 @@
 import React from 'react'
 import CatsAtVet from '../connectors/catsAtVet'
 
-function Vet (props) {
+function Vet () {
   return (
     <div>
       <h2>This is the vet clinic</h2>
