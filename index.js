@@ -16,6 +16,13 @@ const initialState = {
 }
 
 const reducer = function (state = initialState , action) {
+  switch (action.type) {
+    case 'ADD_CAT_TO_VET':
+      const newState = Object.assign({}, state)
+      newState.vetClinic.cats.push(action.payload)
+
+      return newState
+  }
   return state
 }
 
