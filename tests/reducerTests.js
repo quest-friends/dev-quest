@@ -1,5 +1,5 @@
 const test = require('tape')
-const movement = require('../reducers/player_moves')
+const movement = require('../client/reducers/player_moves')
 
 test('PlayerMovesLeft', function (t) {
   var testState = {player:{position: {x:10}  } }
