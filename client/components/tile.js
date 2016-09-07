@@ -5,12 +5,14 @@ class Tile extends React.Component {
 
   constructor(props){
     super(props)
+
+
   }
 
   render(){
     return (
       <div className="tile">
-        <h1> This is rendered by tile.js </h1>
+        <h1>tile</h1>
 
       </div>
     )

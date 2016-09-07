@@ -6,10 +6,6 @@ import reducer from './client/reducers/reducer'
 
 import App from './client/components/app'
 
-const initialState = {
-
-}
-
 const store = createStore(reducer)
 
 render(
