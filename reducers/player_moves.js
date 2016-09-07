@@ -3,7 +3,7 @@ function playerMoves (state = {}, action) {
   switch(action.type){
     case('PLAYER_MOVE_LEFT'):
       newState = Object.assign({}, state)
-      newState.player.coords[0]-=1
+      newState.player.position.x -= 1
       return newState
   }
 }
