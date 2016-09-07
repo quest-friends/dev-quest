@@ -1,4 +1,5 @@
 import React from 'react'
+// import Game from './game'
 
 class App extends React.Component {
 
@@ -6,10 +7,11 @@ class App extends React.Component {
     super(props)
   }
 
+  // <Game />
   render(){
     return (
       <div>
-        <h1> Test React-Redux Page </h1>
+        <h1> This is rendered by app.js </h1>
       </div>
     )
   }
