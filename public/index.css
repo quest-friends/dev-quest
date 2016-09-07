@@ -6,4 +6,5 @@ main {
   display: inline-block;
   box-sizing: border-box;
   width: 5%;
+  border: 1px solid black;
 }
