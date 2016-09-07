@@ -1,5 +1,5 @@
 import React from 'react'
-import Board from './board'
+import BoardConnector from '../connectors/boardConnector'
 
 class Game extends React.Component {
 
@@ -11,7 +11,7 @@ class Game extends React.Component {
     return (
       <div>
         <h1> This is rendered by game.js </h1>
-        <Board />
+        <BoardConnector />
       </div>
     )
   }
