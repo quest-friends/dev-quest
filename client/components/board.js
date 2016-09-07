@@ -22,6 +22,7 @@ class Board extends React.Component {
             return row.map((tile) => {
               return <Tile />
             })
+            
           })}
         </div>
       </div>

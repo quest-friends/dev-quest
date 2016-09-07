@@ -12,8 +12,7 @@ class Tile extends React.Component {
   render(){
     return (
       <div className="tile">
-        <h1>tile</h1>
-
+        tile
       </div>
     )
   }

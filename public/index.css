@@ -1,3 +1,9 @@
 main {
   text-align: center;
 }
+
+.tile {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 5%;
+}
