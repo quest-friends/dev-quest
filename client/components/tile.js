@@ -1,5 +1,5 @@
 import React from 'react'
-// import  from './board'
+// import  from './'
 
 class Tile extends React.Component {
 
