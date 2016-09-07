@@ -7,7 +7,7 @@
     "start": "nodemon server/server.js",
     "build": "browserify . -o public/bundle.js -g uglifyify",
     "watch": "watchify . -o public/bundle.js -g uglifyify",
-    "test": "tape tests/reducers.js | tap-spec"
+    "test": "tape tests/reducerTests.js | tap-spec"
   },
   "browserify": {
     "transform": [
