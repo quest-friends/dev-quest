@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Board from '../components/board'
 
 const mapStateToProps = (state) => {
-  return { board: state.board }
+  return { tileGrid: state.tileGrid }
 }
 
 const boardConnector = connect(mapStateToProps)(Board)
