@@ -1,5 +1,4 @@
 import React from 'react'
-// import  from './'
 
 class Tile extends React.Component {
 
@@ -12,7 +11,7 @@ class Tile extends React.Component {
   render(){
     return (
       <div className="tile">
-        tile
+        .
       </div>
     )
   }

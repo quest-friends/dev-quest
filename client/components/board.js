@@ -1,5 +1,7 @@
 import React from 'react'
 import Tile from './tile'
+import PlayerConnector from '../connectors/playerConnector'
+
 
 class Board extends React.Component {
 
@@ -22,9 +24,9 @@ class Board extends React.Component {
             return row.map((tile) => {
               return <Tile />
             })
-            
           })}
         </div>
+        <PlayerConnector />
       </div>
     )
   }
