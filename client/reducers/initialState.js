@@ -28,12 +28,14 @@ const initialState = {
     },
     health: 3
   },
-  enemy: {
-    position: {
-      x: 10,
-      y: 10
-    },
-    health: 1
+  enemies: {
+    enemy: {
+      position: {
+        x: 10,
+        y: 10
+      },
+      health: 1
+    }
   }
 }
 
