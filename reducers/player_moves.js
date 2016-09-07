@@ -1,4 +1,4 @@
-export default playerMoves (state = {}, action) => {
+function playerMoves (state = {}, action) {
   let newState = {}
   switch(action.type){
     case('PLAYER_MOVE_LEFT'):
@@ -7,3 +7,4 @@ export default playerMoves (state = {}, action) => {
       return newState
   }
 }
+module.exports = { playerMoves }
