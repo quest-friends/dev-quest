@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server.js",
-    "build": "browserify . -o public/bundle.js -g uglifyify",
-    "watch": "watchify . -o public/bundle.js -g uglifyify",
+    "build": "browserify . -o public/bundle.js -d -g uglifyify",
+    "watch": "watchify . -o public/bundle.js -d -g uglifyify",
     "test": "tape tests/reducers.js | tap-spec"
   },
   "browserify": {
@@ -16,14 +16,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pietgeursen/connect-fun"
+    "url": "https://github.com/quest-friends/dev-quest"
   },
   "author": "Hudson Prestidge",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/pietgeursen/connect-fun/issues"
+    "url": "https://github.com/quest-friends/dev-quest/issues"
   },
-  "homepage": "https://github.com/pietgeursen/connect-fun",
+  "homepage": "https://github.com/quest-friends/dev-quest",
   "dependencies": {
     "express": "^4.14.0",
     "react-redux": "^4.4.5",
