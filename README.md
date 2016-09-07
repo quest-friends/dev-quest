@@ -8,7 +8,7 @@ it's a real sweet app
 ### install
 
 ```
-git clone https://github.com/pietgeursen/connect-fun
+git clone https://github.com/quest-friends/dev-quest
 cd 
 npm install
 ```
