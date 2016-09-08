@@ -1,5 +1,5 @@
 import React from 'react'
-import Game from './game'
+import GameConnector from '../connectors/gameConnector'
 
 class App extends React.Component {
 
@@ -11,7 +11,7 @@ class App extends React.Component {
     return (
       <div>
         <h1> This is rendered by app.js </h1>
-        <Game />
+        <GameConnector />
       </div>
     )
   }

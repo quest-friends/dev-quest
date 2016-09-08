@@ -4,10 +4,9 @@ import BoardElement from './boardElement'
 
 class Board extends React.Component {
 
+
   render(){
-
     const {tileGrid, playerPosition} = this.props
-
     return (
       <div>
         <h1> This is rendered by board.js </h1>

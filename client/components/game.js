@@ -5,6 +5,26 @@ class Game extends React.Component {
 
   constructor(props){
     super(props)
+
+  }
+
+  componentDidMount() {
+    document.addEventListener("keydown", (evt) => {
+      switch(evt.key) {
+        case('ArrowLeft'):
+          this.props.playerMoveLeft()
+          break;
+        case('ArrowRight'):
+          this.props.playerMoveRight()
+          break;
+        case('ArrowUp'):
+          this.props.playerMoveUp()
+          break;
+        case('ArrowDown'):
+          this.props.playerMoveDown()
+          break;
+      }
+    })
   }
 
   render(){

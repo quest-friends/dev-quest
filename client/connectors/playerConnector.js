@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Player from '../components/player'
 
 const mapStateToProps = (state) => {
-  return { player: state.player }
+  return { x: state.player.position.x, y: state.player.position.y }
 }
 
 const playerConnector = connect(mapStateToProps)(Player)
