@@ -4,7 +4,9 @@
   "description": "it's a real sweet app",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server/server.js",
+    "start": "node server/server.js",
+    "dev:start": "nodemon server/server.js",
+    "postinstall": "npm run build",
     "build": "browserify . -o public/bundle.js -g uglifyify",
     "watch": "watchify . -o public/bundle.js -d",
     "test": "tape tests/reducerTests.js | tap-spec"
