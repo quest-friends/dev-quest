@@ -1,7 +1,6 @@
 import initialState from './initialState'
 
 function playerMoves (state = initialState.player.position, action) {
-  console.log("player move reducer", state);
   let newState = {}
   switch(action.type){
     case('PLAYER_MOVE_LEFT'):

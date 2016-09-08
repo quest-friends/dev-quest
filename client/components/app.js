@@ -10,7 +10,6 @@ class App extends React.Component {
   }
 
   render(){
-    console.log('rendering the app');
     return (
       <div>
         <h1> This is rendered by app.js </h1>
