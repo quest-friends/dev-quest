@@ -1,7 +1,14 @@
 import initialState from './initialState'
+import { combineReducers } from 'Redux'
+import position from './player_moves'
+import gameRunning from './gameRunning'
 
-const reducer = function (state = initialState, action) {
+function reducer (state = initialState, action) {
   return state
 }
 
-module.exports = reducer
+export default combineReducers({
+  gameRunning,
+  position,
+  reducer
+})

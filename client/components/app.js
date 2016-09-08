@@ -1,5 +1,7 @@
 import React from 'react'
 import GameConnector from '../connectors/gameConnector'
+import StartScreenConnector from '../connectors/startScreenConnector'
+
 
 class App extends React.Component {
 
@@ -8,10 +10,11 @@ class App extends React.Component {
   }
 
   render(){
+    console.log('rendering the app');
     return (
       <div>
         <h1> This is rendered by app.js </h1>
-        <GameConnector />
+        { this.props.gameRunning ? <GameConnector /> : <StartScreenConnector />}
       </div>
     )
   }
