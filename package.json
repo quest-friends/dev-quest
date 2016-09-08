@@ -7,7 +7,7 @@
     "start": "node server/server.js",
     "dev:start": "nodemon server/server.js",
     "postinstall": "npm run build",
-    "build": "NODE_ENV=production browserify . -o public/bundle.js",
+    "build": "browserify . -o public/bundle.js -g uglifyify",
     "watch": "watchify . -o public/bundle.js -d",
     "test": "tape tests/reducerTests.js | tap-spec"
   },
@@ -45,6 +45,7 @@
   "devDependencies": {
     "tap-spec": "^4.1.1",
     "tape": "^4.5.1",
+    "uglifyify": "^3.0.2",
     "watchify": "^3.7.0"
   }
 }
