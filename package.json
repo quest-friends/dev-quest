@@ -1,5 +1,5 @@
 {
-  "name": "connect-fun",
+  "name": "EDA-Quest",
   "version": "1.0.0",
   "description": "it's a real sweet app",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node server/server.js",
     "dev:start": "nodemon server/server.js",
     "postinstall": "npm run build",
-    "build": "browserify . -o public/bundle.js -g uglifyify",
+    "build": "NODE_ENV=production browserify . -o public/bundle.js",
     "watch": "watchify . -o public/bundle.js -d",
     "test": "tape tests/reducerTests.js | tap-spec"
   },
