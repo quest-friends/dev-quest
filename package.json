@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon server/server.js",
     "build": "browserify . -o public/bundle.js -g uglifyify",
-    "watch": "watchify . -o public/bundle.js -g uglifyify",
+    "watch": "watchify . -o public/bundle.js -d",
     "test": "tape tests/reducerTests.js | tap-spec"
   },
   "browserify": {
