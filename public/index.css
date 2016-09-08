@@ -9,7 +9,8 @@ span {
 
 .grid {
   background-color: lightgray;
-  max-width: 60%;
+  display:inline-block;
+  width:50%;
 }
 
 .tile {
@@ -36,6 +37,7 @@ span {
   display: inline-block;
   box-sizing: border-box;
   width: 5%;
-  height: 76px;
+  height: 2.5vw;
   border: 1px solid black;
+  float: left;
 }
