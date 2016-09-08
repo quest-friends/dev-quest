@@ -8,6 +8,25 @@ class Game extends React.Component {
 
   }
 
+  componentDidMount() {
+    document.addEventListener("keydown", (key) => {
+      switch(key.key) {
+        case('ArrowLeft'):
+          this.props.playerMoveLeft()
+          break;
+        case('ArrowRight'):
+          this.props.playerMoveRight()
+          break;
+        case('ArrowUp'):
+          this.props.playerMoveUp()
+          break;
+        case('ArrowDown'):
+          this.props.playerMoveDown()
+          break;
+      }
+    })
+  }
+
   render(){
     return (
       <div>

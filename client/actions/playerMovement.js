@@ -1,29 +1,36 @@
 
 const playerMoveLeft = () => {
-  return ({
-    type: PLAYER_MOVE_LEFT
-  })
+  return {
+    type: "PLAYER_MOVE_LEFT"
+  }
 }
 
 const playerMoveRight = () => {
-  return ({
-    type: PLAYER_MOVE_RIGHT
-  })
+  return {
+    type: "PLAYER_MOVE_RIGHT"
+  }
 }
 const playerMoveUp = () => {
-  return ({
-    type: PLAYER_MOVE_UP
-  })
+  return {
+    type: "PLAYER_MOVE_UP"
+  }
 }
 const playerMoveDown = () => {
-  return ({
-    type: PLAYER_MOVE_DOWN
-  })
+  return {
+    type: "PLAYER_MOVE_DOWN"
+  }
 }
 
-bindActionCreators({
-  playerMoveLeft(),
-  playerMoveRight(),
-  playerMoveUp(),
-  playerMoveDown()
-})
+// bindActionCreators({
+//   playerMoveLeft(),
+//   playerMoveRight(),
+//   playerMoveUp(),
+//   playerMoveDown()
+// })
+
+export {
+  playerMoveLeft,
+  playerMoveRight,
+  playerMoveUp,
+  playerMoveDown
+}

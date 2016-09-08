@@ -11,7 +11,7 @@ class Player extends React.Component {
   render(){
     return (
       <div className='player'>
-        <span><p>{this.props.player.health}</p></span>
+        <span><p>{this.props.x}</p></span>
       </div>
     )
   }

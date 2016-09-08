@@ -1,3 +1,5 @@
+import initialState from './initialState'
+
 function playerMoves (state = initialState, action) {
   let newState = {}
   switch(action.type){
@@ -17,6 +19,9 @@ function playerMoves (state = initialState, action) {
       newState = Object.assign({}, state)
       newState.player.position.y += 1
       return newState
+    default:
+      return state
   }
 }
-module.exports = { playerMoves }
+
+module.exports = playerMoves
