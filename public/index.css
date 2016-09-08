@@ -7,7 +7,13 @@ span {
   transform: translate(0, -50%);
 }
 
+.grid {
+  background-color: lightgray;
+  max-width: 60%;
+}
+
 .tile {
+  background-color: lightblue;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -25,7 +31,7 @@ span {
   transform: translate(-50%, -50%);
 }
 
-.tile-container{
+.board-element{
   position: relative;
   display: inline-block;
   box-sizing: border-box;

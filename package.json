@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server/server.js",
-    "build": "browserify . -o public/bundle.js -d -g uglifyify",
-    "watch": "watchify . -o public/bundle.js -d -g uglifyify",
-    "test": "tape tests/reducertests.js | tap-spec"
+    "build": "browserify . -o public/bundle.js -g uglifyify",
+    "watch": "watchify . -o public/bundle.js -d",
+    "test": "tape tests/reducerTests.js | tap-spec"
   },
   "browserify": {
     "transform": [
@@ -25,6 +25,7 @@
   },
   "homepage": "https://github.com/quest-friends/dev-quest",
   "dependencies": {
+    "bootstrap": "^3.3.7",
     "express": "^4.14.0",
     "react-redux": "^4.4.5",
     "redux": "^3.5.2"
