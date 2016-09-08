@@ -9,7 +9,8 @@ span {
 
 .grid {
   background-color: lightgray;
-  max-width: 50%;
+  display:inline-block;
+  width:50%;
 }
 
 .tile {
