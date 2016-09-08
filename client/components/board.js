@@ -1,36 +1,26 @@
 import React from 'react'
-import Tile from './tile'
-import PlayerConnector from '../connectors/playerConnector'
+import BoardElement from './boardElement'
 
 
 class Board extends React.Component {
 
-  constructor(props){
-    super(props)
-  }
-// <PlayerConnector />
   render(){
+
+    const {tileGrid, playerPosition} = this.props
+
     return (
       <div>
         <h1> This is rendered by board.js </h1>
-        <div>
-          {this.props.tileGrid.map((row, i) => {
+        <div className="grid">
+          {tileGrid.map((row, i) => {
             return row.map((tile, j) => {
-              if (i == this.props.playerPosition.y && j == this.props.playerPosition.x) {
-                return(
-                  <div className='tile-container'>
-                    <Tile />
-                    <PlayerConnector />
-                  </div>
-                  )
-              }
-                else {
-                return(
-                  <div className='tile-container'>
-                    <Tile />
-                  </div>
-                  )
-              }
+              return (
+                <BoardElement
+                  playerPosition={playerPosition}
+                  i={i}
+                  j={j}
+                />
+              )
             })
           })
         }
@@ -38,5 +28,6 @@ class Board extends React.Component {
       </div>
     )
   }
+}
 
 export default Board
