@@ -9,8 +9,8 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", (key) => {
-      switch(key.key) {
+    document.addEventListener("keydown", (evt) => {
+      switch(evt.key) {
         case('ArrowLeft'):
           this.props.playerMoveLeft()
           break;

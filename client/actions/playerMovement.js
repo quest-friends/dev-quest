@@ -21,13 +21,6 @@ const playerMoveDown = () => {
   }
 }
 
-// bindActionCreators({
-//   playerMoveLeft(),
-//   playerMoveRight(),
-//   playerMoveUp(),
-//   playerMoveDown()
-// })
-
 export {
   playerMoveLeft,
   playerMoveRight,
