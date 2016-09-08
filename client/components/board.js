@@ -12,7 +12,6 @@ class Board extends React.Component {
 
 
   }
-// <PlayerConnector />
   render(){
     return (
       <div>
