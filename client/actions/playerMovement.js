@@ -21,4 +21,9 @@ const playerMoveDown = () => {
   })
 }
 
-export default 
+bindActionCreators({
+  playerMoveLeft(),
+  playerMoveRight(),
+  playerMoveUp(),
+  playerMoveDown()
+})

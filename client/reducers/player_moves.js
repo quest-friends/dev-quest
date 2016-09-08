@@ -1,4 +1,4 @@
-function playerMoves (state = {}, action) {
+function playerMoves (state = initialState, action) {
   let newState = {}
   switch(action.type){
     case('PLAYER_MOVE_LEFT'):
