@@ -4,7 +4,6 @@ import BoardElement from './boardElement'
 
 class Board extends React.Component {
 
-
   render(){
     const {tileGrid, playerPosition} = this.props
     return (
@@ -18,7 +17,8 @@ class Board extends React.Component {
                   playerPosition={playerPosition}
                   i={i}
                   j={j}
-                />
+                  tileGrid={tileGrid}
+                  />
               )
             })
           })
