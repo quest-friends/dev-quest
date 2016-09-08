@@ -5,12 +5,14 @@ import PlayerConnector from '../connectors/playerConnector'
 
 class BoardElement extends React.Component {
 
-  isFloorOrWall() {
+//returns the tileType (0, 1, 2 etc) to be given to the Tile as props
+  whatIsTileType() {
     const {tileGrid, i, j} = this.props
     const tileType = tileGrid[i][j]
     return tileType
   }
 
+//function returns true only if the current tile (position(i,j)) matches player's (x,y) position
   isPlayerPresent() {
     const {playerPosition, i, j} = this.props
     return i == playerPosition.y && j == playerPosition.x
@@ -19,8 +21,8 @@ class BoardElement extends React.Component {
   render(){
     return (
       <div className='board-element'>
-        <Tile tileType={this.isFloorOrWall()} />
-        { this.isPlayerPresent() ? <PlayerConnector /> : '' }
+        <Tile tileType={this.whatIsTileType()} />
+        { this.isPlayerPresent() ? <PlayerConnector /> : null }
       </div>
 
     )
@@ -28,8 +30,3 @@ class BoardElement extends React.Component {
 }
 
 export default BoardElement
-
-
-// { condition ? truecase : falsecase }
-
-// if (condition) { truecase} else {falsecase}

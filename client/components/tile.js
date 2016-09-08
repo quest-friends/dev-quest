@@ -6,15 +6,24 @@ class Tile extends React.Component {
     super(props)
   }
 
-  isTileFloor() {
+  tileTypeToRender() {
     const tileType = this.props.tileType
-    return tileType == 1
+    switch (tileType){
+      case (0):
+        return <span><p>##</p></span>
+      case (1):
+        return <span><p>.</p></span>
+      case (2):
+        return <span><p>*</p></span>
+      default:
+        return ""
+    }
   }
 
   render(){
     return (
       <div className="tile">
-        { this.isTileFloor() ? <span><p>.</p></span> : <span><p>#</p></span> }
+      { this.tileTypeToRender() }
       </div>
     )
   }
