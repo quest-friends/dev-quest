@@ -5,17 +5,13 @@ class Board extends React.Component {
 
   constructor(props){
     super(props)
-
-
-
-
   }
 
   render(){
     return (
       <div>
         <h1> This is rendered by board.js </h1>
-        <div>
+        <div className="board">
           {this.props.tileGrid.map((row) => {
             return row.map((tile) => {
               return <Tile />

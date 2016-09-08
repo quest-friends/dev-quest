@@ -1,9 +1,14 @@
 main {
   text-align: center;
 }
-
+.board {
+  border: 1px solid blue;
+  background-color: gray;
+}
 .tile {
   display: inline-block;
   box-sizing: border-box;
   width: 5%;
+  border: 1px solid black;
+  color: blue;
 }
