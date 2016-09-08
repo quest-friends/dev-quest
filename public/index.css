@@ -2,9 +2,34 @@ main {
   text-align: center;
 }
 
+span {
+  vertical-align: middle;
+  transform: translate(0, -50%);
+}
+
 .tile {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+}
+
+.player {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.tile-container{
+  position: relative;
   display: inline-block;
   box-sizing: border-box;
   width: 5%;
+  height: 76px;
   border: 1px solid black;
 }

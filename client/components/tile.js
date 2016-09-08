@@ -11,7 +11,7 @@ class Tile extends React.Component {
   render(){
     return (
       <div className="tile">
-        .
+        <span><p>.</p></span>
       </div>
     )
   }

@@ -10,8 +10,8 @@ class Player extends React.Component {
 
   render(){
     return (
-      <div>
-        {this.props.player.health}
+      <div className='player'>
+        <span><p>{this.props.player.health}</p></span>
       </div>
     )
   }
