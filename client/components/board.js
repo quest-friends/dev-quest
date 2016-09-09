@@ -5,7 +5,7 @@ import BoardElement from './boardElement'
 class Board extends React.Component {
 
   render(){
-    const {tileGrid, playerPosition} = this.props
+    const {tileGrid, playerPosition, enemyPosition} = this.props
     return (
       <div>
         <h1> This is rendered by board.js </h1>
@@ -15,6 +15,7 @@ class Board extends React.Component {
               return (
                 <BoardElement
                   playerPosition={playerPosition}
+                  enemyPosition={enemyPosition}
                   i={i}
                   j={j}
                   tileGrid={tileGrid}
