@@ -13,7 +13,7 @@ class App extends React.Component {
     return (
       <div>
         <h1> This is rendered by app.js </h1>
-        { this.props.gameRunning ? <GameConnector /> : <StartScreenConnector />}
+        { this.props.isGameRunning ? <GameConnector /> : <StartScreenConnector />}
       </div>
     )
   }

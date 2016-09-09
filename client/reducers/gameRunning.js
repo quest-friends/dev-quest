@@ -1,6 +1,6 @@
 import initialState from './initialState'
 
-function gameRunning (state = initialState.gameRunning, action) {
+function gameRunning (state = initialState.isGameRunning, action) {
   let newState = false
   switch(action.type) {
     case 'START_GAME':
