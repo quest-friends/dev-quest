@@ -40,4 +40,4 @@ const initialState = {
   display: "start"
 }
 
-export default initialState
+module.exports = initialState

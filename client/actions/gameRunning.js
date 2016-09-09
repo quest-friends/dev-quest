@@ -20,5 +20,6 @@ function loseGame () {
 
 export {
   startGame,
-  winGame
+  winGame,
+  loseGame
 }

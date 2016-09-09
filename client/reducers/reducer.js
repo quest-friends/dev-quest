@@ -1,8 +1,8 @@
-import initialState from './initialState'
-import { combineReducers } from 'Redux'
+var initialState = require('./initialState')
+var combineReducers = require('redux').combineReducers
 
 function reducer (state = initialState, action) {
-  let newState = {}
+  var newState = {}
   console.log(state);
   switch(action.type){
 
@@ -33,6 +33,10 @@ function reducer (state = initialState, action) {
       newState = Object.assign({}, state)
       newState.display = "win"
       return newState
+    case 'LOSE_GAME':
+      newState = Object.assign({}, state)
+      newState.display = "lose"
+      return newState
 
 
     default:
@@ -40,4 +44,4 @@ function reducer (state = initialState, action) {
   }
 }
 
-export default reducer
+module.exports = reducer
