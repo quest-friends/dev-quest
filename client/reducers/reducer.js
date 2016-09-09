@@ -1,11 +1,12 @@
-import initialState from './initialState'
-import { combineReducers } from 'Redux'
+var initialState = require('./initialState')
+var combineReducers = require('redux').combineReducers
 
 function reducer (state = initialState, action) {
-  let newState = {}
-  const tileGrid = state.tileGrid
-  const i = state.player.position.y
-  const j = state.player.position.x
+
+  var newState = {}
+  var tileGrid = state.tileGrid
+  var i = state.player.position.y
+  var j = state.player.position.x
 
   switch(action.type){
 
@@ -41,7 +42,15 @@ function reducer (state = initialState, action) {
     //these are the cases for game running
     case 'START_GAME':
       newState = Object.assign({}, state)
-      newState.isGameRunning = true
+      newState.display = "game"
+      return newState
+    case 'WIN_GAME':
+      newState = Object.assign({}, state)
+      newState.display = "win"
+      return newState
+    case 'LOSE_GAME':
+      newState = Object.assign({}, state)
+      newState.display = "loss"
       return newState
 
 
@@ -50,4 +59,4 @@ function reducer (state = initialState, action) {
   }
 }
 
-export default reducer
+module.exports = reducer
