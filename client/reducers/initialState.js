@@ -31,13 +31,13 @@ const initialState = {
   enemies: {
     enemy: {
       position: {
-        x: 10,
-        y: 10
+        x: 1,
+        y: 4
       },
       health: 1
     }
   },
-  isGameRunning: false
+  display: "start"
 }
 
-export default initialState
+module.exports = initialState

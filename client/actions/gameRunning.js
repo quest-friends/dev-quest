@@ -5,13 +5,21 @@ function startGame () {
   }
 }
 
-function endGame () {
+function winGame () {
   return {
-    type: "END_GAME"
+    type: "WIN_GAME"
   }
 }
 
+function loseGame () {
+  return {
+    type: "LOSE_GAME"
+  }
+}
+
+
 export {
   startGame,
-  endGame
+  winGame,
+  loseGame
 }

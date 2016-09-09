@@ -1,5 +1,6 @@
 import React from 'react'
 import Tile from './tile'
+import EnemyConnector from '../connectors/enemyConnector'
 import PlayerConnector from '../connectors/playerConnector'
 
 
@@ -18,10 +19,17 @@ class BoardElement extends React.Component {
     return i == playerPosition.y && j == playerPosition.x
   }
 
+  isEnemyPresent() {
+    const {enemyPosition, i, j} = this.props
+    return i == enemyPosition.y && j == enemyPosition.x
+  }
+
+
   render(){
     return (
       <div className='board-element'>
         <Tile tileType={this.whatIsTileType()} />
+        { this.isEnemyPresent() ? <EnemyConnector /> : null }
         { this.isPlayerPresent() ? <PlayerConnector /> : null }
       </div>
 
