@@ -9,7 +9,8 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-    document.addEventListener("keydown", (evt) => {
+    document.addEventListener("keyup", (evt) => {
+      evt.preventDefault()
       switch(evt.key) {
         case('ArrowLeft'):
           this.props.playerMoveLeft()
@@ -22,7 +23,7 @@ class Game extends React.Component {
           break;
         case('ArrowDown'):
           this.props.playerMoveDown()
-          break;
+        break;
       }
     })
   }

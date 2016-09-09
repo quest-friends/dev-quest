@@ -32,6 +32,15 @@ span {
   transform: translate(-50%, -50%);
 }
 
+.enemy {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .board-element{
   position: relative;
   display: inline-block;
