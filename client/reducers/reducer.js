@@ -44,6 +44,15 @@ function reducer (state = initialState, action) {
       newState.isGameRunning = true
       return newState
 
+    case 'END_GAME':
+      newState = Object.assign({}, state)
+      console.log(newState.player.position);
+      // if (newState.player.position == tileGrid[i][j] == 3) {
+      //   newState.isGameRunning = false
+      //   console.log(newState.isGameRunning);
+      // }
+      return newState
+
 
     default:
       return state

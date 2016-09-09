@@ -5,6 +5,13 @@ function startGame () {
   }
 }
 
+function endGame () {
+  return {
+    type: "END_GAME"
+  }
+}
+
 export {
-  startGame
+  startGame,
+  endGame
 }
