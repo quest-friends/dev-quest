@@ -3,7 +3,6 @@ var combineReducers = require('redux').combineReducers
 
 function reducer (state = initialState, action) {
   var newState = {}
-  console.log(state);
   switch(action.type){
 
     //these are the cases for player movement
