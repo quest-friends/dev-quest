@@ -35,7 +35,7 @@ function reducer (state = initialState, action) {
       return newState
     case 'LOSE_GAME':
       newState = Object.assign({}, state)
-      newState.display = "lose"
+      newState.display = "loss"
       return newState
 
 
