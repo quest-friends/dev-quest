@@ -3,10 +3,10 @@ var combineReducers = require('redux').combineReducers
 
 function reducer (state = initialState, action) {
 
-  let newState = {}
-  const tileGrid = state.tileGrid
-  const i = state.player.position.y
-  const j = state.player.position.x
+  var newState = {}
+  var tileGrid = state.tileGrid
+  var i = state.player.position.y
+  var j = state.player.position.x
 
   switch(action.type){
 
