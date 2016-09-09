@@ -11,31 +11,43 @@ function reducer (state = initialState, action) {
   switch(action.type){
 
     //these are the cases for player movement
-    case('PLAYER_MOVE_LEFT'):
+    case 'PLAYER_MOVE_LEFT':
       newState = Object.assign({}, state)
       if (tileGrid[i][j-1] != 0) {
         newState.player.position.x -= 1
+        if (tileGrid[i][j-1] == 3) {
+          newState.display = "win"
+        }
       }
       return newState
 
-    case('PLAYER_MOVE_RIGHT'):
+    case 'PLAYER_MOVE_RIGHT':
       newState = Object.assign({}, state)
       if (tileGrid[i][j+1] != 0 ) {
         newState.player.position.x += 1
+        if (tileGrid[i][j+1] == 3) {
+          newState.display = "win"
+        }
       }
       return newState
 
-    case('PLAYER_MOVE_UP'):
+    case 'PLAYER_MOVE_UP':
       newState = Object.assign({}, state)
       if (tileGrid[i-1][j] != 0 ) {
         newState.player.position.y -= 1
+        if (tileGrid[i-1][j] == 3) {
+          newState.display = "win"
+        }
       }
       return newState
 
-    case('PLAYER_MOVE_DOWN'):
+    case 'PLAYER_MOVE_DOWN':
       newState = Object.assign({}, state)
       if (tileGrid[i+1][j] != 0 ) {
         newState.player.position.y += 1
+        if (tileGrid[i+1][j] == 3) {
+          newState.display = "win"
+        }
       }
       return newState
 
@@ -51,15 +63,6 @@ function reducer (state = initialState, action) {
     case 'LOSE_GAME':
       newState = Object.assign({}, state)
       newState.display = "loss"
-      return newState
-
-    case 'END_GAME':
-      newState = Object.assign({}, state)
-      console.log(newState.player.position);
-      // if (newState.player.position == tileGrid[i][j] == 3) {
-      //   newState.isGameRunning = false
-      //   console.log(newState.isGameRunning);
-      // }
       return newState
 
 

@@ -3,7 +3,6 @@ import Tile from './tile'
 import EnemyConnector from '../connectors/enemyConnector'
 import PlayerConnector from '../connectors/playerConnector'
 
-
 class BoardElement extends React.Component {
 
 //returns the tileType (0, 1, 2 etc) to be given to the Tile as props
@@ -23,7 +22,6 @@ class BoardElement extends React.Component {
     const {enemyPosition, i, j} = this.props
     return i == enemyPosition.y && j == enemyPosition.x
   }
-
 
   render(){
     return (
