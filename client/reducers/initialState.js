@@ -39,7 +39,6 @@ const initialState = {
       health: 1
     }
   ],
-  },
   stairs: {
     position: {
       x: 15,
