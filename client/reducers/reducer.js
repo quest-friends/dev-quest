@@ -13,7 +13,7 @@ function reducer (state = initialState, action) {
     //these are the cases for player movement
     case('PLAYER_MOVE_LEFT'):
       newState = Object.assign({}, state)
-      if (tileGrid[i][j-1] != 0) {
+      if (tileGrid[i][j-1] != 0 ) {
         newState.player.position.x -= 1
       }
       return newState

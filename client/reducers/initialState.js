@@ -35,6 +35,13 @@ const initialState = {
         y: 4
       },
       health: 1
+    },
+    enemy2: {
+      position: {
+        x: 12,
+        y: 8
+      },
+      health: 1
     }
   },
   display: "start"
