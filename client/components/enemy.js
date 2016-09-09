@@ -9,7 +9,6 @@ class Enemy extends React.Component {
   }
 
   render(){
-      console.log("here is the enemy", this.props);
     return (
       <div className='enemy'>
         <span><p>$$</p></span>

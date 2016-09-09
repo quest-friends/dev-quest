@@ -6,7 +6,6 @@ class Board extends React.Component {
 
   render(){
     const {tileGrid, playerPosition, enemyPosition} = this.props
-    console.log("this is enemyPosition from board: ", enemyPosition);
     return (
       <div>
         <h1> This is rendered by board.js </h1>
