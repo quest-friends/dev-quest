@@ -6,11 +6,13 @@ const mapStateToProps = (state) => {
   return {
     tileGrid: state.tileGrid,
     playerPosition: state.player.position,
-    enemyPosition: state.enemies.enemy.position,
     playerX: state.player.position.x,
     playerY: state.player.position.y,
-    enemyX: state.enemies.enemy.position.x,
-    enemyY: state.enemies.enemy.position.y
+//note - we should check if these are necessary as enemies probably render w player
+    // enemyX: state.enemies.enemy.position.x,
+    // enemyY: state.enemies.enemy.position.y,
+//this is now an array from the state
+    enemies: state.enemies
   }
 }
 
