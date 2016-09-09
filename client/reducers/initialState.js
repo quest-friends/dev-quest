@@ -28,14 +28,17 @@ const initialState = {
     },
     health: 3
   },
-  enemies: {
-    enemy: {
-      position: {
-        x: 1,
-        y: 4
-      },
+  enemies: [
+    { position: { x: 1, y: 4 },
+      health: 1
+    },
+    { position: { x: 12, y: 12 },
+      health: 1
+    },
+    { position: { x: 4, y: 14 },
       health: 1
     }
+  ],
   },
   stairs: {
     position: {

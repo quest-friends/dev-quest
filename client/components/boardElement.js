@@ -19,15 +19,18 @@ class BoardElement extends React.Component {
   }
 
   isEnemyPresent() {
-    const {enemyPosition, i, j} = this.props
-    return i == enemyPosition.y && j == enemyPosition.x
+    const {enemies, i, j} = this.props
+    const presentEnemy = enemies.find( (enemy) => {
+      return enemy.position.y==i && enemy.position.x==j
+    })
+    return presentEnemy
   }
 
   render(){
     return (
       <div className='board-element'>
         <Tile tileType={this.whatIsTileType()} />
-        { this.isEnemyPresent() ? <EnemyConnector /> : null }
+        { this.isEnemyPresent() ? <EnemyConnector x={this.props.j} y={this.props.i}/> : null }
         { this.isPlayerPresent() ? <PlayerConnector /> : null }
       </div>
 
