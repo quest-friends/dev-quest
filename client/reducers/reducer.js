@@ -3,8 +3,9 @@ var combineReducers = require('redux').combineReducers
 
 function reducer (state = initialState, action) {
 
-  var newState = {}
-  var tileGrid = state.tileGrid
+
+  var { tileGrid, enemies } = state
+  var newState = Object.assign({}, state)
   var i = state.player.position.y
   var j = state.player.position.x
 
@@ -12,48 +13,61 @@ function reducer (state = initialState, action) {
 
     //these are the cases for player movement
     case 'PLAYER_MOVE_LEFT':
-      newState = Object.assign({}, state)
-      if (tileGrid[i][j-1] != 0) {
+      var presentEnemy = enemies.find(function(enemy) {
+        return (enemy.position.x == (j-1) && enemy.position.y == i)
+      })
+
+      if(presentEnemy) {
+        console.log('attacky stuff goes here');
+      } else if (tileGrid[i][j-1] != 0) {
         newState.player.position.x -= 1
-      }
-      if (tileGrid[i][j-1] == 3) {
+      } else if (tileGrid[i][j-1] == 3) {
         newState.display = "win"
       }
       return newState
 
     case 'PLAYER_MOVE_RIGHT':
-      newState = Object.assign({}, state)
-      if (tileGrid[i][j+1] != 0) {
+      var presentEnemy = enemies.find(function(enemy) {
+        return (enemy.position.x == (j+1) && enemy.position.y == (i))
+      })
+
+      if(presentEnemy) {
+        console.log('attacky stuff goes here');
+      } else if (tileGrid[i][j+1] != 0) {
         newState.player.position.x += 1
-      }
-      if (tileGrid[i][j+1] == 3) {
+      } else if (tileGrid[i][j+1] == 3) {
         newState.display = "win"
       }
       return newState
 
     case 'PLAYER_MOVE_UP':
-      newState = Object.assign({}, state)
-      if (tileGrid[i-1][j] != 0) {
+      var presentEnemy = enemies.find(function(enemy) {
+        return (enemy.position.x == (j) && enemy.position.y == (i-1))
+      })
+      if(presentEnemy) {
+        console.log('attacky stuff goes here');
+      } else if (tileGrid[i-1][j] != 0) {
         newState.player.position.y -= 1
-      }
-      if (tileGrid[i-1][j] == 3) {
+      } else if (tileGrid[i-1][j] == 3) {
         newState.display = "win"
       }
       return newState
 
     case 'PLAYER_MOVE_DOWN':
-      newState = Object.assign({}, state)
-      if (tileGrid[i+1][j] != 0) {
+      var presentEnemy = enemies.find(function(enemy) {
+        return (enemy.position.x == (j) && enemy.position.y == (i+1))
+      })
+      if(presentEnemy) {
+        console.log('attacky stuff goes here');
+      } else if (tileGrid[i+1][j] != 0) {
         newState.player.position.y += 1
-      }
-      if (tileGrid[i+1][j] == 3) {
+      } else if (tileGrid[i+1][j] == 3) {
         newState.display = "win"
       }
       return newState
 
     //these are the cases for game running
     case 'START_GAME':
-      newState = Object.assign({}, state)
       newState.display = "game"
       return newState
     case 'WIN_GAME':
