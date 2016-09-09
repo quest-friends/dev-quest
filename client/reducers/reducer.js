@@ -3,6 +3,7 @@ import { combineReducers } from 'Redux'
 
 function reducer (state = initialState, action) {
   let newState = {}
+  console.log(state);
   switch(action.type){
 
     //these are the cases for player movement
@@ -26,7 +27,7 @@ function reducer (state = initialState, action) {
     //these are the cases for game running
     case 'START_GAME':
       newState = Object.assign({}, state)
-      newState.isGameRunning = true
+      newState.display = "game"
       return newState
 
 

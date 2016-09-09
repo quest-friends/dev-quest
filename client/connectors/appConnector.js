@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import App from '../components/app'
 
 const mapStateToProps = (state) => {
-  return { isGameRunning: state.isGameRunning }
+  return { display: state.display }
 }
 
 const appConnector = connect(mapStateToProps)(App)
