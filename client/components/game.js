@@ -22,7 +22,7 @@ class Game extends React.Component {
           break;
         case('ArrowDown'):
           this.props.playerMoveDown()
-        break;
+          break;
       }
     })
   }
