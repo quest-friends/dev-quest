@@ -36,7 +36,8 @@ const initialState = {
       },
       health: 1
     }
-  }
+  },
+  isGameRunning: false
 }
 
 export default initialState
