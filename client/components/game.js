@@ -9,6 +9,9 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
+    document.addEventListener("keypress", (evt) => {
+      evt.preventDefault()
+    })
     document.addEventListener("keyup", (evt) => {
       switch(evt.key) {
         case('ArrowLeft'):
