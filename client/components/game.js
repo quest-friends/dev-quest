@@ -32,6 +32,7 @@ class Game extends React.Component {
       <div>
         <h1> This is rendered by game.js </h1>
         <BoardConnector />
+        <button onClick={this.props.winGame} > win the game!</button>
       </div>
     )
   }

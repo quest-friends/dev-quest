@@ -29,6 +29,10 @@ function reducer (state = initialState, action) {
       newState = Object.assign({}, state)
       newState.display = "game"
       return newState
+    case 'WIN_GAME':
+      newState = Object.assign({}, state)
+      newState.display = "win"
+      return newState
 
 
     default:
