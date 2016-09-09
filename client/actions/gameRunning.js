@@ -17,7 +17,6 @@ function loseGame () {
   }
 }
 
-
 export {
   startGame,
   winGame,

@@ -15,6 +15,8 @@ class Tile extends React.Component {
         return <span><p>.</p></span>
       case (2):
         return <span><p>*</p></span>
+      case (3):
+        return <span><p>X</p></span>
       default:
         return ""
     }
@@ -23,7 +25,7 @@ class Tile extends React.Component {
   render(){
     return (
       <div className="tile">
-      { this.tileTypeToRender() }
+        { this.tileTypeToRender() }
       </div>
     )
   }
