@@ -9,13 +9,29 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
+    var { enemies, player } = this.props
+    var presentEnemy
+    //This works for firefox
     document.addEventListener("keypress", (evt) => {
+      evt.preventDefault()
+    })
+    //This works for Chrome
+    document.addEventListener("keydown", (evt) => {
       evt.preventDefault()
     })
     document.addEventListener("keyup", (evt) => {
       switch(evt.key) {
         case('ArrowLeft'):
-          this.props.playerMoveLeft()
+        enemies.find(function(enemy) {
+          return (enemy.position.y == player.position.y && enemy.position.x == player.position.x-1)
+        })
+          if(
+          ) {
+            this.props.playerAttackLeft(enemy)
+          }
+          else{
+            this.props.playerMoveLeft()
+          }
           break;
         case('ArrowRight'):
           this.props.playerMoveRight()
