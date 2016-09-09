@@ -23,7 +23,7 @@ const initialState = {
   ],
   player: {
     position: {
-      x: 2,
+      x: 1,
       y: 6
     },
     health: 3
