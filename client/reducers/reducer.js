@@ -4,21 +4,22 @@ var combineReducers = require('redux').combineReducers
 function reducer (state = initialState, action) {
 
 
-  var { tileGrid, enemies } = state
   var newState = Object.assign({}, state)
+  var { tileGrid, enemies } = newState
   var i = state.player.position.y
   var j = state.player.position.x
 
   switch(action.type){
 
     //these are the cases for player movement
+    //these are starting to get bulky, should consider moving some logic elsewhere
     case 'PLAYER_MOVE_LEFT':
       var presentEnemy = enemies.find(function(enemy) {
         return (enemy.position.x == (j-1) && enemy.position.y == i)
       })
 
       if(presentEnemy) {
-        console.log('attacky stuff goes here');
+        console.log('attacked ', presentEnemy)
       } else if (tileGrid[i][j-1] != 0) {
         newState.player.position.x -= 1
       } else if (tileGrid[i][j-1] == 3) {
@@ -32,7 +33,7 @@ function reducer (state = initialState, action) {
       })
 
       if(presentEnemy) {
-        console.log('attacky stuff goes here');
+        console.log('attacked ', presentEnemy)
       } else if (tileGrid[i][j+1] != 0) {
         newState.player.position.x += 1
       } else if (tileGrid[i][j+1] == 3) {
@@ -45,7 +46,7 @@ function reducer (state = initialState, action) {
         return (enemy.position.x == (j) && enemy.position.y == (i-1))
       })
       if(presentEnemy) {
-        console.log('attacky stuff goes here');
+        console.log('attacked ', presentEnemy)
       } else if (tileGrid[i-1][j] != 0) {
         newState.player.position.y -= 1
       } else if (tileGrid[i-1][j] == 3) {
@@ -58,7 +59,8 @@ function reducer (state = initialState, action) {
         return (enemy.position.x == (j) && enemy.position.y == (i+1))
       })
       if(presentEnemy) {
-        console.log('attacky stuff goes here');
+        presentEnemy.health--
+        console.log('attacked ', presentEnemy)
       } else if (tileGrid[i+1][j] != 0) {
         newState.player.position.y += 1
       } else if (tileGrid[i+1][j] == 3) {
