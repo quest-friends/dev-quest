@@ -255,27 +255,108 @@ test('PlayerMovesDown', function (t) {
   t.end()
 })
 
-// test('Starting Game', function (t) {
-//   var testState = {display: "start" }
-//   var expectedState = {display: "game"}
-//   var actualState = reducer(testState, {type: "START_GAME"})
-//   t.deepEqual(actualState, expectedState, "Sending a start game action triggers the game to start")
-//   t.end()
-// })
+test('Starting Game', function (t) {
+  var testState = {
+     tileGrid:[
+       [],
+       [],
+       []
+     ],
+     player:{
+       position: {
+         x: 1,
+         y: 1
+       }
+     },
+     display: "start"
+   }
+
+  var expectedState = {
+     tileGrid:[
+       [],
+       [],
+       []
+     ],
+     player:{
+       position: {
+         x: 1,
+         y: 1
+       }
+     },
+     display: "game"
+   }
+  var actualState = reducer(testState, {type: "START_GAME"})
+  t.deepEqual(actualState, expectedState, "Sending a start game action triggers the game to start")
+  t.end()
+})
+
 //
+test('Winning Game', function (t) {
+  var testState = {
+     tileGrid:[
+       [],
+       [],
+       []
+     ],
+     player:{
+       position: {
+         x: 1,
+         y: 1
+       }
+     },
+     display: "game"
+   }
+
+  var expectedState = {
+     tileGrid:[
+       [],
+       [],
+       []
+     ],
+     player:{
+       position: {
+         x: 1,
+         y: 1
+       }
+     },
+     display: "win"
+   }
+  var actualState = reducer(testState, {type: "WIN_GAME"})
+  t.deepEqual(actualState, expectedState, "Sending a win game action triggers the game to end with WIN")
+  t.end()
+})
 //
-// test('Winning Game', function (t) {
-//   var testState = {display: "game" }
-//   var expectedState = {display: "win"}
-//   var actualState = reducer(testState, {type: "WIN_GAME"})
-//   t.deepEqual(actualState, expectedState, "Sending a win game action triggers the game to end")
-//   t.end()
-// })
-//
-// test('Losing Game', function (t) {
-//   var testState = {display: "game" }
-//   var expectedState = {display: "loss"}
-//   var actualState = reducer(testState, {type: "LOSE_GAME"})
-//   t.deepEqual(actualState, expectedState, "Sending a lose game action triggers the game to start")
-//   t.end()
-// })
+test('Losing Game', function (t) {
+  var testState = {
+     tileGrid:[
+       [],
+       [],
+       []
+     ],
+     player:{
+       position: {
+         x: 1,
+         y: 1
+       }
+     },
+     display: "game"
+   }
+
+  var expectedState = {
+     tileGrid:[
+       [],
+       [],
+       []
+     ],
+     player:{
+       position: {
+         x: 1,
+         y: 1
+       }
+     },
+     display: "loss"
+   }
+  var actualState = reducer(testState, {type: "LOSE_GAME"})
+  t.deepEqual(actualState, expectedState, "Sending a lose game action triggers the game to end with LOSS")
+  t.end()
+})
