@@ -15,9 +15,9 @@ function reducer (state = initialState, action) {
       newState = Object.assign({}, state)
       if (tileGrid[i][j-1] != 0) {
         newState.player.position.x -= 1
-        if (tileGrid[i][j-1] == 3) {
-          newState.display = "win"
-        }
+      }
+      if (tileGrid[i][j-1] == 3) {
+        newState.display = "win"
       }
       return newState
 
@@ -25,9 +25,9 @@ function reducer (state = initialState, action) {
       newState = Object.assign({}, state)
       if (tileGrid[i][j+1] != 0) {
         newState.player.position.x += 1
-        if (tileGrid[i][j+1] == 3) {
-          newState.display = "win"
-        }
+      }
+      if (tileGrid[i][j+1] == 3) {
+        newState.display = "win"
       }
       return newState
 
@@ -35,9 +35,9 @@ function reducer (state = initialState, action) {
       newState = Object.assign({}, state)
       if (tileGrid[i-1][j] != 0) {
         newState.player.position.y -= 1
-        if (tileGrid[i-1][j] == 3) {
-          newState.display = "win"
-        }
+      }
+      if (tileGrid[i-1][j] == 3) {
+        newState.display = "win"
       }
       return newState
 
@@ -45,9 +45,9 @@ function reducer (state = initialState, action) {
       newState = Object.assign({}, state)
       if (tileGrid[i+1][j] != 0) {
         newState.player.position.y += 1
-        if (tileGrid[i+1][j] == 3) {
-          newState.display = "win"
-        }
+      }
+      if (tileGrid[i+1][j] == 3) {
+        newState.display = "win"
       }
       return newState
 
