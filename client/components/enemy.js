@@ -2,8 +2,17 @@ import React from 'react'
 
 class Enemy extends React.Component {
 
+  getPresentEnemy() {
+    const {enemies, x, y} = this.props
+    const presentEnemy = enemies.find( (enemy) => {
+      return enemy.position.y==y && enemy.position.x==x
+    })
+    return presentEnemy
+  }
+
   enemyTypeToRender() {
-    const enemyType = this.props.presentEnemy.type
+    const enemyType = this.getPresentEnemy().type
+
     switch (enemyType){
       case ("ie6"):
         return <span><p>ie6</p></span>
@@ -11,6 +20,8 @@ class Enemy extends React.Component {
         return <span><p>chrome</p></span>
       case ("firefox"):
         return <span><p>firefox</p></span>
+      case ("opera"):
+        return <span><p>opera</p></span>
       default:
         return ""
       }

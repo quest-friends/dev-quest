@@ -40,6 +40,10 @@ const initialState = {
     { position: { x: 4, y: 14 },
       health: 1,
       type: "firefox"
+    },
+    { position: { x: 2, y: 5 },
+      health: 1,
+      type: "opera"
     }
   ],
   display: "start"
