@@ -17,9 +17,12 @@ function reducer (state = initialState, action) {
       nextTile = tileGrid[i][j-1]
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x -= 1
-      } else if (nextTile == 3) {
-        newState.display = "win"
       }
+
+      // else if (nextTile == 3) {
+      //   newState.display = "win"
+      // }
+
       return newState
 
     case 'PLAYER_MOVE_RIGHT':
