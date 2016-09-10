@@ -13,7 +13,14 @@ class Game extends React.Component {
     var { enemies, player } = this.props
     var presentEnemy
 
-    //This seems to work for both Firefox and Chrome
+    //This works for firefox
+    document.addEventListener("keypress", (evt) => {
+      if(evt.key == 'ArrowLeft' || evt.key == 'ArrowRight' || evt.key == 'ArrowDown' || evt.key == 'ArrowUp' ){
+        evt.preventDefault()
+      }
+    })
+
+    //This works for Chrome
     document.addEventListener("keydown", (evt) => {
       if(evt.key == 'ArrowLeft' || evt.key == 'ArrowRight' || evt.key == 'ArrowDown' || evt.key == 'ArrowUp' ){
         evt.preventDefault()
