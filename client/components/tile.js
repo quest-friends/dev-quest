@@ -10,13 +10,13 @@ class Tile extends React.Component {
     const tileType = this.props.tileType
     switch (tileType){
       case (0):
-        return <span><p>##</p></span>
+        return <span>#</span>
       case (1):
-        return <span><p>.</p></span>
+        return <span>.</span>
       case (2):
-        return <span><p>*</p></span>
+        return <span>"*"</span>
       case (3):
-        return <span><p>X</p></span>
+        return <span>X</span>
       default:
         return ""
     }
