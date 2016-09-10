@@ -67,6 +67,12 @@ function reducer (state = initialState, action) {
       console.log('attacking', action.payload)
       return newState
 
+    //these are the cases for enemies attacking
+
+    case 'ENEMY_ATTACK':
+      newState.player.health --
+      return newState
+
     //these are the cases for game running
     case 'START_GAME':
       newState.display = "game"
@@ -90,6 +96,7 @@ function reducer (state = initialState, action) {
       newState.tileGrid = levelGrids[newState.currentLevel-2]
       return newState
       console.log(newState);
+
 
 
     default:

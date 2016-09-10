@@ -6,11 +6,14 @@ class Enemy extends React.Component {
     super(props)
   }
   isPlayerAdjacent() {
-    const {x, y, playerX, playerY} = this.props
-    return (  x == playerX+1 && y == playerY ||
+    const {x, y, playerX, playerY, playerHealth} = this.props
+    if (  x == playerX+1 && y == playerY ||
               x == playerX-1 && y == playerY ||
               x == playerX && y == playerY-1 ||
-              x == playerX && y == playerY+1    )
+              x == playerX && y == playerY+1    ){
+        this.props.enemyAttack()
+        console.log('attacking now!');
+      }
   }
 
   getPresentEnemy() {
@@ -41,8 +44,12 @@ class Enemy extends React.Component {
       }
     }
 
+  componentWillUpdate() {
+    this.isPlayerAdjacent())
+  }
+
   render(){
-    console.log(this.getPresentEnemy().type, " says the player is nearby! ", this.isPlayerAdjacent());
+    console.log(this.getPresentEnemy().type, 'enemy rerendering!');
     return (
       <div className='enemy'>
         {this.enemyTypeToRender()}
