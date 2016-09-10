@@ -17,8 +17,15 @@ function loseGame () {
   }
 }
 
+function nextLevel () {
+  return {
+    type: "NEXT_LEVEL"
+  }
+}
+
 export {
   startGame,
   winGame,
-  loseGame
+  loseGame,
+  nextLevel
 }

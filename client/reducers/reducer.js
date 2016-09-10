@@ -64,6 +64,8 @@ function reducer (state = initialState, action) {
       newState = Object.assign({}, state)
       newState.display = "loss"
       return newState
+    case 'NEXT_LEVEL':
+      newstate
 
 
     default:
