@@ -2,18 +2,6 @@ import React from 'react'
 
 class Enemy extends React.Component {
 
-  constructor(props){
-    super(props)
-  }
-  isPlayerAdjacent() {
-    const {x, y, playerX, playerY, playerHealth} = this.props
-    if (  x == playerX+1 && y == playerY ||
-              x == playerX-1 && y == playerY ||
-              x == playerX && y == playerY-1 ||
-              x == playerX && y == playerY+1    ){
-      }
-  }
-
   getPresentEnemy() {
     const {enemies, x, y} = this.props
     let presentEnemy = enemies.find( (enemy) => {

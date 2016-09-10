@@ -47,7 +47,6 @@ class Game extends React.Component {
           if(this.isPlayerDead()){
             this.props.loseGame()
           }
-          //all enemies act
           break;
 
         case('ArrowRight'):

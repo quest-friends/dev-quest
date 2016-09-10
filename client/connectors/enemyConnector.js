@@ -4,18 +4,10 @@ import Enemy from '../components/enemy'
 
 const mapStateToProps = (state) => {
   return {
-    enemies: state.enemies,
-    playerX: state.player.position.x,
-    playerY: state.player.position.y,
-    playerHealth: state.player.health
+    enemies: state.enemies
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-  }
-}
-
-const enemyConnector = connect(mapStateToProps, mapDispatchToProps)(Enemy)
+const enemyConnector = connect(mapStateToProps)(Enemy)
 
 export default enemyConnector

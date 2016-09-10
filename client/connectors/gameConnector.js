@@ -3,7 +3,7 @@ import {connect} from 'react-redux'
 import Game from '../components/game'
 import {playerMoveLeft, playerMoveRight, playerMoveDown, playerMoveUp} from '../actions/playerMovement'
 import {playerAttack} from '../actions/playerAttack'
-import {allEnemiesAct} from '../actions/enemyAttack'
+import {allEnemiesAct} from '../actions/enemyActions'
 import {nextLevel, loseGame, winGame} from '../actions/gameRunning'
 
 const mapStateToProps = (state) => {
