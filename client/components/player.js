@@ -11,7 +11,7 @@ class Player extends React.Component {
   render(){
     return (
       <div className='player'>
-        <span><p>@</p></span>
+        <span>@</span>
       </div>
     )
   }

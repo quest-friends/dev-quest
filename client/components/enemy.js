@@ -15,13 +15,13 @@ class Enemy extends React.Component {
 
     switch (enemyType){
       case ("ie6"):
-        return <span><p>ie6</p></span>
+        return <span>ie6</span>
       case ("chrome"):
-        return <span><p>chrome</p></span>
+        return <span>chrome</span>
       case ("firefox"):
-        return <span><p>firefox</p></span>
+        return <span>firefox</span>
       case ("opera"):
-        return <span><p>opera</p></span>
+        return <span>opera</span>
       default:
         return ""
       }

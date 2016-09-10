@@ -79,7 +79,6 @@ class Game extends React.Component {
   render(){
     return (
       <div>
-        <h1> This is rendered by game.js </h1>
         <BoardConnector />
         <button onClick={this.props.nextLevel} > next Level!</button>
         <button onClick={this.props.loseGame} > lose the game!</button>
