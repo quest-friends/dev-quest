@@ -86,6 +86,7 @@ function reducer (state = initialState, action) {
         newState.display = "win"
         return newState
       }
+      //WHY IS THIS MINUS TWO
       newState.tileGrid = levelGrids[newState.currentLevel-2]
       return newState
       console.log(newState);

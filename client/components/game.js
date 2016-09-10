@@ -39,6 +39,7 @@ class Game extends React.Component {
           }else{
             this.props.playerMoveLeft()
           }
+          //all enemies act
           break;
 
         case('ArrowRight'):

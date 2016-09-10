@@ -4,7 +4,9 @@ import Enemy from '../components/enemy'
 
 const mapStateToProps = (state) => {
   return {
-    enemies: state.enemies
+    enemies: state.enemies,
+    playerX: state.player.position.x,
+    playerY: state.player.position.y
   }
 }
 

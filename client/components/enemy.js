@@ -2,11 +2,25 @@ import React from 'react'
 
 class Enemy extends React.Component {
 
+  constructor(props){
+    super(props)
+  }
+  isPlayerAdjacent() {
+    const {x, y, playerX, playerY} = this.props
+    return (  x == playerX+1 && y == playerY ||
+              x == playerX-1 && y == playerY ||
+              x == playerX && y == playerY-1 ||
+              x == playerX && y == playerY+1    )
+  }
+
   getPresentEnemy() {
     const {enemies, x, y} = this.props
-    const presentEnemy = enemies.find( (enemy) => {
+    let presentEnemy = enemies.find( (enemy) => {
       return enemy.position.y==y && enemy.position.x==x
     })
+     if (!presentEnemy) {
+       presentEnemy = {type: "dead"}
+     }
     return presentEnemy
   }
 
@@ -28,6 +42,7 @@ class Enemy extends React.Component {
     }
 
   render(){
+    console.log(this.getPresentEnemy().type, " says the player is nearby! ", this.isPlayerAdjacent());
     return (
       <div className='enemy'>
         {this.enemyTypeToRender()}
