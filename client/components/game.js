@@ -22,26 +22,44 @@ class Game extends React.Component {
     document.addEventListener("keyup", (evt) => {
       switch(evt.key) {
         case('ArrowLeft'):
-        enemies.find(function(enemy) {
-          return (enemy.position.y == player.position.y && enemy.position.x == player.position.x-1)
-        })
-          if(
-          ) {
-            this.props.playerAttackLeft(enemy)
-          }
-          else{
+          presentEnemy = enemies.find(function(enemy) {
+            return (enemy.position.y == player.position.y && enemy.position.x == player.position.x-1)
+          })
+          if(presentEnemy) {
+            this.props.playerAttackLeft(presentEnemy)
+          }else{
             this.props.playerMoveLeft()
           }
           break;
         case('ArrowRight'):
-          this.props.playerMoveRight()
+          presentEnemy = enemies.find(function(enemy) {
+            return (enemy.position.y == player.position.y && enemy.position.x == player.position.x+1)
+          })
+          if(presentEnemy) {
+            this.props.playerAttackRight(presentEnemy)
+          }else{
+            this.props.playerMoveRight()
+          }
           break;
         case('ArrowUp'):
-          this.props.playerMoveUp()
+          presentEnemy = enemies.find(function(enemy) {
+            return (enemy.position.y == player.position.y-1 && enemy.position.x == player.position.x)
+          })
+          if(presentEnemy) {
+            this.props.playerAttackUp(presentEnemy)
+          }else{
+            this.props.playerMoveUp()
+          }
           break;
         case('ArrowDown'):
-          this.props.playerMoveDown()
-          break;
+          presentEnemy = enemies.find(function(enemy) {
+            return (enemy.position.y == player.position.y+1 && enemy.position.x == player.position.x)
+          })
+          if(presentEnemy) {
+            this.props.playerAttackDown(presentEnemy)
+          }else{
+            this.props.playerMoveDown()
+          }
       }
     })
   }
