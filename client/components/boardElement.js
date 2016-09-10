@@ -30,7 +30,7 @@ class BoardElement extends React.Component {
     return (
       <div className='board-element'>
         <Tile tileType={this.whatIsTileType()} />
-        { this.isEnemyPresent() ? <EnemyConnector x={this.props.j} y={this.props.i}/> : null }
+        { this.isEnemyPresent() ? <EnemyConnector  presentEnemy={this.isEnemyPresent()}/> : null }
         { this.isPlayerPresent() ? <PlayerConnector /> : null }
       </div>
 
