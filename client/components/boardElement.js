@@ -37,7 +37,6 @@ class BoardElement extends React.Component {
           : null }
         { this.isPlayerPresent() ? <PlayerConnector /> : null }
       </div>
-
     )
   }
 }

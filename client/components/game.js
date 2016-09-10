@@ -100,7 +100,7 @@ class Game extends React.Component {
     return (
       <div>
         <BoardConnector />
-        <button onClick={this.props.nextLevel} > next Level!</button>
+        <button onClick={this.props.winGame} > Win Game!</button>
         <button onClick={this.props.loseGame} > lose the game!</button>
       </div>
     )

@@ -10,6 +10,16 @@ function reducer (state = initialState, action) {
   var j = state.player.position.x
   var nextTile
 
+  const nextLevelFunc = () => {
+    newState.currentLevel ++
+    if (newState.currentLevel == 5){
+      newState.display = "win"
+      return newState
+    }
+    newState.tileGrid = levelGrids[newState.currentLevel-2]
+    return newState
+  }
+
   switch(action.type){
 
     //these are the cases for player movement
@@ -18,10 +28,10 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x -= 1
       }
-      else if (nextTile == 3) {
-        newState.display = "win"
-      }
 
+      else if (nextTile == 3) {
+        nextLevelFunc()
+      }
       return newState
 
     case 'PLAYER_MOVE_RIGHT':
@@ -29,7 +39,7 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x += 1
       } else if (nextTile == 3) {
-        newState.display = "win"
+        nextLevelFunc()
       }
       return newState
 
@@ -38,7 +48,7 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.y -= 1
       } else if (nextTile == 3) {
-        newState.display = "win"
+        nextLevelFunc()
       }
       return newState
 
@@ -47,7 +57,7 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.y += 1
       } else if (nextTile == 3) {
-        newState.display = "win"
+        nextLevelFunc()
       }
       return newState
 
@@ -92,19 +102,6 @@ function reducer (state = initialState, action) {
     case 'LOSE_GAME':
       newState.display = "loss"
       return newState
-
-    case 'NEXT_LEVEL':
-      newState.currentLevel ++
-      if (newState.currentLevel == 5){
-        newState.display = "win"
-        return newState
-      }
-      //WHY IS THIS MINUS TWO
-      newState.tileGrid = levelGrids[newState.currentLevel-2]
-      return newState
-      console.log(newState);
-
-
 
     default:
       return state
