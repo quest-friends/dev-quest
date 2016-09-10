@@ -10,6 +10,16 @@ function reducer (state = initialState, action) {
   var j = state.player.position.x
   var nextTile
 
+  const nextLevelFunc = () => {
+    newState.currentLevel ++
+    if (newState.currentLevel == 5){
+      newState.display = "win"
+      return newState
+    }
+    newState.tileGrid = levelGrids[newState.currentLevel-2]
+    return newState
+  }
+
   switch(action.type){
 
     //these are the cases for player movement
@@ -18,10 +28,10 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x -= 1
       }
-      else if (nextTile == 3) {
-        newState.display = "win"
-      }
 
+      else if (nextTile == 3) {
+        nextLevelFunc()
+      }
       return newState
 
     case 'PLAYER_MOVE_RIGHT':
@@ -29,7 +39,7 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x += 1
       } else if (nextTile == 3) {
-        newState.display = "win"
+        nextLevelFunc()
       }
       return newState
 
@@ -38,7 +48,7 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.y -= 1
       } else if (nextTile == 3) {
-        newState.display = "win"
+        nextLevelFunc()
       }
       return newState
 
@@ -47,7 +57,7 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.y += 1
       } else if (nextTile == 3) {
-        newState.display = "win"
+        nextLevelFunc()
       }
       return newState
 
@@ -81,32 +91,20 @@ function reducer (state = initialState, action) {
       return newState
 
     case 'NEXT_LEVEL':
-      newState.currentLevel ++
-      if (newState.currentLevel == 2){
-        console.log(levelGrids[0]);
-        newState.tileGrid = levelGrids[0]
-        return newState
-      }
-      if (newState.currentLevel == 3){
-        console.log(levelGrids[1]);
-        newState.tileGrid = levelGrids[1]
-        return newState
-      }
-      if (newState.currentLevel == 3){
-        console.log(levelGrids[2]);
-        newState.tileGrid = levelGrids[2]
-        return newState
-      }  if (newState.currentLevel == 4){
-          console.log(levelGrids[3]);
-          newState.display = "win"
-          return newState
-        }
-      console.log(newState);
-
+    newState.currentLevel ++
+    if (newState.currentLevel == 5){
+      newState.display = "win"
+      return newState
+    }
+    newState.tileGrid = levelGrids[newState.currentLevel-2]
+    return newState
+    console.log(newState);
 
     default:
       return state
   }
+
+
 }
 
 module.exports = reducer

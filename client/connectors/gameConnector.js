@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch) => {
     playerMoveUp: () => {dispatch(playerMoveUp()) },
     playerMoveDown: () => {dispatch(playerMoveDown()) },
     playerAttack: (enemy) => {dispatch(playerAttack(enemy)) },
-    winGame: () => {dispatch(loseGame())},
+    winGame: () => {dispatch(winGame())},
     loseGame: () => {dispatch(loseGame())},
     nextLevel: () => {dispatch(nextLevel())}
   }
