@@ -3,7 +3,8 @@ import {connect} from 'react-redux'
 import Game from '../components/game'
 import {playerMoveLeft, playerMoveRight, playerMoveDown, playerMoveUp} from '../actions/playerMovement'
 import {playerAttack} from '../actions/playerAttack'
-import {nextLevel, loseGame, winGame} from '../actions/gameRunning'
+import {allEnemiesAct} from '../actions/enemyActions'
+import {loseGame, winGame} from '../actions/gameRunning'
 
 const mapStateToProps = (state) => {
   return {
@@ -20,8 +21,8 @@ const mapDispatchToProps = (dispatch) => {
     playerMoveDown: () => {dispatch(playerMoveDown()) },
     playerAttack: (enemy) => {dispatch(playerAttack(enemy)) },
     winGame: () => {dispatch(winGame())},
-    loseGame: () => {dispatch(loseGame())},
-    nextLevel: () => {dispatch(nextLevel())}
+    allEnemiesAct: () => {dispatch(allEnemiesAct()) },
+    loseGame: () => {dispatch(loseGame())}
   }
 }
 

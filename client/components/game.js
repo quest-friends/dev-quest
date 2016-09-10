@@ -8,6 +8,10 @@ class Game extends React.Component {
 
   }
 
+  isPlayerDead() {
+    return this.props.player.health == 0
+  }
+
   componentDidMount() {
 
     var { enemies, player } = this.props
@@ -39,6 +43,10 @@ class Game extends React.Component {
           }else{
             this.props.playerMoveLeft()
           }
+          this.props.allEnemiesAct()
+          if(this.isPlayerDead()){
+            this.props.loseGame()
+          }
           break;
 
         case('ArrowRight'):
@@ -49,6 +57,10 @@ class Game extends React.Component {
             this.props.playerAttack(presentEnemy)
           }else{
             this.props.playerMoveRight()
+          }
+          this.props.allEnemiesAct()
+          if(this.isPlayerDead()){
+            this.props.loseGame()
           }
           break;
 
@@ -61,6 +73,10 @@ class Game extends React.Component {
           }else{
             this.props.playerMoveUp()
           }
+          this.props.allEnemiesAct()
+          if(this.isPlayerDead()){
+            this.props.loseGame()
+          }
           break;
 
         case('ArrowDown'):
@@ -72,6 +88,10 @@ class Game extends React.Component {
           }else{
             this.props.playerMoveDown()
           }
+          this.props.allEnemiesAct()
+          if(this.isPlayerDead()){
+            this.props.loseGame()
+          }
       }
     })
   }
@@ -80,7 +100,7 @@ class Game extends React.Component {
     return (
       <div>
         <BoardConnector />
-        <button onClick={this.props.nextLevel} > next Level!</button>
+        <button onClick={this.props.winGame} > Win Game!</button>
         <button onClick={this.props.loseGame} > lose the game!</button>
       </div>
     )

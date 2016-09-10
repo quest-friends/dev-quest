@@ -4,9 +4,12 @@ class Enemy extends React.Component {
 
   getPresentEnemy() {
     const {enemies, x, y} = this.props
-    const presentEnemy = enemies.find( (enemy) => {
+    let presentEnemy = enemies.find( (enemy) => {
       return enemy.position.y==y && enemy.position.x==x
     })
+     if (!presentEnemy) {
+       presentEnemy = {type: "dead"}
+     }
     return presentEnemy
   }
 
