@@ -39,7 +39,8 @@ const initialState = {
       health: 1
     }
   ],
-  display: "start"
+  display: "start",
+  currentLevel: 1
 }
 
 module.exports = initialState
