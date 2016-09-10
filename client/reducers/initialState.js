@@ -30,13 +30,20 @@ const initialState = {
   },
   enemies: [
     { position: { x: 1, y: 4 },
-      health: 1
+      health: 1,
+      type: "ie6"
     },
     { position: { x: 12, y: 12 },
-      health: 1
+      health: 1,
+      type: "chrome"
     },
     { position: { x: 4, y: 14 },
-      health: 1
+      health: 1,
+      type: "firefox"
+    },
+    { position: { x: 2, y: 5 },
+      health: 1,
+      type: "opera"
     }
   ],
   display: "start",
