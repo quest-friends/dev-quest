@@ -5,7 +5,7 @@ var levelGrids = require('../levels/levelGrids')
 function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
-  var { tileGrid, enemies } = newState
+  var { tileGrid, enemies, player } = newState
   var i = state.player.position.y
   var j = state.player.position.x
   var nextTile
@@ -69,8 +69,15 @@ function reducer (state = initialState, action) {
 
     //these are the cases for enemies attacking
 
-    case 'ENEMY_ATTACK':
-      newState.player.health --
+    case 'ALL_ENEMIES_ACT':
+      enemies.map(function(enemy){
+        if(  enemy.position.x == j+1 && enemy.position.y == i ||
+             enemy.position.x == j-1 && enemy.position.y == i ||
+             enemy.position.x == j && enemy.position.y == i-1 ||
+             enemy.position.x == j && enemy.position.y == i+1    ){
+               player.health--
+          }
+      })
       return newState
 
     //these are the cases for game running

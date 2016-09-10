@@ -1,7 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Enemy from '../components/enemy'
-import { enemyAttack } from '../actions/enemyAttack'
 
 const mapStateToProps = (state) => {
   return {
@@ -14,7 +13,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    enemyAttack: () => { dispatch(enemyAttack()) }
   }
 }
 

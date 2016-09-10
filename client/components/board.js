@@ -7,7 +7,7 @@ class Board extends React.Component {
     const {tileGrid, playerPosition, enemies} = this.props
     return (
       <div>
-        <h1> This is rendered by board.js {this.props.playerHealth} </h1>
+        <h1> This is rendered by board.js</h1>
         <div className="grid">
           {tileGrid.map((row, i) => {
             return row.map((tile, j) => {

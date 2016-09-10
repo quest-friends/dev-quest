@@ -1,10 +1,11 @@
 
-const enemyAttack = () => {
+const allEnemiesAct = () => {
+  console.log('enemies acting!');
   return {
-    type: "ENEMY_ATTACK"
+    type: "ALL_ENEMIES_ACT"
   }
 }
 
 export {
-  enemyAttack
+  allEnemiesAct
 }
