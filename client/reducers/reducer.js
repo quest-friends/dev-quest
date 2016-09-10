@@ -82,25 +82,12 @@ function reducer (state = initialState, action) {
 
     case 'NEXT_LEVEL':
       newState.currentLevel ++
-      if (newState.currentLevel == 2){
-        console.log(levelGrids[0]);
-        newState.tileGrid = levelGrids[0]
+      if (newState.currentLevel == 5){
+        newState.display = "win"
         return newState
       }
-      if (newState.currentLevel == 3){
-        console.log(levelGrids[1]);
-        newState.tileGrid = levelGrids[1]
-        return newState
-      }
-      if (newState.currentLevel == 3){
-        console.log(levelGrids[2]);
-        newState.tileGrid = levelGrids[2]
-        return newState
-      }  if (newState.currentLevel == 4){
-          console.log(levelGrids[3]);
-          newState.display = "win"
-          return newState
-        }
+      newState.tileGrid = levelGrids[newState.currentLevel-2]
+      return newState
       console.log(newState);
 
 
