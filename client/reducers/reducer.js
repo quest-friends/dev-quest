@@ -48,12 +48,15 @@ function reducer (state = initialState, action) {
     case 'PLAYER_ATTACK_LEFT':
       console.log('attacking', action.payload)
       return newState
+
     case 'PLAYER_ATTACK_RIGHT':
       console.log('attacking', action.payload)
       return newState
+
     case 'PLAYER_ATTACK_UP':
       console.log('attacking', action.payload)
       return newState
+      
     case 'PLAYER_ATTACK_DOWN':
       console.log('attacking', action.payload)
       return newState
