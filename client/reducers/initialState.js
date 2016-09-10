@@ -46,7 +46,8 @@ const initialState = {
       type: "opera"
     }
   ],
-  display: "start"
+  display: "start",
+  currentLevel: 1
 }
 
 module.exports = initialState
