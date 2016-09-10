@@ -1,6 +1,6 @@
 var initialState = require('./initialState')
 var combineReducers = require('redux').combineReducers
-var levelList = require('../levels/levelList')
+var levelGrids = require('../levels/levelGrids')
 
 function reducer (state = initialState, action) {
 
@@ -84,21 +84,21 @@ function reducer (state = initialState, action) {
     case 'NEXT_LEVEL':
       newState.currentLevel ++
       if (newState.currentLevel == 2){
-        console.log(levelList[0]);
-        newState.tileGrid = levelList[0]
+        console.log(levelGrids[0]);
+        newState.tileGrid = levelGrids[0]
         return newState
       }
       if (newState.currentLevel == 3){
-        console.log(levelList[1]);
-        newState.tileGrid = levelList[1]
+        console.log(levelGrids[1]);
+        newState.tileGrid = levelGrids[1]
         return newState
       }
       if (newState.currentLevel == 3){
-        console.log(levelList[2]);
-        newState.tileGrid = levelList[2]
+        console.log(levelGrids[2]);
+        newState.tileGrid = levelGrids[2]
         return newState
       }  if (newState.currentLevel == 4){
-          console.log(levelList[3]);
+          console.log(levelGrids[3]);
           newState.display = "win"
           return newState
         }
