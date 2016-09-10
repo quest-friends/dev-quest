@@ -18,10 +18,9 @@ function reducer (state = initialState, action) {
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x -= 1
       }
-
-      // else if (nextTile == 3) {
-      //   newState.display = "win"
-      // }
+      else if (nextTile == 3) {
+        newState.display = "win"
+      }
 
       return newState
 
@@ -59,6 +58,12 @@ function reducer (state = initialState, action) {
         return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
       })
       attackedEnemy.health --
+      if (attackedEnemy.health == 0) {
+        var enemyIndex = newState.enemies.findIndex(function(enemy){
+          return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+        })
+        newState.enemies.splice(enemyIndex, 1)
+      }
       console.log('attacking', action.payload)
       return newState
 
