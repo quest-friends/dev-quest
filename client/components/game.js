@@ -35,7 +35,7 @@ class Game extends React.Component {
             return (enemy.position.y == player.position.y && enemy.position.x == player.position.x-1)
           })
           if(presentEnemy) {
-            this.props.playerAttackLeft(presentEnemy)
+            this.props.playerAttack(presentEnemy)
           }else{
             this.props.playerMoveLeft()
           }
@@ -46,7 +46,7 @@ class Game extends React.Component {
             return (enemy.position.y == player.position.y && enemy.position.x == player.position.x+1)
           })
           if(presentEnemy) {
-            this.props.playerAttackRight(presentEnemy)
+            this.props.playerAttack(presentEnemy)
           }else{
             this.props.playerMoveRight()
           }
@@ -57,7 +57,7 @@ class Game extends React.Component {
             return (enemy.position.y == player.position.y-1 && enemy.position.x == player.position.x)
           })
           if(presentEnemy) {
-            this.props.playerAttackUp(presentEnemy)
+            this.props.playerAttack(presentEnemy)
           }else{
             this.props.playerMoveUp()
           }
@@ -68,7 +68,7 @@ class Game extends React.Component {
             return (enemy.position.y == player.position.y+1 && enemy.position.x == player.position.x)
           })
           if(presentEnemy) {
-            this.props.playerAttackDown(presentEnemy)
+            this.props.playerAttack(presentEnemy)
           }else{
             this.props.playerMoveDown()
           }

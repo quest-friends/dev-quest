@@ -17,9 +17,11 @@ function reducer (state = initialState, action) {
       nextTile = tileGrid[i][j-1]
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x -= 1
-      } else if (nextTile == 3) {
+      }
+      else if (nextTile == 3) {
         newState.display = "win"
       }
+
       return newState
 
     case 'PLAYER_MOVE_RIGHT':
@@ -51,22 +53,19 @@ function reducer (state = initialState, action) {
 
     //these are the cases for the player attacking
 
-    case 'PLAYER_ATTACK_LEFT':
+    case 'PLAYER_ATTACK':
+      var attackedEnemy = newState.enemies.find(function(enemy){
+        return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+      })
+      attackedEnemy.health --
+      if (attackedEnemy.health == 0) {
+        var enemyIndex = newState.enemies.findIndex(function(enemy){
+          return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+        })
+        newState.enemies.splice(enemyIndex, 1)
+      }
       console.log('attacking', action.payload)
       return newState
-
-    case 'PLAYER_ATTACK_RIGHT':
-      console.log('attacking', action.payload)
-      return newState
-
-    case 'PLAYER_ATTACK_UP':
-      console.log('attacking', action.payload)
-      return newState
-
-    case 'PLAYER_ATTACK_DOWN':
-      console.log('attacking', action.payload)
-      return newState
-
 
     //these are the cases for game running
     case 'START_GAME':
