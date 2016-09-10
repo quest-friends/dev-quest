@@ -5,7 +5,7 @@ var levelGrids = require('../levels/levelGrids')
 function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
-  var { tileGrid, enemies } = newState
+  var { tileGrid, enemies, player } = newState
   var i = state.player.position.y
   var j = state.player.position.x
   var nextTile
@@ -67,6 +67,19 @@ function reducer (state = initialState, action) {
       console.log('attacking', action.payload)
       return newState
 
+    //these are the cases for enemies attacking
+
+    case 'ALL_ENEMIES_ACT':
+      enemies.map(function(enemy){
+        if(  enemy.position.x == j+1 && enemy.position.y == i ||
+             enemy.position.x == j-1 && enemy.position.y == i ||
+             enemy.position.x == j && enemy.position.y == i-1 ||
+             enemy.position.x == j && enemy.position.y == i+1    ){
+               player.health--
+          }
+      })
+      return newState
+
     //these are the cases for game running
     case 'START_GAME':
       newState.display = "game"
@@ -82,26 +95,15 @@ function reducer (state = initialState, action) {
 
     case 'NEXT_LEVEL':
       newState.currentLevel ++
-      if (newState.currentLevel == 2){
-        console.log(levelGrids[0]);
-        newState.tileGrid = levelGrids[0]
+      if (newState.currentLevel == 5){
+        newState.display = "win"
         return newState
       }
-      if (newState.currentLevel == 3){
-        console.log(levelGrids[1]);
-        newState.tileGrid = levelGrids[1]
-        return newState
-      }
-      if (newState.currentLevel == 3){
-        console.log(levelGrids[2]);
-        newState.tileGrid = levelGrids[2]
-        return newState
-      }  if (newState.currentLevel == 4){
-          console.log(levelGrids[3]);
-          newState.display = "win"
-          return newState
-        }
+      //WHY IS THIS MINUS TWO
+      newState.tileGrid = levelGrids[newState.currentLevel-2]
+      return newState
       console.log(newState);
+
 
 
     default:
