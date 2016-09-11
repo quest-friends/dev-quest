@@ -2,24 +2,17 @@ import React from 'react'
 
 class Item extends React.Component {
 
-  itemToRender() {
-    const itemType
-
-    switch (itemType){
-      case ("coffee"):
-        return <span>coffee</span>
-      default:
-        return ""
-      }
-    }
+  constructor(props){
+    super(props)
+  }
 
   render(){
     return (
       <div className='item'>
-        {this.itemToRender()}
+        <span>coffee</span>
       </div>
     )
   }
 }
 
-export default Enemy
+export default Item
