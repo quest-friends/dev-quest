@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import PlayerStats from '../components/playerStats'
+import ConsoleLog from '../components/consoleLog'
 
 const mapStateToProps = (state) => {
   return {
@@ -9,6 +9,6 @@ const mapStateToProps = (state) => {
   }
 }
 
-const statsConnector = connect(mapStateToProps)(PlayerStats)
+const consoleLogConnector = connect(mapStateToProps)(ConsoleLog)
 
-export default statsConnector
+export default consoleLogConnector

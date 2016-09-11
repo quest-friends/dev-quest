@@ -10,8 +10,8 @@ class ConsoleLog extends React.Component {
 
   render(){
     return (
-      <div className='player'>
-        <span>@</span>
+      <div className='ui-consoleLog'>
+        <h3>This is rendered by consoleLog</h3>
       </div>
     )
   }
