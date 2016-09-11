@@ -1,5 +1,6 @@
 const levelGrids = [
-    [
+  {
+    tileGrid: [
       [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
       [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
       [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,0],
@@ -21,7 +22,25 @@ const levelGrids = [
       [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
       [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     ],
-    [
+    player: {
+      position:{ x: 10, y: 10 }
+    },
+    enemies: [
+      { position: { x: 12, y: 11 },
+        health: 3,
+        type: "ie6",
+        messages: {
+          enemyDetected: "OMG it's ie6 - are people really still using it?",
+          enemyAttacks: "ie6 doesn't support stuff and your code gets smushed and you lose 1 health point",
+          playerAttacks: "You write backwards compatible code - take that, ie6!" ,
+          enemyDefeated: "The world is now safe from ie6 and other outdated Microsoft products..."
+        }
+      }
+    ],
+    enemyCount: 1,
+  },
+  {
+    levelGrid:[
       [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
       [0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0],
       [0,1,3,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0],
@@ -43,7 +62,9 @@ const levelGrids = [
       [0,1,1,1,1,2,2,2,2,1,1,1,1,1,1,1,1,1,1,0],
       [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
     ],
-    [
+  },
+  {
+    levelGrid:[
       [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
       [0,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,0],
       [0,1,1,1,1,1,0,1,1,1,1,1,1,2,1,1,1,1,1,0],
@@ -64,7 +85,8 @@ const levelGrids = [
       [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
       [0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0],
       [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
-    ]
+    ],
+  }
 ]
 
 module.exports = levelGrids

@@ -16,7 +16,11 @@ function reducer (state = initialState, action) {
       newState.display = "win"
       return newState
     }
-    newState.tileGrid = levelGrids[newState.currentLevel-2]
+    var level = levelGrids[0]
+    newState.tileGrid = level.tileGrid
+    newState.player.position = level.player.position
+    newState.enemies = level.enemies
+    newState.enemyCount = level.enemyCount
     return newState
   }
 
