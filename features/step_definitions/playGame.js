@@ -11,8 +11,8 @@ module.exports = function () {
 
   this.When('I hit enter on the enter game button', () => {
     browser.waitForExist(".startGame")
-    browser.keys(['Tab'])
-    browser.keys(['Enter'])
+    client.scroll(".startGame")
+    client.click(".startGame")
   })
 
   this.Then('I am showen the game board', () => {
