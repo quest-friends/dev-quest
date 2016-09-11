@@ -31,7 +31,7 @@ test('PlayerMovesLeft', function (t) {
     }
   }
 
-  var actualState = reducer(testState, {type: "PLAYER_MOVE_LEFT"})
+  var actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:0}})
   t.deepEqual(actualState, expectedState, "Player can move left onto a floor tile")
   testState = {
     tileGrid:[
@@ -60,7 +60,7 @@ test('PlayerMovesLeft', function (t) {
       }
     }
   }
-  actualState = reducer(testState, {type: "PLAYER_MOVE_LEFT"})
+  actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})
   t.deepEqual(actualState, expectedState, "Player cannot move left into a wall")
   t.end()
 })
@@ -94,7 +94,7 @@ test('PlayerMovesRight', function (t) {
     }
   }
 
-  var actualState = reducer(testState, {type: "PLAYER_MOVE_RIGHT"})
+  var actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:2}})
   t.deepEqual(actualState, expectedState, "Player can move right onto a floor tile")
   testState = {
     tileGrid:[
@@ -123,7 +123,7 @@ test('PlayerMovesRight', function (t) {
       }
     }
   }
-  actualState = reducer(testState, {type: "PLAYER_MOVE_RIGHT"})
+  actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})
   t.deepEqual(actualState, expectedState, "Player cannot move right into a wall")
   t.end()
 })
@@ -157,7 +157,7 @@ test('PlayerMovesUp', function (t) {
     }
   }
 
-  var actualState = reducer(testState, {type: "PLAYER_MOVE_UP"})
+  var actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:0, x:1}})
   t.deepEqual(actualState, expectedState, "Player can move up onto a floor tile")
   testState = {
     tileGrid:[
@@ -186,7 +186,7 @@ test('PlayerMovesUp', function (t) {
       }
     }
   }
-  actualState = reducer(testState, {type: "PLAYER_MOVE_UP"})
+  actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})
   t.deepEqual(actualState, expectedState, "Player cannot move up into a wall")
   t.end()
 })
@@ -221,7 +221,7 @@ test('PlayerMovesDown', function (t) {
     }
   }
 
-  var actualState = reducer(testState, {type: "PLAYER_MOVE_DOWN"})
+  var actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:2, x:1}})
   t.deepEqual(actualState, expectedState, "Player can move down onto a floor tile")
   testState = {
     tileGrid:[
@@ -250,7 +250,7 @@ test('PlayerMovesDown', function (t) {
       }
     }
   }
-  actualState = reducer(testState, {type: "PLAYER_MOVE_DOWN"})
+  actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})
   t.deepEqual(actualState, expectedState, "Player cannot move down into a wall")
   t.end()
 })
@@ -438,6 +438,7 @@ test('Enemy dies on Player Attack', function (t) {
      ],
      display: "game",
      currentLevel: 1,
+     enemyCount: 1,
      loggedMessages: []
    }
    var expectedState = {
@@ -456,6 +457,7 @@ test('Enemy dies on Player Attack', function (t) {
       ],
       display: "game",
       currentLevel: 1,
+      enemyCount: 0,
       loggedMessages: ['player attacks', 'it super died']
     }
  var actualState = reducer(testState, {type: "PLAYER_ATTACK", payload: testState.enemies[0]})

@@ -5,12 +5,9 @@ var levelGrids = require('../levels/levelGrids')
 function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
-  var { tileGrid, enemies, player } = newState
-  //can we refactor these i and j things? it seems like they
-  //should be taken out of newState and then directly modified
-  // could destructure them?
-  var playerY = state.player.position.y
-  var playerX = state.player.position.x
+  var { tileGrid , player } = newState
+  var playerX = player.position.x
+  var playerY = player.position.y
   var nextTile
 
 function moveLeft (enemy) {
@@ -37,28 +34,28 @@ function moveTowardsPlayer(enemy) {
     // if the enemy's x is greater than the players
     //  check if the square to the left is a room tile
     //  if  it is, move left
-    if (playerX < x && nextTile == 1 && !enemies.find(function(enemy){return enemy.position.x==x-1 && enemy.position.y==y})){
+    if (playerX < x  && tileGrid[y][x-1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x-1 && newStateEnemy.position.y==y})){
       moveLeft(enemy)
     }
     // else
     // if the enemy's x is less than the players
     //  check if the square to the right is a room tile
     //  if it is, move right
-    else if (playerX > x && tileGrid[y][x+1] == 1 && !enemies.find(function(enemy){return enemy.position.x==x+1 && enemy.position.y==y})){
+    else if (playerX > x  && tileGrid[y][x+1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x+1 && newStateEnemy.position.y==y})){
       moveRight(enemy)
     }
     // else
     // if the enemy's y is less than the players
     //  check if the square to the bottom is a room tile
     //  if it is, move down
-    else if (playerY > y && tileGrid[y+1][x] == 1 && !enemies.find(function(enemy){return enemy.position.x==x && enemy.position.y==y+1})){
+    else if (playerY > y && tileGrid[y+1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y+1})){
       moveDown(enemy)
     }
     // else
     // if the enemy's y is greater than the players
     //  check if the square to the top is a room tile
     //  if it is, move up
-    else if (playerY < y && tileGrid[y-1][x] == 1 && !enemies.find(function(enemy){return enemy.position.x==x && enemy.position.y==y-1})){
+    else if (playerY < y && tileGrid[y-1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y-1})){
       moveUp(enemy)
     }
   }
@@ -73,61 +70,40 @@ function moveTowardsPlayer(enemy) {
     return newState
   }
 
+  var isPlayerAdjacent = function(enemy) {
+    var {x, y } = enemy.position
+    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+  }
+
   switch(action.type){
 
-    //these are the cases for player movement
-    case 'PLAYER_MOVE_LEFT':
-      nextTile = tileGrid[playerY][playerX-1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x -= 1
-      }
-
-      else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_RIGHT':
-      nextTile = tileGrid[playerY][playerX+1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_UP':
-      nextTile = tileGrid[playerY-1][playerX]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y -= 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_DOWN':
-      nextTile = tileGrid[playerY+1][playerX]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
+    case 'PLAYER_MOVE':
+        var { y, x} = action.payload
+        nextTile = tileGrid[y][x]
+        if (nextTile == 1 || nextTile == 2) {
+          newState.player.position.x = x
+          newState.player.position.y = y
+        } else if (nextTile == 3) {
+          nextLevelFunc()
+        }
+        return newState
 
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
-      var attackedEnemy = newState.enemies.find(function(enemy){
-        return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+      var enemyX = action.payload.position.x
+      var enemyY = action.payload.position.y
+
+      var attackedEnemyIndex = newState.enemies.findIndex(function(newStateEnemy){
+        return newStateEnemy.position.x == enemyX && newStateEnemy.position.y == enemyY
       })
+      var attackedEnemy = newState.enemies[attackedEnemyIndex]
+
       attackedEnemy.health --
       newState.loggedMessages.push(action.payload.messages.playerAttacks)
       newState.loggedMessages = newState.loggedMessages.slice(0)
       if (attackedEnemy.health <= 0) {
-        var enemyIndex = newState.enemies.findIndex(function(enemy){
-          return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
-        })
-        newState.enemies.splice(enemyIndex, 1)
+        newState.enemies.splice(attackedEnemyIndex, 1)
         newState.enemyCount--
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
@@ -138,22 +114,14 @@ function moveTowardsPlayer(enemy) {
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
-      enemies.map(function(enemy){
-        var {x, y} = enemy.position
-        //this needs to go through the enemies and tell them all to act, and the enemy should handle the logic?
-        //because each enemy is a simple object, handling the logic in here for now. COULD GET BULKY
-        // thought: could this action just make each enemy dispatch an action of its own?
-        if(  x == playerX+1 && y == playerY ||
-             x == playerX-1 && y == playerY ||
-             x == playerX && y == playerY-1 ||
-             x == playerX && y == playerY+1    ){
+      newState.enemies.map(function(enemy){
+        if(isPlayerAdjacent(enemy)){
                player.health--
-        } else {
+        } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy)
         }
       })
-      var testThing = enemies.slice(0)
-      enemies = testThing
+      newState.enemies = newState.enemies.slice(0)
       return newState
 
     //these are the cases for game running

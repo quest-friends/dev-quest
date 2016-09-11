@@ -15,7 +15,6 @@ class Enemy extends React.Component {
 
   enemyTypeToRender() {
     const enemyType = this.getPresentEnemy().type
-
     switch (enemyType){
       case ("ie6"):
         return <span>ie6</span>
