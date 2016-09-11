@@ -47,7 +47,11 @@ const initialState = {
     }
   ],
   display: "start",
-  currentLevel: 1
+  currentLevel: 1,
+  loggedMessages: [
+    { type: "start",
+      content: "Hello World!"}
+  ]
 }
 
 module.exports = initialState
