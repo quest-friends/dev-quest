@@ -7,6 +7,7 @@ const mapStateToProps = (state) => {
     items: state.items
   }
 }
+
 const itemConnector = connect(mapStateToProps)(Item)
 
 export default itemConnector
