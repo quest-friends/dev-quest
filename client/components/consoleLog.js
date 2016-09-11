@@ -9,10 +9,14 @@ class ConsoleLog extends React.Component {
   }
 
   render(){
+    const {loggedMessages} = this.props
     return (
       <div className='ui-consoleLog'>
         <h3>This is rendered by consoleLog</h3>
-        {this.props.loggedMessages[0].content}
+        {loggedMessages.map( (message) => {
+          return <p>{message.content}</p>
+          }
+        )}
       </div>
     )
   }
