@@ -65,7 +65,6 @@ function reducer (state = initialState, action) {
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
-    console.log("player attack newState",newState);
       var attackedEnemy = newState.enemies.find(function(enemy){
         return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
       })
@@ -76,7 +75,6 @@ function reducer (state = initialState, action) {
         })
         newState.enemies.splice(enemyIndex, 1)
       }
-      console.log('attacking', action.payload)
       return newState
 
     //these are the cases for enemies attacking
