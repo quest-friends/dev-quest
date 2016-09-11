@@ -43,17 +43,18 @@ function reducer (state = initialState, action) {
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
+      var { loggedMessages } = newState
+      var { x, y } = action.payload.position
 
-
-      var attackedEnemy = newState.enemies.find(function(enemy){
-        return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+      var attackedEnemy = enemies.find(function(enemy){
+        return enemy.position.x == x && enemy.position.y == y
       })
       attackedEnemy.health --
       newState.loggedMessages.push(action.payload.messages.playerAttacks)
       newState.loggedMessages = newState.loggedMessages.slice(0)
       if (attackedEnemy.health <= 0) {
         var enemyIndex = newState.enemies.findIndex(function(enemy){
-          return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+          return enemy.position.x == x && enemy.position.y == y
         })
         newState.enemies.splice(enemyIndex, 1)
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
