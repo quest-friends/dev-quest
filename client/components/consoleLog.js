@@ -3,13 +3,19 @@ import React from 'react'
 class ConsoleLog extends React.Component {
 
   render(){
+    const {loggedMessages} = this.props
+    const displayedMessages = loggedMessages.slice(-6)
     return (
       <div className='ui-console'>
         <div className='ui-heading'>
           <h2>Dev Quest 2.0</h2>
         </div>
         <div className='ui-terminalLog'>
-          <p>This is rendered by consoleLog</p>
+         {displayedMessages.map( (message) => {
+            return <p> > {message} </p>
+            })
+          }
+          >
         </div>
       </div>
     )

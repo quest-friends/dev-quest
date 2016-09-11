@@ -4,8 +4,7 @@ import ConsoleLog from '../components/consoleLog'
 
 const mapStateToProps = (state) => {
   return {
-    playerHealth: state.player.health,
-    playerXP: state.player.xp
+    loggedMessages: state.loggedMessages
   }
 }
 
