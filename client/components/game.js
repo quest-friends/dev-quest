@@ -44,7 +44,7 @@ class Game extends React.Component {
               newPosition = {y:y+1,x:x}
           }
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == y && enemy.position.x == x+1)
+            return (enemy.position.y == newPosition.y && enemy.position.x == newPosition.x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
