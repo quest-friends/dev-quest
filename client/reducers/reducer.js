@@ -6,8 +6,8 @@ function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
   var { tileGrid, enemies, player } = newState
-  var i = state.player.position.y
-  var j = state.player.position.x
+  var playerX = player.position.x
+  var playerY = player.position.y
   var nextTile
 
   var nextLevelFunc = function() {
@@ -22,7 +22,7 @@ function reducer (state = initialState, action) {
 
   var isEnemyAdjacent = function(enemy) {
     var {x, y } = enemy.position
-    return  (x == j+1 && y == i || x == j-1 && y == i || x == j && y == i-1 || x == j && y == i+1  )
+    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
   }
 
   switch(action.type){
