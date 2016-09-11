@@ -23,43 +23,17 @@ function reducer (state = initialState, action) {
   switch(action.type){
 
     //these are the cases for player movement
-    case 'PLAYER_MOVE_LEFT':
-      nextTile = tileGrid[i][j-1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x -= 1
-      }
 
-      else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_RIGHT':
-      nextTile = tileGrid[i][j+1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_UP':
-      nextTile = tileGrid[i-1][j]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y -= 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_DOWN':
-      nextTile = tileGrid[i+1][j]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
+    case 'PLAYER_MOVE':
+        var { y, x} = action.payload
+        nextTile = tileGrid[y][x]
+        if (nextTile == 1 || nextTile == 2) {
+          newState.player.position.x = x
+          newState.player.position.y = y
+        } else if (nextTile == 3) {
+          nextLevelFunc()
+        }
+        return newState
 
     //these are the cases for the player attacking
 
