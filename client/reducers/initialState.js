@@ -48,7 +48,10 @@ const initialState = {
     }
   ],
   display: "start",
-  currentLevel: 1
+  currentLevel: 1,
+  items: {
+    position: { x: 1, y: 7}
+  }
 }
 
 module.exports = initialState
