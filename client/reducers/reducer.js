@@ -10,9 +10,10 @@ function reducer (state = initialState, action) {
   var j = state.player.position.x
   var nextTile
 
+  // change to es5 syntax -max
   const nextLevelFunc = () => {
     newState.currentLevel ++
-    if (newState.currentLevel == 5){
+    if (newState.currentLevel == 6){
       newState.display = "win"
       return newState
     }
