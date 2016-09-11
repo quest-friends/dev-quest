@@ -105,10 +105,10 @@ class Game extends React.Component {
           <BoardConnector />
         </div>
         <div className="ui-container">
-          <ConsoleLogConnector /> <br />
+          <ConsoleLogConnector />
           <StatsConnector />
         </div>
-        
+
       </div>
     )
   }

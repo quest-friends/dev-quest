@@ -10,8 +10,8 @@ main {
 
 .grid {
   background-color: lightgray;
-  display:inline-block;
-  width:100%;
+  display: inline-block;
+  width: 90%;
 }
 
 .board-element {
@@ -19,7 +19,7 @@ main {
   display: inline-block;
   box-sizing: border-box;
   width: 5%;
-  height: 2.5vw;
+  height: 2.4vw;
   border: 1px solid black;
   float: left;
 }
@@ -53,6 +53,26 @@ span {
 
 .ui-container {
   width: 30%;
+  height: 96vh;
   float: left;
+}
+
+.ui-console {
+  border: 3px solid black;
+  height: 60%;
+  background-color: #222;
+  color: #39FF14;
+}
+
+.ui-heading {
+  height: 10%;
+}
+
+.ui-terminalLog {
+  max-height: 90%;
+}
+
+.ui-playerStats {
   border: 1px solid black;
+  height: 40%;
 }
