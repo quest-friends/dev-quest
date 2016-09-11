@@ -76,6 +76,7 @@ const initialState = {
   ],
   display: "start",
   currentLevel: 1,
+  enemyCount: 4,
   loggedMessages: [ "Hello World!" ],
   items: [
     { position: { x: 1, y: 7},

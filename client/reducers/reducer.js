@@ -9,8 +9,8 @@ function reducer (state = initialState, action) {
   //can we refactor these i and j things? it seems like they
   //should be taken out of newState and then directly modified
   // could destructure them?
-  var i = state.player.position.y
-  var j = state.player.position.x
+  var playerY = state.player.position.y
+  var playerX = state.player.position.x
   var nextTile
 
 function moveLeft (enemy) {
@@ -31,40 +31,34 @@ function moveDown (enemy) {
 
 function moveTowardsPlayer(enemy) {
     var {x, y} = enemy.position
-    var presentEnemy
     //psuedocode:
     // the case where the player is adjacent to the enemy should already have been handled. So:
     // first implementation,
     // if the enemy's x is greater than the players
     //  check if the square to the left is a room tile
     //  if  it is, move left
-    nextTile = tileGrid[y][x-1]
-    presentEnemy = enemies.find(function(enemy){return enemy.position.x==x-1 && enemy.position.y==y})
-    if (j < x && nextTile == 1 && !presentEnemy){
+    if (playerX < x && nextTile == 1 && !enemies.find(function(enemy){return enemy.position.x==x-1 && enemy.position.y==y})){
       moveLeft(enemy)
     }
     // else
     // if the enemy's x is less than the players
     //  check if the square to the right is a room tile
     //  if it is, move right
-    presentEnemy = enemies.find(function(enemy){return enemy.position.x==x+1 && enemy.position.y==y})
-    if (j > x && tileGrid[y][x+1] == 1 && !presentEnemy){
+    else if (playerX > x && tileGrid[y][x+1] == 1 && !enemies.find(function(enemy){return enemy.position.x==x+1 && enemy.position.y==y})){
       moveRight(enemy)
     }
     // else
     // if the enemy's y is less than the players
     //  check if the square to the bottom is a room tile
     //  if it is, move down
-    presentEnemy = enemies.find(function(enemy){return enemy.position.x==x && enemy.position.y==y+1})
-    if (i > y && tileGrid[y+1][x] == 1 && !presentEnemy){
+    else if (playerY > y && tileGrid[y+1][x] == 1 && !enemies.find(function(enemy){return enemy.position.x==x && enemy.position.y==y+1})){
       moveDown(enemy)
     }
     // else
     // if the enemy's y is greater than the players
     //  check if the square to the top is a room tile
     //  if it is, move up
-    presentEnemy = enemies.find(function(enemy){return enemy.position.x==x && enemy.position.y==y-1})
-    if (i < y && tileGrid[y-1][x] == 1 && !presentEnemy){
+    else if (playerY < y && tileGrid[y-1][x] == 1 && !enemies.find(function(enemy){return enemy.position.x==x && enemy.position.y==y-1})){
       moveUp(enemy)
     }
   }
@@ -83,7 +77,7 @@ function moveTowardsPlayer(enemy) {
 
     //these are the cases for player movement
     case 'PLAYER_MOVE_LEFT':
-      nextTile = tileGrid[i][j-1]
+      nextTile = tileGrid[playerY][playerX-1]
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x -= 1
       }
@@ -94,7 +88,7 @@ function moveTowardsPlayer(enemy) {
       return newState
 
     case 'PLAYER_MOVE_RIGHT':
-      nextTile = tileGrid[i][j+1]
+      nextTile = tileGrid[playerY][playerX+1]
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x += 1
       } else if (nextTile == 3) {
@@ -103,7 +97,7 @@ function moveTowardsPlayer(enemy) {
       return newState
 
     case 'PLAYER_MOVE_UP':
-      nextTile = tileGrid[i-1][j]
+      nextTile = tileGrid[playerY-1][playerX]
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.y -= 1
       } else if (nextTile == 3) {
@@ -112,7 +106,7 @@ function moveTowardsPlayer(enemy) {
       return newState
 
     case 'PLAYER_MOVE_DOWN':
-      nextTile = tileGrid[i+1][j]
+      nextTile = tileGrid[playerY+1][playerX]
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.y += 1
       } else if (nextTile == 3) {
@@ -134,6 +128,7 @@ function moveTowardsPlayer(enemy) {
           return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
         })
         newState.enemies.splice(enemyIndex, 1)
+        newState.enemyCount--
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
       }
@@ -144,18 +139,21 @@ function moveTowardsPlayer(enemy) {
 
     case 'ALL_ENEMIES_ACT':
       enemies.map(function(enemy){
+        var {x, y} = enemy.position
         //this needs to go through the enemies and tell them all to act, and the enemy should handle the logic?
         //because each enemy is a simple object, handling the logic in here for now. COULD GET BULKY
         // thought: could this action just make each enemy dispatch an action of its own?
-        if(  enemy.position.x == j+1 && enemy.position.y == i ||
-             enemy.position.x == j-1 && enemy.position.y == i ||
-             enemy.position.x == j && enemy.position.y == i-1 ||
-             enemy.position.x == j && enemy.position.y == i+1    ){
+        if(  x == playerX+1 && y == playerY ||
+             x == playerX-1 && y == playerY ||
+             x == playerX && y == playerY-1 ||
+             x == playerX && y == playerY+1    ){
                player.health--
         } else {
           moveTowardsPlayer(enemy)
         }
       })
+      var testThing = enemies.slice(0)
+      enemies = testThing
       return newState
 
     //these are the cases for game running
