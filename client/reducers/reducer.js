@@ -20,6 +20,11 @@ function reducer (state = initialState, action) {
     return newState
   }
 
+  var isEnemyAdjacent = function(enemy) {
+    var {x, y } = enemy.position
+    return  (x == j+1 && y == i || x == j-1 && y == i || x == j && y == i-1 || x == j && y == i+1  )
+  }
+
   switch(action.type){
 
     //these are the cases for player movement
@@ -60,10 +65,7 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       enemies.map(function(enemy){
-        if(  enemy.position.x == j+1 && enemy.position.y == i ||
-             enemy.position.x == j-1 && enemy.position.y == i ||
-             enemy.position.x == j && enemy.position.y == i-1 ||
-             enemy.position.x == j && enemy.position.y == i+1    ){
+        if(isEnemyAdjacent(enemy)){
                player.health--
           }
       })
