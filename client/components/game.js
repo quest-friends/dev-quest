@@ -100,6 +100,9 @@ class Game extends React.Component {
     return (
       <div>
         <BoardConnector />
+        <div>
+          <UIConnector />
+        </div>
         <button onClick={this.props.winGame} > Win Game!</button>
         <button onClick={this.props.loseGame} > lose the game!</button>
       </div>
