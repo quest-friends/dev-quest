@@ -49,7 +49,7 @@ function moveTowardsPlayer(enemy) {
       newState.display = "win"
       return newState
     }
-    var level = levelGrids[0]
+    var level = levelGrids[newState.currentLevel-2]
     newState.tileGrid = level.tileGrid
     newState.player.position = level.player.position
     newState.enemies = level.enemies
