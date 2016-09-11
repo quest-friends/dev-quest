@@ -33,17 +33,19 @@ class Game extends React.Component {
       }
     })
 
-    document.addEventListener("keyup", (evt) => {
+    document.addEventListener("keydown", (evt) => {
+        var {y, x} = player.position
+
       switch(evt.key) {
 
         case('ArrowLeft'):
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y && enemy.position.x == player.position.x-1)
+            return (enemy.position.y == y && enemy.position.x == x-1)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }else{
-            this.props.playerMoveLeft()
+            this.props.playerMove( y, x - 1 )
           }
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
@@ -53,12 +55,12 @@ class Game extends React.Component {
 
         case('ArrowRight'):
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y && enemy.position.x == player.position.x+1)
+            return (enemy.position.y == y && enemy.position.x == x+1)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }else{
-            this.props.playerMoveRight()
+            this.props.playerMove( y, x + 1 )
           }
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
@@ -68,12 +70,12 @@ class Game extends React.Component {
 
         case('ArrowUp'):
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y-1 && enemy.position.x == player.position.x)
+            return (enemy.position.y == y-1 && enemy.position.x == x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }else{
-            this.props.playerMoveUp()
+            this.props.playerMove( y - 1, x )
           }
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
@@ -83,12 +85,12 @@ class Game extends React.Component {
 
         case('ArrowDown'):
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y+1 && enemy.position.x == player.position.x)
+            return (enemy.position.y == y+1 && enemy.position.x == x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }else{
-            this.props.playerMoveDown()
+            this.props.playerMove( y + 1, x )
           }
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
