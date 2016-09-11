@@ -5,10 +5,43 @@ var levelGrids = require('../levels/levelGrids')
 function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
-  var { tileGrid, enemies, player, items } = newState
+  var { tileGrid , player, items } = newState
   var playerX = player.position.x
   var playerY = player.position.y
   var nextTile
+
+function moveLeft (enemy) {
+  enemy.position.x --
+}
+
+function moveRight (enemy) {
+  enemy.position.x ++
+}
+
+function moveUp (enemy) {
+  enemy.position.y --
+}
+
+function moveDown (enemy) {
+  enemy.position.y ++
+}
+
+function moveTowardsPlayer(enemy) {
+    var {x, y} = enemy.position
+
+    if (playerX < x  && tileGrid[y][x-1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x-1 && newStateEnemy.position.y==y})){
+      moveLeft(enemy)
+    }
+    else if (playerX > x  && tileGrid[y][x+1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x+1 && newStateEnemy.position.y==y})){
+      moveRight(enemy)
+    }
+    else if (playerY > y && tileGrid[y+1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y+1})){
+      moveDown(enemy)
+    }
+    else if (playerY < y && tileGrid[y-1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y-1})){
+      moveUp(enemy)
+    }
+  }
 
   const nextLevelFunc = () => {
     newState.currentLevel ++
@@ -32,8 +65,6 @@ function reducer (state = initialState, action) {
 
   switch(action.type){
 
-    //these are the cases for player movement
-
     case 'PLAYER_MOVE':
         var { y, x} = action.payload
         nextTile = tileGrid[y][x]
@@ -51,16 +82,16 @@ function reducer (state = initialState, action) {
       var enemyX = action.payload.position.x
       var enemyY = action.payload.position.y
 
-      var attackedEnemyIndex = enemies.findIndex(function(newStateEnemy){
+      var attackedEnemyIndex = newState.enemies.findIndex(function(newStateEnemy){
         return newStateEnemy.position.x == enemyX && newStateEnemy.position.y == enemyY
       })
-      var attackedEnemy = enemies[attackedEnemyIndex]
+      var attackedEnemy = newState.enemies[attackedEnemyIndex]
 
       attackedEnemy.health --
       newState.loggedMessages.push(action.payload.messages.playerAttacks)
       newState.loggedMessages = newState.loggedMessages.slice(0)
       if (attackedEnemy.health <= 0) {
-        enemies.splice(attackedEnemyIndex, 1)
+        newState.enemies.splice(attackedEnemyIndex, 1)
         newState.enemyCount--
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
@@ -89,11 +120,14 @@ function reducer (state = initialState, action) {
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
-      enemies.map(function(enemy){
+      newState.enemies.map(function(enemy){
         if(isPlayerAdjacent(enemy)){
-            player.health--
-          }
+          player.health--
+        } else if (enemy.type == 'chrome') {
+          moveTowardsPlayer(enemy)
+        }
       })
+      newState.enemies = newState.enemies.slice(0)
       return newState
 
     //these are the cases for item functionality
