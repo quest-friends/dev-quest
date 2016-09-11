@@ -20,20 +20,53 @@ function reducer (state = initialState, action) {
     return newState
   }
 
+  const enemyMoveX = (enemy) => {
+
+  }
+
   const moveTowardsPlayer = (enemy) => {
-    if (j > enemy.position.x){
-      enemy.position.x++
-      return
-    }if (j < enemy.position.x){
-      enemy.position.x--
-      return
-    }if (i < enemy.position.y){
-      enemy.position.y--
-      return
-    }if (i > enemy.position.y){
-      enemy.position.y++
-      return
+    var {x, y} = enemy.position
+    //psuedocode:
+    // the case where the player is adjacent to the enemy should already have been handled. So:
+    // first implementation,
+    // if the enemy's x is greater than the players
+    //  check if the square to the left is a room tile
+    //  if it is, move left
+    // else
+    // if the enemy's x is less than the players
+    //  check if the square to the right is a room tile
+    //  if it is, move right
+    // else
+    // if the enemy's y is greater than the players
+    //  check if the square to the bottom is a room tile
+    //  if it is, move down
+    // else
+    // if the enemy's y is less than the players
+    //  check if the square to the top is a room tile
+    //  if it is, move up
+    console.log(tileGrid[y][x-1] == 1)
+    if (j < x && tileGrid[y][x-1] == 1){
+      x--
     }
+    //if (j < x){
+    //   nextTile = tileGrid[y][x-1]
+    //   if(nextTile == 1){
+    //     x--
+    //   }
+    // return
+    // }if (i > y){
+    //   nextTile = tileGrid[y-1][x]
+    //   if(nextTile == 1){
+    //     y--
+    //   }
+    //   return
+    // }if (i < y){
+    //   nextTile = tileGrid[y+1][x]
+    //   if(nextTile == 1){
+    //     y++
+    //   }
+    // return
+    // }
   }
 
   switch(action.type){
@@ -101,11 +134,9 @@ function reducer (state = initialState, action) {
         //because each enemy is a simple object, handling the logic in here for now. COULD GET BULKY
         // thought: could this action just make each enemy dispatch an action of its own?
 
-        if(enemy.type == 'chrome')  {
-          moveTowardsPlayer(enemy)
-        }
+        if (moveTowardsPlayer(enemy)){
 
-        if(  enemy.position.x == j+1 && enemy.position.y == i ||
+        }if(  enemy.position.x == j+1 && enemy.position.y == i ||
              enemy.position.x == j-1 && enemy.position.y == i ||
              enemy.position.x == j && enemy.position.y == i-1 ||
              enemy.position.x == j && enemy.position.y == i+1    ){
