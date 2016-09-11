@@ -2,15 +2,16 @@ main {
   text-align: center;
 }
 
+.board-container {
+  margin-left: 5%;
+  width: 60%;
+  float: left;
+}
+
 .grid {
   background-color: lightgray;
   display:inline-block;
-  width:50%;
-}
-
-.board-container {
-  width: 60%;
-  float: left;
+  width:100%;
 }
 
 .board-element {
@@ -53,4 +54,5 @@ span {
 .ui-container {
   width: 30%;
   float: left;
+  border: 1px solid black;
 }
