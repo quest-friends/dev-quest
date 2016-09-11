@@ -5,11 +5,6 @@ import ConsoleLogConnector from '../connectors/consoleLogConnector'
 
 class Game extends React.Component {
 
-  constructor(props){
-    super(props)
-
-  }
-
   isArrowKey(key) {
     return (key == 'ArrowLeft' || key == 'ArrowRight' || key == 'ArrowDown' || key == 'ArrowUp' )
   }
@@ -19,7 +14,6 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-
     var { enemies, player } = this.props
     var presentEnemy
 
@@ -75,7 +69,6 @@ class Game extends React.Component {
           <ConsoleLogConnector />
           <StatsConnector />
         </div>
-
       </div>
     )
   }
