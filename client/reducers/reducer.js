@@ -28,33 +28,16 @@ function moveDown (enemy) {
 
 function moveTowardsPlayer(enemy) {
     var {x, y} = enemy.position
-    //psuedocode:
-    // the case where the player is adjacent to the enemy should already have been handled. So:
-    // first implementation,
-    // if the enemy's x is greater than the players
-    //  check if the square to the left is a room tile
-    //  if  it is, move left
+
     if (playerX < x  && tileGrid[y][x-1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x-1 && newStateEnemy.position.y==y})){
       moveLeft(enemy)
     }
-    // else
-    // if the enemy's x is less than the players
-    //  check if the square to the right is a room tile
-    //  if it is, move right
     else if (playerX > x  && tileGrid[y][x+1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x+1 && newStateEnemy.position.y==y})){
       moveRight(enemy)
     }
-    // else
-    // if the enemy's y is less than the players
-    //  check if the square to the bottom is a room tile
-    //  if it is, move down
     else if (playerY > y && tileGrid[y+1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y+1})){
       moveDown(enemy)
     }
-    // else
-    // if the enemy's y is greater than the players
-    //  check if the square to the top is a room tile
-    //  if it is, move up
     else if (playerY < y && tileGrid[y-1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y-1})){
       moveUp(enemy)
     }
