@@ -456,7 +456,7 @@ test('Player Attack', function (t) {
 })
 
 //
-test('Enemies Act', function (t) {
+test('Enemies Attack', function (t) {
  var testState = {
    tileGrid: [
      [1,1,1],
@@ -479,7 +479,6 @@ test('Enemies Act', function (t) {
      display: "game",
      currentLevel: 1
    }
-   console.log("testState", testState.player.health);
    var expectedState = {
       tileGrid:[
         [1,1,1],
@@ -502,7 +501,6 @@ test('Enemies Act', function (t) {
       display: "game",
       currentLevel: 1
     }
-    console.log("ExpectedState", expectedState.player.health);
  var actualState = reducer(testState, {type: "ALL_ENEMIES_ACT"})
  t.deepEqual(actualState, expectedState, "enemies Act")
  t.end()
