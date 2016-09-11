@@ -20,7 +20,7 @@ function reducer (state = initialState, action) {
     return newState
   }
 
-  var isEnemyAdjacent = function(enemy) {
+  var isPlayerAdjacent = function(enemy) {
     var {x, y } = enemy.position
     return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
   }
@@ -44,17 +44,19 @@ function reducer (state = initialState, action) {
 
     case 'PLAYER_ATTACK':
       var { loggedMessages } = newState
-      var { x, y } = action.payload.position
+      var enemyX = action.payload.position.x
+      var enemyY = action.payload.position.y
 
       var attackedEnemy = enemies.find(function(enemy){
-        return enemy.position.x == x && enemy.position.y == y
+        return enemy.position.x == enemyX && enemy.position.y == enemyY
       })
+
       attackedEnemy.health --
       newState.loggedMessages.push(action.payload.messages.playerAttacks)
       newState.loggedMessages = newState.loggedMessages.slice(0)
       if (attackedEnemy.health <= 0) {
-        var enemyIndex = newState.enemies.findIndex(function(enemy){
-          return enemy.position.x == x && enemy.position.y == y
+        var enemyIndex = enemies.findIndex(function(enemy){
+          return enemy.position.x == enemyX && enemy.position.y == enemyY
         })
         newState.enemies.splice(enemyIndex, 1)
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
@@ -66,7 +68,7 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       enemies.map(function(enemy){
-        if(isEnemyAdjacent(enemy)){
+        if(isPlayerAdjacent(enemy)){
                player.health--
           }
       })
