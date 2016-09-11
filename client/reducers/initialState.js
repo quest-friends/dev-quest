@@ -26,7 +26,7 @@ const initialState = {
       x: 1,
       y: 6
     },
-    health: 3,
+    health: 10,
     xp: 0
   },
   enemies: [
