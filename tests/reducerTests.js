@@ -450,60 +450,60 @@ test('Player Attack', function (t) {
       display: "game",
       currentLevel: 1
     }
- var actualState = reducer(testState, {type: "PLAYER_ATTACK"})
+ var actualState = reducer(testState, {type: "PLAYER_ATTACK", payload: testState.enemies[0]})
  t.deepEqual(actualState, expectedState, "When enemies Health reaches 0 it is removed from enemy array")
  t.end()
 })
 
 //
-test('Enemies Act', function (t) {
- var testState = {
-   tileGrid: [
-     [1,1,1],
-     [1,1,1],
-     [1,1,1]
-   ],
-     player: {
-       position: {
-         x: 2,
-         y: 1
-       },
-       health: 3
-     },
-     enemies: [
-       { position: { x: 1, y: 1 },
-         health: 1,
-         type: "opera"
-       }
-     ],
-     display: "game",
-     currentLevel: 1
-   }
-   console.log("testState", testState);
-   var expectedState = {
-      tileGrid:[
-        [1,1,1],
-        [1,1,1],
-        [1,1,1]
-      ],
-      player:{
-        position: {
-          x: 2,
-          y: 1
-        },
-        health: 2
-      },
-      enemies: [
-        { position: { x: 1, y: 1 },
-          health: 1,
-          type: "opera"
-        }
-      ],
-      display: "game",
-      currentLevel: 1
-    }
-    console.log("ExpectedState",testState);
- var actualState = reducer(testState, {type: "ALL_ENEMIES_ACT"})
- t.deepEqual(actualState, expectedState, "enemies Act")
- t.end()
-})
+// test('Enemies Act', function (t) {
+//  var testState = {
+//    tileGrid: [
+//      [1,1,1],
+//      [1,1,1],
+//      [1,1,1]
+//    ],
+//      player: {
+//        position: {
+//          x: 2,
+//          y: 1
+//        },
+//        health: 3
+//      },
+//      enemies: [
+//        { position: { x: 1, y: 1 },
+//          health: 1,
+//          type: "opera"
+//        }
+//      ],
+//      display: "game",
+//      currentLevel: 1
+//    }
+//    console.log("testState", testState);
+//    var expectedState = {
+//       tileGrid:[
+//         [1,1,1],
+//         [1,1,1],
+//         [1,1,1]
+//       ],
+//       player:{
+//         position: {
+//           x: 2,
+//           y: 1
+//         },
+//         health: 2
+//       },
+//       enemies: [
+//         { position: { x: 1, y: 1 },
+//           health: 1,
+//           type: "opera"
+//         }
+//       ],
+//       display: "game",
+//       currentLevel: 1
+//     }
+//     console.log("ExpectedState",testState);
+//  var actualState = reducer(testState, {type: "ALL_ENEMIES_ACT"})
+//  t.deepEqual(actualState, expectedState, "enemies Act")
+//  t.end()
+// })

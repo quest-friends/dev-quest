@@ -10,7 +10,7 @@ function reducer (state = initialState, action) {
   var j = state.player.position.x
   var nextTile
 
-  var nextLevelFunc = function(){
+  var nextLevelFunc = function() {
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -24,7 +24,6 @@ function reducer (state = initialState, action) {
 
     //these are the cases for player movement
     case 'PLAYER_MOVE_LEFT':
-    console.log(newState);
       nextTile = tileGrid[i][j-1]
       if (nextTile == 1 || nextTile == 2) {
         newState.player.position.x -= 1
@@ -75,6 +74,7 @@ function reducer (state = initialState, action) {
         })
         newState.enemies.splice(enemyIndex, 1)
       }
+      console.log('attacking', action.payload)
       return newState
 
     //these are the cases for enemies attacking
