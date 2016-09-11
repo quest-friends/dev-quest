@@ -16,7 +16,7 @@ module.exports = function () {
   })
 
   this.Then('I am showen the game board', () => {
-    expect(browser.getText('h2')).toEqual('Dev Quest 2.0')
+    expect(browser.waitForExist(".grid"))
   })
 
 }
