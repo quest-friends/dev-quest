@@ -414,3 +414,48 @@ test('Losing Game', function (t) {
   t.deepEqual(actualState, expectedState, "Sending a player attack action triggers the enemy to lose 1 health")
   t.end()
 })
+
+//
+test('Player Attack', function (t) {
+ var testState = {
+   tileGrid: [
+     [1,1,1],
+     [1,1,1],
+     [1,1,1]
+   ],
+     player: {
+       position: {
+         x: 2,
+         y: 1
+       }
+     },
+     enemies: [
+       { position: { x: 1, y: 1 },
+         health: 1,
+         type: "opera"
+       }
+     ],
+     display: "game",
+     currentLevel: 1
+   }
+   var expectedState = {
+      tileGrid:[
+        [1,1,1],
+        [1,1,1],
+        [1,1,1]
+      ],
+      player:{
+        position: {
+          x: 2,
+          y: 1
+        },
+      },
+      enemies: [
+      ],
+      display: "game",
+      currentLevel: 1
+    }
+ var actualState = reducer(testState, {type: "PLAYER_ATTACK",payload: testState.enemies[0]})
+ t.deepEqual(actualState, expectedState, "Sending a player attack action triggers the enemy to lose 1 health")
+ t.end()
+})
