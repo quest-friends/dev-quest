@@ -5,12 +5,12 @@ const extend = require('xtend')
 module.exports = function () {
 
   this.Given(/^I am viewing the start screen$/, function () {
-    browser.url('http://eda-quest.herokuapp.com/')
+    browser.url('localhost:4000')
   })
 
 
   this.When('I hit enter on the enter game button', () => {
-    browser.waitForExist('.startGame')
+    browser.waitForExist(".startGame")
     browser.keys(['Tab'])
     browser.keys(['Enter'])
   })
