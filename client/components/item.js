@@ -16,7 +16,7 @@ class Item extends React.Component {
     switch (itemType){
       case ("coffee"):
         return <span>coffee</span>
-      case ("CodeRed"):
+      case ("codeRed"):
         return <span>CodeRed</span>
       default:
         return ""
