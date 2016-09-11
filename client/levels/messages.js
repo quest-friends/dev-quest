@@ -10,3 +10,31 @@ const messageOptions = [
 ]
 
 module.exports = messageOptions
+
+
+{type: "detected",
+  content: "It's Chrome: the tentacles of Google are everywhere..."},
+{type: "enemy attacks",
+  content: "Chrome tries to take over the world"},
+{type: "player attacks",
+  content: "You decide to install an open source browser" },
+{type: "defeated",
+  content: "Chrome is gone, now start using Duck Duck Go!"}
+
+{type: "detected",
+  content: "It's Firefox!"},
+{type: "enemy attacks",
+  content: "Unhelpful developer tools slow you down"},
+{type: "player attacks",
+  content: "You switch back to Chrome" },
+{type: "defeated",
+  content: "Bye-bye cute fox logo"}
+
+{type: "detected",
+  content: "It's an Opera!"},
+{type: "enemy attacks",
+  content: "Somehow Opera browser does damage..."},
+{type: "player attacks",
+  content: "Player does something to Opera" },
+{type: "defeated",
+  content: "Bye-bye Opera"}
