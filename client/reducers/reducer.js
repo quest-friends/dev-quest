@@ -20,6 +20,22 @@ function reducer (state = initialState, action) {
     return newState
   }
 
+  const moveTowardsPlayer = (enemy) => {
+    if (j > enemy.position.x){
+      enemy.position.x++
+      return
+    }if (j < enemy.position.x){
+      enemy.position.x--
+      return
+    }if (i < enemy.position.y){
+      enemy.position.y--
+      return
+    }if (i > enemy.position.y){
+      enemy.position.y++
+      return
+    }
+  }
+
   switch(action.type){
 
     //these are the cases for player movement
@@ -81,6 +97,14 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       enemies.map(function(enemy){
+        //this needs to go through the enemies and tell them all to act, and the enemy should handle the logic?
+        //because each enemy is a simple object, handling the logic in here for now. COULD GET BULKY
+        // thought: could this action just make each enemy dispatch an action of its own?
+
+        if(enemy.type == 'chrome')  {
+          moveTowardsPlayer(enemy)
+        }
+
         if(  enemy.position.x == j+1 && enemy.position.y == i ||
              enemy.position.x == j-1 && enemy.position.y == i ||
              enemy.position.x == j && enemy.position.y == i-1 ||
