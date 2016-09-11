@@ -1,5 +1,7 @@
 import React from 'react'
 import BoardConnector from '../connectors/boardConnector'
+import StatsConnector from '../connectors/statsConnector'
+import ConsoleLogConnector from '../connectors/consoleLogConnector'
 
 class Game extends React.Component {
 
@@ -99,9 +101,14 @@ class Game extends React.Component {
   render(){
     return (
       <div>
-        <BoardConnector />
-        <button onClick={this.props.nextLevel} > next Level!</button>
-        <button onClick={this.props.loseGame} > lose the game!</button>
+        <div className="board-container">
+          <BoardConnector />
+        </div>
+        <div className="ui-container">
+          <ConsoleLogConnector /> <br />
+          <StatsConnector />
+        </div>
+        
       </div>
     )
   }

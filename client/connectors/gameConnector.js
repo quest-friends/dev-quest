@@ -4,7 +4,7 @@ import Game from '../components/game'
 import {playerMoveLeft, playerMoveRight, playerMoveDown, playerMoveUp} from '../actions/playerMovement'
 import {playerAttack} from '../actions/playerAttack'
 import {allEnemiesAct} from '../actions/enemyActions'
-import {nextLevel, loseGame, winGame} from '../actions/gameRunning'
+import {loseGame, winGame} from '../actions/gameRunning'
 
 const mapStateToProps = (state) => {
   return {
@@ -20,10 +20,9 @@ const mapDispatchToProps = (dispatch) => {
     playerMoveUp: () => {dispatch(playerMoveUp()) },
     playerMoveDown: () => {dispatch(playerMoveDown()) },
     playerAttack: (enemy) => {dispatch(playerAttack(enemy)) },
+    winGame: () => {dispatch(winGame())},
     allEnemiesAct: () => {dispatch(allEnemiesAct()) },
-    winGame: () => {dispatch(loseGame())},
-    loseGame: () => {dispatch(loseGame())},
-    nextLevel: () => {dispatch(nextLevel())}
+    loseGame: () => {dispatch(loseGame())}
   }
 }
 

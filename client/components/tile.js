@@ -14,7 +14,7 @@ class Tile extends React.Component {
       case (1):
         return <span>.</span>
       case (2):
-        return <span>"*"</span>
+        return <span>*</span>
       case (3):
         return <span>X</span>
       default:

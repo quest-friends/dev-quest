@@ -2,13 +2,19 @@ main {
   text-align: center;
 }
 
+.board-container {
+  margin-left: 5%;
+  width: 60%;
+  float: left;
+}
+
 .grid {
   background-color: lightgray;
   display:inline-block;
-  width:50%;
+  width:100%;
 }
 
-.board-element{
+.board-element {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
@@ -28,7 +34,6 @@ main {
   width: 100%;
 }
 
-
 .player {
   position: absolute;
   height: 100%;
@@ -41,8 +46,13 @@ main {
   width: 100%;
 }
 
-
 span {
   position: relative;
   vertical-align: middle;
+}
+
+.ui-container {
+  width: 30%;
+  float: left;
+  border: 1px solid black;
 }
