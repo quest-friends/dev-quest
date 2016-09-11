@@ -10,7 +10,7 @@ function reducer (state = initialState, action) {
   var j = state.player.position.x
   var nextTile
 
-  const nextLevelFunc = () => {
+  var nextLevelFunc = function() {
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -74,7 +74,6 @@ function reducer (state = initialState, action) {
         })
         newState.enemies.splice(enemyIndex, 1)
       }
-      console.log('attacking', action.payload)
       return newState
 
     //these are the cases for enemies attacking
