@@ -68,14 +68,17 @@ function reducer (state = initialState, action) {
         return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
       })
       attackedEnemy.health --
+      newState.loggedMessages.push(action.payload.messages.playerAttacks)
+      newState.loggedMessages = newState.loggedMessages.slice(0)
+
       if (attackedEnemy.health == 0) {
         var enemyIndex = newState.enemies.findIndex(function(enemy){
           return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
         })
         newState.enemies.splice(enemyIndex, 1)
+        newState.loggedMessages.push(action.payload.messages.enemyDefeated)
+        newState.loggedMessages = newState.loggedMessages.slice(0)
       }
-      newState.loggedMessages = [...newState.loggedMessages, action.payload.messages.enemyAttacks]
-      console.log('attacking', action.payload.messages.enemyAttacks)
       return newState
 
     //these are the cases for enemies attacking

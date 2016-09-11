@@ -4,8 +4,7 @@ class ConsoleLog extends React.Component {
 
   render(){
     const {loggedMessages} = this.props
-    const displayedMessages = loggedMessages.slice(-3)
-    console.log("dispplayedMessages ", displayedMessages);
+    const displayedMessages = loggedMessages.slice(-6)
     return (
       <div className='ui-console'>
         <div className='ui-heading'>

@@ -31,13 +31,13 @@ const initialState = {
   },
   enemies: [
     { position: { x: 1, y: 4 },
-      health: 1,
+      health: 2,
       type: "ie6",
       messages: {
         enemyDetected: "OMG it's ie6 - are people really still using it?",
-        enemyAttacks: "ie6 doesn't support, well, any interesting JS - your code gets smushed and you lose 1 health point",
+        enemyAttacks: "ie6 doesn't support stuff and your code gets smushed and you lose 1 health point",
         playerAttacks: "You write backwards compatible code - take that, ie6!" ,
-        enemyDefeated: "The world is now safe from outdated Microsoft products..."
+        enemyDefeated: "The world is now safe from ie6 and other outdated Microsoft products..."
       }
     },
 
@@ -48,7 +48,7 @@ const initialState = {
         enemyDetected: "It's Chrome: the tentacles of Google are everywhere...",
         enemyAttacks: "Chrome tries to take over the world",
         playerAttacks: "You decide to install an open source browser instead of Google Chrome",
-        enemyDefeated: "Chrome is gone, now start using Duck Duck Go instead of Google!"
+        enemyDefeated: "Chrome is gone, your next challenge is to start using Duck Duck Go search engine"
       }
     },
 
@@ -58,8 +58,8 @@ const initialState = {
       messages: {
         detected: "It's Firefox!",
         enemyAttacks: "Unhelpful Firefox developer tools slow you down",
-        playerAttacks: "You switch back to Chrome",
-        enemyDefeated: "Bye-bye cute fox logo"
+        playerAttacks: "Player does something to Firefox",
+        enemyDefeated: "Bye-bye cute Firefox logo"
       }
     },
 
@@ -76,7 +76,7 @@ const initialState = {
   ],
   display: "start",
   currentLevel: 1,
-  loggedMessages: [ "Hello World!"  ]
+  loggedMessages: [ "Hello World!" ]
 }
 
 module.exports = initialState

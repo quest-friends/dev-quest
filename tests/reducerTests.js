@@ -378,11 +378,13 @@ test('Losing Game', function (t) {
       enemies: [
         { position: { x: 1, y: 1 },
           health: 2,
-          type: "opera"
+          type: "opera",
+          messages: { playerAttacks: "player attacks"}
         }
       ],
       display: "game",
-      currentLevel: 1
+      currentLevel: 1,
+      loggedMessages: []
     }
     var expectedState = {
        tileGrid:[
@@ -399,11 +401,13 @@ test('Losing Game', function (t) {
        enemies: [
          { position: { x: 1, y: 1 },
            health: 1,
-           type: "opera"
+           type: "opera",
+           messages: {playerAttacks: "player attacks"}
          }
        ],
        display: "game",
-       currentLevel: 1
+       currentLevel: 1,
+       loggedMessages: ['player attacks']
      }
   var actualState = reducer(testState, {type: "PLAYER_ATTACK", payload: testState.enemies[0]})
   t.deepEqual(actualState, expectedState, "Sending a player attack action triggers the enemy to lose 1 health")
@@ -411,7 +415,7 @@ test('Losing Game', function (t) {
 })
 
 //
-test('Player Attack', function (t) {
+test('Enemy dies on Player Attack', function (t) {
  var testState = {
    tileGrid: [
      [1,1,1],
@@ -427,11 +431,14 @@ test('Player Attack', function (t) {
      enemies: [
        { position: { x: 1, y: 1 },
          health: 1,
-         type: "opera"
+         type: "opera",
+         messages: { playerAttacks: "player attacks",
+                      enemyDefeated: "it super died"}
        }
      ],
      display: "game",
-     currentLevel: 1
+     currentLevel: 1,
+     loggedMessages: []
    }
    var expectedState = {
       tileGrid:[
@@ -448,7 +455,8 @@ test('Player Attack', function (t) {
       enemies: [
       ],
       display: "game",
-      currentLevel: 1
+      currentLevel: 1,
+      loggedMessages: ['player attacks', 'it super died']
     }
  var actualState = reducer(testState, {type: "PLAYER_ATTACK", payload: testState.enemies[0]})
  t.deepEqual(actualState, expectedState, "When enemies Health reaches 0 it is removed from enemy array")
