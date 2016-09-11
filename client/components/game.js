@@ -32,16 +32,16 @@ class Game extends React.Component {
           var newPosition = {x, y}
           switch(evt.key){
             case 'ArrowLeft':
-              newPosition = {x:x-1,y:y}
+              newPosition = {y:y,x:x-1}
               break;
             case 'ArrowRight':
-              newPosition = {x:x+1,y:y}
+              newPosition = {y:y,x:x+1}
               break;
             case 'ArrowUp':
-              newPosition = {x:x,y:y-1}
+              newPosition = {y:y-1,x:x}
               break;
             case 'ArrowDown':
-              newPosition = {x:x,y:y+1}
+              newPosition = {y:y+1,x:x}
           }
           presentEnemy = enemies.find(function(enemy) {
             return (enemy.position.y == newPosition.y && enemy.position.x == newPosition.x)
