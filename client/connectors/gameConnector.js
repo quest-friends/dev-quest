@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Game from '../components/game'
-import {playerMove, playerMoveRight, playerMoveDown, playerMoveUp} from '../actions/playerMovement'
+import {playerMove} from '../actions/playerMovement'
 import {playerAttack} from '../actions/playerAttack'
 import {allEnemiesAct} from '../actions/enemyActions'
 import {loseGame, winGame} from '../actions/gameRunning'

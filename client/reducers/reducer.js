@@ -38,6 +38,8 @@ function reducer (state = initialState, action) {
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
+
+
       var attackedEnemy = newState.enemies.find(function(enemy){
         return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
       })
