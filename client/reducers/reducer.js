@@ -108,7 +108,6 @@ function moveTowardsPlayer(enemy) {
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
       }
-      console.log('attacking', action.payload)
       return newState
 
     //these are the cases for enemies attacking

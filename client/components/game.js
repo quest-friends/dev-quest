@@ -14,7 +14,7 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-    var { enemies, player } = this.props
+    var { player } = this.props
     var presentEnemy
 
     //This removes defaults for firefox
@@ -43,11 +43,10 @@ class Game extends React.Component {
             case 'ArrowDown':
               nextPosition = {y:y+1,x:x}
           }
-          presentEnemy = enemies.find(function(enemy) {
+          presentEnemy = this.props.enemies.find(function(enemy) {
             return (enemy.position.y == nextPosition.y && enemy.position.x == nextPosition.x)
           })
           if(presentEnemy) {
-            console.log("I'm gonna attack some guy!");
             this.props.playerAttack(presentEnemy)
           }else{
             this.props.playerMove( nextPosition.y, nextPosition.x )
