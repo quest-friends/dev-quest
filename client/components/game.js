@@ -14,8 +14,9 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-    var { enemies, player } = this.props
+    var { enemies, player, items } = this.props
     var presentEnemy
+    var presentItem
 
     //This removes defaults for firefox
     document.addEventListener("keypress", (evt) => {
@@ -43,14 +44,30 @@ class Game extends React.Component {
             case 'ArrowDown':
               nextPosition = {y:y+1,x:x}
           }
+
+
           presentEnemy = enemies.find(function(enemy) {
             return (enemy.position.y == nextPosition.y && enemy.position.x == nextPosition.x)
           })
+
+          presentItem = items.find(function(item) {
+            return (item.position.y == nextPosition.y && item.position.x == nextPosition.x)
+          })
+
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
-          }else{
+          }
+          else if (presentItem) {
+            //trigger PLAYER_ITEM_PICKUP
+            this.props.playerItemPickup(presentItem)
+          }
+          else {
             this.props.playerMove( nextPosition.y, nextPosition.x )
           }
+//is there an item in nextPosition
+//if so trigger pick up action
+
+
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
             this.props.loseGame()

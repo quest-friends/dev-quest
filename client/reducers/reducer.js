@@ -5,7 +5,7 @@ var levelGrids = require('../levels/levelGrids')
 function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
-  var { tileGrid, enemies, player } = newState
+  var { tileGrid, enemies, player, items } = newState
   var playerX = player.position.x
   var playerY = player.position.y
   var nextTile
@@ -23,6 +23,11 @@ function reducer (state = initialState, action) {
   var isPlayerAdjacent = function(enemy) {
     var {x, y } = enemy.position
     return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+  }
+
+  var isPlayerOnItem = function(item) {
+    var {x, y} = item.position
+    return (x == playerX && y == playerY)
   }
 
   switch(action.type){
@@ -63,13 +68,41 @@ function reducer (state = initialState, action) {
       console.log('attacking', action.payload)
       return newState
 
+    // these are the cases for player to item interaction
+
+    case 'PLAYER_ITEM_PICKUP':
+      var itemX = action.payload.position.x
+      var itemY = action.payload.position.y
+
+      var collectedItemIndex = items.findIndex(function(newStateItem){
+        return newStateItem.position.x == itemX && newStateItem.position.y == itemY
+      })
+      // var collectedItem = items[collectedItemIndex]
+
+      // if (collectedItem.health <= 0) {
+      //   items.splice(collectedItemIndex, 1)
+      // }
+      console.log('picking up', action.payload)
+      return newState
+
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
       enemies.map(function(enemy){
         if(isPlayerAdjacent(enemy)){
-               player.health--
+            player.health--
           }
+      })
+      return newState
+
+    //these are the cases for item functionality
+
+    case "ITEM_PICKUP":
+    console.log("item pickup working");
+      items.map(function(item) {
+        if (isPlayerOnItem(item)){
+          player.health++
+        }
       })
       return newState
 

@@ -1,6 +1,7 @@
-const itemPickup = () => {
+const itemPickup = (item) => {
   return {
-    type: "ITEM_PICKUP"
+    type: "ITEM_PICKUP",
+    payload: item
   }
 }
 
