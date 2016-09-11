@@ -77,6 +77,14 @@ const initialState = {
   display: "start",
   currentLevel: 1,
   loggedMessages: [ "Hello World!" ]
+  items: [
+    { position: { x: 1, y: 7},
+     type: "coffee"
+   },
+   { position: { x: 5, y: 12},
+    type: "codeRed"
+  }
+  ]
 }
 
 module.exports = initialState

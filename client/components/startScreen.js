@@ -6,7 +6,7 @@ class StartScreen extends React.Component {
     return (
       <div>
         <h1> This is rendered by the start screen!</h1>
-        <button onClick={this.props.startGame}>Start the gaaaaaame! </button>
+        <button className="startGame" onClick={this.props.startGame}>Start the gaaaaaame! </button>
       </div>
     )
   }

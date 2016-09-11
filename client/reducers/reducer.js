@@ -70,8 +70,7 @@ function reducer (state = initialState, action) {
       attackedEnemy.health --
       newState.loggedMessages.push(action.payload.messages.playerAttacks)
       newState.loggedMessages = newState.loggedMessages.slice(0)
-
-      if (attackedEnemy.health == 0) {
+      if (attackedEnemy.health <= 0) {
         var enemyIndex = newState.enemies.findIndex(function(enemy){
           return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
         })

@@ -11,7 +11,7 @@ class Game extends React.Component {
   }
 
   isPlayerDead() {
-    return this.props.player.health == 0
+    return this.props.player.health <= 0
   }
 
   componentDidMount() {
