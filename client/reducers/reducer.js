@@ -68,7 +68,7 @@ function reducer (state = initialState, action) {
         return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
       })
       attackedEnemy.health --
-      if (attackedEnemy.health == 0) {
+      if (attackedEnemy.health <= 0) {
         var enemyIndex = newState.enemies.findIndex(function(enemy){
           return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
         })
