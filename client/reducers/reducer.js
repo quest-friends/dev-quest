@@ -6,8 +6,8 @@ function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
   var { tileGrid, enemies, player } = newState
-  var i = state.player.position.y
-  var j = state.player.position.x
+  var playerX = player.position.x
+  var playerY = player.position.y
   var nextTile
 
   const nextLevelFunc = () => {
@@ -20,59 +20,45 @@ function reducer (state = initialState, action) {
     return newState
   }
 
+  var isPlayerAdjacent = function(enemy) {
+    var {x, y } = enemy.position
+    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+  }
+
   switch(action.type){
 
     //these are the cases for player movement
-    case 'PLAYER_MOVE_LEFT':
-      nextTile = tileGrid[i][j-1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x -= 1
-      }
 
-      else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_RIGHT':
-      nextTile = tileGrid[i][j+1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_UP':
-      nextTile = tileGrid[i-1][j]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y -= 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_DOWN':
-      nextTile = tileGrid[i+1][j]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
+    case 'PLAYER_MOVE':
+        var { y, x} = action.payload
+        nextTile = tileGrid[y][x]
+        if (nextTile == 1 || nextTile == 2) {
+          newState.player.position.x = x
+          newState.player.position.y = y
+        } else if (nextTile == 3) {
+          nextLevelFunc()
+        }
+        return newState
 
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
-      var attackedEnemy = newState.enemies.find(function(enemy){
-        return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+      var enemyX = action.payload.position.x
+      var enemyY = action.payload.position.y
+
+      var attackedEnemyIndex = enemies.findIndex(function(newStateEnemy){
+        return newStateEnemy.position.x == enemyX && newStateEnemy.position.y == enemyY
       })
+      var attackedEnemy = enemies[attackedEnemyIndex]
+
       attackedEnemy.health --
-      if (attackedEnemy.health == 0) {
-        var enemyIndex = newState.enemies.findIndex(function(enemy){
-          return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
-        })
-        newState.enemies.splice(enemyIndex, 1)
+      newState.loggedMessages.push(action.payload.messages.playerAttacks)
+      newState.loggedMessages = newState.loggedMessages.slice(0)
+      if (attackedEnemy.health <= 0) {
+        enemies.splice(attackedEnemyIndex, 1)
+        newState.enemyCount--
+        newState.loggedMessages.push(action.payload.messages.enemyDefeated)
+        newState.loggedMessages = newState.loggedMessages.slice(0)
       }
       console.log('attacking', action.payload)
       return newState
@@ -81,12 +67,7 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       enemies.map(function(enemy){
-        let x = enemy.position.x
-        let y = enemy.position.y
-        if(  x == j+1 && y == i ||
-             x == j-1 && y == i ||
-             x == j && y == i-1 ||
-             x == j && y == i+1    ){
+        if(isPlayerAdjacent(enemy)){
                player.health--
           }
       })
