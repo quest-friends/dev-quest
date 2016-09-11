@@ -1,6 +1,6 @@
 const itemPickup = () => {
   return {
-    type: "ITEMS_PICKUP"
+    type: "ITEM_PICKUP"
   }
 }
 
