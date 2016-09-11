@@ -55,7 +55,7 @@ class Game extends React.Component {
 
         case('ArrowRight'):
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y && enemy.position.x == player.position.x+1)
+            return (enemy.position.y == y && enemy.position.x == x+1)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
@@ -70,7 +70,7 @@ class Game extends React.Component {
 
         case('ArrowUp'):
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y-1 && enemy.position.x == player.position.x)
+            return (enemy.position.y == y-1 && enemy.position.x == x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
@@ -85,7 +85,7 @@ class Game extends React.Component {
 
         case('ArrowDown'):
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y+1 && enemy.position.x == player.position.x)
+            return (enemy.position.y == y+1 && enemy.position.x == x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
