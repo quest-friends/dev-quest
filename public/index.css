@@ -70,6 +70,8 @@ span {
 
 .ui-terminalLog {
   max-height: 90%;
+  text-align: left;
+  padding-left: 50px;
 }
 
 .ui-playerStats {

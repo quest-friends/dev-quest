@@ -74,11 +74,8 @@ function reducer (state = initialState, action) {
         })
         newState.enemies.splice(enemyIndex, 1)
       }
-<<<<<<< HEAD
-      newState.loggedMessages = [...newState.loggedMessages, action.payload.messages[1]]
-      console.log('attacking', action.payload.messages[1].content)
-=======
->>>>>>> a067dd1037eefc6b71532c76fcaa6aebbbfd21e2
+      newState.loggedMessages = [...newState.loggedMessages, action.payload.messages.enemyAttacks]
+      console.log('attacking', action.payload.messages.enemyAttacks)
       return newState
 
     //these are the cases for enemies attacking

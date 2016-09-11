@@ -33,66 +33,50 @@ const initialState = {
     { position: { x: 1, y: 4 },
       health: 1,
       type: "ie6",
-      messages: [
-        {type: "detected",
-          content: "OMG it's ie6 - are people really still using it?"},
-        {type: "enemy attacks",
-          content: "ie6 doesn't support, well, any interesting JS - your code gets smushed and you lose 1 health point"},
-        {type: "player attacks",
-          content: "You write backwards compatible code - take that, ie6!" },
-        {type: "defeated",
-          content: "The world is now safe from outdated Microsoft products..."}
-      ]
+      messages: {
+        enemyDetected: "OMG it's ie6 - are people really still using it?",
+        enemyAttacks: "ie6 doesn't support, well, any interesting JS - your code gets smushed and you lose 1 health point",
+        playerAttacks: "You write backwards compatible code - take that, ie6!" ,
+        enemyDefeated: "The world is now safe from outdated Microsoft products..."
+      }
     },
-    { position: { x: 12, y: 12 },
+
+    { position: { x: 12, y: 6 },
       health: 1,
       type: "chrome",
-      messages: [
-      {type: "detected",
-        content: "It's Chrome: the tentacles of Google are everywhere..."},
-      {type: "enemy attacks",
-        content: "Chrome tries to take over the world"},
-      {type: "player attacks",
-        content: "You decide to install an open source browser" },
-      {type: "defeated",
-        content: "Chrome is gone, now start using Duck Duck Go!"}
-      ]
+      messages: {
+        enemyDetected: "It's Chrome: the tentacles of Google are everywhere...",
+        enemyAttacks: "Chrome tries to take over the world",
+        playerAttacks: "You decide to install an open source browser instead of Google Chrome",
+        enemyDefeated: "Chrome is gone, now start using Duck Duck Go instead of Google!"
+      }
     },
-    { position: { x: 4, y: 14 },
+
+    { position: { x: 4, y: 7 },
       health: 1,
       type: "firefox",
-      messages: [
-      {type: "detected",
-        content: "It's Firefox!"},
-      {type: "enemy attacks",
-        content: "Unhelpful developer tools slow you down"},
-      {type: "player attacks",
-        content: "You switch back to Chrome" },
-      {type: "defeated",
-        content: "Bye-bye cute fox logo"}
-      ]
+      messages: {
+        detected: "It's Firefox!",
+        enemyAttacks: "Unhelpful Firefox developer tools slow you down",
+        playerAttacks: "You switch back to Chrome",
+        enemyDefeated: "Bye-bye cute fox logo"
+      }
     },
+
     { position: { x: 2, y: 5 },
       health: 1,
       type: "opera",
-      messages: [
-      {type: "detected",
-        content: "It's an Opera!"},
-      {type: "enemy attacks",
-        content: "Somehow Opera browser does damage..."},
-      {type: "player attacks",
-        content: "Player does something to Opera" },
-      {type: "defeated",
-        content: "Bye-bye Opera"}
-      ]
+      messages: {
+        detected: "It's an Opera!",
+        enemyAttacks: "In an as yet undefined way Opera browser does damage...",
+        playerAttacks: "Player does something to Opera",
+        enemyDefeated: "Bye-bye Opera"
+      }
     }
   ],
   display: "start",
   currentLevel: 1,
-  loggedMessages: [
-    { type: "start",
-      content: "Hello World!"}
-  ]
+  loggedMessages: [ "Hello World!"  ]
 }
 
 module.exports = initialState
