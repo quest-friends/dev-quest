@@ -5,9 +5,8 @@ import ConsoleLogConnector from '../connectors/consoleLogConnector'
 
 class Game extends React.Component {
 
-  constructor(props){
-    super(props)
-
+  isArrowKey(key) {
+    return (key == 'ArrowLeft' || key == 'ArrowRight' || key == 'ArrowDown' || key == 'ArrowUp' )
   }
 
   isPlayerDead() {
@@ -15,88 +14,48 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-
     var { enemies, player } = this.props
     var presentEnemy
 
-    //This works for firefox
+    //This removes defaults for firefox
     document.addEventListener("keypress", (evt) => {
-      if(evt.key == 'ArrowLeft' || evt.key == 'ArrowRight' || evt.key == 'ArrowDown' || evt.key == 'ArrowUp' ){
+      if(this.isArrowKey(evt.key)){
         evt.preventDefault()
       }
     })
 
-    //This works for Chrome
-    document.addEventListener("keydown", (evt) => {
-      if(evt.key == 'ArrowLeft' || evt.key == 'ArrowRight' || evt.key == 'ArrowDown' || evt.key == 'ArrowUp' ){
-        evt.preventDefault()
-      }
-    })
-
+    //This removes defaults for Chrome
     document.addEventListener("keydown", (evt) => {
         var {y, x} = player.position
-
-      switch(evt.key) {
-
-        case('ArrowLeft'):
+        if (this.isArrowKey(evt.key)) {
+          evt.preventDefault()
+          var nextPosition = {x, y}
+          switch(evt.key){
+            case 'ArrowLeft':
+              nextPosition = {y:y,x:x-1}
+              break;
+            case 'ArrowRight':
+              nextPosition = {y:y,x:x+1}
+              break;
+            case 'ArrowUp':
+              nextPosition = {y:y-1,x:x}
+              break;
+            case 'ArrowDown':
+              nextPosition = {y:y+1,x:x}
+          }
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == y && enemy.position.x == x-1)
+            return (enemy.position.y == nextPosition.y && enemy.position.x == nextPosition.x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }else{
-            this.props.playerMove( y, x - 1 )
+            this.props.playerMove( nextPosition.y, nextPosition.x )
           }
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
             this.props.loseGame()
           }
-          break;
-
-        case('ArrowRight'):
-          presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == y && enemy.position.x == x+1)
-          })
-          if(presentEnemy) {
-            this.props.playerAttack(presentEnemy)
-          }else{
-            this.props.playerMove( y, x + 1 )
-          }
-          this.props.allEnemiesAct()
-          if(this.isPlayerDead()){
-            this.props.loseGame()
-          }
-          break;
-
-        case('ArrowUp'):
-          presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == y-1 && enemy.position.x == x)
-          })
-          if(presentEnemy) {
-            this.props.playerAttack(presentEnemy)
-          }else{
-            this.props.playerMove( y - 1, x )
-          }
-          this.props.allEnemiesAct()
-          if(this.isPlayerDead()){
-            this.props.loseGame()
-          }
-          break;
-
-        case('ArrowDown'):
-          presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == y+1 && enemy.position.x == x)
-          })
-          if(presentEnemy) {
-            this.props.playerAttack(presentEnemy)
-          }else{
-            this.props.playerMove( y + 1, x )
-          }
-          this.props.allEnemiesAct()
-          if(this.isPlayerDead()){
-            this.props.loseGame()
-          }
-      }
+        }
     })
   }
 
@@ -110,7 +69,6 @@ class Game extends React.Component {
           <ConsoleLogConnector />
           <StatsConnector />
         </div>
-
       </div>
     )
   }
