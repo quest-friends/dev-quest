@@ -77,12 +77,13 @@ function reducer (state = initialState, action) {
       var collectedItemIndex = items.findIndex(function(newStateItem){
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
-      // var collectedItem = items[collectedItemIndex]
+      var collectedItem = items[collectedItemIndex]
+      collectedItem.collected = true
 
-      // if (collectedItem.health <= 0) {
-      //   items.splice(collectedItemIndex, 1)
-      // }
-      console.log('picking up', action.payload)
+      if (collectedItem.collected = true) {
+        items.splice(collectedItemIndex, 1)
+      }
+      console.log('Player picking up', action.payload)
       return newState
 
     //these are the cases for enemies attacking
