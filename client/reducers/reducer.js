@@ -10,7 +10,7 @@ function reducer (state = initialState, action) {
   var j = state.player.position.x
   var nextTile
 
-  var nextLevelFunc = function() {
+  const nextLevelFunc = () => {
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -68,22 +68,25 @@ function reducer (state = initialState, action) {
         return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
       })
       attackedEnemy.health --
-      if (attackedEnemy.health <= 0) {
+      if (attackedEnemy.health == 0) {
         var enemyIndex = newState.enemies.findIndex(function(enemy){
           return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
         })
         newState.enemies.splice(enemyIndex, 1)
       }
+      console.log('attacking', action.payload)
       return newState
 
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
       enemies.map(function(enemy){
-        if(  enemy.position.x == j+1 && enemy.position.y == i ||
-             enemy.position.x == j-1 && enemy.position.y == i ||
-             enemy.position.x == j && enemy.position.y == i-1 ||
-             enemy.position.x == j && enemy.position.y == i+1    ){
+        let x = enemy.position.x
+        let y = enemy.position.y
+        if(  x == j+1 && y == i ||
+             x == j-1 && y == i ||
+             x == j && y == i-1 ||
+             x == j && y == i+1    ){
                player.health--
           }
       })
