@@ -29,27 +29,27 @@ class Game extends React.Component {
         var {y, x} = player.position
         if (this.isArrowKey(evt.key)) {
           evt.preventDefault()
-          var newPosition = {x, y}
+          var nextPosition = {x, y}
           switch(evt.key){
             case 'ArrowLeft':
-              newPosition = {y:y,x:x-1}
+              nextPosition = {y:y,x:x-1}
               break;
             case 'ArrowRight':
-              newPosition = {y:y,x:x+1}
+              nextPosition = {y:y,x:x+1}
               break;
             case 'ArrowUp':
-              newPosition = {y:y-1,x:x}
+              nextPosition = {y:y-1,x:x}
               break;
             case 'ArrowDown':
-              newPosition = {y:y+1,x:x}
+              nextPosition = {y:y+1,x:x}
           }
           presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == newPosition.y && enemy.position.x == newPosition.x)
+            return (enemy.position.y == nextPosition.y && enemy.position.x == nextPosition.x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }else{
-            this.props.playerMove( newPosition.y, newPosition.x )
+            this.props.playerMove( nextPosition.y, nextPosition.x )
           }
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
