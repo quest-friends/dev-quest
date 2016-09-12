@@ -58,8 +58,10 @@ class Game extends React.Component {
         }
     })
   }
+  //<button className='playerML' onClick={ArrowLeft}>left</button>
 
   render(){
+    console.log(this.props);
     return (
       <div>
         <div className="board-container">
