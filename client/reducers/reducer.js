@@ -14,7 +14,6 @@ function reducer (state = initialState, action) {
   switch(action.type){
 
     case 'PLAYER_MOVE':
-    console.log('player move');
         nextTile = newState.tileGrid[action.payload.y][action.payload.x]
         if (nextTile == 1 || nextTile == 2) {
           newState.player.position.x = action.payload.x

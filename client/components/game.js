@@ -71,7 +71,6 @@ class Game extends React.Component {
   }
 
   render () {
-    console.log('game rendering!');
     return (
       <div>
         <div className='board-container'>

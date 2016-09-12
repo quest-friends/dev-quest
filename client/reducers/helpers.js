@@ -1,12 +1,12 @@
 
-const randomiseEnemyPosition = (tileGrid, enemy) => {
+const randomisePosition = (tileGrid, object) => {
     let yCoord = Math.floor(Math.random() * tileGrid.length)
     let xCoord = Math.floor(Math.random() * tileGrid[0].length)
     if ( tileGrid[yCoord][xCoord] === 1) {
-        enemy.position = {x: xCoord, y: yCoord}
+        object.position = {x: xCoord, y: yCoord}
     }
     else {
-      randomiseEnemyPosition(tileGrid, enemy)
+      randomisePosition(tileGrid, object)
      }
 }
 
@@ -60,7 +60,10 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.enemyCount = level.enemyCount
     newState.items = level.items
     newState.enemies.map(function(enemy){
-      randomiseEnemyPosition(newState.tileGrid, enemy)
+      randomisePosition(newState.tileGrid, enemy)
+    })
+    newState.items.map(function(item){
+      randomisePosition(newState.tileGrid, item)
     })
     return newState
   }
@@ -86,7 +89,7 @@ const moveTowardsPlayer = (enemy, state) => {
   }
 
 module.exports ={
-  randomiseEnemyPosition,
+  randomisePosition,
   moveEnemy,
   moveTowardsPlayer,
   nextLevel,
