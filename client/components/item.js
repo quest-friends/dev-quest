@@ -4,11 +4,10 @@ class Item extends React.Component {
 
   getPresentItem() {
     const {items, x, y} = this.props
-    console.log('position', x, y );
     let presentItem = items.find( (item) => {
       return item.position.y==y && item.position.x==x
     })
-    return presentItem //always return an item as render of Item only called in tile with Item instatiated
+    return presentItem
   }
 
   itemTypeToRender() {

@@ -8,7 +8,7 @@ class PlayerStats extends React.Component {
         <h3>Coder Stats:</h3>
         <p>Wellbeing: {this.props.health}</p>
         <p>Exp: {this.props.xp}</p>
-        <blink><p>Attack: {this.props.attack}</p></blink>
+        <p>Attack: {this.props.attack}</p>
         <p>Defence: {this.props.defence}</p>
         <p>Laptop Charge: {this.props.charge}%</p>
       </div>

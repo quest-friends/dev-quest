@@ -81,7 +81,6 @@ const initialState = {
   currentLevel: 1,
   enemyCount: 4,
   loggedMessages: [ "Hello World!" ],
-  itemCount: 2,
   items: [
     { position: { x: 1, y: 7},
       type: "coffee"
