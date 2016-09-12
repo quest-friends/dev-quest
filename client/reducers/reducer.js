@@ -58,6 +58,11 @@ function moveTowardsPlayer(enemy) {
     return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
   }
 
+  var isPlayerOnItem = function(item) {
+    var {x, y} = item.position
+    return (x == playerX && y == playerY)
+  }
+
   switch(action.type){
 
     case 'PLAYER_MOVE':
@@ -93,12 +98,25 @@ function moveTowardsPlayer(enemy) {
       }
       return newState
 
+    // these are the cases for player to item interaction
+
+    case 'PICKUP_ITEM':
+      var itemX = action.payload.position.x
+      var itemY = action.payload.position.y
+
+      var collectedItemIndex = newState.items.findIndex(function(newStateItem){
+        return newStateItem.position.x == itemX && newStateItem.position.y == itemY
+      })
+        newState.items.splice(collectedItemIndex, 1)
+        newState.player.health++
+      return newState
+
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
         if(isPlayerAdjacent(enemy)){
-               player.health--
+          player.health--
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy)
         }
