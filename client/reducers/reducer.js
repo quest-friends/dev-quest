@@ -14,6 +14,7 @@ function reducer (state = initialState, action) {
   switch(action.type){
 
     case 'PLAYER_MOVE':
+    console.log('player move');
         nextTile = newState.tileGrid[action.payload.y][action.payload.x]
         if (nextTile == 1 || nextTile == 2) {
           newState.player.position.x = action.payload.x
@@ -46,14 +47,15 @@ function reducer (state = initialState, action) {
     // these are the cases for player to item interaction
 
     case 'PICKUP_ITEM':
+    console.log('pickup item');
       var itemX = action.payload.position.x
       var itemY = action.payload.position.y
-
-      var collectedItemIndex = newState.items.findIndex(function(newStateItem){
-        return newStateItem.position.x == itemX && newStateItem.position.y == itemY
+      var collectedItemIndex = newState.items.findIndex(function(item){
+        return item.position.x == itemX && item.position.y == itemY
       })
-        newState.items.splice(collectedItemIndex, 1)
+        newState.items = removeElementFromArray(newState.items, collectedItemIndex)
         newState.player.health++
+        console.log('returning item state');
       return newState
 
     //these are the cases for enemies attacking
@@ -66,7 +68,6 @@ function reducer (state = initialState, action) {
           moveTowardsPlayer(enemy, newState)
         }
       })
-      newState.enemies = newState.enemies.slice(0)
       return newState
 
     //these are the cases for game running
