@@ -76,6 +76,8 @@ function reducer (state = initialState, action) {
       newState.enemies.map(function(enemy){
         if(isPlayerAdjacent(player, enemy)){
           player.health--
+          newState.loggedMessages.push(enemy.messages.enemyAttacks)
+          newState.loggedMessages = newState.loggedMessages.slice(0)
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
         }

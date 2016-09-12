@@ -17,13 +17,13 @@ class Enemy extends React.Component {
     const enemyType = this.getPresentEnemy().type
     switch (enemyType){
       case ("ie6"):
-        return <span>ie6</span>
+        return <span>IE</span>
       case ("chrome"):
         return <span>chrome</span>
       case ("firefox"):
         return <span>firefox</span>
-      case ("opera"):
-        return <span>opera</span>
+      case ("safari"):
+        return <span>safari</span>
       default:
         return ""
       }
