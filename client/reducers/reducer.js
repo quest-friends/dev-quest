@@ -1,6 +1,7 @@
 var initialState = require('./initialState')
 var combineReducers = require('redux').combineReducers
-var levelGrids = require('../levels/levelGrids')
+var levelList = require('../levels/levelList')
+var tileGrids = require('../levels/tileGrids')
 
 function reducer (state = initialState, action) {
 
@@ -50,11 +51,11 @@ function moveTowardsPlayer(enemy) {
       newState.display = "win"
       return newState
     }
-    var level = levelGrids[newState.currentLevel-2]
-    newState.tileGrid = level.tileGrid
-    newState.player.position = level.player.position
-    newState.enemies = level.enemies
-    newState.enemyCount = level.enemyCount
+    var level = levelList[newState.currentLevel-2]
+    newState.tileGrid = tileGrids[0]
+    // newState.player.position = level.player.position
+    // newState.enemies = level.enemies
+    // newState.enemyCount = level.enemyCount
     return newState
   }
 
