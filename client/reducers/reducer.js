@@ -104,7 +104,7 @@ function moveTowardsPlayer(enemy) {
       })
       var attackedEnemy = newState.enemies[attackedEnemyIndex]
 
-      attackedEnemy.health --
+      attackedEnemy.health -= newState.player.attack
       newState.loggedMessages.push(action.payload.messages.playerAttacks)
       newState.loggedMessages = newState.loggedMessages.slice(0)
       if (attackedEnemy.health <= 0) {
@@ -113,6 +113,9 @@ function moveTowardsPlayer(enemy) {
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
         newState.player.xp += 5
+        if (newState.player.xp >= 10) {
+          newState.player.attack++
+        }
       }
       return newState
 
