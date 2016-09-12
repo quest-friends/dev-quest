@@ -81,12 +81,10 @@ const initialState = {
   enemyCount: 4,
   items: [
     { position: { x: 1, y: 7},
-      type: "coffee",
-      collected: false
+      type: "coffee"
     },
     { position: { x: 5, y: 12},
-      type: "codeRed",
-      collected: false
+      type: "codeRed"
     }
   ]
 }

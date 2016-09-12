@@ -5,8 +5,7 @@ import {playerMove} from '../actions/playerMovement'
 import {playerAttack} from '../actions/playerAttack'
 import {allEnemiesAct} from '../actions/enemyActions'
 import {loseGame, winGame} from '../actions/gameRunning'
-import {itemPickup} from '../actions/itemActions'
-import {playerItemPickup} from '../actions/playerItemPickup'
+import {pickUpItem} from '../actions/pickUpItem'
 
 const mapStateToProps = (state) => {
   return {
@@ -20,11 +19,10 @@ const mapDispatchToProps = (dispatch) => {
   return {
     playerMove: (y, x) => {dispatch(playerMove(y, x)) },
     playerAttack: (enemy) => {dispatch(playerAttack(enemy)) },
-    playerItemPickup: (item) => {dispatch(playerItemPickup(item))},
+    pickUpItem: (item) => {dispatch(pickUpItem(item))},
     winGame: () => {dispatch(winGame())},
     allEnemiesAct: () => {dispatch(allEnemiesAct()) },
-    loseGame: () => {dispatch(loseGame())},
-    itemPickup: () => {dispatch(itemPickup())}
+    loseGame: () => {dispatch(loseGame())}
   }
 }
 

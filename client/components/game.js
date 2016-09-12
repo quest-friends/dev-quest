@@ -56,15 +56,12 @@ class Game extends React.Component {
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }
-          else if (presentItem) {
-            //trigger PLAYER_ITEM_PICKUP
-            this.props.playerItemPickup(presentItem)
-          }
           else {
             this.props.playerMove( nextPosition.y, nextPosition.x )
+            if (presentItem) {
+              this.props.pickUpItem(presentItem)
+            }
           }
-//is there an item in nextPosition
-//if so trigger pick up action
 
 
           this.props.allEnemiesAct()

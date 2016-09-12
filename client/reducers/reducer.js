@@ -96,25 +96,19 @@ function moveTowardsPlayer(enemy) {
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
       }
-      console.log('attacking', action.payload)
       return newState
 
     // these are the cases for player to item interaction
 
-    case 'PLAYER_ITEM_PICKUP':
+    case 'PICKUP_ITEM':
       var itemX = action.payload.position.x
       var itemY = action.payload.position.y
 
       var collectedItemIndex = items.findIndex(function(newStateItem){
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
-      var collectedItem = items[collectedItemIndex]
-      collectedItem.collected = true
-
-      if (collectedItem.collected = true) {
         items.splice(collectedItemIndex, 1)
-      }
-      console.log('Player picking up', action.payload)
+        newState.player.health++
       return newState
 
     //these are the cases for enemies attacking
@@ -128,17 +122,6 @@ function moveTowardsPlayer(enemy) {
         }
       })
       newState.enemies = newState.enemies.slice(0)
-      return newState
-
-    //these are the cases for item functionality
-
-    case "ITEM_PICKUP":
-    console.log("item pickup working");
-      items.map(function(item) {
-        if (isPlayerOnItem(item)){
-          player.health++
-        }
-      })
       return newState
 
     //these are the cases for game running

@@ -7,9 +7,6 @@ class Item extends React.Component {
     let presentItem = items.find( (item) => {
       return item.position.y==y && item.position.x==x
     })
-    if (!presentItem) {
-      presentItem = {type: "dead"}
-    }
     return presentItem
   }
 
