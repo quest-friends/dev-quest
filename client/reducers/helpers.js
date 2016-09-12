@@ -89,7 +89,7 @@ const moveTowardsPlayer = (enemy, state) => {
   }
 
 module.exports ={
-  randomisePosition,
+  randomiseObjectPositionToFloorTile,
   moveEnemy,
   moveTowardsPlayer,
   nextLevel,
