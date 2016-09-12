@@ -1,44 +1,40 @@
 module.exports = {
-  
+
   Chrome: {
     type: "chrome",
     health: 1,
     messages: {
-      enemyDetected: "It's Chrome: the tentacles of Google are everywhere...",
-      enemyAttacks: "Chrome tries to take over the world",
-      playerAttacks: "You decide to install an open source browser instead of Google Chrome",
-      enemyDefeated: "Chrome is gone, your next challenge is to start using Duck Duck Go search engine"
+      enemyAttacks: "Google Chrome is trying to take over the world...",
+      playerAttacks: "Installing an open source browser to replace Google Chrome...",
+      enemyDefeated: "Chrome is gone, now start using Duck Duck Go search engine!"
     }
   },
     Firefox: {
     type: "firefox",
     health: 1,
     messages: {
-      detected: "It's Firefox!",
-      enemyAttacks: "Unhelpful Firefox developer tools slow you down",
-      playerAttacks: "Player does something to Firefox",
-      enemyDefeated: "Bye-bye cute Firefox logo"
+      enemyAttacks: "Unhelpful Firefox developer tools slow you down...",
+      playerAttacks: "Abandoning Firefox to go back to Chrome...",
+      enemyDefeated: "Bye-bye cute fox logo!"
     }
   },
   Ie6: {
     type: "ie6",
     health: 2,
     messages: {
-      enemyDetected: "OMG it's ie6 - are people really still using it?",
-      enemyAttacks: "ie6 doesn't support stuff and your code gets smushed and you lose 1 health point",
-      playerAttacks: "You write backwards compatible code - take that, ie6!" ,
-      enemyDefeated: "The world is now safe from ie6 and other outdated Microsoft products..."
+      enemyAttacks: "Your code is smushed by Internet Explorer v1-8...",
+      playerAttacks: "Writing backwards compatible code to deal to Internet Explorer...",
+      enemyDefeated: "Outdated Microsoft product dies!"
     }
   },
 
   Opera: {
-      type: "opera",
+      type: "safari",
       health: 1,
       messages: {
-        detected: "It's an Opera!",
-        enemyAttacks: "In an as yet undefined way Opera browser does damage...",
-        playerAttacks: "Player does something to Opera",
-        enemyDefeated: "Bye-bye Opera"
+        enemyAttacks: "Safari doesn't support the plug-in you need - why would you want to add anything to an already perfect Apple product?",
+        playerAttacks: "Hating on an Apple product gives you nerd cred...",
+        enemyDefeated: "There's only a core left of that apple!"
       }
     }
   }
