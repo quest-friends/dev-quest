@@ -87,6 +87,9 @@ const initialState = {
     },
     { position: { x: 5, y: 12},
       type: "codeRed"
+    },
+    { position: { x: 5, y: 5 },
+      type: "battery"
     }
   ]
 }

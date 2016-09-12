@@ -22,6 +22,7 @@ function reducer (state = initialState, action) {
         } else if (nextTile == 3) {
           nextLevel(newState, levelList, tileGrids)
         }
+        newState.player.charge --
         return newState
 
     //these are the cases for the player attacking
@@ -40,6 +41,7 @@ function reducer (state = initialState, action) {
         newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
         newState.enemyCount--
         newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
+        newState.player.xp += 5
       }
       return newState
 
