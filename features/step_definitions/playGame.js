@@ -17,8 +17,8 @@ module.exports = function () {
     expect(browser.waitForExist(".grid"))
   })
 
-  // this.Then('I can navigate the maze and go to the next level', () => {
-  //   client.keys("E015")
-  // })
+   this.Then('I can navigate the maze and go to the next level', () => {
+     browser.keys('\uE014');
+   })
 
 }
