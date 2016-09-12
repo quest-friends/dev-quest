@@ -1,7 +1,7 @@
 import {Chrome, Firefox, Opera, Ie6} from "../enemies/enemies"
 
-const createEnemy = (type, x, y) => {
-  return Object.assign({}, type, {position: {x, y}})
+const createEnemy = (type) => {
+  return Object.assign({}, type)
 }
 
 const levelList = [
@@ -10,8 +10,8 @@ const levelList = [
       position:{ x: 2, y: 2 }
     },
     enemies: [
-      createEnemy(Chrome, 4, 3),
-      createEnemy(Firefox, 11, 11)
+      createEnemy(Chrome),
+      createEnemy(Firefox)
 
     ],
   enemyCount: 1,
