@@ -12,7 +12,7 @@ class Item extends React.Component {
 
   itemTypeToRender() {
     const itemType = this.getPresentItem().type
-    
+
     switch (itemType){
       case ("coffee"):
         return <span>coffee</span>

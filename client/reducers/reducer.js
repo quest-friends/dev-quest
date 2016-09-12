@@ -10,40 +10,41 @@ function reducer (state = initialState, action) {
   var playerY = player.position.y
   var nextTile
 
-function moveLeft (enemy) {
-  enemy.position.x --
-}
-
-function moveRight (enemy) {
-  enemy.position.x ++
-}
-
-function moveUp (enemy) {
-  enemy.position.y --
-}
-
-function moveDown (enemy) {
-  enemy.position.y ++
+function moveEnemy(enemy, y, x){
+  enemy.position = {y:y, x:x}
 }
 
 function moveTowardsPlayer(enemy) {
     var {x, y} = enemy.position
+    var enemyDestination = {x, y}
 
-    if (playerX < x  && tileGrid[y][x-1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x-1 && newStateEnemy.position.y==y})){
-      moveLeft(enemy)
+    switch(true){
+      case (playerX < x):
+        enemyDestination = {y:y, x:x-1}
+        break
+
+      case (playerX > x):
+        enemyDestination = {y:y, x:x+1}
+        break
+
+      case (playerY < y):
+        enemyDestination = {y:y-1, x:x}
+        break
+
+      case (playerY > y):
+        enemyDestination = {y:y+1, x:x}
+        break
+
+      default:
+       enemyDestination = {x, y}
     }
-    else if (playerX > x  && tileGrid[y][x+1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x+1 && newStateEnemy.position.y==y})){
-      moveRight(enemy)
-    }
-    else if (playerY > y && tileGrid[y+1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y+1})){
-      moveDown(enemy)
-    }
-    else if (playerY < y && tileGrid[y-1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y-1})){
-      moveUp(enemy)
+
+    if (tileGrid[enemyDestination.y][enemyDestination.x] == 1 && !isEnemyInTile(enemyDestination.y, enemyDestination.x) ){
+      moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
     }
   }
 
-  const nextLevelFunc = () => {
+  var nextLevelFunc = () => {
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -57,9 +58,20 @@ function moveTowardsPlayer(enemy) {
     return newState
   }
 
+  var isEnemyInTile = (y, x) => {
+    return newState.enemies.find(function(newStateEnemy){
+      return newStateEnemy.position.x==x && newStateEnemy.position.y==y
+    })
+  }
+
   var isPlayerAdjacent = function(enemy) {
     var {x, y } = enemy.position
     return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+  }
+
+  var isPlayerOnItem = function(item) {
+    var {x, y} = item.position
+    return (x == playerX && y == playerY)
   }
 
   switch(action.type){
@@ -97,12 +109,25 @@ function moveTowardsPlayer(enemy) {
       }
       return newState
 
+    // these are the cases for player to item interaction
+
+    case 'PICKUP_ITEM':
+      var itemX = action.payload.position.x
+      var itemY = action.payload.position.y
+
+      var collectedItemIndex = newState.items.findIndex(function(newStateItem){
+        return newStateItem.position.x == itemX && newStateItem.position.y == itemY
+      })
+        newState.items.splice(collectedItemIndex, 1)
+        newState.player.health++
+      return newState
+
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
         if(isPlayerAdjacent(enemy)){
-               player.health--
+          player.health--
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy)
         }
