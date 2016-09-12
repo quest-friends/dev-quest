@@ -22,54 +22,18 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      { position: { x: 12, y: 11 },
-        health: 3,
-        type: "ie6",
-        messages: {
-          enemyDetected: "OMG it's ie6 - are people really still using it?",
-          enemyAttacks: "ie6 doesn't support stuff and your code gets smushed and you lose 1 health point",
-          playerAttacks: "You write backwards compatible code - take that, ie6!" ,
-          enemyDefeated: "The world is now safe from ie6 and other outdated Microsoft products..."
-        }
-      },
-      { position: { x: 12, y: 15 },
-          health: 1,
-          type: "chrome",
-          messages: {
-            enemyDetected: "It's Chrome: the tentacles of Google are everywhere...",
-            enemyAttacks: "Chrome tries to take over the world",
-            playerAttacks: "You decide to install an open source browser instead of Google Chrome",
-            enemyDefeated: "Chrome is gone, your next challenge is to start using Duck Duck Go search engine"
-          }
-      },
-      { position: { x: 15, y: 11 },
-          health: 1,
-          type: "chrome",
-          messages: {
-            enemyDetected: "It's Chrome: the tentacles of Google are everywhere...",
-            enemyAttacks: "Chrome tries to take over the world",
-            playerAttacks: "You decide to install an open source browser instead of Google Chrome",
-            enemyDefeated: "Chrome is gone, your next challenge is to start using Duck Duck Go search engine"
-          }
-      }
+      createEnemy(Chrome, 4, 3),
+      createEnemy(Firefox, 11, 11)
     ],
-    enemyCount: 3
+    enemyCount: 1
   },
   {
     player: {
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      { position: { x: 12, y: 11 },
-        health: 3,
-        type: "ie6",
-        messages: {
-          enemyDetected: "OMG it's ie6 - are people really still using it?",
-          enemyAttacks: "ie6 doesn't support stuff and your code gets smushed and you lose 1 health point",
-          playerAttacks: "You write backwards compatible code - take that, ie6!" ,
-          enemyDefeated: "The world is now safe from ie6 and other outdated Microsoft products..."
-        }
-      }
+      createEnemy(Chrome, 4, 3),
+      createEnemy(Firefox, 11, 11)
     ],
     enemyCount: 1
   }
