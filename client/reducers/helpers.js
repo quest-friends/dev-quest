@@ -74,8 +74,14 @@ const moveTowardsPlayer = (enemy, state) => {
     var {x, y } = enemy.position
     var playerX = player.position.x
     var playerY = player.position.y
-    
+
     return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+  }
+
+  const removeElementFromArray = (array, index) => {
+    var startOfArray = array.slice(0,index)
+    var endOfArray = array.slice(index+1)
+    return startOfArray.concat(endOfArray)
   }
 
 module.exports ={
@@ -84,5 +90,6 @@ module.exports ={
   moveTowardsPlayer,
   nextLevel,
   isEnemyInTile,
-  isPlayerAdjacent
+  isPlayerAdjacent,
+  removeElementFromArray
 }

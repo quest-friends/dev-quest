@@ -14,7 +14,6 @@ class Game extends React.Component {
   }
 
   componentDidMount () {
-    var { player } = this.props
     var presentEnemy
     var presentItem
 
@@ -27,7 +26,7 @@ class Game extends React.Component {
 
   //This removes defaults for Chrome
   document.addEventListener('keydown', (evt) => {
-      var {y, x} = player.position
+      var {y, x} = this.props.player.position
       if (this.isArrowKey(evt.key)) {
         evt.preventDefault()
         var nextPosition = {x, y}
@@ -72,6 +71,7 @@ class Game extends React.Component {
   }
 
   render () {
+    console.log('game rendering!');
     return (
       <div>
         <div className='board-container'>

@@ -1,26 +1,23 @@
-var initialState = require('./initialState')
-var combineReducers = require('redux').combineReducers
-var levelList = require('../levels/levelList')
-var tileGrids = require('../levels/tileGrids')
-var helpers = require('./helpers')
+const initialState = require('./initialState')
+const combineReducers = require('redux').combineReducers
+const levelList = require('../levels/levelList')
+const tileGrids = require('../levels/tileGrids')
+const helpers = require('./helpers')
+const clone = require('clone')
 
 function reducer (state = initialState, action) {
 
-  var newState = Object.assign({}, state)
-  var { tileGrid , player } = newState
-  var playerX = player.position.x
-  var playerY = player.position.y
+  var newState = clone(state)
   var nextTile
-  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel} = helpers
+  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel, removeElementFromArray} = helpers
 
   switch(action.type){
 
     case 'PLAYER_MOVE':
-        var { y, x} = action.payload
-        nextTile = tileGrid[y][x]
+        nextTile = newState.tileGrid[action.payload.y][action.payload.x]
         if (nextTile == 1 || nextTile == 2) {
-          newState.player.position.x = x
-          newState.player.position.y = y
+          newState.player.position.x = action.payload.x
+          newState.player.position.y = action.payload.y
           newState.player.charge --
         } else if (nextTile == 3) {
           nextLevel(newState, levelList, tileGrids)
@@ -30,22 +27,19 @@ function reducer (state = initialState, action) {
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
-      var enemyX = action.payload.position.x
-      var enemyY = action.payload.position.y
+      var {position, messages} = action.payload
 
-      var attackedEnemyIndex = newState.enemies.findIndex(function(newStateEnemy){
-        return newStateEnemy.position.x == enemyX && newStateEnemy.position.y == enemyY
+      var attackedEnemyIndex = newState.enemies.findIndex(function(enemy){
+        return enemy.position.x == position.x && enemy.position.y == position.y
       })
       var attackedEnemy = newState.enemies[attackedEnemyIndex]
 
       attackedEnemy.health --
-      newState.loggedMessages.push(action.payload.messages.playerAttacks)
-      newState.loggedMessages = newState.loggedMessages.slice(0)
+      newState.loggedMessages = [...newState.loggedMessages, messages.playerAttacks]
       if (attackedEnemy.health <= 0) {
-        newState.enemies.splice(attackedEnemyIndex, 1)
+        newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
         newState.enemyCount--
-        newState.loggedMessages.push(action.payload.messages.enemyDefeated)
-        newState.loggedMessages = newState.loggedMessages.slice(0)
+        newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
       }
       return newState
 
@@ -66,8 +60,8 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
-        if(isPlayerAdjacent(player, enemy)){
-          player.health--
+        if(isPlayerAdjacent(newState.player, enemy)){
+          newState.player.health--
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
         }
