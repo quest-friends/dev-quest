@@ -5,6 +5,7 @@ import PlayerStats from '../components/playerStats'
 const mapStateToProps = (state) => {
   return {
     playerHealth: state.player.health,
+    playerCharge: state.player.charge,
     playerXP: state.player.xp
   }
 }
