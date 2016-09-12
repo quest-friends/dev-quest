@@ -53,14 +53,14 @@ class Game extends React.Component {
         })
 
           if (presentEnemy) {
-            this.props.playerAttack(presentEnemy)
-          }
-          else if (presentItem) {
-            this.props.pickUpItem(presentItem)
+            this.props.playerAttack (presentEnemy)
           }
           else {
-            this.props.playerMove( nextPosition.y, nextPosition.x )
+            this.props.playerMove (nextPosition.y, nextPosition.x)
+            if (presentItem) {
+              this.props.pickUpItem (presentItem)
             }
+          }
 
         this.props.allEnemiesAct()
         if (this.isPlayerDead()) {
