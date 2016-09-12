@@ -27,7 +27,7 @@ const initialState = {
       y: 6
     },
     health: 20,
-    charge: 1300,
+    charge: 300,
     xp: 0,
     attack: 1,
     defence: 1
