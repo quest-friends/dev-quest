@@ -38,6 +38,13 @@ main {
   position: absolute;
   height: 100%;
   width: 100%;
+  animation:blink 700ms 100ms;
+}
+
+@keyframes blink {
+  from { opacity:1; }
+  to { opacity:0; }
+};
 }
 
 .enemy {

@@ -5,7 +5,8 @@ import Player from '../components/player'
 const mapStateToProps = (state) => {
   return {
     x: state.player.position.x,
-    y: state.player.position.y
+    y: state.player.position.y,
+    health: state.player.health
     }
 }
 
