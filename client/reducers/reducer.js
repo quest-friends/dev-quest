@@ -87,10 +87,10 @@ function moveTowardsPlayer(enemy) {
         if (nextTile == 1 || nextTile == 2) {
           newState.player.position.x = x
           newState.player.position.y = y
-          newState.player.charge --
         } else if (nextTile == 3) {
           nextLevelFunc()
         }
+        newState.player.charge --
         return newState
 
     //these are the cases for the player attacking
@@ -112,6 +112,7 @@ function moveTowardsPlayer(enemy) {
         newState.enemyCount--
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
+        newState.player.xp += 5
       }
       return newState
 
@@ -124,8 +125,15 @@ function moveTowardsPlayer(enemy) {
       var collectedItemIndex = newState.items.findIndex(function(newStateItem){
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
-        newState.items.splice(collectedItemIndex, 1)
-        newState.player.health++
+      newState.items.splice(collectedItemIndex, 1)
+      newState.items.map(function(item) {
+        switch(item.type) {
+          case ("battery"):
+            return player.charge += 10
+          default:
+            return player.health++
+        }
+      })
       return newState
 
     //these are the cases for enemies attacking
