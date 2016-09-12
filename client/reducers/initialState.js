@@ -27,6 +27,7 @@ const initialState = {
       y: 6
     },
     health: 10,
+    batteryLife: 30,
     xp: 0
   },
   enemies: [
