@@ -52,6 +52,7 @@ function moveTowardsPlayer(enemy) {
       return newState
     }
     var level = levelList[newState.currentLevel-2]
+    console.log(newState);
     newState.tileGrid = tileGrids[Math.floor(Math.random() * tileGrids.length)]
     newState.player.position = level.player.position
     newState.enemies = level.enemies

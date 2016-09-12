@@ -1,5 +1,7 @@
 module.exports = {
+  
   Chrome: {
+    type: "chrome",
     health: 1,
     messages: {
       enemyDetected: "It's Chrome: the tentacles of Google are everywhere...",
@@ -7,8 +9,9 @@ module.exports = {
       playerAttacks: "You decide to install an open source browser instead of Google Chrome",
       enemyDefeated: "Chrome is gone, your next challenge is to start using Duck Duck Go search engine"
     }
-  }
-  Firefox:{
+  },
+    Firefox: {
+    type: "firefox",
     health: 1,
     messages: {
       detected: "It's Firefox!",
@@ -17,7 +20,8 @@ module.exports = {
       enemyDefeated: "Bye-bye cute Firefox logo"
     }
   },
-  Ie6:{
+  Ie6: {
+    type: "ie6",
     health: 2,
     messages: {
       enemyDetected: "OMG it's ie6 - are people really still using it?",
@@ -28,6 +32,7 @@ module.exports = {
   },
 
   Opera: {
+      type: "opera",
       health: 1,
       messages: {
         detected: "It's an Opera!",
