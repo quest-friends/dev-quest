@@ -4,7 +4,7 @@ class StartScreen extends React.Component {
 
   render(){
     return (
-      <div className="startScreen">
+      <div className="displayScreen">
         <h1>Dev Quest 2.0</h1>
         <br /><br /><br />
         <h4>The path to coding mastery is fraught with trials and danger.

@@ -5,8 +5,9 @@ body {
   color: #42390F;
   font-family: 'Geo', sans-serif;
 }
-.app-style {
 
+h1, h2, h3 {
+  text-decoration: underline;
 }
 
 .board-container {
@@ -94,7 +95,7 @@ span {
   width: 100%;
 }
 
-.startScreen {
+.displayScreen {
   border: 3px solid #635516;
   height: 97vh;
 }
