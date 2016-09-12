@@ -78,7 +78,7 @@ function moveTowardsPlayer(enemy) {
         if (nextTile == 1 || nextTile == 2) {
           newState.player.position.x = x
           newState.player.position.y = y
-          newState.player.batteryLife --
+          newState.player.charge --
         } else if (nextTile == 3) {
           nextLevelFunc()
         }

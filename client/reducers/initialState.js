@@ -26,9 +26,11 @@ const initialState = {
       x: 1,
       y: 6
     },
-    health: 10,
-    batteryLife: 30,
-    xp: 0
+    health: 20,
+    charge: 30,
+    xp: 0,
+    attack: 1,
+    defence: 1
   },
   enemies: [
     { position: { x: 1, y: 4 },
