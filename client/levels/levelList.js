@@ -1,4 +1,4 @@
-const levelGrids = [
+const levelList = [
   {
     tileGrid: [
       [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
