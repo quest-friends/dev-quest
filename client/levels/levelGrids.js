@@ -55,9 +55,10 @@ const levelGrids = [
             playerAttacks: "You decide to install an open source browser instead of Google Chrome",
             enemyDefeated: "Chrome is gone, your next challenge is to start using Duck Duck Go search engine"
           }
-      }
+      },
     ],
     enemyCount: 3,
+
   },
 
   {
