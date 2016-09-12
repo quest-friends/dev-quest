@@ -14,7 +14,7 @@ class Game extends React.Component {
   }
 
   componentDidMount() {
-    var { player, items } = this.props
+    var { player } = this.props
     var presentEnemy
     var presentItem
 
@@ -49,7 +49,7 @@ class Game extends React.Component {
             return (enemy.position.y == nextPosition.y && enemy.position.x == nextPosition.x)
           })
 
-          presentItem = items.find(function(item) {
+          presentItem = this.props.items.find(function(item) {
             return (item.position.y == nextPosition.y && item.position.x == nextPosition.x)
           })
 

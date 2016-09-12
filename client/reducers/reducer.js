@@ -5,7 +5,7 @@ var levelGrids = require('../levels/levelGrids')
 function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
-  var { tileGrid , player, items } = newState
+  var { tileGrid , player } = newState
   var playerX = player.position.x
   var playerY = player.position.y
   var nextTile
@@ -104,10 +104,10 @@ function moveTowardsPlayer(enemy) {
       var itemX = action.payload.position.x
       var itemY = action.payload.position.y
 
-      var collectedItemIndex = items.findIndex(function(newStateItem){
+      var collectedItemIndex = newState.items.findIndex(function(newStateItem){
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
-        items.splice(collectedItemIndex, 1)
+        newState.items.splice(collectedItemIndex, 1)
         newState.player.health++
       return newState
 
