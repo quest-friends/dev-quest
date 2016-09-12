@@ -1,12 +1,12 @@
 
-const randomiseEnemyPosition = (tileGrid, enemy) => {
+const randomiseObjectPositionToFloorTile = (tileGrid, object) => {
     let yCoord = Math.floor(Math.random() * tileGrid.length)
     let xCoord = Math.floor(Math.random() * tileGrid[0].length)
     if ( tileGrid[yCoord][xCoord] === 1) {
-        enemy.position = {x: xCoord, y: yCoord}
+        object.position = {x: xCoord, y: yCoord}
     }
     else {
-      randomiseEnemyPosition(tileGrid, enemy)
+      randomiseObjectPositionToFloorTile(tileGrid, object)
      }
 }
 
@@ -58,8 +58,12 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.player.position = level.player.position
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
+    newState.items = level.items
     newState.enemies.map(function(enemy){
-      randomiseEnemyPosition(newState.tileGrid, enemy)
+      randomiseObjectPositionToFloorTile(newState.tileGrid, enemy)
+    })
+    newState.items.map(function(item){
+      randomiseObjectPositionToFloorTile(newState.tileGrid, item)
     })
     return newState
   }
@@ -74,15 +78,22 @@ const moveTowardsPlayer = (enemy, state) => {
     var {x, y } = enemy.position
     var playerX = player.position.x
     var playerY = player.position.y
-    
+
     return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
   }
 
+  const removeElementFromArray = (array, index) => {
+    var startOfArray = array.slice(0,index)
+    var endOfArray = array.slice(index+1)
+    return startOfArray.concat(endOfArray)
+  }
+
 module.exports ={
-  randomiseEnemyPosition,
+  randomiseObjectPositionToFloorTile,
   moveEnemy,
   moveTowardsPlayer,
   nextLevel,
   isEnemyInTile,
-  isPlayerAdjacent
+  isPlayerAdjacent,
+  removeElementFromArray
 }
