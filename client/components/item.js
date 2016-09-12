@@ -18,7 +18,9 @@ class Item extends React.Component {
       case ("coffee"):
         return <span>coffee</span>
       case ("codeRed"):
-        return <span>CodeRed</span>
+        return <span>codeRed</span>
+      case ("battery"):
+        return <span>battery</span>
       default:
         return ""
     }

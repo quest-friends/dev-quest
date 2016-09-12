@@ -83,12 +83,15 @@ const initialState = {
   loggedMessages: [ "Hello World!" ],
   itemCount: 2,
   items: [
-    // { position: { x: 8, y: 8},
-    //   type: "coffee"
-    // },
-    // { position: { x: 9, y: 9},
-    //   type: "codeRed"
-    // }
+    { position: { x: 1, y: 7},
+      type: "coffee"
+    },
+    { position: { x: 5, y: 12},
+      type: "codeRed"
+    },
+    { position: { x: 5, y: 5 },
+      type: "battery"
+    }
   ]
 }
 
