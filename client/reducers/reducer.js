@@ -12,75 +12,7 @@ function reducer (state = initialState, action) {
   var playerY = player.position.y
   var nextTile
 
-function moveEnemy(enemy, y, x){
-  enemy.position = {y:y, x:x}
-}
-
-function moveTowardsPlayer(enemy) {
-    var {x, y} = enemy.position
-    var enemyDestination = {x, y}
-
-    switch(true){
-      case (playerX < x):
-        enemyDestination = {y:y, x:x-1}
-        break
-
-      case (playerX > x):
-        enemyDestination = {y:y, x:x+1}
-        break
-
-      case (playerY < y):
-        enemyDestination = {y:y-1, x:x}
-        break
-
-      case (playerY > y):
-        enemyDestination = {y:y+1, x:x}
-        break
-
-      default:
-       enemyDestination = {x, y}
-    }
-
-    if (tileGrid[enemyDestination.y][enemyDestination.x] == 1 && !isEnemyInTile(enemyDestination.y, enemyDestination.x) ){
-      moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
-    }
-  }
-
-  var nextLevelFunc = () => {
-    console.log("this is the next level fn being called");
-    newState.currentLevel ++
-    if (newState.currentLevel == 5){
-      newState.display = "win"
-      return newState
-    }
-    var level = levelList[newState.currentLevel-2]
-    newState.tileGrid = tileGrids[Math.floor(Math.random() * tileGrids.length)]
-    newState.player.position = level.player.position
-    newState.enemies = level.enemies
-    newState.enemyCount = level.enemyCount
-    newState.items = level.items
-    newState.itemCount = level.itemCount
-    newState.enemies.map(function(enemy){
-      helpers.randomiseEnemyPosition(newState.tileGrid, enemy)
-    })
-    return newState
-  }
-
-  var isEnemyInTile = (y, x) => {
-    return newState.enemies.find(function(newStateEnemy){
-      return newStateEnemy.position.x==x && newStateEnemy.position.y==y
-    })
-  }
-
-  var isPlayerAdjacent = function(enemy) {
-    var {x, y } = enemy.position
-    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
-  }
-
-  var isPlayerOnItem = function(item) {
-    var {x, y} = item.position
-    return (x == playerX && y == playerY)
-  }
+  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel} = helpers
 
   switch(action.type){
 
@@ -91,7 +23,7 @@ function moveTowardsPlayer(enemy) {
           newState.player.position.x = x
           newState.player.position.y = y
         } else if (nextTile == 3) {
-          nextLevelFunc()
+          nextLevel(newState, levelList, tileGrids)
         }
         newState.player.charge --
         return newState
@@ -143,10 +75,10 @@ function moveTowardsPlayer(enemy) {
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
-        if(isPlayerAdjacent(enemy)){
+        if(isPlayerAdjacent(player, enemy)){
           player.health--
         } else if (enemy.type == 'chrome') {
-          moveTowardsPlayer(enemy)
+          moveTowardsPlayer(enemy, newState)
         }
       })
       newState.enemies = newState.enemies.slice(0)
