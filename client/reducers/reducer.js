@@ -117,7 +117,6 @@ function moveTowardsPlayer(enemy) {
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
       newState.items.splice(collectedItemIndex, 1)
-      // console.log(collectedItemIndex);
       newState.items.map(function(item) {
         switch(item.type) {
           case ("battery"):
@@ -128,7 +127,6 @@ function moveTowardsPlayer(enemy) {
             return player.health++
         }
       })
-      // console.log(newState.items);
       return newState
 
     //these are the cases for enemies attacking
