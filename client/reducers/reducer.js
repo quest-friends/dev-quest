@@ -12,16 +12,6 @@ function reducer (state = initialState, action) {
   var playerY = player.position.y
   var nextTile
 
-  var isPlayerAdjacent = function(enemy) {
-    var {x, y } = enemy.position
-    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
-  }
-
-  var isPlayerOnItem = function(item) {
-    var {x, y} = item.position
-    return (x == playerX && y == playerY)
-  }
-
   switch(action.type){
 
     case 'PLAYER_MOVE':
@@ -75,7 +65,7 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
-        if(isPlayerAdjacent(enemy)){
+        if(helpers.isPlayerAdjacent(player, enemy)){
           player.health--
         } else if (enemy.type == 'chrome') {
           helpers.moveTowardsPlayer(enemy, newState)

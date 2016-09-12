@@ -70,14 +70,19 @@ const moveTowardsPlayer = (enemy, state) => {
     })
   }
 
-
-
-
+  const isPlayerAdjacent = (player, enemy) => {
+    var {x, y } = enemy.position
+    var playerX = player.position.x
+    var playerY = player.position.y
+    
+    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+  }
 
 module.exports ={
   randomiseEnemyPosition,
   moveEnemy,
   moveTowardsPlayer,
   nextLevel,
-  isEnemyInTile
+  isEnemyInTile,
+  isPlayerAdjacent
 }
