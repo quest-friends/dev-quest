@@ -32,7 +32,7 @@ function reducer (state = initialState, action) {
           newState.player.position.y = y
           newState.player.charge --
         } else if (nextTile == 3) {
-          helpers.nextLevel(newState, levelList)
+          helpers.nextLevel(newState, levelList, tileGrids)
         }
         return newState
 

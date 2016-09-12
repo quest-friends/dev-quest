@@ -47,7 +47,7 @@ const moveTowardsPlayer = (enemy, state) => {
     }
   }
 
-  const nextLevel = (newState) => {
+  const nextLevel = (newState, levelList, tileGrids) => {
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -59,7 +59,7 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
     newState.enemies.map(function(enemy){
-      helpers.randomiseEnemyPosition(newState.tileGrid, enemy)
+      randomiseEnemyPosition(newState.tileGrid, enemy)
     })
     return newState
   }
