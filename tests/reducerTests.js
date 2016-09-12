@@ -13,7 +13,8 @@ test('PlayerMovesLeft', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 30
     }
   }
 
@@ -27,7 +28,8 @@ test('PlayerMovesLeft', function (t) {
       position: {
         x: 0,
         y: 1
-      }
+      },
+      charge: 29
     }
   }
 
@@ -43,7 +45,8 @@ test('PlayerMovesLeft', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge:30
     }
   }
 
@@ -57,7 +60,8 @@ test('PlayerMovesLeft', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 29
     }
   }
   actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})
@@ -76,7 +80,8 @@ test('PlayerMovesRight', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 30
     }
   }
 
@@ -90,7 +95,8 @@ test('PlayerMovesRight', function (t) {
       position: {
         x: 2,
         y: 1
-      }
+      },
+      charge: 29
     }
   }
 
@@ -106,7 +112,8 @@ test('PlayerMovesRight', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 30
     }
   }
 
@@ -120,7 +127,8 @@ test('PlayerMovesRight', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 29
     }
   }
   actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})
@@ -139,7 +147,8 @@ test('PlayerMovesUp', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 30
     }
   }
 
@@ -153,7 +162,8 @@ test('PlayerMovesUp', function (t) {
       position: {
         x: 1,
         y: 0
-      }
+      },
+      charge: 29
     }
   }
 
@@ -169,7 +179,8 @@ test('PlayerMovesUp', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 30
     }
   }
 
@@ -183,7 +194,8 @@ test('PlayerMovesUp', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 29
     }
   }
   actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})
@@ -203,7 +215,8 @@ test('PlayerMovesDown', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 30
     }
   }
 
@@ -217,7 +230,8 @@ test('PlayerMovesDown', function (t) {
       position: {
         x: 1,
         y: 2
-      }
+      },
+      charge: 29
     }
   }
 
@@ -233,7 +247,8 @@ test('PlayerMovesDown', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 30
     }
   }
 
@@ -247,7 +262,8 @@ test('PlayerMovesDown', function (t) {
       position: {
         x: 1,
         y: 1
-      }
+      },
+      charge: 29
     }
   }
   actualState = reducer(testState, {type: "PLAYER_MOVE", payload: {y:1, x:1}})

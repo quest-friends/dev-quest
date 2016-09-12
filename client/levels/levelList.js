@@ -1,4 +1,4 @@
-import {Chrome, Firefox, Opera, Ie6} from "../enemies/enemies"
+var enemiesType = require('../enemies/enemies')
 
 const createEnemy = (type) => {
   return Object.assign({}, type)
@@ -10,8 +10,8 @@ const levelList = [
       position:{ x: 2, y: 2 }
     },
     enemies: [
-      createEnemy(Chrome),
-      createEnemy(Firefox)
+      createEnemy(enemiesType.Chrome),
+      createEnemy(enemiesType.Firefox)
 
     ],
   enemyCount: 1,
@@ -22,8 +22,8 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      createEnemy(Chrome, 4, 3),
-      createEnemy(Firefox, 11, 11)
+      createEnemy(enemiesType.Chrome, 4, 3),
+      createEnemy(enemiesType.Firefox, 11, 11)
     ],
     enemyCount: 1
   },
@@ -32,8 +32,8 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      createEnemy(Chrome, 4, 3),
-      createEnemy(Firefox, 11, 11)
+      createEnemy(enemiesType.Chrome, 4, 3),
+      createEnemy(enemiesType.Firefox, 11, 11)
     ],
     enemyCount: 1
   }
