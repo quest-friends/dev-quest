@@ -19,9 +19,11 @@ class Enemy extends React.Component {
       case ("ie6"):
         return <span>ie6</span>
       case ("chrome"):
-        return <span>chrome</span>
+        return <div><img src={"./img/googleChrome.svg.png"} alt="googlechrome" className="img-enemy" /></div>
+        //return <span>chrome</span>
       case ("firefox"):
-        return <span>firefox</span>
+        return <div><img src={"./img/firefox.png"} alt="firefox" className="img-enemy" /></div>
+        //return <span>firefox</span>
       case ("opera"):
         return <span>opera</span>
       default:
