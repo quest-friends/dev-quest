@@ -2,6 +2,7 @@ import React from 'react'
 
 class ConsoleLog extends React.Component {
 
+
   render(){
     const {loggedMessages} = this.props
     const displayedMessages = loggedMessages.slice(-6)
