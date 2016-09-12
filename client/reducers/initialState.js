@@ -26,8 +26,11 @@ const initialState = {
       x: 1,
       y: 6
     },
-    health: 10,
-    xp: 0
+    health: 20,
+    charge: 1300,
+    xp: 0,
+    attack: 1,
+    defence: 1
   },
   enemies: [
     { position: { x: 1, y: 4 },
@@ -78,14 +81,14 @@ const initialState = {
   currentLevel: 1,
   enemyCount: 4,
   loggedMessages: [ "Hello World!" ],
-  enemyCount: 4,
+  itemCount: 2,
   items: [
-    { position: { x: 1, y: 7},
-      type: "coffee"
-    },
-    { position: { x: 5, y: 12},
-      type: "codeRed"
-    }
+    // { position: { x: 8, y: 8},
+    //   type: "coffee"
+    // },
+    // { position: { x: 9, y: 9},
+    //   type: "codeRed"
+    // }
   ]
 }
 

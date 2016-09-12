@@ -10,7 +10,7 @@ class Game extends React.Component {
   }
 
   isPlayerDead() {
-    return this.props.player.health <= 0
+    return (this.props.player.health <= 0 || this.props.player.charge <= 0)
   }
 
   componentDidMount() {
@@ -53,16 +53,15 @@ class Game extends React.Component {
             return (item.position.y == nextPosition.y && item.position.x == nextPosition.x)
           })
 
-          if(presentEnemy) {
+          if (presentEnemy) {
             this.props.playerAttack(presentEnemy)
+          }
+          else if (presentItem) {
+            this.props.pickUpItem(presentItem)
           }
           else {
             this.props.playerMove( nextPosition.y, nextPosition.x )
-            if (presentItem) {
-              this.props.pickUpItem(presentItem)
             }
-          }
-
 
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){

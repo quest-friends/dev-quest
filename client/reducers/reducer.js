@@ -45,6 +45,7 @@ function moveTowardsPlayer(enemy) {
   }
 
   var nextLevelFunc = () => {
+    console.log("this is the next level fn being called");
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -56,6 +57,7 @@ function moveTowardsPlayer(enemy) {
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
     newState.items = level.items
+    newState.itemCount = level.itemCount
     return newState
   }
 
@@ -83,6 +85,7 @@ function moveTowardsPlayer(enemy) {
         if (nextTile == 1 || nextTile == 2) {
           newState.player.position.x = x
           newState.player.position.y = y
+          newState.player.charge --
         } else if (nextTile == 3) {
           nextLevelFunc()
         }
@@ -120,6 +123,7 @@ function moveTowardsPlayer(enemy) {
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
         newState.items.splice(collectedItemIndex, 1)
+        newState.itemCount --
         newState.player.health++
       return newState
 

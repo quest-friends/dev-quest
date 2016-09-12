@@ -58,11 +58,12 @@ const levelGrids = [
       }
     ],
     enemyCount: 3,
+    itemCount: 2,
     items: [
-      { position: { x: 5, y: 4},
+      { position: { x: 2, y: 2},
         type: "coffee"
       },
-      { position: { x: 8, y: 13},
+      { position: { x: 3, y: 3},
         type: "codeRed"
       }
     ]
@@ -126,7 +127,16 @@ const levelGrids = [
           }
       }
     ],
-    enemyCount: 3
+    enemyCount: 3,
+    itemCount: 2,
+    items: [
+      { position: { x: 4, y: 4},
+        type: "coffee"
+      },
+      { position: { x: 5, y: 5},
+        type: "codeRed"
+      }
+    ]
   },
   {
     tileGrid:[
@@ -166,7 +176,16 @@ const levelGrids = [
         }
       }
     ],
-    enemyCount: 1
+    enemyCount: 1,
+    itemCount: 2,
+    items: [
+      { position: { x: 6, y: 6},
+        type: "coffee"
+      },
+      { position: { x: 7, y: 7},
+        type: "codeRed"
+      }
+    ]
   }
 ]
 
