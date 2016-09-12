@@ -14,7 +14,15 @@ const levelList = [
       createEnemy(enemiesType.Firefox)
 
     ],
-  enemyCount: 1,
+    items: [
+        { position: { x: 10, y: 10},
+          type: "coffee"
+        },
+        { position: { x: 20, y: 20},
+          type: "coffee"
+        }
+      ],
+    enemyCount: 1,
   },
 
   {

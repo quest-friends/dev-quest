@@ -58,6 +58,7 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.player.position = level.player.position
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
+    newState.items = level.items
     newState.enemies.map(function(enemy){
       randomiseEnemyPosition(newState.tileGrid, enemy)
     })

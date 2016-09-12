@@ -47,7 +47,6 @@ function reducer (state = initialState, action) {
     // these are the cases for player to item interaction
 
     case 'PICKUP_ITEM':
-    console.log('pickup item');
       var itemX = action.payload.position.x
       var itemY = action.payload.position.y
       var collectedItemIndex = newState.items.findIndex(function(item){
@@ -55,7 +54,6 @@ function reducer (state = initialState, action) {
       })
         newState.items = removeElementFromArray(newState.items, collectedItemIndex)
         newState.player.health++
-        console.log('returning item state');
       return newState
 
     //these are the cases for enemies attacking
