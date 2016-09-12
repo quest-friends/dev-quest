@@ -129,10 +129,8 @@ function moveTowardsPlayer(enemy) {
       newState.items.map(function(item) {
         switch(item.type) {
           case ("battery"):
-          console.log(item.type)
             return player.charge += 10
           default:
-          console.log(item.type)
             return player.health++
         }
       })
