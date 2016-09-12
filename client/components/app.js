@@ -6,17 +6,14 @@ import LossScreen from './lossScreen'
 
 class App extends React.Component {
 
-  constructor(props){
-    super(props)
-  }
-
   render(){
+    const display = this.props.display
     return (
       <div>
-        { this.props.display === "start" ? <StartScreenConnector /> : null }
-        { this.props.display === "game" ? <GameConnector /> : null }
-        { this.props.display === "win" ? <WinScreen /> : null }
-        { this.props.display === "loss" ? <LossScreen /> : null }
+        {display === "start" ? <StartScreenConnector /> : null}
+        {display === "game" ? <GameConnector /> : null}
+        {display === "win" ? <WinScreen /> : null}
+        {display === "loss" ? <LossScreen /> : null}
       </div>
     )
   }
