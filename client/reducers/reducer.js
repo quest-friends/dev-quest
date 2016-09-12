@@ -55,6 +55,7 @@ function moveTowardsPlayer(enemy) {
     newState.player.position = level.player.position
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
+    newState.items = level.items
     return newState
   }
 

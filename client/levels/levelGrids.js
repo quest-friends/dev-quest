@@ -58,6 +58,14 @@ const levelGrids = [
       }
     ],
     enemyCount: 3,
+    items: [
+      { position: { x: 5, y: 4},
+        type: "coffee"
+      },
+      { position: { x: 8, y: 13},
+        type: "codeRed"
+      }
+    ]
   },
 
   {
