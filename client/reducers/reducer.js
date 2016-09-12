@@ -11,6 +11,7 @@ function reducer (state = initialState, action) {
   var playerX = player.position.x
   var playerY = player.position.y
   var nextTile
+  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel} = helpers
 
   switch(action.type){
 
@@ -22,7 +23,7 @@ function reducer (state = initialState, action) {
           newState.player.position.y = y
           newState.player.charge --
         } else if (nextTile == 3) {
-          helpers.nextLevel(newState, levelList, tileGrids)
+          nextLevel(newState, levelList, tileGrids)
         }
         return newState
 
@@ -65,10 +66,10 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
-        if(helpers.isPlayerAdjacent(player, enemy)){
+        if(isPlayerAdjacent(player, enemy)){
           player.health--
         } else if (enemy.type == 'chrome') {
-          helpers.moveTowardsPlayer(enemy, newState)
+          moveTowardsPlayer(enemy, newState)
         }
       })
       newState.enemies = newState.enemies.slice(0)
