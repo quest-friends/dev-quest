@@ -9,7 +9,7 @@ class App extends React.Component {
   render(){
     const display = this.props.display
     return (
-      <div className="app-style">
+      <div>
         {display === "start" ? <StartScreenConnector /> : null}
         {display === "game" ? <GameConnector /> : null}
         {display === "win" ? <WinScreen /> : null}
