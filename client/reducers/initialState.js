@@ -27,7 +27,7 @@ const initialState = {
       y: 6
     },
     health: 20,
-    charge: 30,
+    charge: 100,
     xp: 0,
     attack: 1,
     defence: 1
@@ -88,6 +88,9 @@ const initialState = {
     },
     { position: { x: 5, y: 12},
       type: "codeRed"
+    },
+    { position: { x: 5, y: 5 },
+      type: "battery"
     }
   ]
 }

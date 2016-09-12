@@ -103,6 +103,7 @@ function moveTowardsPlayer(enemy) {
         newState.enemyCount--
         newState.loggedMessages.push(action.payload.messages.enemyDefeated)
         newState.loggedMessages = newState.loggedMessages.slice(0)
+        newState.player.xp += 5
       }
       return newState
 
@@ -115,8 +116,14 @@ function moveTowardsPlayer(enemy) {
       var collectedItemIndex = newState.items.findIndex(function(newStateItem){
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
-        newState.items.splice(collectedItemIndex, 1)
-        newState.player.health++
+      newState.items.map(function(item) {
+        if (item.type == 'coffee' || item.type == 'codeRed') {
+          player.health++
+        } else if (item.type == 'battery') {
+          player.charge += 10
+        }
+      })
+      newState.items.splice(collectedItemIndex, 1)
       return newState
 
     //these are the cases for enemies attacking
