@@ -5,96 +5,57 @@ import ConsoleLogConnector from '../connectors/consoleLogConnector'
 
 class Game extends React.Component {
 
-  constructor(props){
-    super(props)
-
+  isArrowKey(key) {
+    return (key == 'ArrowLeft' || key == 'ArrowRight' || key == 'ArrowDown' || key == 'ArrowUp' )
   }
 
   isPlayerDead() {
-    return this.props.player.health == 0
+    return this.props.player.health <= 0
   }
 
   componentDidMount() {
-
-    var { enemies, player } = this.props
+    var { player } = this.props
     var presentEnemy
 
-    //This works for firefox
+    //This removes defaults for firefox
     document.addEventListener("keypress", (evt) => {
-      if(evt.key == 'ArrowLeft' || evt.key == 'ArrowRight' || evt.key == 'ArrowDown' || evt.key == 'ArrowUp' ){
+      if(this.isArrowKey(evt.key)){
         evt.preventDefault()
       }
     })
 
-    //This works for Chrome
+    //This removes defaults for Chrome
     document.addEventListener("keydown", (evt) => {
-      if(evt.key == 'ArrowLeft' || evt.key == 'ArrowRight' || evt.key == 'ArrowDown' || evt.key == 'ArrowUp' ){
-        evt.preventDefault()
-      }
-    })
-
-    document.addEventListener("keyup", (evt) => {
-      switch(evt.key) {
-
-        case('ArrowLeft'):
-          presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y && enemy.position.x == player.position.x-1)
+        var {y, x} = player.position
+        if (this.isArrowKey(evt.key)) {
+          evt.preventDefault()
+          var nextPosition = {x, y}
+          switch(evt.key){
+            case 'ArrowLeft':
+              nextPosition = {y:y,x:x-1}
+              break;
+            case 'ArrowRight':
+              nextPosition = {y:y,x:x+1}
+              break;
+            case 'ArrowUp':
+              nextPosition = {y:y-1,x:x}
+              break;
+            case 'ArrowDown':
+              nextPosition = {y:y+1,x:x}
+          }
+          presentEnemy = this.props.enemies.find(function(enemy) {
+            return (enemy.position.y == nextPosition.y && enemy.position.x == nextPosition.x)
           })
           if(presentEnemy) {
             this.props.playerAttack(presentEnemy)
           }else{
-            this.props.playerMoveLeft()
+            this.props.playerMove( nextPosition.y, nextPosition.x )
           }
           this.props.allEnemiesAct()
           if(this.isPlayerDead()){
             this.props.loseGame()
           }
-          break;
-
-        case('ArrowRight'):
-          presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y && enemy.position.x == player.position.x+1)
-          })
-          if(presentEnemy) {
-            this.props.playerAttack(presentEnemy)
-          }else{
-            this.props.playerMoveRight()
-          }
-          this.props.allEnemiesAct()
-          if(this.isPlayerDead()){
-            this.props.loseGame()
-          }
-          break;
-
-        case('ArrowUp'):
-          presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y-1 && enemy.position.x == player.position.x)
-          })
-          if(presentEnemy) {
-            this.props.playerAttack(presentEnemy)
-          }else{
-            this.props.playerMoveUp()
-          }
-          this.props.allEnemiesAct()
-          if(this.isPlayerDead()){
-            this.props.loseGame()
-          }
-          break;
-
-        case('ArrowDown'):
-          presentEnemy = enemies.find(function(enemy) {
-            return (enemy.position.y == player.position.y+1 && enemy.position.x == player.position.x)
-          })
-          if(presentEnemy) {
-            this.props.playerAttack(presentEnemy)
-          }else{
-            this.props.playerMoveDown()
-          }
-          this.props.allEnemiesAct()
-          if(this.isPlayerDead()){
-            this.props.loseGame()
-          }
-      }
+        }
     })
   }
 
@@ -108,7 +69,6 @@ class Game extends React.Component {
           <ConsoleLogConnector />
           <StatsConnector />
         </div>
-
       </div>
     )
   }

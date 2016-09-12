@@ -1,29 +1,10 @@
-
-const playerMoveLeft = () => {
+const playerMove = (y, x) => {
   return {
-    type: "PLAYER_MOVE_LEFT"
-  }
-}
-
-const playerMoveRight = () => {
-  return {
-    type: "PLAYER_MOVE_RIGHT"
-  }
-}
-const playerMoveUp = () => {
-  return {
-    type: "PLAYER_MOVE_UP"
-  }
-}
-const playerMoveDown = () => {
-  return {
-    type: "PLAYER_MOVE_DOWN"
+    type: "PLAYER_MOVE",
+    payload: {y, x}
   }
 }
 
 export {
-  playerMoveLeft,
-  playerMoveRight,
-  playerMoveUp,
-  playerMoveDown
+  playerMove
 }

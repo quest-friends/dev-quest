@@ -5,12 +5,45 @@ var levelGrids = require('../levels/levelGrids')
 function reducer (state = initialState, action) {
 
   var newState = Object.assign({}, state)
-  var { tileGrid, enemies, player } = newState
-  var i = state.player.position.y
-  var j = state.player.position.x
+  var { tileGrid , player } = newState
+  var playerX = player.position.x
+  var playerY = player.position.y
   var nextTile
 
-  var nextLevelFunc = function() {
+function moveLeft (enemy) {
+  enemy.position.x --
+}
+
+function moveRight (enemy) {
+  enemy.position.x ++
+}
+
+function moveUp (enemy) {
+  enemy.position.y --
+}
+
+function moveDown (enemy) {
+  enemy.position.y ++
+}
+
+function moveTowardsPlayer(enemy) {
+    var {x, y} = enemy.position
+
+    if (playerX < x  && tileGrid[y][x-1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x-1 && newStateEnemy.position.y==y})){
+      moveLeft(enemy)
+    }
+    else if (playerX > x  && tileGrid[y][x+1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x+1 && newStateEnemy.position.y==y})){
+      moveRight(enemy)
+    }
+    else if (playerY > y && tileGrid[y+1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y+1})){
+      moveDown(enemy)
+    }
+    else if (playerY < y && tileGrid[y-1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y-1})){
+      moveUp(enemy)
+    }
+  }
+
+  const nextLevelFunc = () => {
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -20,73 +53,57 @@ function reducer (state = initialState, action) {
     return newState
   }
 
+  var isPlayerAdjacent = function(enemy) {
+    var {x, y } = enemy.position
+    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+  }
+
   switch(action.type){
 
-    //these are the cases for player movement
-    case 'PLAYER_MOVE_LEFT':
-      nextTile = tileGrid[i][j-1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x -= 1
-      }
-
-      else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_RIGHT':
-      nextTile = tileGrid[i][j+1]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.x += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_UP':
-      nextTile = tileGrid[i-1][j]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y -= 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
-
-    case 'PLAYER_MOVE_DOWN':
-      nextTile = tileGrid[i+1][j]
-      if (nextTile == 1 || nextTile == 2) {
-        newState.player.position.y += 1
-      } else if (nextTile == 3) {
-        nextLevelFunc()
-      }
-      return newState
+    case 'PLAYER_MOVE':
+        var { y, x} = action.payload
+        nextTile = tileGrid[y][x]
+        if (nextTile == 1 || nextTile == 2) {
+          newState.player.position.x = x
+          newState.player.position.y = y
+        } else if (nextTile == 3) {
+          nextLevelFunc()
+        }
+        return newState
 
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
-      var attackedEnemy = newState.enemies.find(function(enemy){
-        return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
+      var enemyX = action.payload.position.x
+      var enemyY = action.payload.position.y
+
+      var attackedEnemyIndex = newState.enemies.findIndex(function(newStateEnemy){
+        return newStateEnemy.position.x == enemyX && newStateEnemy.position.y == enemyY
       })
+      var attackedEnemy = newState.enemies[attackedEnemyIndex]
+
       attackedEnemy.health --
-      if (attackedEnemy.health == 0) {
-        var enemyIndex = newState.enemies.findIndex(function(enemy){
-          return enemy.position.x == action.payload.position.x && enemy.position.y == action.payload.position.y
-        })
-        newState.enemies.splice(enemyIndex, 1)
+      newState.loggedMessages.push(action.payload.messages.playerAttacks)
+      newState.loggedMessages = newState.loggedMessages.slice(0)
+      if (attackedEnemy.health <= 0) {
+        newState.enemies.splice(attackedEnemyIndex, 1)
+        newState.enemyCount--
+        newState.loggedMessages.push(action.payload.messages.enemyDefeated)
+        newState.loggedMessages = newState.loggedMessages.slice(0)
       }
       return newState
 
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
-      enemies.map(function(enemy){
-        if(  enemy.position.x == j+1 && enemy.position.y == i ||
-             enemy.position.x == j-1 && enemy.position.y == i ||
-             enemy.position.x == j && enemy.position.y == i-1 ||
-             enemy.position.x == j && enemy.position.y == i+1    ){
+      newState.enemies.map(function(enemy){
+        if(isPlayerAdjacent(enemy)){
                player.health--
-          }
+        } else if (enemy.type == 'chrome') {
+          moveTowardsPlayer(enemy)
+        }
       })
+      newState.enemies = newState.enemies.slice(0)
       return newState
 
     //these are the cases for game running

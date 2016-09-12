@@ -9,7 +9,9 @@ const mapStateToProps = (state) => {
     playerX: state.player.position.x,
     playerY: state.player.position.y,
     playerHealth: state.player.health,
-    enemies: state.enemies
+    enemies: state.enemies,
+    enemyCount: state.enemyCount,
+    items: state.items
   }
 }
 
