@@ -78,10 +78,10 @@ function moveTowardsPlayer(enemy) {
         if (nextTile == 1 || nextTile == 2) {
           newState.player.position.x = x
           newState.player.position.y = y
-          newState.player.charge --
         } else if (nextTile == 3) {
           nextLevelFunc()
         }
+        newState.player.charge --
         return newState
 
     //these are the cases for the player attacking
@@ -116,14 +116,19 @@ function moveTowardsPlayer(enemy) {
       var collectedItemIndex = newState.items.findIndex(function(newStateItem){
         return newStateItem.position.x == itemX && newStateItem.position.y == itemY
       })
+      newState.items.splice(collectedItemIndex, 1)
+      // console.log(collectedItemIndex);
       newState.items.map(function(item) {
-        if (item.type == 'coffee' || item.type == 'codeRed') {
-          player.health++
-        } else if (item.type == 'battery') {
-          player.charge += 10
+        switch(item.type) {
+          case ("battery"):
+          console.log(item.type)
+            return player.charge += 10
+          default:
+          console.log(item.type)
+            return player.health++
         }
       })
-      newState.items.splice(collectedItemIndex, 1)
+      // console.log(newState.items);
       return newState
 
     //these are the cases for enemies attacking

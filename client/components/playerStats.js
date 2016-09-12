@@ -10,7 +10,7 @@ class PlayerStats extends React.Component {
         <p>Exp: {this.props.xp}</p>
         <p>Attack: {this.props.attack}</p>
         <p>Defence: {this.props.defence}</p>
-        <p>Laptop Charge: {this.props.charge}</p>
+        <p>Laptop Charge: {this.props.charge}%</p>
       </div>
     )
   }
