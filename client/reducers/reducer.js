@@ -10,40 +10,41 @@ function reducer (state = initialState, action) {
   var playerY = player.position.y
   var nextTile
 
-function moveLeft (enemy) {
-  enemy.position.x --
-}
-
-function moveRight (enemy) {
-  enemy.position.x ++
-}
-
-function moveUp (enemy) {
-  enemy.position.y --
-}
-
-function moveDown (enemy) {
-  enemy.position.y ++
+function moveEnemy(enemy, y, x){
+  enemy.position = {y:y, x:x}
 }
 
 function moveTowardsPlayer(enemy) {
     var {x, y} = enemy.position
+    var enemyDestination = {x, y}
 
-    if (playerX < x  && tileGrid[y][x-1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x-1 && newStateEnemy.position.y==y})){
-      moveLeft(enemy)
+    switch(true){
+      case (playerX < x):
+        enemyDestination = {y:y, x:x-1}
+        break
+
+      case (playerX > x):
+        enemyDestination = {y:y, x:x+1}
+        break
+
+      case (playerY < y):
+        enemyDestination = {y:y-1, x:x}
+        break
+
+      case (playerY > y):
+        enemyDestination = {y:y+1, x:x}
+        break
+
+      default:
+       enemyDestination = {x, y}
     }
-    else if (playerX > x  && tileGrid[y][x+1] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x+1 && newStateEnemy.position.y==y})){
-      moveRight(enemy)
-    }
-    else if (playerY > y && tileGrid[y+1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y+1})){
-      moveDown(enemy)
-    }
-    else if (playerY < y && tileGrid[y-1][x] == 1 && !newState.enemies.find(function(newStateEnemy){return newStateEnemy.position.x==x && newStateEnemy.position.y==y-1})){
-      moveUp(enemy)
+
+    if (tileGrid[enemyDestination.y][enemyDestination.x] == 1 && !isEnemyInTile(enemyDestination.y, enemyDestination.x) ){
+      moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
     }
   }
 
-  const nextLevelFunc = () => {
+  var nextLevelFunc = () => {
     newState.currentLevel ++
     if (newState.currentLevel == 5){
       newState.display = "win"
@@ -51,6 +52,12 @@ function moveTowardsPlayer(enemy) {
     }
     newState.tileGrid = levelGrids[newState.currentLevel-2]
     return newState
+  }
+
+  var isEnemyInTile = (y, x) => {
+    return newState.enemies.find(function(newStateEnemy){
+      return newStateEnemy.position.x==x && newStateEnemy.position.y==y
+    })
   }
 
   var isPlayerAdjacent = function(enemy) {
