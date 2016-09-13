@@ -17,15 +17,15 @@ class Enemy extends React.Component {
     const enemyType = this.getPresentEnemy().type
     switch (enemyType){
       case ("ie6"):
-        return <div><img src={"./img/enemies/ie6.png"} alt="googlechrome" className="img-enemy" /></div>
+        return <div><img src={"./img/enemies/ie6.gif"} alt="googlechrome" className="img-enemy" /></div>
       case ("chrome"):
-        return <div><img src={"./img/enemies/googleChrome.png"} alt="googlechrome" className="img-enemy" /></div>
+        return <div><img src={"./img/enemies/googleChrome.gif"} alt="googlechrome" className="img-enemy" /></div>
       case ("firefox"):
-        return <div><img src={"./img/enemies/firefox.png"} alt="firefox" className="img-enemy" /></div>
+        return <div><img src={"./img/enemies/firefox.gif"} alt="firefox" className="img-enemy" /></div>
       case ("safari"):
-        return <div><img src={"./img/enemies/safari.png"} alt="googlechrome" className="img-enemy" /></div>
+        return <div><img src={"./img/enemies/safari.gif"} alt="googlechrome" className="img-enemy" /></div>
       case ("promise"):
-        return <div><img src={"./img/enemies/safari.png"} alt="googlechrome" className="img-enemy" /></div>
+        return <div><img src={"./img/enemies/safari.gif"} alt="googlechrome" className="img-enemy" /></div>
       default:
         return ""
       }
