@@ -9,7 +9,14 @@ function reducer (state = initialState, action) {
 
   var newState = clone(state)
   var nextTile
-  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel, removeElementFromArray, moveAroundRandomly, randomiseObjectPositionToFloorTile} = helpers
+  var {
+    isPlayerAdjacent,
+    moveTowardsPlayer,
+    nextLevel,
+    removeElementFromArray,
+    moveAroundRandomly,
+    randomiseObjectPositionToFloorTile
+  } = helpers
 
   switch(action.type){
 
