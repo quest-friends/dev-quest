@@ -11,7 +11,7 @@ class WinScreen extends React.Component {
       <div className="display-screen">
         <div className="display-screen-info">
           <h1>Well done, you have reached coding enlightenment!</h1>
-          <h4>It seems your journey as a Web Developer has come to an end</h4>
+          <p>It seems your journey as a Web Developer has come to an end</p>
           <h2>Give it another go?</h2>
         </div>
         <button className="start-game-button" onClick={this.reloadGame}>Refactor Your Code</button>

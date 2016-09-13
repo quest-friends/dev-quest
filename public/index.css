@@ -15,6 +15,20 @@ h2, h3 {
   text-decoration: underline;
 }
 
+h4 {
+  
+  padding-left: 20px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+span {
+  position: relative;
+  vertical-align: middle;
+}
+
 .board-container {
   margin-left: 5%;
   width: 60%;
@@ -59,10 +73,6 @@ h2, h3 {
   width: 100%;
 }
 
-span {
-  position: relative;
-  vertical-align: middle;
-}
 
 .ui-container {
   width: 30%;
@@ -92,9 +102,7 @@ span {
   border: 3px solid black;
   height: 40%;
   text-align: left;
-  padding-top: 10px;
   padding-left: 50px;
-  font-weight: bold;
 }
 
 .item {
@@ -130,8 +138,6 @@ span {
   background-color: #635516;
   border: 3px solid black;
   margin: auto;
-  /*position: relative;;*/
-  /*float: left;*/
 }
 
 .start-game-button {
@@ -143,15 +149,27 @@ span {
   margin: 10px auto;
   position: relative;
   top: 77%;
-  /*float: left;*/
 }
 
-  .img-enemy {
-    width: 100%;
-    height: 100%;
-  }
+.img-enemy {
+  width: 100%;
+  height: 100%;
+}
 
-  .img-player {
-    height:50%;
-    width:50%;
-  }
+.img-player {
+  height:50%;
+  width:50%;
+}
+
+.attacked {
+  animation:blink 700ms 100ms;
+}
+
+.no-underline {
+  text-decoration: none !important;
+}
+
+@keyframes blink {
+  from { opacity:1; }
+  to { opacity:0; }
+}

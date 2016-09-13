@@ -7,7 +7,7 @@ const randomiseObjectPositionToFloorTile = (tileGrid, object) => {
     }
     else {
       randomiseObjectPositionToFloorTile(tileGrid, object)
-     }
+    }
 }
 
 const moveEnemy = (enemy, y, x) => {
@@ -42,6 +42,37 @@ const moveTowardsPlayer = (enemy, state) => {
        enemyDestination = {x, y}
     }
 
+    if (tileGrid[enemyDestination.y][enemyDestination.x] == 1 && !isEnemyInTile(state.enemies, enemyDestination.y, enemyDestination.x) ){
+      moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
+    }
+  }
+
+  const moveAroundRandomly = (enemy, state) => {
+    var direction = Math.floor(Math.random() * 5)
+    var {x, y} = enemy.position
+    var enemyDestination = {x, y}
+    var tileGrid = state.tileGrid
+
+    switch(direction){
+      case (0):
+        enemyDestination = {y:y, x:x-1}
+        break
+
+      case (1):
+        enemyDestination = {y:y, x:x+1}
+        break
+
+      case (2):
+        enemyDestination = {y:y-1, x:x}
+        break
+
+      case (3):
+        enemyDestination = {y:y+1, x:x}
+        break
+
+      default:
+       enemyDestination = {x, y}
+    }
     if (tileGrid[enemyDestination.y][enemyDestination.x] == 1 && !isEnemyInTile(state.enemies, enemyDestination.y, enemyDestination.x) ){
       moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
     }
@@ -95,5 +126,6 @@ module.exports ={
   nextLevel,
   isEnemyInTile,
   isPlayerAdjacent,
-  removeElementFromArray
+  removeElementFromArray,
+  moveAroundRandomly
 }

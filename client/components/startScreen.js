@@ -10,8 +10,8 @@ class StartScreen extends React.Component {
       <div className="display-screen">
         <div className="display-screen-info">
           <h1>Dev Quest 2.0</h1>
-          <h4>The path to coding mastery is fraught with trials and danger.
-            It will take all of your determination, skill, and coffee to achieve greatness.</h4>
+          <p>The path to coding mastery is fraught with trials and danger.
+            It will take all of your determination, skill, and coffee to achieve greatness.</p>
           <h2>Are you ready to begin your journey?</h2>
         </div>
 

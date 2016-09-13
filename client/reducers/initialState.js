@@ -31,7 +31,8 @@ const initialState = {
     charge: 0,
     xp: 0,
     attack: 0,
-    defence: 0
+    defence: 0,
+    hasBeenAttacked: false
   },
   enemies: [
     { position: { x: 1, y: 4 },
@@ -54,7 +55,7 @@ const initialState = {
       }
     },
 
-    { position: { x: 4, y: 7 },
+    { position: { x: 10, y: 12 },
       health: 1,
       type: "firefox",
       messages: {
