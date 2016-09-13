@@ -65,7 +65,7 @@ class Game extends React.Component {
           if (presentItem) {
             this.props.pickUpItem (presentItem)
           }
-          if (presentGotcha) {
+          if (presentGotcha && presentGotcha.triggered==false) {
             this.props.stepOnGotcha(presentGotcha)
           }
         }
