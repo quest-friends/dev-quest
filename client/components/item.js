@@ -15,11 +15,11 @@ class Item extends React.Component {
 
     switch (itemType){
       case ("coffee"):
-        return <span>coffee</span>
+        return <div><img src={"./img/items/coffee.png"} alt="googlechrome" className="img-enemy" /></div>
       case ("codeRed"):
         return <span>codeRed</span>
       case ("battery"):
-        return <span>battery</span>
+        return <div><img src={"./img/items/battery.png"} alt="battery" className="img-enemy" /></div>
       default:
         return ""
     }
