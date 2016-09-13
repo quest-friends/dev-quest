@@ -12,7 +12,15 @@ const levelList = [
     enemies: [
       clone(enemies.Chrome),
       clone(enemies.Firefox),
-      clone(enemies.Promise)
+      clone(enemies.Promise),
+      clone(enemies.Const),
+      clone(enemies.Let),
+      clone(enemies.Var),
+      clone(enemies.Emeny),
+      clone(enemies.Bracket),
+      clone(enemies.Comma),
+      clone(enemies.Async)
+
     ],
     items: [
       clone(items.Coffee),
