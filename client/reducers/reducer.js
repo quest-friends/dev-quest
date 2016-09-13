@@ -85,14 +85,15 @@ function reducer (state = initialState, action) {
       // these are the cases for player to gotcha interaction
 
     case 'STEP_ON_GOTCHA':
+      console.log('stepping on a gotcha');
       var gotchaX = action.payload.position.x
       var gotchaY = action.payload.position.y
       var triggeredGotchaIndex = newState.gotchas.findIndex(function(gotcha){
         return gotcha.position.x == gotchaX && gotcha.position.y == gotchaY
       })
-        newState.items = removeElementFromArray(newState.items, triggeredGotchaIndex)
-        newState.player.health++
-        newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnTrigger]
+      var triggeredGotcha = newState.gotchas[triggeredGotchaIndex]
+      triggeredGotcha.triggered = true
+      newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnTrigger]
       return newState
 
     //these are the cases for enemies attacking

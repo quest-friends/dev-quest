@@ -95,8 +95,28 @@ const initialState = {
   gotchas: [
     {
       type: "rabbithole",
-      position: {x: 3, y: 3}
-    }
+      triggered: false,
+      position: {x: 3, y: 7},
+      messageOnTrigger: 'I triggered a rabbithole'
+    },
+    {
+      type: "rabbithole",
+      triggered: false,
+      position: {x: 1, y: 7},
+      messageOnTrigger: 'I triggered a rabbithole'
+    },
+    {
+      type: "rabbithole",
+      triggered: false,
+      position: {x: 2, y: 7},
+      messageOnTrigger: 'I triggered a rabbithole'
+    },
+    {
+      type: "rabbithole",
+      triggered: false,
+      position: {x: 4, y: 7},
+      messageOnTrigger: 'I triggered a rabbithole'
+    },
   ]
 }
 
