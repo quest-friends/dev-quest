@@ -36,5 +36,15 @@ module.exports = {
         playerAttacks: "Hating on an Apple product gives you nerd cred...",
         enemyDefeated: "There's only a core left of that apple!"
       }
+    },
+
+  Promise: {
+      type: "promise",
+      health: 1,
+      messages: {
+        enemyAttacks: "promise-y attack",
+        playerAttacks: "You attack the promise, but it just returns a new promise!",
+        enemyDefeated: "promise died...?"
+      }
     }
   }

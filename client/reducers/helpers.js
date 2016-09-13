@@ -7,7 +7,7 @@ const randomiseObjectPositionToFloorTile = (tileGrid, object) => {
     }
     else {
       randomiseObjectPositionToFloorTile(tileGrid, object)
-     }
+    }
 }
 
 const moveEnemy = (enemy, y, x) => {
