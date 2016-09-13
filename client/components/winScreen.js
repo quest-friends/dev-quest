@@ -8,7 +8,7 @@ class WinScreen extends React.Component {
         <h1>Well done, you have reached coding enlightenment!</h1>
         <h4>It seems your journey as a Web Developer has come to an end</h4>
         <h2>Give it another go?</h2>
-        <button className="startGameButton" onclick={this.props.restartGame}>Refactor Your Code</button>
+        <button className="startGameButton" onClick={this.props.restartGame}>Refactor Your Code</button>
       </div>
     )
   }
