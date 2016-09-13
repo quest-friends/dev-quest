@@ -63,17 +63,16 @@ function reducer (state = initialState, action) {
       var collectedItemIndex = newState.items.findIndex(function(item){
         return item.position.x == itemX && item.position.y == itemY
       })
-      var collectedItem = newState.collectedItemIndex[collectedItem].type
-      console.log(collectedItemIndex);
+      // var collectedItem = newState.items.collectedItemIndex
+      console.log("item with type", newState.items.type)
         newState.items = removeElementFromArray(newState.items, collectedItemIndex)
+        // collectedItem
         newState.player.health++
-        console.log("type is: ", collectedItem);
         // if (newState.items == 'coffee') {
         //   console.log("inside adding health");
         //   return newState.player.health ++
         // }
         newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnPickup]
-        console.log("item withNewState", newState.items)
       return newState
 
     //these are the cases for enemies attacking
