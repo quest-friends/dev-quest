@@ -7,7 +7,7 @@
     "start": "node server/server.js",
     "dev:start": "nodemon server/server.js",
     "postinstall": "npm run build",
-    "build": "browserify . -o public/bundle.js -g uglifyify",
+    "build": "browserify . -o public/bundle.js -d -g uglifyify",
     "watch": "watchify . -o public/bundle.js -d",
     "test": "browserify ./tests/*.js -d | node | tap-spec",
     "test:i": "chimp --watch"
