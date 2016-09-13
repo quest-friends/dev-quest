@@ -78,15 +78,15 @@ function reducer (state = initialState, action) {
       var collectedItemIndex = newState.items.findIndex(function(item){
         return item.position.x == itemX && item.position.y == itemY
       })
-      var collectedItem = newState.items[collectedItemIndex].type
+      var collectedItemType = newState.items[collectedItemIndex].type
         newState.items = removeElementFromArray(newState.items, collectedItemIndex)
-        if (collectedItem == 'coffee') {
+        if (collectedItemType == 'coffee') {
             newState.player.health++
         }
-        else if (collectedItem == 'battery') {
+        else if (collectedItemType == 'battery') {
           newState.player.charge+= 30
         }
-        else if (collectedItem == 'codeRed') {
+        else if (collectedItemType == 'codeRed') {
             newState.player.health+= 5
         }
         newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnPickup]
