@@ -49,6 +49,12 @@ h1, h2, h3 {
   width: 100%;
 }
 
+.gotcha {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
 
 .enemy {
   position: absolute;
