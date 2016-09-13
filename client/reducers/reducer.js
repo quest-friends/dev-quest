@@ -59,7 +59,7 @@ function reducer (state = initialState, action) {
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
-        if(isPlayerAdjacent(newState.player, enemy)){
+        if (isPlayerAdjacent(newState.player, enemy)) {
           newState.player.health--
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
