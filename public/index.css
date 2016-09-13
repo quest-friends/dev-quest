@@ -1,5 +1,14 @@
-main {
+body {
   text-align: center;
+  height: 100%;
+  background-color: #B89A56;
+  color: #42390F;
+  font-family: 'Geo', sans-serif;
+}
+
+h1, h2, h3 {
+  text-decoration: underline;
+  padding-bottom: 20px;
 }
 
 .board-container {
@@ -40,12 +49,12 @@ main {
   width: 100%;
 }
 .attacked {
-  animation:blink 700ms 100ms;
+animation:blink 700ms 100ms;
 }
 
 @keyframes blink {
-  from { opacity:1; }
-  to { opacity:0; }
+from { opacity:1; }
+to { opacity:0; }
 };
 }
 
@@ -62,7 +71,7 @@ span {
 
 .ui-container {
   width: 30%;
-  height: 96vh;
+  height: 720px;
   float: left;
 }
 
@@ -78,18 +87,33 @@ span {
 }
 
 .ui-terminalLog {
-  max-height: 90%;
+  max-height: 60%;
   text-align: left;
   padding-left: 50px;
 }
 
 .ui-playerStats {
-  border: 1px solid black;
+  border: 3px solid black;
   height: 40%;
+  text-align: left;
+  padding-left: 50px;
 }
 
 .item {
   position: absolute;
   height: 100%;
   width: 100%;
+}
+
+.displayScreen {
+  border: 3px solid #635516;
+  height: 97vh;
+}
+
+.startGameButton {
+  background-color: #B56A3C;
+  height: 60px;
+  width: 200px;
+  font-size: 1.5em;
+  margin: 20px;
 }

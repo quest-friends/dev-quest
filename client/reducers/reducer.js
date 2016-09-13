@@ -14,9 +14,9 @@ function reducer (state = initialState, action) {
   switch(action.type){
 
     case 'PLAYER_MOVE':
-        newState.player.hasBeenAttacked = false
         nextTile = newState.tileGrid[action.payload.y][action.payload.x]
         if (nextTile == 1 || nextTile == 2) {
+          // newState.player.hasBeenAttacked = false
           newState.player.position.x = action.payload.x
           newState.player.position.y = action.payload.y
         } else if (nextTile == 3) {
