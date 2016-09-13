@@ -2,13 +2,17 @@ body {
   text-align: center;
   height: 100%;
   background-color: #B89A56;
-  color: #42390F;
+  color: #3b330d;
   font-family: 'Geo', sans-serif;
 }
 
-h1, h2, h3 {
+h1 {
   text-decoration: underline;
   padding-bottom: 20px;
+}
+
+h2, h3 {
+  text-decoration: underline;
 }
 
 .board-container {
@@ -81,14 +85,16 @@ span {
   max-height: 60%;
   text-align: left;
   padding-left: 50px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .ui-playerStats {
   border: 3px solid black;
   height: 40%;
   text-align: left;
+  padding-top: 10px;
   padding-left: 50px;
+  font-weight: bold;
 }
 
 .item {
@@ -102,10 +108,15 @@ span {
   height: 97vh;
 }
 
+.displayScreenIntro {
+  font-size: 1.4em;
+  padding: 50px;
+}
+
 .startGameButton {
   background-color: #B56A3C;
   height: 60px;
-  width: 200px;
+  width: 260px;
   font-size: 1.5em;
   margin: 20px;
 }

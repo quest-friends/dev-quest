@@ -1,7 +1,7 @@
 module.exports = {
 
 JavaScript: {
-  type: "javascript",
+  type: "JavaScript",
   health: 10,
   charge: 50,
   xp: 0,
@@ -14,7 +14,7 @@ JavaScript: {
 },
 
 Ruby: {
-  type: "ruby",
+  type: "Ruby",
   health: 20,
   charge: 20,
   xp: 0,

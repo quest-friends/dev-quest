@@ -6,6 +6,7 @@ class PlayerStats extends React.Component {
     return (
       <div className='ui-playerStats'>
         <h3>Coder Stats:</h3>
+        <p>Main Language: {this.props.type}</p>
         <p>Wellbeing: {this.props.health}</p>
         <p>Exp: {this.props.xp}</p>
         <p>Attack: {this.props.attack}</p>
