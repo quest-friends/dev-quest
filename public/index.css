@@ -1,14 +1,35 @@
 body {
   text-align: center;
   height: 100%;
-  background-color: #B89A56;
-  color: #42390F;
+  background-color: #3b330d;
+  color: #B89A56;
   font-family: 'Geo', sans-serif;
 }
 
-h1, h2, h3 {
+h1 {
   text-decoration: underline;
   padding-bottom: 20px;
+}
+
+h2, h3 {
+  text-decoration: underline;
+}
+
+h4 {
+  padding-left: 20px;
+}
+
+h5 {
+  margin: 0;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+}
+
+span {
+  position: relative;
+  vertical-align: middle;
 }
 
 .board-container {
@@ -49,17 +70,12 @@ h1, h2, h3 {
   width: 100%;
 }
 
-
 .enemy {
   position: absolute;
   height: 100%;
   width: 100%;
 }
 
-span {
-  position: relative;
-  vertical-align: middle;
-}
 
 .ui-container {
   width: 30%;
@@ -82,7 +98,7 @@ span {
   max-height: 60%;
   text-align: left;
   padding-left: 50px;
-  font-size: 1.5rem;
+  font-size: 1.2em;
 }
 
 .ui-playerStats {
@@ -98,17 +114,53 @@ span {
   width: 100%;
 }
 
-.displayScreen {
+.display-screen {
   border: 3px solid #635516;
   height: 97vh;
 }
 
-.startGameButton {
+.display-screen-info {
+  font-size: 1.4em;
+  padding: 20px 40px 40px 40px;
+}
+
+.choose-class-container {
+  background-color: #B3977F;
+  /*height: 300px;*/
+}
+
+.new-player-class {
+  width: 50%;
+  float: left;
+  margin: auto;
+}
+
+.class-info {
+  height: 400px;
+  width: 300px;
+  background-color: #635516;
+  border: 3px solid black;
+  margin: auto;
+}
+
+.class-picture {
+  height: 40%;
+}
+
+.class-starting-stats {
+  text-align: left;
+  padding: 20px 30px;
+}
+
+.start-game-button {
   background-color: #B56A3C;
   height: 60px;
-  width: 200px;
+  width: 260px;
+  border: 3px solid #B89A56;
   font-size: 1.5em;
-  margin: 20px;
+  margin: 10px auto;
+  position: relative;
+  top: 77%;
 }
 
 .img-background{
@@ -127,6 +179,10 @@ span {
 
 .attacked {
   animation:blink 700ms 100ms;
+}
+
+.no-underline {
+  text-decoration: none !important;
 }
 
 @keyframes blink {
