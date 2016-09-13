@@ -28,7 +28,7 @@ module.exports = {
     }
   },
 
-  Opera: {
+  Safari: {
       type: "safari",
       health: 1,
       messages: {
