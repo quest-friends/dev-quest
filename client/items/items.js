@@ -10,8 +10,8 @@ module.exports = {
     messageOnPickup: "Recharging laptop battery..."
   },
 
-  CodeRed: {
-    type: "codeRed",
+  FreshAir: {
+    type: "freshAir",
     messageOnPickup: "Now coding twice as fast, but a bit jittery"
   },
 
