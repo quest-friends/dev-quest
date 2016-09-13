@@ -31,7 +31,6 @@ const initialState = {
       x: 1,
       y: 6
     },
-
     health: 0,
     charge: 0,
     xp: 0,
