@@ -25,7 +25,7 @@ class Enemy extends React.Component {
       case ("safari"):
         return <div><img src={"./img/enemies/safari.gif"} alt="googlechrome" className="img-enemy" /></div>
       case ("promise"):
-        return <div><img src={"./img/enemies/safari.gif"} alt="googlechrome" className="img-enemy" /></div>
+        return <div><p>promise</p></div>
       case ("const"):
         return <div><p>const</p></div>
       case ("let"):
