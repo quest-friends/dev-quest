@@ -33,7 +33,7 @@ const initialState = {
     defence: 1
   },
   enemies: [
-    { position: { x: 1, y: 4 },
+    { position: { x: 10, y: 4 },
       health: 2,
       type: "ie6",
       messages: {

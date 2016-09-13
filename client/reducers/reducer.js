@@ -9,7 +9,7 @@ function reducer (state = initialState, action) {
 
   var newState = clone(state)
   var nextTile
-  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel, removeElementFromArray} = helpers
+  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel, removeElementFromArray, moveAroundRandomly} = helpers
 
   switch(action.type){
 
@@ -68,6 +68,8 @@ function reducer (state = initialState, action) {
           newState.player.health--
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
+        } else if (enemy.type == 'ie6') {
+          moveAroundRandomly(enemy, newState)
         }
       })
       return newState
