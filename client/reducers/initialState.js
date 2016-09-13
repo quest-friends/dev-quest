@@ -50,7 +50,7 @@ const initialState = {
     Object.assign({}, items.Coffee, {position: { x: 4, y: 7}}),
     Object.assign({}, items.Battery, {position: { x: 14, y: 4}}),
     Object.assign({}, items.Coffee, {position: { x: 16, y: 13}}),
-    Object.assign({}, items.CodeRed, {position: { x: 7, y: 7}}),
+    Object.assign({}, items.FreshAir, {position: { x: 7, y: 7}}),
     Object.assign({}, items.ApiKey, {position: { x: 6, y: 6}})
   ],
   loggedMessages: [ "Hello World!" ],

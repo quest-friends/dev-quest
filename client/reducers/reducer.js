@@ -96,7 +96,7 @@ function reducer (state = initialState, action) {
         else if (collectedItemType == 'battery') {
           newState.player.charge+= 30
         }
-        else if (collectedItemType == 'codeRed') {
+        else if (collectedItemType == 'freshAir') {
             newState.player.health+= 5
         }
         newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnPickup]
