@@ -9,7 +9,7 @@ function reducer (state = initialState, action) {
 
   var newState = clone(state)
   var nextTile
-  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel, removeElementFromArray, moveAroundRandomly} = helpers
+  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel, removeElementFromArray, moveAroundRandomly, randomiseObjectPositionToFloorTile} = helpers
 
   switch(action.type){
 
@@ -41,13 +41,20 @@ function reducer (state = initialState, action) {
       newState.loggedMessages = [...newState.loggedMessages, messages.playerAttacks]
 
       if (attackedEnemy.health <= 0) {
-        newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
-        newState.enemyCount--
-        newState.player.xp += 5
-        if (newState.player.xp >= 10) {
-          newState.player.attack++
+        if(attackedEnemy.type == "promise") {
+          randomiseObjectPositionToFloorTile(newState.tileGrid, attackedEnemy)
+          attackedEnemy.health++
         }
-        newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
+
+        else {
+          newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
+          newState.enemyCount--
+          newState.player.xp += 5
+          if (newState.player.xp >= 10) {
+            newState.player.attack++
+          }
+          newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
+        }
       }
       return newState
 
