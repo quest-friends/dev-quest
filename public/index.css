@@ -110,12 +110,23 @@ span {
 
 .display-screen-info {
   font-size: 1.4em;
-  padding: 50px;
+  padding: 20px 40px 40px 40px;
+}
+
+.choose-class-container {
+  background-color: #B3977F;
+  /*height: 300px;*/
+}
+
+.new-player-class {
+  width: 50%;
+  float: left;
+  margin: auto;
 }
 
 .class-info {
-  height: 300px;
-  width: 400px;
+  height: 400px;
+  width: 300px;
   background-color: #635516;
   border: 3px solid black;
   margin: auto;
@@ -127,10 +138,11 @@ span {
   background-color: #B56A3C;
   height: 60px;
   width: 260px;
+  border: 3px solid #B89A56;
   font-size: 1.5em;
   margin: 10px auto;
   position: relative;
-  top: 50%;
+  top: 77%;
   /*float: left;*/
 }
 

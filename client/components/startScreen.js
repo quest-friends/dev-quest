@@ -15,16 +15,14 @@ class StartScreen extends React.Component {
           <h2>Are you ready to begin your journey?</h2>
         </div>
 
-        <div className="choose-class-container">
-          <div className="new-player-class">
-            <div className="class-info">
-              <button className="start-game-button" onClick={ () => this.props.startGame(players.JavaScript) } >Code in JavaScript</button>
-            </div>
+        <div className="new-player-class">
+          <div className="class-info">
+            <button className="start-game-button" onClick={ () => this.props.startGame(players.JavaScript) } >Code in JavaScript</button>
           </div>
-          <div className="new-player-class">
-            <div className="class-info">
-              <button className="start-game-button" onClick={ () => this.props.startGame(players.Ruby) } >Code in Ruby</button>
-            </div>
+        </div>
+        <div className="new-player-class">
+          <div className="class-info">
+            <button className="start-game-button" onClick={ () => this.props.startGame(players.Ruby) } >Code in Ruby</button>
           </div>
         </div>
 
