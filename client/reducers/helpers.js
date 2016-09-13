@@ -91,19 +91,17 @@ const moveTowardsPlayer = (enemy, state) => {
       newState.display = "win"
       return newState
     }
-    var level = levelList[newState.currentLevel-2]
-    //this is very hack-y but I don't understand the currentLevel stuff above
-    var messageOnStart = `Starting Sprint ${newState.currentLevel}...`
-
+    var level = levelList[newState.currentLevel-1]
     newState.tileGrid = tileGrids[Math.floor(Math.random() * tileGrids.length)]
     movePlayerToSpawnTile(newState)
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
     newState.items = level.items
     newState.gotchas = level.gotchas
+    newState.isExitOpen = false
+    var messageOnStart = `Starting Sprint ${newState.currentLevel}...`
     newState.loggedMessages = []
     newState.loggedMessages = [messageOnStart]
-    newState.isExitOpen = false
     newState.enemies.map(function(enemy){
       randomiseObjectPositionToFloorTile(newState.tileGrid, enemy)
     })

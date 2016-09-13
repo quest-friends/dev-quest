@@ -51,7 +51,7 @@ const initialState = {
   ],
   loggedMessages: [ "Hello World!" ],
   display: "start",
-  currentLevel: 1,
+  currentLevel: 0,
   isExitOpen: false,
   tutorialLevel: true,
   gotchas: [
