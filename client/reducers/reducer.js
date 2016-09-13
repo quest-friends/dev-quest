@@ -77,11 +77,14 @@ function reducer (state = initialState, action) {
       var collectedItemIndex = newState.items.findIndex(function(item){
         return item.position.x == itemX && item.position.y == itemY
       })
-      // var collectedItem = newState.items.collectedItemIndex
-      console.log("item with type", newState.items.type)
+      var collectedItem = newState.items[collectedItemIndex].type
         newState.items = removeElementFromArray(newState.items, collectedItemIndex)
+          if (collectedItem == 'coffee') {
+            newState.player.health++
+        }
+        console.log("item with type", collectedItem)
         // collectedItem
-        newState.player.health++
+        // newState.player.health++
         // if (newState.items == 'coffee') {
         //   console.log("inside adding health");
         //   return newState.player.health ++
