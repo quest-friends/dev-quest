@@ -1,5 +1,6 @@
 var enemies = require('../enemies/enemies')
 var items = require('../items/items')
+var gotchas = require('../gotchas/gotchas')
 var clone = require('clone')
 
 const initialState = {
@@ -55,30 +56,10 @@ const initialState = {
   display: "start",
   currentLevel: 1,
   gotchas: [
-    {
-      type: "rabbithole",
-      triggered: false,
-      position: {x: 3, y: 7},
-      messageOnTrigger: 'I triggered a rabbithole'
-    },
-    {
-      type: "rabbithole",
-      triggered: false,
-      position: {x: 1, y: 7},
-      messageOnTrigger: 'I triggered a rabbithole'
-    },
-    {
-      type: "rabbithole",
-      triggered: false,
-      position: {x: 2, y: 7},
-      messageOnTrigger: 'I triggered a rabbithole'
-    },
-    {
-      type: "rabbithole",
-      triggered: false,
-      position: {x: 4, y: 7},
-      messageOnTrigger: 'I triggered a rabbithole'
-    },
+    Object.assign({}, gotchas.Rabbithole, {position: {x:4, y:7}}),
+    Object.assign({}, gotchas.Rabbithole, {position: {x:3, y:7}}),
+    Object.assign({}, gotchas.Rabbithole, {position: {x:2, y:7}}),
+    Object.assign({}, gotchas.Rabbithole, {position: {x:5, y:7}})
   ]
 }
 

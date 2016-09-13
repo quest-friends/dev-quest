@@ -21,13 +21,6 @@ class Gotcha extends React.Component {
           return ""
       }
     }
-
-    // else {
-      return ""
-    // }
-
-
-
   }
 
   render(){
