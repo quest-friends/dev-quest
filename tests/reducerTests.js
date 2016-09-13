@@ -1,5 +1,6 @@
 const test = require('tape')
 const reducer = require('../client/reducers/reducer')
+const deepFreeze = require('deep-freeze')
 
 
 test('PlayerMovesLeft', function (t) {
@@ -17,6 +18,8 @@ test('PlayerMovesLeft', function (t) {
       charge: 30
     }
   }
+
+  deepFreeze(testState)
 
   var expectedState = {
     tileGrid:[
@@ -85,6 +88,8 @@ test('PlayerMovesRight', function (t) {
     }
   }
 
+  deepFreeze(testState)
+
   var expectedState = {
     tileGrid:[
       [1,1,1],
@@ -116,6 +121,8 @@ test('PlayerMovesRight', function (t) {
       charge: 30
     }
   }
+
+  deepFreeze(testState)
 
    expectedState = {
     tileGrid:[
@@ -152,6 +159,8 @@ test('PlayerMovesUp', function (t) {
     }
   }
 
+  deepFreeze(testState)
+
   var expectedState = {
     tileGrid:[
       [1,1,1],
@@ -183,6 +192,8 @@ test('PlayerMovesUp', function (t) {
       charge: 30
     }
   }
+
+  deepFreeze(testState)
 
    expectedState = {
     tileGrid:[
@@ -220,6 +231,8 @@ test('PlayerMovesDown', function (t) {
     }
   }
 
+  deepFreeze(testState)
+
   var expectedState = {
     tileGrid:[
       [1,1,1],
@@ -251,6 +264,8 @@ test('PlayerMovesDown', function (t) {
       charge: 30
     }
   }
+
+  deepFreeze(testState)
 
    expectedState = {
     tileGrid:[
@@ -286,6 +301,8 @@ test('Starting Game', function (t) {
      },
      display: "start"
    }
+
+   deepFreeze(testState)
 
   var expectedState = {
      tileGrid:[
@@ -323,6 +340,8 @@ test('Winning Game', function (t) {
      display: "game"
    }
 
+   deepFreeze(testState)
+
   var expectedState = {
      tileGrid:[
        [],
@@ -358,6 +377,8 @@ test('Losing Game', function (t) {
      display: "game"
    }
 
+   deepFreeze(testState)
+
   var expectedState = {
      tileGrid:[
        [],
@@ -389,7 +410,8 @@ test('Losing Game', function (t) {
         position: {
           x: 2,
           y: 1
-        }
+        },
+        attack: 1
       },
       enemies: [
         { position: { x: 1, y: 1 },
@@ -402,6 +424,9 @@ test('Losing Game', function (t) {
       currentLevel: 1,
       loggedMessages: []
     }
+
+    deepFreeze(testState)
+
     var expectedState = {
        tileGrid:[
          [1,1,1],
@@ -413,6 +438,7 @@ test('Losing Game', function (t) {
            x: 2,
            y: 1
          },
+         attack: 1
        },
        enemies: [
          { position: { x: 1, y: 1 },
@@ -442,7 +468,9 @@ test('Enemy dies on Player Attack', function (t) {
        position: {
          x: 2,
          y: 1
-       }
+       },
+       attack: 1,
+       xp: 0
      },
      enemies: [
        { position: { x: 1, y: 1 },
@@ -457,6 +485,9 @@ test('Enemy dies on Player Attack', function (t) {
      enemyCount: 1,
      loggedMessages: []
    }
+
+   deepFreeze(testState)
+
    var expectedState = {
       tileGrid:[
         [1,1,1],
@@ -468,6 +499,8 @@ test('Enemy dies on Player Attack', function (t) {
           x: 2,
           y: 1
         },
+        attack: 1,
+        xp: 5
       },
       enemies: [
       ],
@@ -505,6 +538,9 @@ test('Enemies Attack', function (t) {
      display: "game",
      currentLevel: 1
    }
+
+   deepFreeze(testState)
+
    var expectedState = {
       tileGrid:[
         [1,1,1],

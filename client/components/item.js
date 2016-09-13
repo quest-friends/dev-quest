@@ -28,7 +28,7 @@ class Item extends React.Component {
   render(){
     return (
       <div className='item'>
-        {this.itemTypeToRender()}
+        {this.getPresentItem() ? this.itemTypeToRender() : null}
       </div>
     )
   }
