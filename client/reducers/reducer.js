@@ -9,7 +9,7 @@ const tileGrids = require('../levels/tileGrids')
 function reducer (state = initialState, action) {
 
   var newState = clone(state)
-  var nextTile, currentLevel, enemies, items
+  var nextTile, currentLevel, enemies, itemsList
   var {
     isPlayerAdjacent,
     moveTowardsPlayer,
