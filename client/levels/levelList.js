@@ -11,8 +11,7 @@ const levelList = [
       position:{ x: 2, y: 2 }
     },
     enemies: [
-      createObject(enemies.Chrome),
-      createObject(enemies.Firefox)
+      createObject(enemies.Promise)
     ],
     items: [
       createObject(items.Coffee),
@@ -26,8 +25,7 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      createObject(enemies.Chrome, 4, 3),
-      createObject(enemies.Firefox, 11, 11)
+      createObject(enemies.Promise)
     ],
     enemyCount: 1
   },
@@ -36,8 +34,8 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      createObject(enemies.Chrome, 4, 3),
-      createObject(enemies.Firefox, 11, 11)
+      createObject(enemies.Chrome),
+      createObject(enemies.Firefox)
     ],
     enemyCount: 1
   }

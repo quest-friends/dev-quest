@@ -9,7 +9,7 @@
     "postinstall": "npm run build",
     "build": "browserify . -o public/bundle.js -g uglifyify",
     "watch": "watchify . -o public/bundle.js -d",
-    "test": "tape tests/reducerTests.js | tap-spec",
+    "test": "browserify ./tests/*.js -d | node | tap-spec",
     "test:i": "chimp --watch"
   },
   "browserify": {
