@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
     playerHealth: state.player.health,
     enemies: state.enemies,
     enemyCount: state.enemyCount,
-    items: state.items
+    items: state.items,
+    currentLevel: state.currentLevel
   }
 }
 
