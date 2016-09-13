@@ -7,7 +7,7 @@ module.exports = {
 
   Battery: {
     type: "battery",
-    messageOnPickup: "Recharging laptop battery..."
+    messageOnPickup: "Recharging batteries..."
   },
 
   FreshAir: {

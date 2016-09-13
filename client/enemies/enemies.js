@@ -6,7 +6,7 @@ module.exports = {
     messages: {
       enemyAttacks: "Google Chrome is trying to take over the world...",
       playerAttacks: "Installing an open source browser to replace Google Chrome...",
-      enemyDefeated: "Chrome is gone, now start using Duck Duck Go search engine!"
+      enemyDefeated: "Chrome gone, next step: use Duck Duck Go search engine!"
     }
   },
     Firefox: {
@@ -22,8 +22,8 @@ module.exports = {
     type: "ie6",
     health: 2,
     messages: {
-      enemyAttacks: "Your code is smushed by Internet Explorer v1-8...",
-      playerAttacks: "Writing backwards compatible code to deal to Internet Explorer...",
+      enemyAttacks: "Your code is smushed by old versions of Internet Explorer...",
+      playerAttacks: "Writing backwards compatible code to deal to Internet Exploder...",
       enemyDefeated: "Outdated Microsoft product dies!"
     }
   },
@@ -34,7 +34,7 @@ module.exports = {
       messages: {
         enemyAttacks: "Safari doesn't support the plug-in you need - why would you want to add anything to an already perfect Apple product?",
         playerAttacks: "Hating on an Apple product gives you nerd cred...",
-        enemyDefeated: "There's only a core left of that apple!"
+        enemyDefeated: "There's not even a core left of that apple!"
       }
     },
 
@@ -42,9 +42,9 @@ module.exports = {
       type: "promise",
       health: 1,
       messages: {
-        enemyAttacks: "promise-y attack",
-        playerAttacks: "You attack the promise, but it just returns a new promise!",
-        enemyDefeated: "promise died...?"
+        enemyAttacks: "Promises ensnare you in a chain of thens and whens...",
+        playerAttacks: "Executing the promise just returns a new promise...",
+        enemyDefeated: "Promises never die!"
       }
     }
   }

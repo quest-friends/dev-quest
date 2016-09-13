@@ -6,9 +6,9 @@ module.exports = {
       type: "rabbithole",
       triggered: false,
       messageOnTrigger: 'Triggering a rabbithole wastes hours...'
-    }
+    },
 
-  InfinteLoop: {
+  InfiniteLoop: {
     type: "infiniteloop",
     triggered: false,
     messageOnTrigger: "Browser crashes because you coded an infinite loop"
