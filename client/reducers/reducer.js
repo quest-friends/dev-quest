@@ -36,6 +36,9 @@ function reducer (state = initialState, action) {
             if (isExitOpen)
               { nextLevel(newState, levelList, tileGrids) }
             else {
+              if (currentLevel == 3) {
+          newState.loggedMessages = [...newState.loggedMessages, "Have you found all the syntax errors?"]          
+              }
           newState.loggedMessages = [...newState.loggedMessages, "Exit blocked!"]
             }
           }
