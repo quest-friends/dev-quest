@@ -1,6 +1,18 @@
 module.exports = {
 
-  Coffee : { position: { x: 1, y: 7},
-    type: "coffee"
+  Coffee : {
+    type: "coffee",
+    messageOnPickup: "Instant human, just add coffee"
+  },
+
+  Battery: {
+    type: "battery",
+    messageOnPickup: "Recharging laptop battery..."
+  },
+
+  CodeRed: {
+    type: "codeRed",
+    messageOnPickup: "Now coding twice as fast, but a bit jittery"
   }
+
 }

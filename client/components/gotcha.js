@@ -13,12 +13,20 @@ class Gotcha extends React.Component {
   gotchaTypeToRender() {
     const gotchaType = this.getPresentGotcha().type
 
-    switch (gotchaType){
-      case ("rabbithole"):
-        return <div></div>
-      default:
-        return ""
+    if(this.getPresentGotcha().triggered){
+      switch (gotchaType){
+        case ("rabbithole"):
+          return <div><img src={"./img/enemies/firefox.png"} alt="firefox" className="img-enemy" /></div>
+        default:
+          return ""
+      }
     }
+    else {
+      return ""
+    }
+
+
+
   }
 
   render(){
