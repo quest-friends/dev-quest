@@ -3,6 +3,7 @@ module.exports = {
   Chrome: {
     type: "chrome",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "Google Chrome is trying to take over the world...",
       playerAttacks: "Installing an open source browser to replace Google Chrome...",
@@ -13,6 +14,7 @@ module.exports = {
   Firefox: {
     type: "firefox",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "Unhelpful Firefox developer tools slow you down...",
       playerAttacks: "Abandoning Firefox to go back to Chrome...",
@@ -23,6 +25,7 @@ module.exports = {
   Ie6: {
     type: "ie6",
     health: 2,
+    attack: 5,
     messages: {
       enemyAttacks: "Your code is smushed by Internet Explorer v1-8...",
       playerAttacks: "Writing backwards compatible code to deal to Internet Explorer...",
@@ -33,6 +36,7 @@ module.exports = {
   Safari: {
     type: "safari",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "Safari doesn't support the plug-in you need - why would you want to add anything to an already perfect Apple product?",
       playerAttacks: "Hating on an Apple product gives you nerd cred...",
@@ -43,8 +47,9 @@ module.exports = {
   Var: {
     type: "var",
     health: 1,
+    attack: 5,
     messages: {
-      enemyAttacks: "var-y attack",
+      enemyAttacks: "var attack",
       playerAttacks: "You attack the var, but it just returns a new var!",
       enemyDefeated: "var died"
     }
@@ -53,8 +58,9 @@ module.exports = {
   Const: {
     type: "const",
     health: 1,
+    attack: 5,
     messages: {
-      enemyAttacks: "const-y attack",
+      enemyAttacks: "const attack",
       playerAttacks: "You attack the const, but it just returns a new const!",
       enemyDefeated: "const died"
     }
@@ -63,8 +69,9 @@ module.exports = {
   Let: {
     type: "let",
     health: 1,
+    attack: 5,
     messages: {
-      enemyAttacks: "let-y attack",
+      enemyAttacks: "let attack",
       playerAttacks: "You attack the let, but it just returns a new let!",
       enemyDefeated: "let died"
     }
@@ -73,6 +80,7 @@ module.exports = {
   Bracket: {
     type: "bracket",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "bracket attack",
       playerAttacks: "You attack the bracket, but it just returns a new bracket!",
@@ -83,6 +91,7 @@ module.exports = {
   Comma: {
     type: "comma",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "comma-y attack",
       playerAttacks: "You attack the comma, but it just returns a new comma!",
@@ -93,6 +102,7 @@ module.exports = {
   Emeny: {
     type: "emeny",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "emeny attack",
       playerAttacks: "You attack the emeny, but it just returns a new emeny!",
@@ -103,6 +113,7 @@ module.exports = {
   Promise: {
     type: "promise",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "promise-y attack",
       playerAttacks: "You attack the promise, but it just returns a new promise!",
@@ -113,6 +124,7 @@ module.exports = {
   Async: {
     type: "async",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "async attack",
       playerAttacks: "You attack the async, but it just returns a new async!",
