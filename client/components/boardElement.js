@@ -14,6 +14,13 @@ class BoardElement extends React.Component {
     return tileType
   }
 
+//returns the current level
+
+  whatIsCurrentLevel(){
+    const {currentLevel} = this.props
+    return currentLevel
+  }
+
 //function returns true only if the current tile (position(i,j)) matches player's (x,y) position
   isPlayerPresent() {
     const {playerPosition, i, j} = this.props
@@ -47,7 +54,7 @@ class BoardElement extends React.Component {
   render(){
     return (
       <div className='board-element'>
-        <Tile tileType={this.whatIsTileType()} />
+        <Tile tileType={this.whatIsTileType()} currentLevel={this.whatIsCurrentLevel()} />
         { this.isGotchaPresent() ? <GotchaConnector
           x={this.props.j}
           y={this.props.i}
