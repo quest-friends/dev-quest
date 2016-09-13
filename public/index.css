@@ -29,12 +29,12 @@ h1, h2, h3 {
   box-sizing: border-box;
   width: 5%;
   height: 2.4vw;
-  
+
   float: left;
 }
 
 .tile {
-  background-color: lightblue;
+  background-color: black;
   position: absolute;
   left: 50%;
   top: 50%;
