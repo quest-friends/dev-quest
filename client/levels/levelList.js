@@ -1,9 +1,7 @@
 var enemies = require('../enemies/enemies')
 var items = require('../items/items')
+var clone = require('clone')
 
-const createObject = (type) => {
-  return Object.assign({}, type)
-}
 
 const levelList = [
   {
@@ -11,11 +9,13 @@ const levelList = [
       position:{ x: 2, y: 2 }
     },
     enemies: [
-      createObject(enemies.Promise)
+      clone(enemies.Chrome),
+      clone(enemies.Firefox),
+      clone(enemies.Promise)
     ],
     items: [
-      createObject(items.Coffee),
-      createObject(items.Coffee)
+      clone(items.Coffee),
+      clone(items.Coffee)
       ],
     enemyCount: 1,
   },
@@ -25,7 +25,9 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      createObject(enemies.Promise)
+      clone(enemies.Chrome),
+      clone(enemies.Firefox),
+      clone(enemies.Promise)
     ],
     enemyCount: 1
   },
@@ -34,8 +36,8 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      createObject(enemies.Chrome),
-      createObject(enemies.Firefox)
+      clone(enemies.Chrome),
+      clone(enemies.Firefox)
     ],
     enemyCount: 1
   }
