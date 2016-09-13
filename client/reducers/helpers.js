@@ -126,18 +126,12 @@ const moveTowardsPlayer = (enemy, state) => {
   }
 
   const checkIfExitShouldBeOpen = (currentLevel, enemies, itemsList) => {
-    console.log("inside check exit", currentLevel, enemies.length);
-    console.log("this is the itemsList within check exit ", itemsList);
-
     var itemTypeArray = itemsList.map( (item) => { return item.type})
-
-    console.log("indexOf within the check exit", itemTypeArray.indexOf("apiKey") )
-
-    if ( currentLevel == 3 && enemies.length == 0 ) {
+    if ( currentLevel != 3 && itemTypeArray.indexOf("apiKey") == -1 )
+    {
       return true
     }
-    else if ( itemTypeArray.indexOf("apiKey") == -1 )
-    {
+    else if ( currentLevel == 3 && enemies.length == 0 ) {
       return true
     }
     else {
