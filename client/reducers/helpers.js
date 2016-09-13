@@ -77,6 +77,11 @@ const moveTowardsPlayer = (enemy, state) => {
       moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
     }
   }
+  const playerPoss = (newState) => {
+    newState.tileGrid.map((row)=> {
+      row.findIndex((tileType)=> tileType == 4)
+    })
+  }
 
   const nextLevel = (newState, levelList, tileGrids) => {
     newState.currentLevel ++
@@ -87,6 +92,8 @@ const moveTowardsPlayer = (enemy, state) => {
     var level = levelList[newState.currentLevel-2]
     newState.tileGrid = tileGrids[Math.floor(Math.random() * tileGrids.length)]
     newState.player.position = level.player.position
+    console.log(level.player.position);
+    console.log(newState.tileGrid);
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
     newState.items = level.items

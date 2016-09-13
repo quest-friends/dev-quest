@@ -15,7 +15,7 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee)
+      clone(items.Battery)
       ],
     enemyCount: 1,
   },
@@ -31,7 +31,7 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee)
+      clone(items.Battery)
       ],
     enemyCount: 1
   },
@@ -45,7 +45,7 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee)
+      clone(items.Battery)
       ],
     enemyCount: 1
   }
