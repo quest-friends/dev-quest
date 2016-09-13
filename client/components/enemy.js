@@ -24,6 +24,8 @@ class Enemy extends React.Component {
         return <div><img src={"./img/enemies/firefox.png"} alt="firefox" className="img-enemy" /></div>
       case ("safari"):
         return <div><img src={"./img/enemies/Opera.png"} alt="googlechrome" className="img-enemy" /></div>
+      case ("promise"):
+        return <div><img src={"./img/enemies/Opera.png"} alt="googlechrome" className="img-enemy" /></div>
       default:
         return ""
       }
