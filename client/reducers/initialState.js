@@ -31,11 +31,13 @@ const initialState = {
       x: 1,
       y: 6
     },
+
     health: 0,
     charge: 0,
     xp: 0,
     attack: 0,
-    defence: 0
+    defence: 0,
+    hasBeenAttacked: false
   },
   enemyCount: 4,
   enemies: [

@@ -10,7 +10,14 @@ function reducer (state = initialState, action) {
 
   var newState = clone(state)
   var nextTile
-  var {isPlayerAdjacent, moveTowardsPlayer, nextLevel, removeElementFromArray} = helpers
+  var {
+    isPlayerAdjacent,
+    moveTowardsPlayer,
+    nextLevel,
+    removeElementFromArray,
+    moveAroundRandomly,
+    randomiseObjectPositionToFloorTile
+  } = helpers
 
   switch(action.type){
 
@@ -42,15 +49,26 @@ function reducer (state = initialState, action) {
       newState.loggedMessages = [...newState.loggedMessages, messages.playerAttacks]
 
       if (attackedEnemy.health <= 0) {
-        newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
-        newState.enemyCount--
-        newState.player.xp += 5
-        if (newState.player.xp >= 10) {
-          newState.player.attack++
+        if(attackedEnemy.type == "promise") {
+          randomiseObjectPositionToFloorTile(newState.tileGrid, attackedEnemy)
+          attackedEnemy.health++
         }
-        newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
+
+        else {
+          newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
+          newState.enemyCount--
+          newState.player.xp += 5
+          if (newState.player.xp >= 10) {
+            newState.player.attack++
+          }
+          newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
+        }
       }
       return newState
+
+      case 'PLAYER_ATTACKED_TO_FALSE':
+        newState.player.hasBeenAttacked = false
+        return newState
 
     // these are the cases for player to item interaction
 
@@ -72,11 +90,14 @@ function reducer (state = initialState, action) {
         if(isPlayerAdjacent(newState.player, enemy)){
           newState.loggedMessages = [...newState.loggedMessages, enemy.messages.enemyAttacks]
           newState.player.health--
+          newState.player.hasBeenAttacked = true
             if (newState.player.health <= 5) {
               newState.loggedMessages = [...newState.loggedMessages, "Your well-being is important - go get some coffee"]
             }
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
+        } else if (enemy.type == 'firefox') {
+          moveAroundRandomly(enemy, newState)
         }
       })
       return newState

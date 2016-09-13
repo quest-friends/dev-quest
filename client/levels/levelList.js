@@ -10,7 +10,8 @@ const levelList = [
     },
     enemies: [
       clone(enemies.Chrome),
-      clone(enemies.Firefox)
+      clone(enemies.Firefox),
+      clone(enemies.Promise)
     ],
     items: [
       clone(items.Coffee),
@@ -25,7 +26,8 @@ const levelList = [
     },
     enemies: [
       clone(enemies.Chrome),
-      clone(enemies.Firefox)
+      clone(enemies.Firefox),
+      clone(enemies.Promise)
     ],
     enemyCount: 1
   },
