@@ -4,6 +4,6 @@ module.exports = {
   RabbitHole:  {
       type: "rabbithole",
       triggered: false,
-      messageOnTrigger: 'I triggered a rabbithole'
+      messageOnTrigger: 'Triggering a rabbithole wastes SO much time...'
     }
   }
