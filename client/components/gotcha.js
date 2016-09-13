@@ -16,8 +16,10 @@ class Gotcha extends React.Component {
     if(this.getPresentGotcha().triggered){
       switch (gotchaType){
         case ("rabbithole"):
+        case ("infiniteloop"):
+        case ("pushedtomaster"):
           return <div><img src={"./img/rabbithole.png"} alt="firefox" className="img-enemy" /></div>
-        default:
+      default:
           return ""
       }
     }

@@ -30,7 +30,8 @@ const levelList = [
       ],
     gotchas: [
       clone(gotchas.RabbitHole),
-      clone(gotchas.RabbitHole)
+      clone(gotchas.InfinteLoop),
+      clone(gotchas.PushedToMaster)
     ],
     enemyCount: 3,
   },
