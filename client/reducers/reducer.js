@@ -81,7 +81,7 @@ function reducer (state = initialState, action) {
             }
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
-        } else if (enemy.type == 'ie6') {
+        } else if (enemy.type == 'firefox') {
           moveAroundRandomly(enemy, newState)
         }
       })

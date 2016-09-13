@@ -34,7 +34,7 @@ const initialState = {
     hasBeenAttacked: false
   },
   enemies: [
-    { position: { x: 10, y: 4 },
+    { position: { x: 1, y: 4 },
       health: 2,
       type: "ie6",
       messages: {
@@ -54,7 +54,7 @@ const initialState = {
       }
     },
 
-    { position: { x: 4, y: 7 },
+    { position: { x: 10, y: 12 },
       health: 1,
       type: "firefox",
       messages: {
