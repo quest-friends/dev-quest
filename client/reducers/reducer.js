@@ -79,16 +79,13 @@ function reducer (state = initialState, action) {
       })
       var collectedItem = newState.items[collectedItemIndex].type
         newState.items = removeElementFromArray(newState.items, collectedItemIndex)
-          if (collectedItem == 'coffee') {
+        console.log(newState.player);
+        if (collectedItem == 'coffee') {
             newState.player.health++
         }
-        console.log("item with type", collectedItem)
-        // collectedItem
-        // newState.player.health++
-        // if (newState.items == 'coffee') {
-        //   console.log("inside adding health");
-        //   return newState.player.health ++
-        // }
+        else if (collectedItem == 'battery') {
+          newState.player.charge+= 30
+        }
         newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnPickup]
       return newState
 
