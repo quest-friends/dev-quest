@@ -14,7 +14,7 @@ class Tile extends React.Component {
     const tileType = this.props.tileType
     switch (tileType) {
       case (0):
-        return <div><img src={`./img/background/wall${number}.png`} alt="wall" className="img-enemy" /></div>
+        return <div><img src={`./img/background/wall${number}.gif`} alt="wall" className="img-enemy" /></div>
       case (1):
         return <div><img src={`./img/background/floor${number}.png`} alt="floor" className="img-enemy" /></div>
       case (2):
