@@ -3,13 +3,13 @@ import React from 'react'
 class Player extends React.Component {
 
   componentDidMount() {
-    // if (playerTookDamage) this.props.resetAttackedState()
+    if (this.props.hasBeenAttacked){
+      this.props.resolvePlayerDamage()
+    }
   }
-
 
   render(){
     const attackedClass = this.props.hasBeenAttacked ? 'attacked' : ''
-
     return (
       <div className='player'>
         <span className={attackedClass}>

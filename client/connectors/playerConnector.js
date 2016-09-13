@@ -14,10 +14,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    resolvePlayerDamage: () => dispatch(resolvePlayerDamage())
+    resolvePlayerDamage: () => {dispatch(resolvePlayerDamage())}
   }
 }
 
-const playerConnector = connect(mapStateToProps)(Player)
+const playerConnector = connect(mapStateToProps, mapDispatchToProps)(Player)
 
 export default playerConnector

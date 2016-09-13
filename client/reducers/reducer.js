@@ -16,7 +16,6 @@ function reducer (state = initialState, action) {
     case 'PLAYER_MOVE':
         nextTile = newState.tileGrid[action.payload.y][action.payload.x]
         if (nextTile == 1 || nextTile == 2) {
-          // newState.player.hasBeenAttacked = false
           newState.player.position.x = action.payload.x
           newState.player.position.y = action.payload.y
         } else if (nextTile == 3) {
@@ -31,7 +30,6 @@ function reducer (state = initialState, action) {
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
-      // newState.player.hasBeenAttacked = false
       var {position, messages} = action.payload
 
       var attackedEnemyIndex = newState.enemies.findIndex(function(enemy){
@@ -52,6 +50,10 @@ function reducer (state = initialState, action) {
         newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
       }
       return newState
+
+      case 'RESOLVE_PLAYER_DAMAGE':
+        newState.player.hasBeenAttacked = false
+        return newState
 
     // these are the cases for player to item interaction
 
