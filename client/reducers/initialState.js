@@ -26,8 +26,8 @@ const initialState = {
       x: 1,
       y: 6
     },
-    health: 20,
-    charge: 100,
+    health: 7,
+    charge: 50,
     xp: 0,
     attack: 1,
     defence: 1
@@ -79,13 +79,16 @@ const initialState = {
   loggedMessages: [ "Hello World!" ],
   items: [
     { position: { x: 1, y: 7},
-      type: "coffee"
+      type: "coffee",
+      messageOnPickup: "Instant human, just add coffee"
     },
     { position: { x: 5, y: 12},
-      type: "codeRed"
+      type: "codeRed",
+      messageOnPickup: "Now coding twice as fast, but a bit jittery"
     },
     { position: { x: 5, y: 5 },
-      type: "battery"
+      type: "battery",
+      messageOnPickup: "Recharging laptop battery..."
     }
   ]
 }
