@@ -40,9 +40,9 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Firefox)
+      clone(enemies.Const),
+      clone(enemies.Let),
+      clone(enemies.Var)
     ],
     items: [
       clone(items.Coffee),
@@ -63,8 +63,9 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
-      clone(enemies.Chrome),
-      clone(enemies.Firefox)
+      clone(enemies.Emeny),
+      clone(enemies.Bracket),
+      clone(enemies.Comma)
     ],
     items: [
       clone(items.Coffee),
