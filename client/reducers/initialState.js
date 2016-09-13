@@ -26,8 +26,8 @@ const initialState = {
       x: 1,
       y: 6
     },
-    health: 20,
-    charge: 100,
+    health: 7,
+    charge: 50,
     xp: 0,
     attack: 1,
     defence: 1,
@@ -38,10 +38,9 @@ const initialState = {
       health: 2,
       type: "ie6",
       messages: {
-        enemyDetected: "OMG it's ie6 - are people really still using it?",
-        enemyAttacks: "ie6 doesn't support stuff and your code gets smushed and you lose 1 health point",
-        playerAttacks: "You write backwards compatible code - take that, ie6!" ,
-        enemyDefeated: "The world is now safe from ie6 and other outdated Microsoft products..."
+        enemyAttacks: "Your code is smushed by Internet Explorer v1-8...",
+        playerAttacks: "Writing backwards compatible code to deal to Internet Explorer...",
+        enemyDefeated: "Outdated Microsoft product dies!"
       }
     },
 
@@ -49,10 +48,9 @@ const initialState = {
       health: 1,
       type: "chrome",
       messages: {
-        enemyDetected: "It's Chrome: the tentacles of Google are everywhere...",
-        enemyAttacks: "Chrome tries to take over the world",
-        playerAttacks: "You decide to install an open source browser instead of Google Chrome",
-        enemyDefeated: "Chrome is gone, your next challenge is to start using Duck Duck Go search engine"
+        enemyAttacks: "Google Chrome is trying to take over the world...",
+        playerAttacks: "Installing an open source browser to replace Google Chrome...",
+        enemyDefeated: "Chrome is gone, now start using Duck Duck Go search engine!"
       }
     },
 
@@ -60,21 +58,19 @@ const initialState = {
       health: 1,
       type: "firefox",
       messages: {
-        detected: "It's Firefox!",
-        enemyAttacks: "Unhelpful Firefox developer tools slow you down",
-        playerAttacks: "Player does something to Firefox",
-        enemyDefeated: "Bye-bye cute Firefox logo"
+        enemyAttacks: "Unhelpful Firefox developer tools slow you down...",
+        playerAttacks: "Abandoning Firefox to go back to Chrome...",
+        enemyDefeated: "Bye-bye cute fox logo!"
       }
     },
 
     { position: { x: 2, y: 5 },
       health: 1,
-      type: "opera",
+      type: "safari",
       messages: {
-        detected: "It's an Opera!",
-        enemyAttacks: "In an as yet undefined way Opera browser does damage...",
-        playerAttacks: "Player does something to Opera",
-        enemyDefeated: "Bye-bye Opera"
+        enemyAttacks: "Safari doesn't support the plug-in you need - why would you want to add anything to an already perfect Apple product?",
+        playerAttacks: "Hating on an Apple product gives you nerd cred...",
+        enemyDefeated: "There's only a core left of that apple!"
       }
     }
   ],
@@ -84,13 +80,16 @@ const initialState = {
   loggedMessages: [ "Hello World!" ],
   items: [
     { position: { x: 1, y: 7},
-      type: "coffee"
+      type: "coffee",
+      messageOnPickup: "Instant human, just add coffee"
     },
     { position: { x: 5, y: 12},
-      type: "codeRed"
+      type: "codeRed",
+      messageOnPickup: "Now coding twice as fast, but a bit jittery"
     },
     { position: { x: 5, y: 5 },
-      type: "battery"
+      type: "battery",
+      messageOnPickup: "Recharging laptop battery..."
     }
   ]
 }

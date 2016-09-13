@@ -23,6 +23,9 @@ function reducer (state = initialState, action) {
           nextLevel(newState, levelList, tileGrids)
         }
         newState.player.charge --
+        if (newState.player.charge <= 10) {
+          newState.loggedMessages = [...newState.loggedMessages, "Battery less than 10%, recharge now!"]
+        }
         return newState
 
     //these are the cases for the player attacking
@@ -60,15 +63,20 @@ function reducer (state = initialState, action) {
       })
         newState.items = removeElementFromArray(newState.items, collectedItemIndex)
         newState.player.health++
+        newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnPickup]
       return newState
 
     //these are the cases for enemies attacking
 
     case 'ALL_ENEMIES_ACT':
       newState.enemies.map(function(enemy){
-        if (isPlayerAdjacent(newState.player, enemy)) {
+        if(isPlayerAdjacent(newState.player, enemy)){
+          newState.loggedMessages = [...newState.loggedMessages, enemy.messages.enemyAttacks]
           newState.player.health--
           newState.player.hasBeenAttacked = true
+            if (newState.player.health <= 5) {
+              newState.loggedMessages = [...newState.loggedMessages, "Your well-being is important - go get some coffee"]
+            }
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
         }
