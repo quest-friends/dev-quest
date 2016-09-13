@@ -13,7 +13,7 @@ class Player extends React.Component {
     return (
       <div className='player'>
         <span className={attackedClass}>
-          <img src={"./img/player/player.png"} alt="googlechrome" className="img-player" />
+          <img src={"./img/player/python.gif"} alt="player" className="img-player" />
         </span>
       </div>
     )

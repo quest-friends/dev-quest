@@ -173,16 +173,16 @@ span {
   width: 110%;
   height: 110%;
 }
+
 .img-enemy {
   width: 80%;
   height: 80%;
 }
 
 .img-player {
-  height:50%;
-  width:50%;
+  width: 100%;
+  height: 100%;
 }
-
 .attacked {
   animation:blink 700ms 100ms;
 }
