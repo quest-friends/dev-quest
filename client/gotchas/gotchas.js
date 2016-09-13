@@ -7,7 +7,7 @@ module.exports = {
     messageOnTrigger: "You've fallen into a rabbit hole and wasted hours in the blink of an eye."
   },
 
-  InfinteLoop: {
+  InfiniteLoop: {
     type: "infiniteloop",
     triggered: false,
     messageOnTrigger: "Oh no! An infinite loop crashed your browser."
