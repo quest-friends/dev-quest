@@ -1,9 +1,10 @@
 const initialState = require('./initialState')
 const combineReducers = require('redux').combineReducers
+const clone = require('clone')
+
+const helpers = require('./helpers')
 const levelList = require('../levels/levelList')
 const tileGrids = require('../levels/tileGrids')
-const helpers = require('./helpers')
-const clone = require('clone')
 
 function reducer (state = initialState, action) {
 
@@ -83,6 +84,12 @@ function reducer (state = initialState, action) {
     //these are the cases for game running
     case 'START_GAME':
       newState.display = "game"
+      newState.player.type = action.payload.type
+      newState.player.health = action.payload.health
+      newState.player.charge = action.payload.charge
+      newState.player.xp = action.payload.xp
+      newState.player.attack = action.payload.attack
+      newState.player.defence = action.payload.defence
       return newState
 
     case 'WIN_GAME':

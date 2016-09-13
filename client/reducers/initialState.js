@@ -22,15 +22,16 @@ const initialState = {
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
   ],
   player: {
+    type: null,
     position: {
       x: 1,
       y: 6
     },
-    health: 7,
-    charge: 50,
+    health: 0,
+    charge: 0,
     xp: 0,
-    attack: 1,
-    defence: 1
+    attack: 0,
+    defence: 0
   },
   enemies: [
     { position: { x: 1, y: 4 },
