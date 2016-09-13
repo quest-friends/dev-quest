@@ -54,7 +54,7 @@ const initialState = {
       }
     },
 
-    { position: { x: 4, y: 7 },
+    { position: { x: 10, y: 12 },
       health: 1,
       type: "firefox",
       messages: {
