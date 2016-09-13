@@ -17,15 +17,13 @@ class Enemy extends React.Component {
     const enemyType = this.getPresentEnemy().type
     switch (enemyType){
       case ("ie6"):
-        return <span>ie6</span>
+        return <div><img src={"./img/enemies/ie6.png"} alt="googlechrome" className="img-enemy" /></div>
       case ("chrome"):
-        return <div><img src={"./img/googleChrome.svg.png"} alt="googlechrome" className="img-enemy" /></div>
-        //return <span>chrome</span>
+        return <div><img src={"./img/enemies/googleChrome.png"} alt="googlechrome" className="img-enemy" /></div>
       case ("firefox"):
-        return <div><img src={"./img/firefox.png"} alt="firefox" className="img-enemy" /></div>
-        //return <span>firefox</span>
+        return <div><img src={"./img/enemies/firefox.png"} alt="firefox" className="img-enemy" /></div>
       case ("opera"):
-        return <span>opera</span>
+        return <div><img src={"./img/enemies/Opera.png"} alt="googlechrome" className="img-enemy" /></div>
       default:
         return ""
       }
