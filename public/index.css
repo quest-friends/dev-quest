@@ -1,8 +1,8 @@
 body {
   text-align: center;
   height: 100%;
-  background-color: #B89A56;
-  color: #3b330d;
+  background-color: #3b330d;
+  color: #B89A56;
   font-family: 'Geo', sans-serif;
 }
 
@@ -16,8 +16,11 @@ h2, h3 {
 }
 
 h4 {
-  
   padding-left: 20px;
+}
+
+h5 {
+  margin: 0;
 }
 
 p {
@@ -138,6 +141,15 @@ span {
   background-color: #635516;
   border: 3px solid black;
   margin: auto;
+}
+
+.class-picture {
+  height: 40%;
+}
+
+.class-starting-stats {
+  text-align: left;
+  padding: 20px 30px;
 }
 
 .start-game-button {
