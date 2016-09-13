@@ -1,5 +1,6 @@
 var enemies = require('../enemies/enemies')
 var items = require('../items/items')
+var gotchas = require('../gotchas/gotchas')
 var clone = require('clone')
 
 
@@ -17,6 +18,10 @@ const levelList = [
       clone(items.Coffee),
       clone(items.Battery)
       ],
+    gotchas: [
+      clone(gotchas.RabbitHole),
+      clone(gotchas.RabbitHole)
+    ],
     enemyCount: 1,
   },
 
@@ -33,6 +38,10 @@ const levelList = [
       clone(items.Coffee),
       clone(items.Battery)
       ],
+      gotchas: [
+        clone(gotchas.RabbitHole),
+        clone(gotchas.RabbitHole)
+      ],
     enemyCount: 1
   },
   {
@@ -46,6 +55,10 @@ const levelList = [
     items: [
       clone(items.Coffee),
       clone(items.Battery)
+      ],
+      gotchas: [
+        clone(gotchas.RabbitHole),
+        clone(gotchas.RabbitHole)
       ],
     enemyCount: 1
   }

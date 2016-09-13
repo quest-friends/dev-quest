@@ -16,6 +16,7 @@ class Game extends React.Component {
   componentDidMount () {
     var presentEnemy
     var presentItem
+    var presentGotcha
 
   //This removes defaults for firefox
   document.addEventListener('keypress', (evt) => {
@@ -52,15 +53,22 @@ class Game extends React.Component {
           return (item.position.y == nextPosition.y && item.position.x == nextPosition.x)
         })
 
-          if (presentEnemy) {
-            this.props.playerAttack (presentEnemy)
+        presentGotcha = this.props.gotchas.find(function (gotcha) {
+          return (gotcha.position.y == nextPosition.y && gotcha.position.x == nextPosition.x)
+        })
+
+        if (presentEnemy) {
+          this.props.playerAttack (presentEnemy)
+        }
+        else {
+          this.props.playerMove (nextPosition.y, nextPosition.x)
+          if (presentItem) {
+            this.props.pickUpItem (presentItem)
           }
-          else {
-            this.props.playerMove (nextPosition.y, nextPosition.x)
-            if (presentItem) {
-              this.props.pickUpItem (presentItem)
-            }
+          if (presentGotcha && presentGotcha.triggered==false) {
+            this.props.stepOnGotcha(presentGotcha)
           }
+        }
 
         this.props.allEnemiesAct()
         if (this.isPlayerDead()) {
