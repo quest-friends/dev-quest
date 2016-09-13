@@ -34,11 +34,16 @@ function reducer (state = initialState, action) {
       })
       var attackedEnemy = newState.enemies[attackedEnemyIndex]
 
-      attackedEnemy.health --
+      attackedEnemy.health -= newState.player.attack
       newState.loggedMessages = [...newState.loggedMessages, messages.playerAttacks]
+
       if (attackedEnemy.health <= 0) {
         newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
         newState.enemyCount--
+        newState.player.xp += 5
+        if (newState.player.xp >= 10) {
+          newState.player.attack++
+        }
         newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
       }
       return newState
