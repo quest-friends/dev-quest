@@ -59,7 +59,7 @@ function reducer (state = initialState, action) {
       newState.loggedMessages = [...newState.loggedMessages, messages.playerAttacks]
 
       if (attackedEnemy.health <= 0) {
-        if(attackedEnemy.type == "promise") {
+        if(attackedEnemy.type == "promise" || attackedEnemy.type == "async") {
           randomiseObjectPositionToFloorTile(newState.tileGrid, attackedEnemy)
           attackedEnemy.health++
         }
@@ -133,9 +133,10 @@ function reducer (state = initialState, action) {
             if (newState.player.health <= 5) {
               newState.loggedMessages = [...newState.loggedMessages, "Your well-being is important - go get some coffee"]
             }
-        } else if (enemy.type == 'chrome') {
+        } else if (enemy.type == 'chrome' || enemy.type == 'let' || enemy.type == 'var' ||
+                    enemy.type == 'comma' || enemy.type == 'bracket') {
           moveTowardsPlayer(enemy, newState)
-        } else if (enemy.type == 'firefox') {
+        } else if (enemy.type == 'firefox' || enemy.type == 'emeny') {
           moveAroundRandomly(enemy, newState)
         }
       })
