@@ -2,10 +2,7 @@ import React from 'react'
 
 class LossScreen extends React.Component {
 
-
-
   reloadGame () {
-    // console.log("in function");
     location.reload()
   }
 
