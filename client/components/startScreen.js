@@ -18,7 +18,7 @@ class StartScreen extends React.Component {
         <div className="new-player-class">
           <div className="class-info">
             <div className="class-picture">
-              <img alt="JavaScript"></img>
+              <img src="./img/player/player.png" alt="JavaScript" />
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
@@ -37,7 +37,7 @@ class StartScreen extends React.Component {
         <div className="new-player-class">
           <div className="class-info">
             <div className="class-picture">
-              <img alt="Ruby"></img>
+              <img src="./img/player/ruby.gif" alt="Ruby" />
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
@@ -56,7 +56,7 @@ class StartScreen extends React.Component {
         <div className="new-player-class">
           <div className="class-info">
             <div className="class-picture">
-              <img alt="Python"></img>
+              <img src="./img/player/python.gif" alt="Python" />
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
