@@ -36,7 +36,6 @@ const initialState = {
     charge: 0,
     xp: 0,
     attack: 0,
-    defence: 0,
     hasBeenAttacked: false
   },
   enemyCount: 4,

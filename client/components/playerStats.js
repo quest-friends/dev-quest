@@ -10,7 +10,6 @@ class PlayerStats extends React.Component {
         <h4>- Wellbeing: {this.props.health}</h4>
         <h4>- Exp: {this.props.xp}</h4>
         <h4>- Attack: {this.props.attack}</h4>
-        <h4>- Defence: {this.props.defence}</h4>
         <h4>- Laptop Charge: {this.props.charge}%</h4>
       </div>
     )

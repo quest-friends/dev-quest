@@ -24,7 +24,6 @@ class StartScreen extends React.Component {
               <h3>Beginner Stats</h3>
               <h5>Wellbeing: 10</h5>
               <h5>Attack: 2</h5>
-              <h5>Defence: 1</h5>
               <h5>Laptop Charge: 50%</h5>
             </div>
             <button className="start-game-button" onClick={ () => this.props.startGame(players.JavaScript) } >Code in JavaScript</button>
@@ -40,7 +39,6 @@ class StartScreen extends React.Component {
               <h3>Beginner Stats</h3>
               <h5>Wellbeing: 20</h5>
               <h5>Attack: 1</h5>
-              <h5>Defence: 2</h5>
               <h5>Laptop Charge: 20%</h5>
             </div>
             <button className="start-game-button" onClick={ () => this.props.startGame(players.Ruby) } >Code in Ruby</button>
