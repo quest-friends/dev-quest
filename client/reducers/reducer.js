@@ -51,7 +51,7 @@ function reducer (state = initialState, action) {
       }
       return newState
 
-      case 'RESOLVE_PLAYER_DAMAGE':
+      case 'PLAYER_ATTACKED_TO_FALSE':
         newState.player.hasBeenAttacked = false
         return newState
 

@@ -4,7 +4,7 @@ class Player extends React.Component {
 
   componentDidMount() {
     if (this.props.hasBeenAttacked){
-      this.props.resolvePlayerDamage()
+      this.props.setPlayerAttackedToFalse()
     }
   }
 

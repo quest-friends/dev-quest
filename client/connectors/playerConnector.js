@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Player from '../components/player'
-import {resolvePlayerDamage} from '../actions/playerActions'
+import {setPlayerAttackedToFalse} from '../actions/playerActions'
 
 const mapStateToProps = (state) => {
   return {
@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    resolvePlayerDamage: () => {dispatch(resolvePlayerDamage())}
+    setPlayerAttackedToFalse: () => {dispatch(setPlayerAttackedToFalse())}
   }
 }
 

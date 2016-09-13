@@ -5,14 +5,13 @@ const playerAttack = (enemy) => {
     payload: enemy
   }
 }
-
-const resolvePlayerDamage = () => {
+const setPlayerAttackedToFalse = () => {
   return {
-    type: "RESOLVE_PLAYER_DAMAGE"
+    type: "PLAYER_ATTACKED_TO_FALSE"
   }
 }
 
 export {
   playerAttack,
-  resolvePlayerDamage
+  setPlayerAttackedToFalse
 }
