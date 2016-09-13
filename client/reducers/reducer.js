@@ -112,7 +112,13 @@ function reducer (state = initialState, action) {
       })
       var triggeredGotcha = newState.gotchas[triggeredGotchaIndex]
       triggeredGotcha.triggered = true
-      newState.player.health--
+      if (triggeredGotcha.type == "rabbithole") {
+        newState.player.charge -= 10
+      } else if (triggeredGotcha.type == "infiniteloop") {
+        newState.player.health -= 5
+      } else if (triggeredGotcha.type == "pushedtomaster") {
+        newState.player.attack--
+      }
       newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnTrigger]
       return newState
 
