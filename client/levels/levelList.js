@@ -15,9 +15,10 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee)
-      ],
-    enemyCount: 1,
+      clone(items.Coffee),
+      clone(items.Battery)
+    ],
+    enemyCount: 1
   },
 
   {
@@ -26,14 +27,40 @@ const levelList = [
     },
     enemies: [
       clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
+      clone(enemies.Chrome),
       clone(enemies.Firefox),
+      clone(enemies.Firefox),
+      clone(enemies.Firefox),
+      clone(enemies.Firefox),
+      clone(enemies.Firefox),
+      clone(enemies.Promise),
+      clone(enemies.Promise),
+      clone(enemies.Promise),
+      clone(enemies.Promise),
+      clone(enemies.Promise),
+      clone(enemies.Promise),
+      clone(enemies.Promise),
+      clone(enemies.Promise),
       clone(enemies.Promise)
     ],
     items: [
       clone(items.Coffee),
       clone(items.Coffee)
-      ],
-    enemyCount: 1
+    ],
+    enemyCount: 10
   },
   {
     player: {
@@ -46,7 +73,7 @@ const levelList = [
     items: [
       clone(items.Coffee),
       clone(items.Coffee)
-      ],
+    ],
     enemyCount: 1
   }
 ]

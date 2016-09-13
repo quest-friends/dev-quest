@@ -119,6 +119,22 @@ const moveTowardsPlayer = (enemy, state) => {
     return startOfArray.concat(endOfArray)
   }
 
+  const isExitOpen = (currentLevel, enemies, itemsList) => {
+    if ( currentLevel == 3 && enemies.length == 0 ) {
+      return true
+    }
+    else if ( itemsList.indexOf({
+        type: "apiKey",
+        messageOnPickup: "API key unlocks doors"
+      }) > -1 )
+    {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
 module.exports ={
   randomiseObjectPositionToFloorTile,
   moveEnemy,
@@ -127,5 +143,6 @@ module.exports ={
   isEnemyInTile,
   isPlayerAdjacent,
   removeElementFromArray,
-  moveAroundRandomly
+  moveAroundRandomly,
+  isExitOpen
 }

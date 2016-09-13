@@ -13,6 +13,11 @@ module.exports = {
   CodeRed: {
     type: "codeRed",
     messageOnPickup: "Now coding twice as fast, but a bit jittery"
+  },
+
+  ApiKey: {
+    type: "apiKey",
+    messageOnPickup: "API key unlocks doors"
   }
 
 }
