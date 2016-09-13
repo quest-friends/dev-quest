@@ -15,13 +15,13 @@ class Item extends React.Component {
 
     switch (itemType){
       case ("coffee"):
-        return <div><img src={"./img/items/coffee.png"} alt="googlechrome" className="img-enemy" /></div>
+        return <div><img src={"./img/items/coffee.png"} alt="coffee" className="img-item" /></div>
       case ("freshAir"):
-        return <span>freshAir</span>
+        return <span><img src={"./img/items/freshAir.png"} alt="freshAir" className="img-item" /></span>
       case ("battery"):
-        return <div><img src={"./img/items/battery.png"} alt="battery" className="img-enemy" /></div>
+        return <div><img src={"./img/items/battery.png"} alt="battery" className="img-item" /></div>
       case ("apiKey"):
-        return <div>APIkey</div>
+        return <div><img src={"./img/items/key.png"} alt="ApiKey" className="img-item" /></div>
       default:
         return ""
     }
