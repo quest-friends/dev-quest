@@ -29,7 +29,7 @@ h1, h2, h3 {
   box-sizing: border-box;
   width: 5%;
   height: 2.4vw;
-  border: 1px solid black;
+  
   float: left;
 }
 
