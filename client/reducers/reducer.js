@@ -32,13 +32,7 @@ function reducer (state = initialState, action) {
           newState.player.position.x = action.payload.x
           newState.player.position.y = action.payload.y
         } else if ( nextTile == 3 ) {
-            isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList) //true or false
-            if (newState.tutorialLevel && isExitOpen) {
-              newState.tutorialLevel = false
-              newState = nextLevel(newState, levelList, tileGrids)
-              newState.currentLevel--
-              return newState
-            }
+            isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList)
             if (isExitOpen)
               { newState = nextLevel(newState, levelList, tileGrids) }
             else {

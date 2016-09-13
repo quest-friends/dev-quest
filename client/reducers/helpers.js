@@ -92,7 +92,7 @@ const moveTowardsPlayer = (enemy, state) => {
       return newState
     }
     console.log(newState.currentLevel);
-    var level = levelList[newState.currentLevel-2]
+    var level = levelList[newState.currentLevel-1]
     newState.tileGrid = tileGrids[Math.floor(Math.random() * tileGrids.length)]
     movePlayerToSpawnTile(newState)
     newState.enemies = level.enemies
