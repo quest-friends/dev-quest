@@ -14,6 +14,7 @@ function reducer (state = initialState, action) {
   switch(action.type){
 
     case 'PLAYER_MOVE':
+        newState.player.hasBeenAttacked = false
         nextTile = newState.tileGrid[action.payload.y][action.payload.x]
         if (nextTile == 1 || nextTile == 2) {
           newState.player.position.x = action.payload.x
@@ -27,6 +28,7 @@ function reducer (state = initialState, action) {
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
+      // newState.player.hasBeenAttacked = false
       var {position, messages} = action.payload
 
       var attackedEnemyIndex = newState.enemies.findIndex(function(enemy){
@@ -66,6 +68,7 @@ function reducer (state = initialState, action) {
       newState.enemies.map(function(enemy){
         if (isPlayerAdjacent(newState.player, enemy)) {
           newState.player.health--
+          newState.player.hasBeenAttacked = true
         } else if (enemy.type == 'chrome') {
           moveTowardsPlayer(enemy, newState)
         }
