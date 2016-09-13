@@ -1,7 +1,8 @@
 
-function startGame () {
+function startGame (player) {
   return {
-    type: "START_GAME"
+    type: "START_GAME",
+    payload: player
   }
 }
 
