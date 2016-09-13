@@ -24,9 +24,5 @@ Ruby: {
     messageOnPlayerChoice: "Hmm Ruby - hope you like playing by the rules...",
     messageOnXpIncrease: "Your jewel box is now full of Gems!"
   }
-}
-
-
-
 
 }

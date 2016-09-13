@@ -105,6 +105,7 @@ function reducer (state = initialState, action) {
     //these are the cases for game running
     case 'START_GAME':
       newState.display = "game"
+      newState.loggedMessages = [...newState.loggedMessages, action.payload.messages.messageOnPlayerChoice]
       newState.player.type = action.payload.type
       newState.player.health = action.payload.health
       newState.player.charge = action.payload.charge

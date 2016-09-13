@@ -299,10 +299,24 @@ test('Starting Game', function (t) {
          y: 1
        }
      },
+     loggedMessages: [],
      display: "start"
    }
 
    deepFreeze(testState)
+
+   var player = {
+       type: "javascript",
+       health: 10,
+       charge: 100,
+       xp: 0,
+       attack: 2,
+       defence: 1,
+       messages: {
+         messageOnPlayerChoice: "You've chosen JavaScript, good choice!",
+         messageOnXpIncrease: "You can now write in ES6 - now you can slay const and let"
+       }
+     }
 
   var expectedState = {
      tileGrid:[
@@ -314,11 +328,18 @@ test('Starting Game', function (t) {
        position: {
          x: 1,
          y: 1
-       }
+       },
+       health: 10,
+       charge: 100,
+       type: "javascript",
+       xp: 0,
+       attack: 2,
+       defence: 1,
      },
+     loggedMessages: [ "You've chosen JavaScript, good choice!" ],
      display: "game"
    }
-  var actualState = reducer(testState, {type: "START_GAME"})
+  var actualState = reducer(testState, {type: "START_GAME", payload: player})
   t.deepEqual(actualState, expectedState, "Sending a start game action triggers the game to start")
   t.end()
 })
@@ -416,7 +437,7 @@ test('Losing Game', function (t) {
       enemies: [
         { position: { x: 1, y: 1 },
           health: 2,
-          type: "opera",
+          type: "chrome",
           messages: { playerAttacks: "player attacks"}
         }
       ],
@@ -443,7 +464,7 @@ test('Losing Game', function (t) {
        enemies: [
          { position: { x: 1, y: 1 },
            health: 1,
-           type: "opera",
+           type: "chrome",
            messages: {playerAttacks: "player attacks"}
          }
        ],
@@ -475,7 +496,7 @@ test('Enemy dies on Player Attack', function (t) {
      enemies: [
        { position: { x: 1, y: 1 },
          health: 1,
-         type: "opera",
+         type: "chrome",
          messages: { playerAttacks: "player attacks",
                       enemyDefeated: "it super died"}
        }
