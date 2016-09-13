@@ -56,10 +56,7 @@ const initialState = {
   display: "start",
   currentLevel: 1,
   gotchas: [
-    Object.assign({}, gotchas.Rabbithole, {position: {x:4, y:7}}),
-    Object.assign({}, gotchas.Rabbithole, {position: {x:3, y:7}}),
-    Object.assign({}, gotchas.Rabbithole, {position: {x:2, y:7}}),
-    Object.assign({}, gotchas.Rabbithole, {position: {x:5, y:7}})
+    Object.assign({}, gotchas.Rabbithole, {position: {x:4, y:7}})
   ]
 }
 
