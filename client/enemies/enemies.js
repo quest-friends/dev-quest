@@ -3,6 +3,7 @@ module.exports = {
   Chrome: {
     type: "chrome",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "Google Chrome is trying to take over the world...",
       playerAttacks: "Installing an open source browser to replace Google Chrome...",
@@ -12,6 +13,7 @@ module.exports = {
     Firefox: {
     type: "firefox",
     health: 1,
+    attack: 5,
     messages: {
       enemyAttacks: "Unhelpful Firefox developer tools slow you down...",
       playerAttacks: "Abandoning Firefox to go back to Chrome...",
@@ -21,6 +23,7 @@ module.exports = {
   Ie6: {
     type: "ie6",
     health: 2,
+    attack: 5,
     messages: {
       enemyAttacks: "Your code is smushed by old versions of Internet Explorer...",
       playerAttacks: "Writing backwards compatible code to deal to Internet Exploder...",
@@ -31,6 +34,7 @@ module.exports = {
   Safari: {
       type: "safari",
       health: 1,
+      attack: 5,
       messages: {
         enemyAttacks: "Safari doesn't support the plug-in you need - why would you want to add anything to an already perfect Apple product?",
         playerAttacks: "Hating on an Apple product gives you nerd cred...",
@@ -41,6 +45,7 @@ module.exports = {
   Promise: {
       type: "promise",
       health: 1,
+      attack: 5,
       messages: {
         enemyAttacks: "Promises ensnare you in a chain of thens and whens...",
         playerAttacks: "Executing the promise just returns a new promise...",
