@@ -30,7 +30,8 @@ const initialState = {
     charge: 50,
     xp: 0,
     attack: 1,
-    defence: 1
+    defence: 1,
+    hasBeenAttacked: false
   },
   enemies: [
     { position: { x: 1, y: 4 },

@@ -51,6 +51,10 @@ function reducer (state = initialState, action) {
       }
       return newState
 
+      case 'PLAYER_ATTACKED_TO_FALSE':
+        newState.player.hasBeenAttacked = false
+        return newState
+
     // these are the cases for player to item interaction
 
     case 'PICKUP_ITEM':
@@ -71,6 +75,7 @@ function reducer (state = initialState, action) {
         if(isPlayerAdjacent(newState.player, enemy)){
           newState.loggedMessages = [...newState.loggedMessages, enemy.messages.enemyAttacks]
           newState.player.health--
+          newState.player.hasBeenAttacked = true
             if (newState.player.health <= 5) {
               newState.loggedMessages = [...newState.loggedMessages, "Your well-being is important - go get some coffee"]
             }
