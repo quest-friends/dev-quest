@@ -33,8 +33,14 @@ function reducer (state = initialState, action) {
           newState.player.position.y = action.payload.y
         } else if ( nextTile == 3 ) {
             isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList) //true or false
+            if (newState.tutorialLevel && isExitOpen) {
+              newState.tutorialLevel = false
+              newState = nextLevel(newState, levelList, tileGrids)
+              newState.currentLevel--
+              return newState
+            }
             if (isExitOpen)
-              { nextLevel(newState, levelList, tileGrids) }
+              { newState = nextLevel(newState, levelList, tileGrids) }
             else {
           newState.loggedMessages = [...newState.loggedMessages, "Exit blocked!"]
             }
@@ -91,13 +97,13 @@ function reducer (state = initialState, action) {
       var collectedItemType = newState.items[collectedItemIndex].type
         newState.items = removeElementFromArray(newState.items, collectedItemIndex)
         if (collectedItemType == 'coffee') {
-            newState.player.health++
+            newState.player.health += 5
         }
         else if (collectedItemType == 'battery') {
-          newState.player.charge+= 30
+          newState.player.charge += 30
         }
         else if (collectedItemType == 'freshAir') {
-            newState.player.health+= 5
+            newState.player.health += 25
         }
         newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnPickup]
       return newState
@@ -128,7 +134,7 @@ function reducer (state = initialState, action) {
       newState.enemies.map(function(enemy){
         if(isPlayerAdjacent(newState.player, enemy)){
           newState.loggedMessages = [...newState.loggedMessages, enemy.messages.enemyAttacks]
-          newState.player.health--
+          newState.player.health-= enemy.attack
           newState.player.hasBeenAttacked = true
             if (newState.player.health <= 5) {
               newState.loggedMessages = [...newState.loggedMessages, "Your well-being is important - go get some coffee"]
