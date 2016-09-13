@@ -1,9 +1,9 @@
 module.exports = {
 
   JavaScript: {
-    type: "javascript",
+    type: "JavaScript",
     health: 10,
-    charge: 100,
+    charge: 50,
     xp: 0,
     attack: 2,
     defence: 1,
@@ -12,11 +12,10 @@ module.exports = {
       messageOnXpIncrease: "You can now write in ES6 - now you can slay const and let"
     }
   },
-
   Ruby: {
-    type: "ruby",
-    health: 4,
-    charge: 80,
+    type: "Ruby",
+    health: 20,
+    charge: 20,
     xp: 0,
     attack: 1,
     defence: 2,

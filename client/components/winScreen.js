@@ -8,11 +8,13 @@ class WinScreen extends React.Component {
 
   render(){
     return (
-      <div className="displayScreen">
-        <h1>Well done, you have reached coding enlightenment!</h1>
-        <h4>It seems your journey as a Web Developer has come to an end</h4>
-        <h2>Give it another go?</h2>
-        <button className="startGameButton" onClick={this.reloadGame}>Refactor Your Code</button>
+      <div className="display-screen">
+        <div className="display-screen-info">
+          <h1>Well done, you have reached coding enlightenment!</h1>
+          <p>It seems your journey as a Web Developer has come to an end</p>
+          <h2>Give it another go?</h2>
+        </div>
+        <button className="start-game-button" onClick={this.reloadGame}>Refactor Your Code</button>
       </div>
     )
   }
