@@ -1,5 +1,6 @@
 var enemies = require('../enemies/enemies')
 var items = require('../items/items')
+var gotchas = require('../gotchas/gotchas')
 var clone = require('clone')
 
 
@@ -15,10 +16,13 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee),
       clone(items.Battery)
     ],
-    enemyCount: 1
+    gotchas: [
+      clone(gotchas.RabbitHole),
+      clone(gotchas.RabbitHole)
+    ],
+    enemyCount: 3,
   },
 
   {
@@ -33,35 +37,20 @@ const levelList = [
       clone(enemies.Chrome),
       clone(enemies.Chrome),
       clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
-      clone(enemies.Chrome),
       clone(enemies.Firefox),
-      clone(enemies.Firefox),
-      clone(enemies.Firefox),
-      clone(enemies.Firefox),
-      clone(enemies.Firefox),
-      clone(enemies.Promise),
-      clone(enemies.Promise),
-      clone(enemies.Promise),
-      clone(enemies.Promise),
-      clone(enemies.Promise),
-      clone(enemies.Promise),
-      clone(enemies.Promise),
-      clone(enemies.Promise),
-      clone(enemies.Promise)
+      clone(enemies.Firefox)
     ],
     items: [
       clone(items.Coffee),
       clone(items.Coffee)
     ],
-    enemyCount: 10
+    gotchas: [
+      clone(gotchas.RabbitHole),
+      clone(gotchas.RabbitHole)
+    ],
+    enemyCount: 9
   },
+
   {
     player: {
       position:{ x: 1, y: 15 }
@@ -74,7 +63,11 @@ const levelList = [
       clone(items.Coffee),
       clone(items.Coffee)
     ],
-    enemyCount: 1
+    gotchas: [
+      clone(gotchas.RabbitHole),
+      clone(gotchas.RabbitHole)
+    ],
+    enemyCount: 2
   }
 ]
 

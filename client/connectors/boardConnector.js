@@ -12,6 +12,7 @@ const mapStateToProps = (state) => {
     enemies: state.enemies,
     enemyCount: state.enemyCount,
     items: state.items,
+    gotchas: state.gotchas,
     currentLevel: state.currentLevel
   }
 }

@@ -1,5 +1,6 @@
 var enemies = require('../enemies/enemies')
 var items = require('../items/items')
+var gotchas = require('../gotchas/gotchas')
 var clone = require('clone')
 
 const initialState = {
@@ -55,7 +56,9 @@ const initialState = {
   loggedMessages: [ "Hello World!" ],
   display: "start",
   currentLevel: 1,
-
-  }
+  gotchas: [
+    Object.assign({}, gotchas.Rabbithole, {position: {x:4, y:7}})
+  ]
+}
 
 module.exports = initialState
