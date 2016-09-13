@@ -90,11 +90,15 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.enemies = level.enemies
     newState.enemyCount = level.enemyCount
     newState.items = level.items
+    newState.gotchas = level.gotchas
     newState.enemies.map(function(enemy){
       randomiseObjectPositionToFloorTile(newState.tileGrid, enemy)
     })
     newState.items.map(function(item){
       randomiseObjectPositionToFloorTile(newState.tileGrid, item)
+    })
+    newState.gotchas.map(function(gotcha){
+      randomiseObjectPositionToFloorTile(newState.tileGrid, gotcha)
     })
     return newState
   }
