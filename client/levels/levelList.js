@@ -16,7 +16,7 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee)
+      clone(items.Battery)
       ],
     gotchas: [
       clone(gotchas.RabbitHole),
@@ -36,7 +36,7 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee)
+      clone(items.Battery)
       ],
       gotchas: [
         clone(gotchas.RabbitHole),
@@ -54,7 +54,7 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee)
+      clone(items.Battery)
       ],
       gotchas: [
         clone(gotchas.RabbitHole),
