@@ -17,7 +17,7 @@ module.exports = {
 
   ApiKey: {
     type: "apiKey",
-    messageOnPickup: "Hint: an API is the key to finishing this sprint"
+    messageOnPickup: "Now you have the (API) key to finishing this sprint"
   }
 
 }
