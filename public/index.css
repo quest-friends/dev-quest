@@ -163,9 +163,13 @@ span {
   top: 77%;
 }
 
+.img-background{
+  width: 110%;
+  height: 110%;
+}
 .img-enemy {
-  width: 100%;
-  height: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .img-player {
