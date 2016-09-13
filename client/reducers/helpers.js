@@ -98,6 +98,7 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.enemyCount = level.enemyCount
     newState.items = level.items
     newState.gotchas = level.gotchas
+    newState.isExitOpen = false
     newState.enemies.map(function(enemy){
       randomiseObjectPositionToFloorTile(newState.tileGrid, enemy)
     })
@@ -130,6 +131,20 @@ const moveTowardsPlayer = (enemy, state) => {
     return startOfArray.concat(endOfArray)
   }
 
+  const checkIfExitShouldBeOpen = (currentLevel, enemies, itemsList) => {
+    var itemTypeArray = itemsList.map( (item) => { return item.type})
+    if ( currentLevel != 3 && itemTypeArray.indexOf("apiKey") == -1 )
+    {
+      return true
+    }
+    else if ( currentLevel == 3 && enemies.length == 0 ) {
+      return true
+    }
+    else {
+      return false
+    }
+  }
+
 module.exports ={
   randomiseObjectPositionToFloorTile,
   moveEnemy,
@@ -138,5 +153,6 @@ module.exports ={
   isEnemyInTile,
   isPlayerAdjacent,
   removeElementFromArray,
-  moveAroundRandomly
+  moveAroundRandomly,
+  checkIfExitShouldBeOpen
 }

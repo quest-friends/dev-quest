@@ -9,26 +9,36 @@ const tileGrids = require('../levels/tileGrids')
 function reducer (state = initialState, action) {
 
   var newState = clone(state)
-  var nextTile
+  var nextTile, currentLevel, enemies, itemsList, isExitOpen
   var {
     isPlayerAdjacent,
     moveTowardsPlayer,
     nextLevel,
     removeElementFromArray,
     moveAroundRandomly,
-    randomiseObjectPositionToFloorTile
+    randomiseObjectPositionToFloorTile,
+    checkIfExitShouldBeOpen
   } = helpers
 
   switch(action.type){
 
     case 'PLAYER_MOVE':
         nextTile = newState.tileGrid[action.payload.y][action.payload.x]
+        currentLevel = newState.currentLevel
+        enemies = newState.enemies
+        itemsList = newState.items
+
         if (nextTile == 1 || nextTile == 2 || nextTile == 4) {
           newState.player.position.x = action.payload.x
           newState.player.position.y = action.payload.y
-        } else if (nextTile == 3) {
-          nextLevel(newState, levelList, tileGrids)
-        }
+        } else if ( nextTile == 3 ) {
+            isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList) //true or false
+            if (isExitOpen)
+              { nextLevel(newState, levelList, tileGrids) }
+            else {
+          newState.loggedMessages = [...newState.loggedMessages, "Exit blocked!"]
+            }
+          }
         newState.player.charge --
         if (newState.player.charge <= 10) {
           newState.loggedMessages = [...newState.loggedMessages, "Battery less than 10%, recharge now!"]

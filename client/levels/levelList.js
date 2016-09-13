@@ -16,13 +16,15 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
+      clone(items.Battery),
+      clone(items.ApiKey),
       clone(items.Battery)
       ],
     gotchas: [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
     ],
-    enemyCount: 1,
+    enemyCount: 3,
   },
 
   {
@@ -31,19 +33,23 @@ const levelList = [
     },
     enemies: [
       clone(enemies.Chrome),
-      clone(enemies.Firefox),
-      clone(enemies.Promise)
+      clone(enemies.Chrome),
+      clone(enemies.Firefox)
     ],
     items: [
       clone(items.Coffee),
+      clone(items.Coffee),
+      clone(items.Battery),
+      clone(items.Battery),
       clone(items.Battery)
-      ],
-      gotchas: [
-        clone(gotchas.RabbitHole),
-        clone(gotchas.RabbitHole)
-      ],
-    enemyCount: 1
+    ],
+    gotchas: [
+      clone(gotchas.RabbitHole),
+      clone(gotchas.RabbitHole)
+    ],
+    enemyCount: 3
   },
+
   {
     player: {
       position:{ x: 1, y: 15 }
@@ -54,13 +60,14 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Battery)
+      clone(items.Battery),
+      clone(items.ApiKey)
       ],
-      gotchas: [
-        clone(gotchas.RabbitHole),
-        clone(gotchas.RabbitHole)
-      ],
-    enemyCount: 1
+    gotchas: [
+      clone(gotchas.RabbitHole),
+      clone(gotchas.RabbitHole)
+    ],
+    enemyCount: 2
   }
 ]
 
