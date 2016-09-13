@@ -3,6 +3,7 @@ import Tile from './tile'
 import EnemyConnector from '../connectors/enemyConnector'
 import PlayerConnector from '../connectors/playerConnector'
 import ItemConnector from '../connectors/itemConnector'
+import GotchaConnector from '../connectors/gotchaConnector'
 
 class BoardElement extends React.Component {
 
@@ -35,10 +36,23 @@ class BoardElement extends React.Component {
     return presentItem
   }
 
+  isGotchaPresent() {
+    const {gotchas, i, j} = this.props
+    const presentGotcha = gotchas.find( (gotcha) => {
+      return gotcha.position.y==i && gotcha.position.x==j
+    })
+    return presentGotcha
+  }
+
   render(){
     return (
       <div className='board-element'>
         <Tile tileType={this.whatIsTileType()} />
+        { this.isGotchaPresent() ? <GotchaConnector
+          x={this.props.j}
+          y={this.props.i}
+          />
+          : null }
         { this.isItemPresent() ? <ItemConnector
           x={this.props.j}
           y={this.props.i}

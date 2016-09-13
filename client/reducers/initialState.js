@@ -91,6 +91,12 @@ const initialState = {
       type: "battery",
       messageOnPickup: "Recharging laptop battery..."
     }
+  ],
+  gotchas: [
+    {
+      type: "rabbithole",
+      position: {x: 3, y: 3}
+    }
   ]
 }
 
