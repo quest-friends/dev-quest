@@ -14,8 +14,12 @@ class StartScreen extends React.Component {
         <h2>Are you ready to begin your journey?</h2>
 
 
-        <button className="startGameButton" onClick={ () => this.props.startGame(players.JavaScript) } >Code in JavaScript</button>
-        <button className="startGameButton" onClick={ () => this.props.startGame(players.Ruby) } >Code in Ruby</button>
+        <button className="startGameButton"
+          onClick={ () => this.props.startGame(players.JavaScript) } >Code in JavaScript
+        </button>
+        <button className="startGameButton"
+          onClick={ () => this.props.startGame(players.Ruby) } >Code in Ruby
+        </button>
 
       </div>
     )
