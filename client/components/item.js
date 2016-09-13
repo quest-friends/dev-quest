@@ -20,6 +20,8 @@ class Item extends React.Component {
         return <span>codeRed</span>
       case ("battery"):
         return <div><img src={"./img/items/battery.png"} alt="battery" className="img-enemy" /></div>
+      case ("apiKey"):
+        return <div>APIkey</div>
       default:
         return ""
     }

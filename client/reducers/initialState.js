@@ -56,6 +56,7 @@ const initialState = {
   loggedMessages: [ "Hello World!" ],
   display: "start",
   currentLevel: 1,
+  isExitOpen: false,
   gotchas: [
     Object.assign({}, gotchas.Rabbithole, {position: {x:4, y:7}})
   ]

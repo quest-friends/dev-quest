@@ -1,3 +1,4 @@
+var items = require('../items/items')
 
 const randomiseObjectPositionToFloorTile = (tileGrid, object) => {
     let yCoord = Math.floor(Math.random() * tileGrid.length)
@@ -91,6 +92,7 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.enemyCount = level.enemyCount
     newState.items = level.items
     newState.gotchas = level.gotchas
+    newState.isExitOpen = false
     newState.enemies.map(function(enemy){
       randomiseObjectPositionToFloorTile(newState.tileGrid, enemy)
     })
@@ -123,14 +125,18 @@ const moveTowardsPlayer = (enemy, state) => {
     return startOfArray.concat(endOfArray)
   }
 
-  const isExitOpen = (currentLevel, enemies, itemsList) => {
+  const checkIfExitShouldBeOpen = (currentLevel, enemies, itemsList) => {
+    console.log("inside check exit", currentLevel, enemies.length);
+    console.log("this is the itemsList within check exit ", itemsList);
+
+    var itemTypeArray = itemsList.map( (item) => { return item.type})
+
+    console.log("indexOf within the check exit", itemTypeArray.indexOf("apiKey") )
+
     if ( currentLevel == 3 && enemies.length == 0 ) {
       return true
     }
-    else if ( itemsList.indexOf({
-        type: "apiKey",
-        messageOnPickup: "API key unlocks doors"
-      }) > -1 )
+    else if ( itemTypeArray.indexOf("apiKey") == -1 )
     {
       return true
     }
@@ -148,5 +154,5 @@ module.exports ={
   isPlayerAdjacent,
   removeElementFromArray,
   moveAroundRandomly,
-  isExitOpen
+  checkIfExitShouldBeOpen
 }
