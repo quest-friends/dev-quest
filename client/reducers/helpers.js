@@ -1,4 +1,3 @@
-var items = require('../items/items')
 
 const randomiseObjectPositionToFloorTile = (tileGrid, object) => {
     let yCoord = Math.floor(Math.random() * tileGrid.length)
