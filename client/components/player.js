@@ -4,13 +4,14 @@ class Player extends React.Component {
 
   playerImageToRender() {
     const playerClass = this.props.type
+
     switch (playerClass) {
       case ("JavaScript"):
         return <img src="./img/player/player.gif" alt="player" className="img-player" />
       case ("Ruby"):
-      return <img src="./img/player/ruby.gif" alt="player" className="img-player" />
+        return <img src="./img/player/ruby.gif" alt="player" className="img-player" />
       case ("Python"):
-      return <img src="./img/player/python.gif" alt="player" className="img-player" />
+        return <img src="./img/player/python.gif" alt="player" className="img-player" />
       default:
         return ""
     }

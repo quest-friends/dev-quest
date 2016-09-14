@@ -36,11 +36,9 @@ const initialState = {
     charge: 0,
     xp: 0,
     attack: 0,
-    defence: 0,
     image: null,
     hasBeenAttacked: false
   },
-  enemyCount: 4,
   enemies: [
     Object.assign({}, enemies.Firefox, {position: { x: 15, y: 10}}),
     Object.assign({}, enemies.Ie6, {position: { x: 2, y: 14}})

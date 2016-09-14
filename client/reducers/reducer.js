@@ -15,7 +15,7 @@ function reducer (state = initialState, action) {
     moveTowardsPlayer,
     nextLevel,
     removeElementFromArray,
-    moveAroundRandomly,
+    moveEnemyInRandomDirection,
     randomiseObjectPositionToFloorTile,
     checkIfExitShouldBeOpen
   } = helpers
@@ -71,7 +71,6 @@ function reducer (state = initialState, action) {
 
         else {
           newState.enemies = removeElementFromArray(newState.enemies, attackedEnemyIndex)
-          newState.enemyCount--
           newState.player.xp += 5
           if (newState.player.xp >= 10) {
             newState.player.attack++
@@ -108,7 +107,7 @@ function reducer (state = initialState, action) {
 
       // these are the cases for player to gotcha interaction
 
-    case 'STEP_ON_GOTCHA':
+    case 'TRIGGER_GOTCHA':
       var gotchaX = action.payload.position.x
       var gotchaY = action.payload.position.y
       var triggeredGotchaIndex = newState.gotchas.findIndex(function(gotcha){
@@ -141,7 +140,7 @@ function reducer (state = initialState, action) {
                     enemy.type == 'comma' || enemy.type == 'bracket' || enemy.type == "promise") {
           moveTowardsPlayer(enemy, newState)
         } else if (enemy.type == 'firefox' || enemy.type == 'emeny' || enemy.type == "async") {
-          moveAroundRandomly(enemy, newState)
+          moveEnemyInRandomDirection(enemy, newState)
         }
       })
       return newState
