@@ -99,7 +99,7 @@ function reducer (state = initialState, action) {
             newState.player.health += 5
         }
         else if (collectedItemType == 'battery') {
-          newState.player.charge += 30
+          newState.player.charge += 100
         }
         else if (collectedItemType == 'freshAir') {
             newState.player.health += 25
