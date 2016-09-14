@@ -18,32 +18,54 @@ class StartScreen extends React.Component {
         <div className="new-player-class">
           <div className="class-info">
             <div className="class-picture">
-              <img alt="JavaScript"></img>
+              <img src="./img/player/player.png" alt="JavaScript" className="class-img" />
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 10</h5>
+              <h5>Wellbeing: 50</h5>
               <h5>Attack: 2</h5>
-              <h5>Defence: 1</h5>
-              <h5>Laptop Charge: 50%</h5>
+              <h5>Laptop Charge: 100%</h5>
             </div>
-            <button className="start-game-button" onClick={ () => this.props.startGame(players.JavaScript) } >Code in JavaScript</button>
+            <button className="start-game-button"
+                    onClick={ () => this.props.startGame(players.JavaScript) } >
+                    Code in JavaScript
+            </button>
           </div>
         </div>
 
         <div className="new-player-class">
           <div className="class-info">
             <div className="class-picture">
-              <img alt="Ruby"></img>
+              <img src="./img/player/ruby.gif" alt="Ruby" className="class-img" />
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 20</h5>
+              <h5>Wellbeing: 80</h5>
               <h5>Attack: 1</h5>
-              <h5>Defence: 2</h5>
-              <h5>Laptop Charge: 20%</h5>
+              <h5>Laptop Charge: 100%</h5>
             </div>
-            <button className="start-game-button" onClick={ () => this.props.startGame(players.Ruby) } >Code in Ruby</button>
+            <button className="start-game-button"
+                    onClick={ () => this.props.startGame(players.Ruby) } >
+                    Code in Ruby
+            </button>
+          </div>
+        </div>
+
+        <div className="new-player-class">
+          <div className="class-info">
+            <div className="class-picture">
+              <img src="./img/player/python.gif" alt="Python" className="class-img" />
+            </div>
+            <div className="class-starting-stats">
+              <h3>Beginner Stats</h3>
+              <h5>Wellbeing: 40</h5>
+              <h5>Attack: 3</h5>
+              <h5>Laptop Charge: 100%</h5>
+            </div>
+            <button className="start-game-button"
+                    onClick={ () => this.props.startGame(players.Python) } >
+                    Code in Python
+            </button>
           </div>
         </div>
 

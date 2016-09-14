@@ -80,7 +80,7 @@ class Game extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="display-screen">
         <div className='board-container'>
           <BoardConnector />
         </div>
