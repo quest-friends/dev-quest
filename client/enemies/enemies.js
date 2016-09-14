@@ -18,7 +18,7 @@ module.exports = {
     messages: {
       enemyAttacks: "Unhelpful Firefox developer tools slow you down...",
       playerAttacks: "Abandoning Firefox to go back to Chrome...",
-      enemyDefeated: "Bye-bye cute fox logo!"
+      enemyDefeated: "You've been blooded!"
     }
   },
 
@@ -49,9 +49,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "var attack",
-      playerAttacks: "You attack the var, but it just returns a new var!",
-      enemyDefeated: "var died"
+      enemyAttacks: "Scope ambiguity with var catches you out...",
+      playerAttacks: "Using const and let makes var redundant...",
+      enemyDefeated: "Your code is safe from ambiguously mutable variables!"
     }
   },
 
@@ -60,9 +60,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "const attack",
-      playerAttacks: "You attack the const, but it just returns a new const!",
-      enemyDefeated: "const died"
+      enemyAttacks: "Trying to reassign a Const variable breaks your function...",
+      playerAttacks: "Changing the const to let works...",
+      enemyDefeated: "Hurrah - no more 'constant' variable weirdness!"
     }
   },
 
@@ -71,9 +71,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "let attack",
-      playerAttacks: "You attack the let, but it just returns a new let!",
-      enemyDefeated: "let died"
+      enemyAttacks: "The let variable isn't accessible outside its block...",
+      playerAttacks: "You figure out how scope actually works...",
+      enemyDefeated: "Revert to var - who needs ES6?"
     }
   },
 
@@ -82,9 +82,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "bracket attack",
-      playerAttacks: "You attack the bracket, but it just returns a new bracket!",
-      enemyDefeated: "bracket died"
+      enemyAttacks: "Syntax error: misplaced bracket...",
+      playerAttacks: "Hours spent matching brackets pay off...",
+      enemyDefeated: "A place for every bracket, and every bracket in its place!"
     }
   },
 
@@ -93,9 +93,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "comma-y attack",
-      playerAttacks: "You attack the comma, but it just returns a new comma!",
-      enemyDefeated: "comma died"
+      enemyAttacks: "Syntax error: missing comma in array or object...",
+      playerAttacks: "Scanning for commas, losing will to live...",
+      enemyDefeated: "All items now separated by commas!",
     }
   },
 
@@ -104,9 +104,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "emeny attack",
-      playerAttacks: "You attack the emeny, but it just returns a new emeny!",
-      enemyDefeated: "emeny died"
+      enemyAttacks: "Syntax error: typo breaks the program entirely...",
+      playerAttacks: "Autocomplete in text editor is your new best friend...",
+      enemyDefeated: "Code is now word perfect!"
     }
   },
 
