@@ -27,8 +27,9 @@ function reducer (state = initialState, action) {
       currentLevel = newState.currentLevel
       enemies = newState.enemies
       itemsList = newState.items
+      var validMovementTiles = [1, 2, 4]
 
-      if (nextTile == 1 || nextTile == 2 || nextTile == 4) {
+      if (validMovementTiles.indexOf(nextTile) > -1) {
         newState.player.position.x = action.payload.x
         newState.player.position.y = action.payload.y
       } else if ( nextTile == 3 ) {
