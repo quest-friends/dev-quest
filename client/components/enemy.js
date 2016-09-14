@@ -27,11 +27,11 @@ class Enemy extends React.Component {
       case ("promise"):
         return <div><img src={"./img/enemies/promise.gif"} alt="promise" className="img-enemy" /></div>
       case ("const"):
-        return <div><p>const</p></div>
+        return <div><img src={"./img/enemies/const.gif"} alt="const" className="img-enemy" /></div>
       case ("let"):
-        return <div><p>let</p></div>
+        return <div><img src={"./img/enemies/let.gif"} alt="let" className="img-enemy" /></div>
       case ("var"):
-        return <div><p>var</p></div>
+        return <div><img src={"./img/enemies/var.gif"} alt="var" className="img-enemy" /></div>
       case ("emeny"):
         return <div><p>emeny</p></div>
       case ("comma"):
