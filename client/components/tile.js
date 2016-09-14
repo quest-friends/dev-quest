@@ -14,15 +14,15 @@ class Tile extends React.Component {
     const tileType = this.props.tileType
     switch (tileType) {
       case (0):
-        return <div><img src={`./img/background/wall${number}.gif`} alt="wall" className="img-background-wall" /></div>
+        return <img src={`./img/background/wall${number}.gif`} alt="wall" className="img-background-wall" />
       case (1):
-        return <div><img src={`./img/background/floor${number}.png`} alt="floor" className="img-background-floor" /></div>
+        return <img src={`./img/background/floor${number}.png`} alt="floor" className="img-background-floor" />
       case (2):
-        return <div><img src={`./img/background/floor${number}.png`} alt="hall" className="img-background-floor" /></div>
+        return <img src={`./img/background/floor${number}.png`} alt="hall" className="img-background-floor" />
       case (3):
-        return <div><img src={`./img/background/stairs.png`} alt="stairs" className="img-background" /></div>
+        return <img src={`./img/background/stairs.png`} alt="stairs" className="img-background" />
       case (4):
-        return <div><img src={`./img/background/floor${number}.png`} alt="spawn" className="img-background-floor" /></div>
+        return <img src={`./img/background/floor${number}.png`} alt="spawn" className="img-background-floor" />
       default:
         return ""
     }
