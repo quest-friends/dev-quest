@@ -9,7 +9,10 @@ body {
 h1 {
   font-family: 'Geo', sans-serif;
   text-decoration: underline;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
+}
+h2 {
+  font-size: 1.4em;
 }
 
 h3 {
@@ -110,6 +113,7 @@ button {
 
 .ui-terminalLog {
   max-height: 60%;
+  font-size: 1.4em;
   text-align: left;
   padding: 0 50px;
 }
@@ -123,7 +127,7 @@ button {
 
 .ui-statsLog {
   text-align: left;
-  font-size: 1.2em;
+  font-size: 1.4em;
   padding-left: 50px;
 }
 
@@ -145,6 +149,9 @@ button {
 
 .display-screen-info {
   font-size: 1.4em;
+  width: 70%;
+  margin-left: 15%;
+  margin-right: 15%;
   padding: 0px 40px;
 }
 .display-screen-howToPlay {
