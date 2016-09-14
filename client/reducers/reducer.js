@@ -76,7 +76,6 @@ function reducer (state = initialState, action) {
           if (newState.player.xp >= 10) {
             newState.player.attack++
           }
-          // newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
         }
       }
       return newState

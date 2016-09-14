@@ -100,7 +100,6 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.gotchas = level.gotchas
     newState.isExitOpen = false
     var messageAboutSprint = `Starting Sprint ${newState.currentLevel}...`
-    newState.loggedMessages = []
     newState.loggedMessages = [messageAboutSprint, level.messageOnStart]
     newState.enemies.map(function(enemy){
       randomiseObjectPositionToFloorTile(newState.tileGrid, enemy)
