@@ -235,4 +235,6 @@ p {
   to { opacity:0; }
   0% {background-color: none}
   100% {background-color: red}
+  0% {color: none}
+  100% {color: red}
 }
