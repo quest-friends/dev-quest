@@ -527,7 +527,7 @@ test('Enemy dies on Player Attack', function (t) {
       display: "game",
       currentLevel: 1,
       enemyCount: 0,
-      loggedMessages: ['player attacks', 'it super died']
+      loggedMessages: ['player attacks']
     }
  var actualState = reducer(testState, {type: "PLAYER_ATTACK", payload: testState.enemies[0]})
  t.deepEqual(actualState, expectedState, "When enemies Health reaches 0 it is removed from enemy array")
