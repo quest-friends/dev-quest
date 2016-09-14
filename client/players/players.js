@@ -3,11 +3,11 @@ module.exports = {
   JavaScript: {
     type: "JavaScript",
     health: 50,
-    charge: 50,
+    charge: 500,
     xp: 0,
     attack: 2,
     defence: 2,
-    image: "player.png",
+    image: "player.gif",
     messages: {
       messageOnPlayerChoice: "You've chosen to code JavaScript, good choice!",
       messageOnXpIncrease: "You can now write in ES6 - now you can slay const and let"

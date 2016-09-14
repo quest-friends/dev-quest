@@ -6,7 +6,7 @@ class Player extends React.Component {
     const playerClass = this.props.type
     switch (playerClass) {
       case ("JavaScript"):
-        return <img src="./img/player/player.png" alt="player" className="img-player" />
+        return <img src="./img/player/player.gif" alt="player" className="img-player" />
       case ("Ruby"):
       return <img src="./img/player/ruby.gif" alt="player" className="img-player" />
       case ("Python"):
