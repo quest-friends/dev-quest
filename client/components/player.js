@@ -4,13 +4,14 @@ class Player extends React.Component {
 
   playerImageToRender() {
     const playerClass = this.props.type
+
     switch (playerClass) {
       case ("JavaScript"):
-        return <img src="./img/player/player.png" alt="player" className="img-player" />
+        return <img src="./img/player/player.gif" alt="player" className="img-player" />
       case ("Ruby"):
-      return <img src="./img/player/ruby.gif" alt="player" className="img-player" />
+        return <img src="./img/player/ruby.gif" alt="player" className="img-player" />
       case ("Python"):
-      return <img src="./img/player/python.gif" alt="player" className="img-player" />
+        return <img src="./img/player/python.gif" alt="player" className="img-player" />
       default:
         return ""
     }
@@ -23,10 +24,10 @@ class Player extends React.Component {
   }
 
   render(){
-    const attackedClass = this.props.hasBeenAttacked ? 'attacked' : ''
+    const attackedClass = this.props.hasBeenAttacked ? 'attacked player' : 'player'
     return (
-      <div className='player'>
-        <span className={attackedClass}>
+      <div className={attackedClass}>
+        <span>
           {this.playerImageToRender()}
         </span>
       </div>

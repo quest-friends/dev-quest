@@ -4,6 +4,7 @@ class Gotcha extends React.Component {
 
   getPresentGotcha() {
     const {gotchas, x, y} = this.props
+
     let presentGotcha = gotchas.find( (gotcha) => {
       return gotcha.position.y==y && gotcha.position.x==x
     })
@@ -18,7 +19,7 @@ class Gotcha extends React.Component {
         case ("rabbithole"):
         case ("infiniteloop"):
         case ("pushedtomaster"):
-          return <div><img src={"./img/rabbithole.png"} alt="firefox" className="img-enemy" /></div>
+          return <div><img src={"./img/traps/rabbitHole.png"} alt="trap" className="img-trap" /></div>
       default:
           return ""
       }

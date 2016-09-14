@@ -14,22 +14,27 @@ class Game extends React.Component {
   }
 
   componentDidMount () {
-    var presentEnemy
-    var presentItem
-    var presentGotcha
 
-  //This removes defaults for firefox
-  document.addEventListener('keypress', (evt) => {
+  document.addEventListener('keydown', (evt) => {
     if (this.isArrowKey(evt.key)) {
       evt.preventDefault()
     }
   })
 
-  //This removes defaults for Chrome
-  document.addEventListener('keydown', (evt) => {
-      var {y, x} = this.props.player.position
+  document.addEventListener('keyup', (evt) => {
+      const {y, x} = this.props.player.position
+      const {enemies, items, gotchas, allEnemiesAct} = this.props
+
+      if(evt.keyCode == 32) {
+        this.props.playerWait()
+        setTimeout(function () { allEnemiesAct() }, 50)
+
+        if (this.isPlayerDead()) {
+          this.props.loseGame()
+        }
+      }
+
       if (this.isArrowKey(evt.key)) {
-        evt.preventDefault()
         var nextPosition = {x, y}
         switch (evt.key) {
           case 'ArrowLeft':
@@ -45,32 +50,34 @@ class Game extends React.Component {
             nextPosition = {y: y + 1, x: x}
         }
 
-        presentEnemy = this.props.enemies.find(function (enemy) {
+        const enemyInTile = enemies.find(function (enemy) {
           return (enemy.position.y == nextPosition.y && enemy.position.x == nextPosition.x)
         })
 
-        presentItem = this.props.items.find(function (item) {
+        const itemInTile = items.find(function (item) {
           return (item.position.y == nextPosition.y && item.position.x == nextPosition.x)
         })
 
-        presentGotcha = this.props.gotchas.find(function (gotcha) {
+        const gotchaInTile = gotchas.find(function (gotcha) {
           return (gotcha.position.y == nextPosition.y && gotcha.position.x == nextPosition.x)
         })
 
-        if (presentEnemy) {
-          this.props.playerAttack (presentEnemy)
+        if (enemyInTile) {
+          this.props.playerAttack (enemyInTile)
         }
+
         else {
           this.props.playerMove (nextPosition.y, nextPosition.x)
-          if (presentItem) {
-            this.props.pickUpItem (presentItem)
+          if (itemInTile) {
+            this.props.pickUpItem (itemInTile)
           }
-          if (presentGotcha && presentGotcha.triggered==false) {
-            this.props.stepOnGotcha(presentGotcha)
+          if (gotchaInTile && gotchaInTile.triggered==false) {
+            this.props.triggerGotcha(gotchaInTile)
           }
         }
 
-        this.props.allEnemiesAct()
+        setTimeout(function () { allEnemiesAct() }, 50)
+
         if (this.isPlayerDead()) {
           this.props.loseGame()
         }
@@ -81,13 +88,13 @@ class Game extends React.Component {
   render () {
     return (
       <div className="display-screen">
-        <div className='board-container'>
-          <BoardConnector />
-        </div>
         <div className='ui-container'>
           <ConsoleLogConnector />
           <StatsConnector />
           <button onClick={this.props.winGame}>Win game</button>
+        </div>
+        <div className='board-container'>
+          <BoardConnector />
         </div>
       </div>
     )

@@ -10,15 +10,15 @@ class StartScreen extends React.Component {
       <div className="display-screen">
         <div className="display-screen-info">
           <h1>Dev Quest 2.0</h1>
-          <p>The path to coding mastery is fraught with trials and danger.
-            It will take all of your determination, skill, and coffee to achieve greatness.</p>
+          <h2>The path to coding mastery is fraught with trials and danger.
+            It will take all of your determination, skill, and coffee to achieve greatness.</h2>
           <h2>Are you ready to begin your journey as a junior dev?</h2>
         </div>
 
         <div className="new-player-class">
           <div className="class-info"  onClick={ () => this.props.startGame(players.JavaScript) }>
             <div className="class-picture">
-              <img src="./img/player/player.png" alt="JavaScript" className="class-img" />
+              <img src="./img/player/player.gif" alt="JavaScript" className="class-img" />
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>

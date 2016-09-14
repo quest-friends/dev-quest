@@ -4,13 +4,12 @@ class Enemy extends React.Component {
 
   getPresentEnemy() {
     const {enemies, x, y} = this.props
+
     let presentEnemy = enemies.find( (enemy) => {
       return enemy.position.y==y && enemy.position.x==x
     })
-     if (!presentEnemy) {
-       presentEnemy = {type: "dead"}
-     }
     return presentEnemy
+
   }
 
   enemyTypeToRender() {
@@ -33,11 +32,11 @@ class Enemy extends React.Component {
       case ("var"):
         return <div><img src={"./img/enemies/var.gif"} alt="var" className="img-enemy" /></div>
       case ("emeny"):
-        return <div><p>emeny</p></div>
+        return <div><img src={"./img/enemies/typo.gif"} alt="typo" className="img-enemy" /></div>
       case ("comma"):
         return <div><img src={"./img/enemies/comma.gif"} alt="comma" className="img-enemy" /></div>
       case ("bracket"):
-        return <div><p>bracket</p></div>
+        return <div><img src={"./img/enemies/brackets.gif"} alt="brackets" className="img-enemy" /></div>
       case ("async"):
         return <div><img src={"./img/enemies/async.gif"} alt="async" className="img-enemy" /></div>
       default:
@@ -48,7 +47,7 @@ class Enemy extends React.Component {
   render(){
     return (
       <div className='enemy'>
-        {this.enemyTypeToRender()}
+        {this.getPresentEnemy() ? this.enemyTypeToRender() : null}
       </div>
     )
   }

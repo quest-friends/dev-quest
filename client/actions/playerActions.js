@@ -11,6 +11,7 @@ const setPlayerAttackedToFalse = () => {
   }
 }
 
+
 export {
   playerAttack,
   setPlayerAttackedToFalse
