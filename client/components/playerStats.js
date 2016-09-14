@@ -2,12 +2,6 @@ import React from 'react'
 
 class PlayerStats extends React.Component {
 
-  componentDidMount() {
-    if (this.props.hasBeenAttacked){
-      this.props.setPlayerAttackedToFalse()
-    }
-  }
-
   render(){
     const attackedClass = this.props.hasBeenAttacked ? 'attacked' : ''
     return (
@@ -24,9 +18,9 @@ class PlayerStats extends React.Component {
             <p>Attack:</p>
             <p>Exp:</p>
           </div>
-          <div className="player-stats-left-align">
+          <div>
             <p>{this.props.type}</p>
-            <p className={attackedClass}>{this.props.health}</p>
+            <p>{this.props.health}</p>
             <p>{this.props.charge}%</p>
             <p>{this.props.attack}</p>
             <p>{this.props.xp}</p>
