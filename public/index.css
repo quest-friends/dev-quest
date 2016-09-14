@@ -51,11 +51,16 @@ p {
   float: left;
 }
 
+.transparent {
+  opacity: 0;
+}
+
 .tile {
   background-color: black;
   position: absolute;
   height: 100%;
   width: 100%;
+  background-image: url("/img/background/matrix.gif");
 }
 
 .player {
