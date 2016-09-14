@@ -3,7 +3,7 @@ module.exports = {
   JavaScript: {
     type: "JavaScript",
     health: 50,
-    charge: 100,
+    charge: 200,
     xp: 0,
     attack: 2,
     image: "player.png",
