@@ -16,7 +16,7 @@ class StartScreen extends React.Component {
         </div>
 
         <div className="new-player-class">
-          <div className="class-info">
+          <div className="class-info"  onClick={ () => this.props.startGame(players.JavaScript) }>
             <div className="class-picture">
               <img src="./img/player/player.png" alt="JavaScript" className="class-img" />
             </div>
@@ -34,7 +34,7 @@ class StartScreen extends React.Component {
         </div>
 
         <div className="new-player-class">
-          <div className="class-info">
+          <div className="class-info" onClick={ () => this.props.startGame(players.Ruby) }>
             <div className="class-picture">
               <img src="./img/player/ruby.gif" alt="Ruby" className="class-img" />
             </div>
@@ -44,15 +44,14 @@ class StartScreen extends React.Component {
               <h5>Attack: 1</h5>
               <h5>Laptop Charge: 100%</h5>
             </div>
-            <button className="start-game-button"
-                    onClick={ () => this.props.startGame(players.Ruby) } >
+            <button className="start-game-button" >
                     Code in Ruby
             </button>
           </div>
         </div>
 
         <div className="new-player-class">
-          <div className="class-info">
+          <div className="class-info" onClick={ () => this.props.startGame(players.Python) }>
             <div className="class-picture">
               <img src="./img/player/python.gif" alt="Python" className="class-img" />
             </div>
@@ -62,8 +61,7 @@ class StartScreen extends React.Component {
               <h5>Attack: 3</h5>
               <h5>Laptop Charge: 100%</h5>
             </div>
-            <button className="start-game-button"
-                    onClick={ () => this.props.startGame(players.Python) } >
+            <button className="start-game-button" >
                     Code in Python
             </button>
           </div>

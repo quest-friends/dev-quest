@@ -9,11 +9,11 @@ class PlayerStats extends React.Component {
           <h3>Coder Stats:</h3>
         </div>
         <div className="ui-statsLog">
-          <p>- Main Language: {this.props.type}</p>
-          <p>- Wellbeing: {this.props.health}</p>
-          <p>- Laptop Charge: {this.props.charge}%</p>
-          <p>- Attack: {this.props.attack}</p>
-          <p>- Exp: {this.props.xp}</p>
+          <p>> Main Language: <span>{this.props.type}</span></p>
+          <p>> Wellbeing: <span>{this.props.health}</span></p>
+          <p>> Laptop Charge: <span>{this.props.charge}%</span></p>
+          <p>> Attack: <span>{this.props.attack}</span></p>
+          <p>> Exp: <span>{this.props.xp}</span></p>
         </div>
       </div>
     )

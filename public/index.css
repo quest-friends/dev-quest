@@ -30,8 +30,9 @@ p {
 }
 
 span {
-  position: relative;
-  vertical-align: middle;
+  float: right;
+  /*position: relative;
+  vertical-align: middle;*/
 }
 
 .board-container {
