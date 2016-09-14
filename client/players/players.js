@@ -3,7 +3,7 @@ module.exports = {
   JavaScript: {
     type: "JavaScript",
     health: 50,
-    charge: 50,
+    charge: 100,
     xp: 0,
     attack: 2,
     image: "player.png",
@@ -16,7 +16,7 @@ module.exports = {
   Ruby: {
     type: "Ruby",
     health: 80,
-    charge: 30,
+    charge: 100,
     xp: 0,
     attack: 1,
     image: "ruby.gif",
@@ -29,7 +29,7 @@ module.exports = {
   Python: {
     type: "Python",
     health: 40,
-    charge: 50,
+    charge: 100,
     xp: 0,
     attack: 3,
     image: "python.gif",

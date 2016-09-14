@@ -7,21 +7,16 @@ import GotchaConnector from '../connectors/gotchaConnector'
 
 class BoardElement extends React.Component {
 
-//returns the tileType (0, 1, 2 etc) to be given to the Tile as props
   whatIsTileType() {
     const {tileGrid, i, j} = this.props
     const tileType = tileGrid[i][j]
     return tileType
   }
 
-//returns the current level
-
   whatIsCurrentLevel(){
-    const {currentLevel} = this.props
-    return currentLevel
+    return this.props.currentLevel
   }
 
-//function returns true only if the current tile (position(i,j)) matches player's (x,y) position
   isPlayerPresent() {
     const {playerPosition, i, j} = this.props
     return i == playerPosition.y && j == playerPosition.x
