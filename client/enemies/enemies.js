@@ -126,9 +126,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "async attack",
-      playerAttacks: "You attack the async, but it just returns a new async!",
-      enemyDefeated: "async died"
+      enemyAttacks: "Trying to write asynchronous code sends you to Callback Hell",
+      playerAttacks: "Modularising your code helps, but callbacks keep popping up...",
+      enemyDefeated: "Callback Hell is infinite!"
     }
   }
 
