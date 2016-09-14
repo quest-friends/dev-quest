@@ -90,12 +90,12 @@ module.exports = {
     }
   },
 
-  Emeny: {
+  emeny: {
     type: "emeny",
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Syntax error: typo breaks program => well-being - -",
+      enemyAttacks: "Syntax error: emeny breaks program => well-being - -",
       playerAttacks: "Using autocomplete in code editor improves accuracy",
     }
   },

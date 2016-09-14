@@ -61,6 +61,10 @@ td {
   float: left;
 }
 
+.transparent {
+  opacity: 0;
+}
+
 .tile {
   background-color: black;
   position: absolute;
@@ -69,6 +73,7 @@ td {
   transform: translate(-50%, -50%);
   height: 100%;
   width: 100%;
+  background-image: url("/img/background/matrix.gif");
 }
 
 .player {
