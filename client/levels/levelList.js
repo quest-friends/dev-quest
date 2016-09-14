@@ -25,8 +25,7 @@ const levelList = [
       clone(gotchas.RabbitHole),
       clone(gotchas.InfiniteLoop),
       clone(gotchas.PushedToMaster)
-    ],
-    enemyCount: 4,
+    ]
   },
 
   {
@@ -49,8 +48,7 @@ const levelList = [
     gotchas: [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
-    ],
-    enemyCount: 3
+    ]
   },
 
   {
@@ -69,8 +67,7 @@ const levelList = [
     gotchas: [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
-    ],
-    enemyCount: 3
+    ]
   },
 
   { player: {
@@ -88,8 +85,7 @@ const levelList = [
     gotchas: [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
-    ],
-    enemyCount: 2
+    ]
   }
 ]
 

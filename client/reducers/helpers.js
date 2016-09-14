@@ -14,6 +14,12 @@ const moveEnemy = (enemy, y, x) => {
   enemy.position = {y:y, x:x}
 }
 
+const getComponentByTile = (array, tileY, tileX) => {
+  return array.find( (component) => {
+    return component.position.y==tileY && component.position.x==tileX
+  })
+}
+
 const moveTowardsPlayer = (enemy, state) => {
     var {x, y} = enemy.position
     var enemyDestination = {x, y}
@@ -95,7 +101,6 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.tileGrid = tileGrids[Math.floor(Math.random() * tileGrids.length)]
     movePlayerToSpawnTile(newState)
     newState.enemies = level.enemies
-    newState.enemyCount = level.enemyCount
     newState.items = level.items
     newState.gotchas = level.gotchas
     newState.isExitOpen = false
@@ -152,6 +157,7 @@ module.exports ={
   randomiseObjectPositionToFloorTile,
   moveEnemy,
   moveTowardsPlayer,
+  getComponentByTile,
   nextLevel,
   isEnemyInTile,
   isPlayerAdjacent,
