@@ -2,6 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import Player from '../components/player'
 import {setPlayerAttackedToFalse} from '../actions/playerActions'
+import { startGame } from '../actions/gameRunning'
 
 const mapStateToProps = (state) => {
   return {
@@ -15,7 +16,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setPlayerAttackedToFalse: () => {dispatch(setPlayerAttackedToFalse())}
+    setPlayerAttackedToFalse: () => {dispatch(setPlayerAttackedToFalse())},
+    startGame: (player) => {dispatch(startGame(player))}
   }
 }
 
