@@ -5,7 +5,9 @@ import WinScreen from '../components/winScreen'
 const mapStateToProps = (state) => {
   return {
     health: state.player.health,
-    charge: state.player.charge
+    charge: state.player.charge,
+    experience: state.player.xp,
+    attack: state.player.attack
     }
 }
 

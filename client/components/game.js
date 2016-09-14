@@ -87,6 +87,7 @@ class Game extends React.Component {
         <div className='ui-container'>
           <ConsoleLogConnector />
           <StatsConnector />
+          <button onClick={this.props.winGame}>Win game</button>
         </div>
       </div>
     )
