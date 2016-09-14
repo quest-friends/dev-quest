@@ -8,7 +8,8 @@ const mapStateToProps = (state) => {
     x: state.player.position.x,
     y: state.player.position.y,
     health: state.player.health,
-    hasBeenAttacked: state.player.hasBeenAttacked
+    hasBeenAttacked: state.player.hasBeenAttacked,
+    type: state.player.type
     }
 }
 

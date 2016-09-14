@@ -156,10 +156,11 @@ span {
   background-color: #B89A56;
 }
 
-/*img {
+.class-img {
   margin: 25px;
   background-color: transparent;
-}*/
+  height: 100px;
+}
 
 .class-starting-stats {
   text-align: left;

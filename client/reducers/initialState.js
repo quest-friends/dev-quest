@@ -37,6 +37,7 @@ const initialState = {
     xp: 0,
     attack: 0,
     defence: 0,
+    image: "",
     hasBeenAttacked: false
   },
   enemyCount: 4,
