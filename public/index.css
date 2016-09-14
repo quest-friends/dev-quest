@@ -230,7 +230,8 @@ td {
 }
 
 .attacked {
-  animation:blink 700ms 100ms;
+  animation:blink 250ms 5ms;
+  color: inherit;
 }
 
 .no-underline {
@@ -240,4 +241,6 @@ td {
 @keyframes blink {
   from { opacity:1; }
   to { opacity:0; }
+  0% {background-color: none}
+  100% {background-color: red}
 }
