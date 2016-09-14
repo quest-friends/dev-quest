@@ -1,5 +1,5 @@
 
-const stepOnGotcha = (gotcha) => {
+const triggerGotcha = (gotcha) => {
   return {
     type: "STEP_ON_GOTCHA",
     payload: gotcha
@@ -7,5 +7,5 @@ const stepOnGotcha = (gotcha) => {
 }
 
 export {
-  stepOnGotcha
+  triggerGotcha
 }

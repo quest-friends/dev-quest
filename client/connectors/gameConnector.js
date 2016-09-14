@@ -6,7 +6,7 @@ import {playerAttack} from '../actions/playerActions'
 import {allEnemiesAct} from '../actions/enemyActions'
 import {loseGame, winGame} from '../actions/gameRunning'
 import {pickUpItem} from '../actions/pickUpItem'
-import {stepOnGotcha} from '../actions/gotchaActions'
+import {triggerGotcha} from '../actions/gotchaActions'
 
 const mapStateToProps = (state) => {
   return {
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
     playerMove: (y, x) => {dispatch(playerMove(y, x)) },
     playerAttack: (enemy) => {dispatch(playerAttack(enemy)) },
     pickUpItem: (item) => {dispatch(pickUpItem(item))},
-    stepOnGotcha: (gotcha) => {dispatch(stepOnGotcha(gotcha))},
+    triggerGotcha: (gotcha) => {dispatch(triggerGotcha(gotcha))},
     winGame: () => {dispatch(winGame())},
     allEnemiesAct: () => {dispatch(allEnemiesAct()) },
     loseGame: () => {dispatch(loseGame())}
