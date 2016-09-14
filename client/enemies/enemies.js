@@ -7,7 +7,6 @@ module.exports = {
     messages: {
       enemyAttacks: "Google wants to rule the world => well-being- -",
       playerAttacks: "Installing an open source browser to replace Chrome",
-      // enemyDefeated: "Chrome gone, next step: use Duck Duck Go search engine!"
     }
   },
 
@@ -18,7 +17,6 @@ module.exports = {
     messages: {
       enemyAttacks: "Unhelpful Firefox developer tools => well-being- -",
       playerAttacks: "Replacing Firefox with another browser solves problem",
-      // enemyDefeated: "You've been blooded!"
     }
   },
 
