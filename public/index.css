@@ -35,6 +35,10 @@ button {
   font-family: 'Ubuntu Mono', monospace;
 }
 
+button {
+  font-family: 'Geo', sans-serif;
+}
+
 .board-container {
   margin-top: 0.5%;
   width: 60%;
@@ -140,12 +144,18 @@ button {
 
 .display-screen {
   border: 5px outset #B89A56;
-  height: 97vh;
+  height: 48.6vw;
 }
 
 .display-screen-info {
   font-size: 1.4em;
-  padding: 20px 40px 40px 40px;
+  padding: 0px 40px;
+}
+.display-screen-howToPlay {
+  font-size: 1.2em;
+  float: left;
+  width: 100%;
+  padding: 0;
 }
 
 .choose-class-container {
@@ -158,13 +168,30 @@ button {
   margin: auto;
 }
 
-.class-info {
+.class-info-left {
+  height: 400px;
+  width: 300px;
+  background-color: #635516;
+  border: 4px outset #B89A56;
+  margin: 0 0 0 auto;
+}
+
+.class-info-middle {
   height: 400px;
   width: 300px;
   background-color: #635516;
   border: 4px outset #B89A56;
   margin: auto;
 }
+
+.class-info-right {
+  height: 400px;
+  width: 300px;
+  background-color: #635516;
+  border: 4px outset #B89A56;
+  margin: 0 auto 0 0;
+}
+
 
 .class-picture {
   height: 40%;
@@ -240,9 +267,16 @@ button {
   text-decoration: none !important;
 }
 
+.no-padding {
+  margin: 0;
+  padding: 20px 0 0 0;
+}
+
 @keyframes blink {
   from { opacity:1; }
   to { opacity:0; }
   0% {background-color: none}
   100% {background-color: red}
+  0% {color: none}
+  100% {color: red}
 }
