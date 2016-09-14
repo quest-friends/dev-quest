@@ -27,6 +27,7 @@ const levelList = [
       clone(gotchas.PushedToMaster)
     ],
     enemyCount: 4,
+    messageOnStart: "Getting to grips with browsers and developer tools"
   },
 
   {
@@ -50,7 +51,8 @@ const levelList = [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
     ],
-    enemyCount: 3
+    enemyCount: 3,
+    messageOnStart: "Starting to code: learning about variables"
   },
 
   {
@@ -70,7 +72,8 @@ const levelList = [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
     ],
-    enemyCount: 3
+    enemyCount: 3,
+    messageOnStart: "Debugger monster level: clear all the syntax errors"
   },
 
   { player: {
@@ -89,7 +92,8 @@ const levelList = [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
     ],
-    enemyCount: 2
+    enemyCount: 2,
+    messageOnStart: "Welcome to the fiery pits of Callback Hell"
   }
 ]
 

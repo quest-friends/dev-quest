@@ -50,7 +50,7 @@ const initialState = {
     Object.assign({}, items.Battery, {position: { x: 16, y: 8}}),
     Object.assign({}, items.ApiKey, {position: { x: 4, y: 14}})
   ],
-  loggedMessages: [ "Hello World!" ],
+  loggedMessages: [ "Welcome to the tutorial", "Hello World!" ],
   display: "start",
   currentLevel: 0,
   isExitOpen: false,
