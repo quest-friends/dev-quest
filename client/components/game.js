@@ -26,6 +26,7 @@ class Game extends React.Component {
       const {enemies, items, gotchas, allEnemiesAct} = this.props
 
       if(evt.keyCode == 32) {
+        this.props.playerWait()
         setTimeout(function () { allEnemiesAct() }, 50)
 
         if (this.isPlayerDead()) {
