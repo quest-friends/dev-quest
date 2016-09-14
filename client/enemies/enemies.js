@@ -5,9 +5,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Google Chrome is trying to take over the world...",
-      playerAttacks: "Installing an open source browser to replace Google Chrome...",
-      enemyDefeated: "Chrome gone, next step: use Duck Duck Go search engine!"
+      enemyAttacks: "Google asserts world dominance, well-being--",
+      playerAttacks: "Installing an open source browser instead of Chrome",
+      // enemyDefeated: "Chrome gone, next step: use Duck Duck Go search engine!"
     }
   },
 
@@ -16,9 +16,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Unhelpful Firefox developer tools slow you down...",
-      playerAttacks: "Abandoning Firefox to go back to Chrome...",
-      enemyDefeated: "You've been blooded!"
+      enemyAttacks: "Unhelpful Firefox developer tools => well-being - -",
+      playerAttacks: "Uninstalling Firefox, bye-bye cute logo",
+      // enemyDefeated: "You've been blooded!"
     }
   },
 
@@ -27,9 +27,9 @@ module.exports = {
     health: 2,
     attack: 5,
     messages: {
-      enemyAttacks: "Your code is smushed by old versions of Internet Explorer...",
-      playerAttacks: "Writing backwards compatible code to deal to Internet Exploder...",
-      enemyDefeated: "Outdated Microsoft product dies!"
+      enemyAttacks: "Internet Explorer now default browser => well-being - -",
+      playerAttacks: "Uninstalling Internet Exploder",
+      // enemyDefeated: "Outdated Microsoft product dies!"
     }
   },
 
