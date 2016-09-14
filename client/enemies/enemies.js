@@ -90,7 +90,7 @@ module.exports = {
     }
   },
 
-  emeny: {
+  Emeny: {
     type: "emeny",
     health: 1,
     attack: 5,

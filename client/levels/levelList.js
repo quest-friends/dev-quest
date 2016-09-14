@@ -64,10 +64,10 @@ const levelList = [
       clone(enemies.Emeny),
       clone(enemies.Bracket),
       clone(enemies.Comma),
-      clone(enemies.Enemy),
+      clone(enemies.Emeny),
       clone(enemies.Bracket),
       clone(enemies.Comma),
-      clone(enemies.Enemy),
+      clone(enemies.Emeny),
       clone(enemies.Bracket),
       clone(enemies.Comma)
     ],
