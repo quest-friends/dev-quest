@@ -42,17 +42,13 @@ const moveTowardsPlayerThroughRoom = (enemy, state) => {
 
 const moveHorizontallyTowardPlayer = (enemy, state) => {
   var enemyDestination
+
   if(state.player.position.x > enemy.position.x) {
     enemyDestination = {x:enemy.position.x+1, y:enemy.position.y}
   } else {
     enemyDestination = {x:enemy.position.x-1, y:enemy.position.y}
   }
-
-  var validTiles = [1]
-  if(enemy.type == 'promise' || enemy.type == 'var') {
-    validTiles = [1,2]
-  }
-
+  var validTiles = determineValidMovementTiles(enemy)
   if (validTiles.indexOf(state.tileGrid[enemyDestination.y][enemyDestination.x]) > -1 && !isEnemyInTile(state.enemies, enemyDestination.y, enemyDestination.x) ){
     moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
   }
@@ -65,15 +61,18 @@ const moveVerticallyTowardPlayer = (enemy, state) => {
   } else {
     enemyDestination = {y:enemy.position.y-1, x:enemy.position.x}
   }
-
-  var validTiles = [1]
-  if(enemy.type == 'promise'  || enemy.type == 'var') {
-    validTiles = [1,2]
-  }
-
+  var validTiles = determineValidMovementTiles(enemy)
   if (validTiles.indexOf(state.tileGrid[enemyDestination.y][enemyDestination.x]) > -1 && !isEnemyInTile(state.enemies, enemyDestination.y, enemyDestination.x) ){
     moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
   }
+}
+
+const determineValidMovementTiles = (enemy) => {
+  var validTiles = [1]
+  if(enemy.type == 'promise' || enemy.type == 'var') {
+    validTiles = [1,2]
+  }
+  return validTiles
 }
 
 const moveEnemyInRandomDirection = (enemy, state) => {
