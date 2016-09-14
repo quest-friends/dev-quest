@@ -1,7 +1,7 @@
 
 const triggerGotcha = (gotcha) => {
   return {
-    type: "STEP_ON_GOTCHA",
+    type: "TRIGGER_GOTCHA",
     payload: gotcha
   }
 }

@@ -107,7 +107,7 @@ function reducer (state = initialState, action) {
 
       // these are the cases for player to gotcha interaction
 
-    case 'STEP_ON_GOTCHA':
+    case 'TRIGGER_GOTCHA':
       var gotchaX = action.payload.position.x
       var gotchaY = action.payload.position.y
       var triggeredGotchaIndex = newState.gotchas.findIndex(function(gotcha){

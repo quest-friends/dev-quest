@@ -13,12 +13,6 @@ const randomiseObjectPositionToFloorTile = (tileGrid, object) => {
 const moveEnemy = (enemy, y, x) => {
   enemy.position = {y:y, x:x}
 }
-//
-// const getComponentByTile = (array, tileY, tileX) => {
-//   return array.find( (component) => {
-//     return component.position.y==tileY && component.position.x==tileX
-//   })
-// }
 
 const moveTowardsPlayer = (enemy, state) => {
     var {x, y} = enemy.position
@@ -148,11 +142,11 @@ const moveTowardsPlayer = (enemy, state) => {
     var itemTypes = itemsList.map( (item) => { return item.type})
 
     if (currentLevel == 3 && enemies.length != 0 ) {
-     return false
+      return false
     }
-     else if ( itemTypes.indexOf("apiKey") == -1 ) {
-       return true
-     }
+    else if ( itemTypes.indexOf("apiKey") == -1 ) {
+      return true
+    }
   }
 
 module.exports ={
