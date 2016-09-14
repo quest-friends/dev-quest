@@ -13,6 +13,7 @@ const levelList = [
       clone(enemies.Chrome),
       clone(enemies.Firefox),
       clone(enemies.Safari),
+      clone(enemies.Ie6),
       clone(enemies.Ie6)
     ],
     items: [
@@ -26,7 +27,7 @@ const levelList = [
       clone(gotchas.InfiniteLoop),
       clone(gotchas.PushedToMaster)
     ],
-    enemyCount: 4,
+    enemyCount: 5,
   },
 
   {
@@ -40,15 +41,14 @@ const levelList = [
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee),
-      clone(items.Battery),
       clone(items.Battery),
       clone(items.Battery),
       clone(items.ApiKey)
     ],
     gotchas: [
       clone(gotchas.RabbitHole),
-      clone(gotchas.RabbitHole)
+      clone(gotchas.RabbitHole),
+      clone(gotchas.PushedToMaster)
     ],
     enemyCount: 3
   },
@@ -60,6 +60,12 @@ const levelList = [
     enemies: [
       clone(enemies.Emeny),
       clone(enemies.Bracket),
+      clone(enemies.Comma),
+      clone(enemies.Emeny),
+      clone(enemies.Bracket),
+      clone(enemies.Comma),
+      clone(enemies.Emeny),
+      clone(enemies.Bracket),
       clone(enemies.Comma)
     ],
     items: [
@@ -68,6 +74,7 @@ const levelList = [
       ],
     gotchas: [
       clone(gotchas.RabbitHole),
+      clone(gotchas.InfiniteLoop),
       clone(gotchas.RabbitHole)
     ],
     enemyCount: 3
@@ -77,6 +84,8 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
+      clone(enemies.Async),
+      clone(enemies.Promise),
       clone(enemies.Async),
       clone(enemies.Promise)
     ],
