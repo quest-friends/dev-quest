@@ -12,7 +12,7 @@ function reducer (state = initialState, action) {
   var nextTile, currentLevel, enemies, itemsList, isExitOpen
   var {
     isPlayerAdjacent,
-    moveTowardsPlayer,
+    moveTowardsPlayerThroughRoom,
     nextLevel,
     removeElementFromArray,
     moveEnemyInRandomDirection,
@@ -142,7 +142,7 @@ function reducer (state = initialState, action) {
             }
         } else if (enemy.type == 'chrome' || enemy.type == 'let' || enemy.type == 'var' ||
                     enemy.type == 'comma' || enemy.type == 'bracket' || enemy.type == "promise") {
-          moveTowardsPlayer(enemy, newState)
+          moveTowardsPlayerThroughRoom(enemy, newState)
         } else if (enemy.type == 'firefox' || enemy.type == 'emeny' || enemy.type == "async") {
           moveEnemyInRandomDirection(enemy, newState)
         }
