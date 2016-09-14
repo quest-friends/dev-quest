@@ -13,8 +13,8 @@ class Board extends React.Component {
                 <BoardElement
                   playerPosition={playerPosition}
                   enemies={enemies}
-                  i={i}
-                  j={j}
+                  yCoord={i}
+                  xCoord={j}
                   tileGrid={tileGrid}
                   items={items}
                   gotchas={gotchas}

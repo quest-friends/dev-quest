@@ -47,7 +47,7 @@ const moveTowardsPlayer = (enemy, state) => {
     }
   }
 
-  const moveAroundRandomly = (enemy, state) => {
+  const moveEnemyInRandomDirection = (enemy, state) => {
     var direction = Math.floor(Math.random() * 5)
     var {x, y} = enemy.position
     var enemyDestination = {x, y}
@@ -73,10 +73,13 @@ const moveTowardsPlayer = (enemy, state) => {
       default:
        enemyDestination = {x, y}
     }
+
     if (tileGrid[enemyDestination.y][enemyDestination.x] == 1 && !isEnemyInTile(state.enemies, enemyDestination.y, enemyDestination.x) ){
       moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
     }
+
   }
+
   const movePlayerToSpawnTile = (newState) => {
     newState.tileGrid.map(function(row, i) {
       if (row.indexOf(4) > -1) {
@@ -95,7 +98,6 @@ const moveTowardsPlayer = (enemy, state) => {
     newState.tileGrid = tileGrids[Math.floor(Math.random() * tileGrids.length)]
     movePlayerToSpawnTile(newState)
     newState.enemies = level.enemies
-    newState.enemyCount = level.enemyCount
     newState.items = level.items
     newState.gotchas = level.gotchas
     newState.isExitOpen = false
@@ -124,7 +126,10 @@ const moveTowardsPlayer = (enemy, state) => {
     var playerX = player.position.x
     var playerY = player.position.y
 
-    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+    return  (x == playerX+1 && y == playerY ||
+             x == playerX-1 && y == playerY ||
+             x == playerX && y == playerY-1 ||
+             x == playerX && y == playerY+1  )
   }
 
   const removeElementFromArray = (array, index) => {
@@ -134,16 +139,13 @@ const moveTowardsPlayer = (enemy, state) => {
   }
 
   const checkIfExitShouldBeOpen = (currentLevel, enemies, itemsList) => {
-    var itemTypeArray = itemsList.map( (item) => { return item.type})
-    if ( currentLevel != 3 && itemTypeArray.indexOf("apiKey") == -1 )
-    {
-      return true
-    }
-    else if ( currentLevel == 3 && enemies.length == 0 ) {
-      return true
-    }
-    else {
+    var itemTypes = itemsList.map( (item) => { return item.type})
+
+    if (currentLevel == 3 && enemies.length != 0 ) {
       return false
+    }
+    else if ( itemTypes.indexOf("apiKey") == -1 ) {
+      return true
     }
   }
 
@@ -155,6 +157,6 @@ module.exports ={
   isEnemyInTile,
   isPlayerAdjacent,
   removeElementFromArray,
-  moveAroundRandomly,
+  moveEnemyInRandomDirection,
   checkIfExitShouldBeOpen
 }
