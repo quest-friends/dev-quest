@@ -7,9 +7,6 @@ class Enemy extends React.Component {
     let presentEnemy = enemies.find( (enemy) => {
       return enemy.position.y==y && enemy.position.x==x
     })
-     if (!presentEnemy) {
-       presentEnemy = {type: "dead"}
-     }
     return presentEnemy
   }
 
@@ -48,7 +45,7 @@ class Enemy extends React.Component {
   render(){
     return (
       <div className='enemy'>
-        {this.enemyTypeToRender()}
+        {this.getPresentEnemy() ? this.enemyTypeToRender() : null}
       </div>
     )
   }
