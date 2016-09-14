@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import Game from '../components/game'
-import {playerMove} from '../actions/playerMovement'
+import {playerMove, playerWait} from '../actions/playerMovement'
 import {playerAttack} from '../actions/playerActions'
 import {allEnemiesAct} from '../actions/enemyActions'
 import {loseGame, winGame} from '../actions/gameRunning'
@@ -20,6 +20,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     playerMove: (y, x) => {dispatch(playerMove(y, x)) },
+    playerWait: () => {dispatch(playerWait())},
     playerAttack: (enemy) => {dispatch(playerAttack(enemy)) },
     pickUpItem: (item) => {dispatch(pickUpItem(item))},
     triggerGotcha: (gotcha) => {dispatch(triggerGotcha(gotcha))},

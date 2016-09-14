@@ -24,10 +24,10 @@ class Player extends React.Component {
   }
 
   render(){
-    const attackedClass = this.props.hasBeenAttacked ? 'attacked' : ''
+    const attackedClass = this.props.hasBeenAttacked ? 'attacked player' : 'player'
     return (
-      <div className='player'>
-        <span className={attackedClass}>
+      <div className={attackedClass}>
+        <span>
           {this.playerImageToRender()}
         </span>
       </div>
