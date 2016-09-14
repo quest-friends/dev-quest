@@ -46,16 +46,16 @@ td {
 }
 
 .grid {
-  background-color: lightgray;
   display: inline-block;
   width: 90%;
+  border: 3px outset #B89A56;
 }
 
 .board-element {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  width: 5%;
+  width: 4.975%;
   height: 2.4vw;
 
   float: left;
@@ -97,7 +97,7 @@ td {
 }
 
 .ui-console {
-  border: 3px solid black;
+  border: 3px outset #B89A56;
   height: 60%;
   background-color: #222;
   color: #39FF14;
@@ -118,7 +118,7 @@ td {
 
 .ui-playerStats {
   background-color: #635516;
-  border: 3px solid black;
+  border: 3px outset #B89A56;
   height: 40%;
 }
 
