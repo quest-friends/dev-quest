@@ -23,7 +23,7 @@ class Game extends React.Component {
 
   document.addEventListener('keyup', (evt) => {
       const {y, x} = this.props.player.position
-      const {enemies, items, gotchas} = this.props
+      const {enemies, items, gotchas, allEnemiesAct} = this.props
 
       if (this.isArrowKey(evt.key)) {
         var nextPosition = {x, y}
@@ -66,8 +66,8 @@ class Game extends React.Component {
             this.props.triggerGotcha(gotchaInTile)
           }
         }
-        var self = this
-        setTimeout(function () { self.props.allEnemiesAct() }, 50)
+
+        setTimeout(function () { allEnemiesAct() }, 50)
 
         if (this.isPlayerDead()) {
           this.props.loseGame()
