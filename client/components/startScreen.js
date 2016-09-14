@@ -26,8 +26,7 @@ class StartScreen extends React.Component {
               <h5>Attack: 2</h5>
               <h5>Laptop Charge: 100%</h5>
             </div>
-            <button className="start-game-button"
-                    onClick={ () => this.props.startGame(players.JavaScript) } >
+            <button className="start-game-button" >
                     Code in JavaScript
             </button>
           </div>

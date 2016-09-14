@@ -1,7 +1,7 @@
 body {
   text-align: center;
   height: 100%;
-  background-color: #3b330d;
+  background-color: #231C07;
   color: #B89A56;
   font-family: 'Geo', sans-serif;
 }
@@ -55,9 +55,9 @@ td {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
-  width: 4.975%;
+  width: 5%;
   height: 2.4vw;
-
+  /*border: 1px solid #392A16;*/
   float: left;
 }
 
@@ -120,10 +120,13 @@ td {
   background-color: #635516;
   border: 3px outset #B89A56;
   height: 40%;
+  color: #eee;
+
 }
 
 .ui-statsLog {
   text-align: left;
+  font-size: 1.2em;
   padding-left: 50px;
 }
 
@@ -193,8 +196,8 @@ td {
 }
 
 .img-background{
-  width: 110%;
-  height: 110%;
+  width: 100%;
+  height: 100%;
 }
 
 .img-enemy {

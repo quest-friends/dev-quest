@@ -12,23 +12,23 @@ class PlayerStats extends React.Component {
         <table className="ui-statsLog">
           <tbody>
             <tr>
-              <td>> Main Language:</td>
+              <td>Main Language:</td>
               <td>{this.props.type}</td>
             </tr>
             <tr>
-              <td>> Wellbeing:</td>
+              <td>Wellbeing:</td>
               <td>{this.props.health}</td>
             </tr>
             <tr>
-              <td>> Laptop Charge:</td>
+              <td>Laptop Charge:</td>
               <td>{this.props.charge}%</td>
             </tr>
             <tr>
-              <td>> Attack:</td>
+              <td>Attack:</td>
               <td>{this.props.attack}</td>
             </tr>
             <tr>
-              <td>> Exp:</td>
+              <td>Exp:</td>
               <td>{this.props.xp}</td>
             </tr>
           </tbody>
