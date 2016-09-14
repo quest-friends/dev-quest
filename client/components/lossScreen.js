@@ -11,7 +11,7 @@ class LossScreen extends React.Component {
     const charge = this.props.charge
     let lossMessage
     if (health <= 0) {
-      lossMessage = "You neglected your health & well-being - developers need to take care of themselves as well as writing sweet code"
+      lossMessage = "You neglected your health - developers need to take care of themselves as well as writing sweet code"
     }
     else {
       lossMessage = "You ran out of charge - writing code can really run your batteries down"

@@ -11,13 +11,13 @@ module.exports = {
   InfiniteLoop: {
     type: "infiniteloop",
     triggered: false,
-    messageOnTrigger: "Browser crashes because you coded an infinite loop => well-being -= 5"
+    messageOnTrigger: "Browser crashes because you coded an infinite loop => health -= 5"
   },
 
   PushedToMaster: {
     type: "pushedtomaster",
     triggered: false,
-    messageOnTrigger: "Rookie git push to master causes merge conflict => attack strength - -"
+    messageOnTrigger: "Rookie git push to master causes merge conflict => attack strength--"
   }
 
 }
