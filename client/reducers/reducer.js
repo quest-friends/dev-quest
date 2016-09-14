@@ -23,36 +23,36 @@ function reducer (state = initialState, action) {
   switch(action.type){
 
     case 'PLAYER_MOVE':
-        nextTile = newState.tileGrid[action.payload.y][action.payload.x]
-        currentLevel = newState.currentLevel
-        enemies = newState.enemies
-        itemsList = newState.items
+      nextTile = newState.tileGrid[action.payload.y][action.payload.x]
+      currentLevel = newState.currentLevel
+      enemies = newState.enemies
+      itemsList = newState.items
 
-        if (nextTile == 1 || nextTile == 2 || nextTile == 4) {
-          newState.player.position.x = action.payload.x
-          newState.player.position.y = action.payload.y
-        } else if ( nextTile == 3 ) {
-            isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList)
-            if (isExitOpen)
-              { newState = nextLevel(newState, levelList, tileGrids) }
+      if (nextTile == 1 || nextTile == 2 || nextTile == 4) {
+        newState.player.position.x = action.payload.x
+        newState.player.position.y = action.payload.y
+      } else if ( nextTile == 3 ) {
+          isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList)
+          if (isExitOpen)
+            { newState = nextLevel(newState, levelList, tileGrids) }
+          else {
+            if (currentLevel == 3) {
+              newState.loggedMessages = [...newState.loggedMessages, "Have you defeated all the syntax errors?"]
+            }
             else {
-              if (currentLevel == 3) {
-                newState.loggedMessages = [...newState.loggedMessages, "Have you defeated all the syntax errors?"]
-              }
-              else {
-                newState.loggedMessages = [...newState.loggedMessages, "Exit locked - you don't have the key (yet)"]
-              }
+              newState.loggedMessages = [...newState.loggedMessages, "Exit locked - you don't have the key (yet)"]
             }
           }
-        newState.player.charge --
-        if (newState.player.charge <= 10) {
-          newState.loggedMessages = [...newState.loggedMessages, "Battery less than 10%, recharge now!"]
         }
-        return newState
+      newState.player.charge --
+      if (newState.player.charge <= 10) {
+        newState.loggedMessages = [...newState.loggedMessages, "Battery less than 10%, recharge now!"]
+      }
+      return newState
 
-      case 'PLAYER_WAIT':
-        newState.player.charge --
-        return newState
+    case 'PLAYER_WAIT':
+      newState.player.charge --
+      return newState
 
     //these are the cases for the player attacking
 
@@ -83,9 +83,9 @@ function reducer (state = initialState, action) {
       }
       return newState
 
-      case 'PLAYER_ATTACKED_TO_FALSE':
-        newState.player.hasBeenAttacked = false
-        return newState
+    case 'PLAYER_ATTACKED_TO_FALSE':
+      newState.player.hasBeenAttacked = false
+      return newState
 
     // these are the cases for player to item interaction
 
@@ -107,9 +107,9 @@ function reducer (state = initialState, action) {
             newState.player.health += 25
         }
         newState.loggedMessages = [...newState.loggedMessages, action.payload.messageOnPickup]
-      return newState
+        return newState
 
-      // these are the cases for player to gotcha interaction
+    // these are the cases for player to gotcha interaction
 
     case 'TRIGGER_GOTCHA':
       var gotchaX = action.payload.position.x
