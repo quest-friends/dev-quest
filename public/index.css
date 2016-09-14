@@ -219,6 +219,11 @@ p {
   height: 100%;
 }
 
+.img-trap {
+  width: 95%;
+  height: 90%;
+}
+
 .attacked {
   animation:blink 700ms 100ms;
 }

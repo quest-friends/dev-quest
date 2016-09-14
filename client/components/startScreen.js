@@ -18,7 +18,7 @@ class StartScreen extends React.Component {
         <div className="new-player-class">
           <div className="class-info"  onClick={ () => this.props.startGame(players.JavaScript) }>
             <div className="class-picture">
-              <img src="./img/player/player.png" alt="JavaScript" className="class-img" />
+              <img src="./img/player/player.gif" alt="JavaScript" className="class-img" />
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
