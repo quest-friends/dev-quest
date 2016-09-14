@@ -4,8 +4,6 @@ class Player extends React.Component {
 
   playerImageToRender() {
     const playerClass = this.props.type
-    console.log("playerClass is", playerClass);
-    console.log("type.ruby: ", playerClass.Ruby);
     switch (playerClass) {
       case ("JavaScript"):
         return <img src="./img/player/player.png" alt="player" className="img-player" />
