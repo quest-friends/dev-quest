@@ -30,6 +30,10 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
+button {
+  font-family: 'Geo', sans-serif;
+}
+
 .board-container {
   margin-top: 0.5%;
   width: 60%;
@@ -159,13 +163,30 @@ p {
   margin: auto;
 }
 
-.class-info {
+.class-info-left {
+  height: 400px;
+  width: 300px;
+  background-color: #635516;
+  border: 4px outset #B89A56;
+  margin: 0 0 0 auto;
+}
+
+.class-info-middle {
   height: 400px;
   width: 300px;
   background-color: #635516;
   border: 4px outset #B89A56;
   margin: auto;
 }
+
+.class-info-right {
+  height: 400px;
+  width: 300px;
+  background-color: #635516;
+  border: 4px outset #B89A56;
+  margin: 0 auto 0 0;
+}
+
 
 .class-picture {
   height: 40%;

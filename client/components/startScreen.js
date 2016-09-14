@@ -16,7 +16,7 @@ class StartScreen extends React.Component {
         </div>
 
         <div className="new-player-class">
-          <div className="class-info"  onClick={ () => this.props.startGame(players.JavaScript) }>
+          <div className="class-info-left"  onClick={ () => this.props.startGame(players.JavaScript) }>
             <div className="class-picture">
               <img src="./img/player/player.gif" alt="JavaScript" className="class-img" />
             </div>
@@ -33,7 +33,7 @@ class StartScreen extends React.Component {
         </div>
 
         <div className="new-player-class">
-          <div className="class-info" onClick={ () => this.props.startGame(players.Ruby) }>
+          <div className="class-info-middle" onClick={ () => this.props.startGame(players.Ruby) }>
             <div className="class-picture">
               <img src="./img/player/ruby.gif" alt="Ruby" className="class-img" />
             </div>
@@ -50,7 +50,7 @@ class StartScreen extends React.Component {
         </div>
 
         <div className="new-player-class">
-          <div className="class-info" onClick={ () => this.props.startGame(players.Python) }>
+          <div className="class-info-right" onClick={ () => this.props.startGame(players.Python) }>
             <div className="class-picture">
               <img src="./img/player/python.gif" alt="Python" className="class-img" />
             </div>
