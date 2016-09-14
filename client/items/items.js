@@ -2,22 +2,22 @@ module.exports = {
 
   Coffee : {
     type: "coffee",
-    messageOnPickup: "Now coding twice as fast, but a bit jittery"
+    messageOnPickup: "Coffee => coding twice as fast, jitters, well-being++"
   },
 
   Battery: {
     type: "battery",
-    messageOnPickup: "Recharging batteries..."
+    messageOnPickup: "Recharging batteries => charge++"
   },
 
   FreshAir: {
     type: "freshAir",
-    messageOnPickup: "Fresh air === fresh eyes"
+    messageOnPickup: "Fresh air === fresh eyes, well-being++"
   },
 
   ApiKey: {
     type: "apiKey",
-    messageOnPickup: "Now you have the (API) key to finishing this sprint"
+    messageOnPickup: "API keys open (web development) doors"
   }
 
 }

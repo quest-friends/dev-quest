@@ -5,9 +5,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Google Chrome is trying to take over the world...",
-      playerAttacks: "Installing an open source browser to replace Google Chrome...",
-      enemyDefeated: "Chrome gone, next step: use Duck Duck Go search engine!"
+      enemyAttacks: "Google wants to rule the world => well-being- -",
+      playerAttacks: "Installing an open source browser to replace Chrome",
     }
   },
 
@@ -16,20 +15,18 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Unhelpful Firefox developer tools slow you down...",
-      playerAttacks: "Abandoning Firefox to go back to Chrome...",
-      enemyDefeated: "You've been blooded!"
+      enemyAttacks: "Unhelpful Firefox developer tools => well-being- -",
+      playerAttacks: "Replacing Firefox with another browser solves problem",
     }
   },
 
   Ie6: {
     type: "ie6",
-    health: 2,
-    attack: 5,
+    health: 4,
+    attack: 2,
     messages: {
-      enemyAttacks: "Your code is smushed by old versions of Internet Explorer...",
-      playerAttacks: "Writing backwards compatible code to deal to Internet Exploder...",
-      enemyDefeated: "Outdated Microsoft product dies!"
+      enemyAttacks: "Internet Explorer makes itself the default browser => well-being- -",
+      playerAttacks: "Uninstalling Internet Exploder fixes issue (eventually)",
     }
   },
 
@@ -38,9 +35,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Safari doesn't support the plug-in you need - why would you want to add anything to an already perfect Apple product?",
-      playerAttacks: "Hating on an Apple product gives you nerd cred...",
-      enemyDefeated: "There's only a core left of that apple!"
+      enemyAttacks: "Perfect Apple product doesn't support plug-ins => well-being- -",
+      playerAttacks: "Abandoning Apple for Linux gives you nerd cred",
     }
   },
 
@@ -49,9 +45,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Scope ambiguity with var catches you out...",
-      playerAttacks: "Using const and let makes var redundant...",
-      enemyDefeated: "Your code is safe from ambiguously mutable variables!"
+      enemyAttacks: "Confusion over variable scope of var => well-being- -",
+      playerAttacks: "Learning to use scope correctly improves code",
     }
   },
 
@@ -60,9 +55,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Trying to reassign a Const variable breaks your function...",
-      playerAttacks: "Changing the const to let works...",
-      enemyDefeated: "Hurrah - no more 'constant' variable weirdness!"
+      enemyAttacks: "Confusion over constant variables, well-being- -",
+      playerAttacks: "Learning that variable != varying helps",
     }
   },
 
@@ -71,10 +65,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "The let variable isn't accessible outside its block...",
-      playerAttacks: "You figure out how scope actually works...",
-      enemyDefeated: "Revert to var - who needs ES6?"
-    }
+      enemyAttacks: "Confusion over scope of let => well-being- -",
+      playerAttacks: "Learning to use scope correctly improves code",
+      }
   },
 
   Bracket: {
@@ -82,10 +75,9 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Syntax error: misplaced bracket...",
-      playerAttacks: "Hours spent matching brackets pay off...",
-      enemyDefeated: "A place for every bracket, and every bracket in its place!"
-    }
+      enemyAttacks: "Syntax error: misplaced bracket => well-being- -",
+      playerAttacks: "Neat indentation helps you pair brackets",
+      }
   },
 
   Comma: {
@@ -93,9 +85,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Syntax error: missing comma in array or object...",
-      playerAttacks: "Scanning for commas, losing will to live...",
-      enemyDefeated: "All items now separated by commas!",
+      enemyAttacks: "Syntax error: missing comma in array => well-being- -",
+      playerAttacks: "Losing will to live, but all commas are now correct",
     }
   },
 
@@ -104,9 +95,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Syntax error: typo breaks the program entirely...",
-      playerAttacks: "Autocomplete in text editor is your new best friend...",
-      enemyDefeated: "Code is now word perfect!"
+      enemyAttacks: "Syntax error: typo breaks program => well-being - -",
+      playerAttacks: "Using autocomplete in code editor improves accuracy",
     }
   },
 
@@ -115,9 +105,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Promises ensnare you in a chain of thens and whens...",
-      playerAttacks: "Executing the promise just returns a new promise...",
-      enemyDefeated: "Promises never die!"
+      enemyAttacks: "Promises chain ties code in knots => well-being- -",
+      playerAttacks: "Executing the promise just returns a new promise!",
     }
   },
 
@@ -126,9 +115,8 @@ module.exports = {
     health: 1,
     attack: 5,
     messages: {
-      enemyAttacks: "Trying to write asynchronous code sends you to Callback Hell",
-      playerAttacks: "Modularising your code helps, but callbacks keep popping up...",
-      enemyDefeated: "Callback Hell is infinite!"
+      enemyAttacks: "Async code sends you to Callback Hell => well-being- -",
+      playerAttacks: "Callback calls another callback calls another callback..."
     }
   }
 
