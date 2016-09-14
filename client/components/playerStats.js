@@ -5,13 +5,35 @@ class PlayerStats extends React.Component {
   render(){
     return (
       <div className='ui-playerStats'>
-        <h3>Coder Stats:</h3>
-        <h4>- Main Language: {this.props.type}</h4>
-        <h4>- Wellbeing: {this.props.health}</h4>
-        <h4>- Exp: {this.props.xp}</h4>
-        <h4>- Attack: {this.props.attack}</h4>
-        <h4>- Defence: {this.props.defence}</h4>
-        <h4>- Laptop Charge: {this.props.charge}%</h4>
+        <div className="ui-heading">
+          <h3>Coder Stats:</h3>
+        </div>
+
+        <table className="ui-statsLog">
+          <tbody>
+            <tr>
+              <td>Main Language:</td>
+              <td>{this.props.type}</td>
+            </tr>
+            <tr>
+              <td>Wellbeing:</td>
+              <td>{this.props.health}</td>
+            </tr>
+            <tr>
+              <td>Laptop Charge:</td>
+              <td>{this.props.charge}%</td>
+            </tr>
+            <tr>
+              <td>Attack:</td>
+              <td>{this.props.attack}</td>
+            </tr>
+            <tr>
+              <td>Exp:</td>
+              <td>{this.props.xp}</td>
+            </tr>
+          </tbody>
+        </table>
+
       </div>
     )
   }

@@ -13,6 +13,7 @@ const levelList = [
       clone(enemies.Chrome),
       clone(enemies.Firefox),
       clone(enemies.Safari),
+      clone(enemies.Ie6),
       clone(enemies.Ie6)
     ],
     items: [
@@ -26,7 +27,8 @@ const levelList = [
       clone(gotchas.InfiniteLoop),
       clone(gotchas.PushedToMaster)
     ],
-    enemyCount: 4,
+    enemyCount: 5,
+    messageOnStart: "Getting to grips with browsers and developer tools"
   },
 
   {
@@ -36,21 +38,24 @@ const levelList = [
     enemies: [
       clone(enemies.Const),
       clone(enemies.Let),
+      clone(enemies.Var),
+      clone(enemies.Const),
+      clone(enemies.Let),
       clone(enemies.Var)
     ],
     items: [
       clone(items.Coffee),
-      clone(items.Coffee),
-      clone(items.Battery),
       clone(items.Battery),
       clone(items.Battery),
       clone(items.ApiKey)
     ],
     gotchas: [
       clone(gotchas.RabbitHole),
-      clone(gotchas.RabbitHole)
+      clone(gotchas.RabbitHole),
+      clone(gotchas.PushedToMaster)
     ],
-    enemyCount: 3
+    enemyCount: 6,
+    messageOnStart: "Starting to code: learning about variables"
   },
 
   {
@@ -58,6 +63,12 @@ const levelList = [
       position:{ x: 1, y: 15 }
     },
     enemies: [
+      clone(enemies.Emeny),
+      clone(enemies.Bracket),
+      clone(enemies.Comma),
+      clone(enemies.Emeny),
+      clone(enemies.Bracket),
+      clone(enemies.Comma),
       clone(enemies.Emeny),
       clone(enemies.Bracket),
       clone(enemies.Comma)
@@ -68,15 +79,19 @@ const levelList = [
       ],
     gotchas: [
       clone(gotchas.RabbitHole),
+      clone(gotchas.InfiniteLoop),
       clone(gotchas.RabbitHole)
     ],
-    enemyCount: 3
+    enemyCount: 9,
+    messageOnStart: "Monster debugger level - you need to clear all the syntax errors"
   },
 
   { player: {
       position:{ x: 1, y: 15 }
     },
     enemies: [
+      clone(enemies.Async),
+      clone(enemies.Promise),
       clone(enemies.Async),
       clone(enemies.Promise)
     ],
@@ -89,7 +104,8 @@ const levelList = [
       clone(gotchas.RabbitHole),
       clone(gotchas.RabbitHole)
     ],
-    enemyCount: 2
+    enemyCount: 4,
+    messageOnStart: "Welcome to the fiery pits of Callback Hell"
   }
 ]
 

@@ -15,9 +15,9 @@ const initialState = {
     [0,0,1,1,1,1,1,1,0,0,0,0,1,1,1,1,1,1,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0],
     [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0],
-    [0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0],
+    [0,0,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,0,0],
+    [0,0,1,1,1,1,1,0,0,0,0,0,1,1,1,1,1,1,0,0],
+    [0,0,0,0,2,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0],
     [0,1,1,1,1,1,1,0,0,0,0,0,0,0,2,0,0,0,0,0],
     [0,1,1,1,1,1,1,0,0,0,0,0,0,0,2,0,0,0,0,0],
     [0,1,1,1,1,1,1,2,2,2,2,2,2,2,2,0,0,0,0,0],
@@ -48,15 +48,15 @@ const initialState = {
   items: [
     Object.assign({}, items.Coffee, {position: { x: 7, y: 3}}),
     Object.assign({}, items.Battery, {position: { x: 16, y: 8}}),
-    Object.assign({}, items.ApiKey, {position: { x: 4, y: 14}})
+    Object.assign({}, items.ApiKey, {position: { x: 4, y: 10}})
   ],
-  loggedMessages: [ "Hello World!" ],
+  loggedMessages: [ "Welcome to the tutorial", "Hello World!" ],
   display: "start",
   currentLevel: 0,
   isExitOpen: false,
   tutorialLevel: true,
   gotchas: [
-    Object.assign({}, gotchas.RabbitHole, {position: {x:5, y:15}})
+    Object.assign({}, gotchas.RabbitHole, {position: {x:6, y:15}})
   ]
 }
 
