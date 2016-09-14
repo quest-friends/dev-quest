@@ -76,11 +76,13 @@ class Game extends React.Component {
           }
         }
 
-        setTimeout(function () { allEnemiesAct() }, 50)
+        setTimeout( () => {
+          allEnemiesAct()
+          if (this.isPlayerDead()) {
+            this.props.loseGame()
+          }
+        }, 50)
 
-        if (this.isPlayerDead()) {
-          this.props.loseGame()
-        }
       }
     })
   }

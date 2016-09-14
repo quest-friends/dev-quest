@@ -96,7 +96,7 @@ class StartScreen extends React.Component {
 
         <div className="display-screen-howToPlay">
           <h1 className="no-padding">How To Play</h1>
-          <p>Navigation, attack and picking up use arrow keys</p>
+          <p>Navigation, attack and picking up items use arrow keys</p>
           <p>Pick up batteries to top up charge</p>
           <p>Pick up coffee and fresh air to increase health and wellbeing</p>
         </div>
