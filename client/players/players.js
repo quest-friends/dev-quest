@@ -9,7 +9,7 @@ module.exports = {
     defence: 2,
     image: "player.png",
     messages: {
-      messageOnPlayerChoice: "You've chosen JavaScript, good choice!",
+      messageOnPlayerChoice: "You've chosen to code JavaScript, good choice!",
       messageOnXpIncrease: "You can now write in ES6 - now you can slay const and let"
     }
   },
@@ -23,7 +23,7 @@ module.exports = {
     defence: 3,
     image: "ruby.gif",
     messages: {
-      messageOnPlayerChoice: "Hmm Ruby - hope you like playing by the rules...",
+      messageOnPlayerChoice: "Hmm coding in Ruby - hope you like playing by the rules...",
       messageOnXpIncrease: "Your jewel box is now full of Gems!"
     }
   },

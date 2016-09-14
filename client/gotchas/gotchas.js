@@ -1,21 +1,23 @@
 
 
 module.exports = {
-  RabbitHole: {
-    type: "rabbithole",
-    triggered: false,
-    messageOnTrigger: "You've fallen into a rabbit hole and wasted hours in the blink of an eye."
-  },
+
+  RabbitHole:  {
+      type: "rabbithole",
+      triggered: false,
+      messageOnTrigger: 'Triggering a rabbithole wastes hours...'
+    },
 
   InfiniteLoop: {
     type: "infiniteloop",
     triggered: false,
-    messageOnTrigger: "Oh no! An infinite loop crashed your browser."
+    messageOnTrigger: "Browser crashes because you coded an infinite loop"
   },
 
   PushedToMaster: {
     type: "pushedtomaster",
     triggered: false,
-    messageOnTrigger: "You rookie, you've pushed straight to master and caused a merge conflict."
+    messageOnTrigger: "Rookie push to master => merge conflict + team grumpiness"
   }
+
 }
