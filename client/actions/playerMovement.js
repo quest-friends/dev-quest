@@ -5,6 +5,13 @@ const playerMove = (y, x) => {
   }
 }
 
+const playerWait = () => {
+  return {
+    type: "PLAYER_WAIT"
+  }
+}
+
 export {
-  playerMove
+  playerMove,
+  playerWait
 }
