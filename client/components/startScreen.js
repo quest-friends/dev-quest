@@ -49,10 +49,19 @@ class StartScreen extends React.Component {
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 80</h5>
-              <h5>Attack: 1</h5>
-              <h5>Laptop Charge: 100%</h5>
-            </div>
+                <div className="player-stats-left-align">
+                  <h5>Language:</h5>
+                  <h5>Health:</h5>
+                  <h5>Battery:</h5>
+                  <h5>Strength:</h5>
+                </div>
+                <div className="player-stats-left-align">
+                  <h5>{players.Ruby.type}</h5>
+                  <h5>{players.Ruby.health}</h5>
+                  <h5>{players.Ruby.charge}%</h5>
+                  <h5>{players.Ruby.attack}</h5>
+                </div>
+              </div>
             <button className="start-game-button" >
                     Code in Ruby
             </button>
@@ -66,10 +75,19 @@ class StartScreen extends React.Component {
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 40</h5>
-              <h5>Attack: 3</h5>
-              <h5>Laptop Charge: 100%</h5>
-            </div>
+                <div className="player-stats-left-align">
+                  <h5>Language:</h5>
+                  <h5>Health:</h5>
+                  <h5>Battery:</h5>
+                  <h5>Strength:</h5>
+                </div>
+                <div className="player-stats-left-align">
+                  <h5>{players.Python.type}</h5>
+                  <h5>{players.Python.health}</h5>
+                  <h5>{players.Python.charge}%</h5>
+                  <h5>{players.Python.attack}</h5>
+                </div>
+              </div>
             <button className="start-game-button" >
                     Code in Python
             </button>
@@ -78,9 +96,9 @@ class StartScreen extends React.Component {
 
         <div className="display-screen-howToPlay">
           <h1 className="no-padding">How To Play</h1>
-          <p>Navigation & Attack == Arrow Keys</p>
-          <p>PickUp (Battery) => increases laptop charge</p>
-          <p>PickUp (coffee, freshAir) => increases wellbeing</p>
+          <p>Navigation, attack and picking up use arrow keys</p>
+          <p>Pick up batteries to top up charge</p>
+          <p>Pick up coffee and fresh air to increase health and wellbeing</p>
         </div>
 
       </div>

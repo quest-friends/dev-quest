@@ -35,10 +35,6 @@ button {
   font-family: 'Ubuntu Mono', monospace;
 }
 
-button {
-  font-family: 'Geo', sans-serif;
-}
-
 .board-container {
   margin-top: 0.5%;
   width: 60%;
@@ -219,7 +215,7 @@ button {
   width: 260px;
   border: 5px outset #B89A56;
   font-size: 1.5em;
-  margin: 30px auto 10px auto;
+  margin: 15px auto;
   top: 77%;
 }
 
