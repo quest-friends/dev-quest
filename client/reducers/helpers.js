@@ -49,7 +49,7 @@ const moveHorizontallyTowardPlayer = (enemy, state) => {
   }
 
   var validTiles = [1]
-  if(enemy.type == 'promise') {
+  if(enemy.type == 'promise' || enemy.type == 'var') {
     validTiles = [1,2]
   }
 
@@ -67,7 +67,7 @@ const moveVerticallyTowardPlayer = (enemy, state) => {
   }
 
   var validTiles = [1]
-  if(enemy.type == 'promise') {
+  if(enemy.type == 'promise'  || enemy.type == 'var') {
     validTiles = [1,2]
   }
 
