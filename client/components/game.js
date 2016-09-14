@@ -66,8 +66,9 @@ class Game extends React.Component {
             this.props.triggerGotcha(gotchaInTile)
           }
         }
+        var self = this
+        setTimeout(function () { self.props.allEnemiesAct() }, 50)
 
-        this.props.allEnemiesAct()
         if (this.isPlayerDead()) {
           this.props.loseGame()
         }

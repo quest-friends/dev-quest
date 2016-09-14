@@ -15,7 +15,7 @@ function reducer (state = initialState, action) {
     moveTowardsPlayer,
     nextLevel,
     removeElementFromArray,
-    moveAroundRandomly,
+    moveEnemyInRandomDirection,
     randomiseObjectPositionToFloorTile,
     checkIfExitShouldBeOpen
   } = helpers
@@ -140,7 +140,7 @@ function reducer (state = initialState, action) {
                     enemy.type == 'comma' || enemy.type == 'bracket' || enemy.type == "promise") {
           moveTowardsPlayer(enemy, newState)
         } else if (enemy.type == 'firefox' || enemy.type == 'emeny' || enemy.type == "async") {
-          moveAroundRandomly(enemy, newState)
+          moveEnemyInRandomDirection(enemy, newState)
         }
       })
       return newState

@@ -13,12 +13,12 @@ const randomiseObjectPositionToFloorTile = (tileGrid, object) => {
 const moveEnemy = (enemy, y, x) => {
   enemy.position = {y:y, x:x}
 }
-
-const getComponentByTile = (array, tileY, tileX) => {
-  return array.find( (component) => {
-    return component.position.y==tileY && component.position.x==tileX
-  })
-}
+//
+// const getComponentByTile = (array, tileY, tileX) => {
+//   return array.find( (component) => {
+//     return component.position.y==tileY && component.position.x==tileX
+//   })
+// }
 
 const moveTowardsPlayer = (enemy, state) => {
     var {x, y} = enemy.position
@@ -53,7 +53,7 @@ const moveTowardsPlayer = (enemy, state) => {
     }
   }
 
-  const moveAroundRandomly = (enemy, state) => {
+  const moveEnemyInRandomDirection = (enemy, state) => {
     var direction = Math.floor(Math.random() * 5)
     var {x, y} = enemy.position
     var enemyDestination = {x, y}
@@ -156,11 +156,10 @@ module.exports ={
   randomiseObjectPositionToFloorTile,
   moveEnemy,
   moveTowardsPlayer,
-  getComponentByTile,
   nextLevel,
   isEnemyInTile,
   isPlayerAdjacent,
   removeElementFromArray,
-  moveAroundRandomly,
+  moveEnemyInRandomDirection,
   checkIfExitShouldBeOpen
 }
