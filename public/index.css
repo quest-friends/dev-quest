@@ -31,7 +31,7 @@ p {
 
 .board-container {
   margin-top: 0.5%;
-  margin-left: 3%;
+  /*margin-left: 3%;*/
   width: 60%;
   float: left;
 }
@@ -77,10 +77,10 @@ p {
 }
 
 .ui-container {
-  width: 30%;
-  height: 48vw;
+  width: 35%;
+  height: 47.6vw;
   margin-top: 0.5%;
-  margin-left: 5%;
+  margin-left: 4%;
   float: left;
 }
 
