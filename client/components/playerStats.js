@@ -8,32 +8,23 @@ class PlayerStats extends React.Component {
         <div className="ui-heading">
           <h3>Coder Stats:</h3>
         </div>
+        <div className="ui-statsLog">
 
-        <table className="ui-statsLog">
-          <tbody>
-            <tr>
-              <td>Main Language:</td>
-              <td>{this.props.type}</td>
-            </tr>
-            <tr>
-              <td>Wellbeing:</td>
-              <td>{this.props.health}</td>
-            </tr>
-            <tr>
-              <td>Laptop Charge:</td>
-              <td>{this.props.charge}%</td>
-            </tr>
-            <tr>
-              <td>Attack:</td>
-              <td>{this.props.attack}</td>
-            </tr>
-            <tr>
-              <td>Exp:</td>
-              <td>{this.props.xp}</td>
-            </tr>
-          </tbody>
-        </table>
-
+          <div className="player-stats-left-align">
+            <p>Main Language:</p>
+            <p>Wellbeing:</p>
+            <p>Laptop Charge:</p>
+            <p>Attack:</p>
+            <p>Exp:</p>
+          </div>
+          <div className="player-stats-left-align">
+            <p>{this.props.type}</p>
+            <p>{this.props.health}</p>
+            <p>{this.props.charge}%</p>
+            <p>{this.props.attack}</p>
+            <p>{this.props.xp}</p>
+          </div>
+        </div>
       </div>
     )
   }
