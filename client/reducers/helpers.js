@@ -79,10 +79,13 @@ const moveTowardsPlayer = (enemy, state) => {
       default:
        enemyDestination = {x, y}
     }
+
     if (tileGrid[enemyDestination.y][enemyDestination.x] == 1 && !isEnemyInTile(state.enemies, enemyDestination.y, enemyDestination.x) ){
       moveEnemy(enemy, enemyDestination.y, enemyDestination.x)
     }
+
   }
+
   const movePlayerToSpawnTile = (newState) => {
     newState.tileGrid.map(function(row, i) {
       if (row.indexOf(4) > -1) {
@@ -129,7 +132,10 @@ const moveTowardsPlayer = (enemy, state) => {
     var playerX = player.position.x
     var playerY = player.position.y
 
-    return  (x == playerX+1 && y == playerY || x == playerX-1 && y == playerY || x == playerX && y == playerY-1 || x == playerX && y == playerY+1  )
+    return  (x == playerX+1 && y == playerY ||
+             x == playerX-1 && y == playerY ||
+             x == playerX && y == playerY-1 ||
+             x == playerX && y == playerY+1  )
   }
 
   const removeElementFromArray = (array, index) => {
@@ -139,17 +145,14 @@ const moveTowardsPlayer = (enemy, state) => {
   }
 
   const checkIfExitShouldBeOpen = (currentLevel, enemies, itemsList) => {
-    var itemTypeArray = itemsList.map( (item) => { return item.type})
-    if ( currentLevel != 3 && itemTypeArray.indexOf("apiKey") == -1 )
-    {
-      return true
+    var itemTypes = itemsList.map( (item) => { return item.type})
+
+    if (currentLevel == 3 && enemies.length != 0 ) {
+     return false
     }
-    else if ( currentLevel == 3 && enemies.length == 0 ) {
-      return true
-    }
-    else {
-      return false
-    }
+     else if ( itemTypes.indexOf("apiKey") == -1 ) {
+       return true
+     }
   }
 
 module.exports ={
