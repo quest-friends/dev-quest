@@ -7,19 +7,28 @@ class LossScreen extends React.Component {
   }
 
   textToRender() {
-    //if health <= 0, render "You neglected your health & well-being - developers need to take care of themselves as well as writing sweet code"
-    //if charge <= 0, text is "You ran out of charge - developers need to keep their (literal AND figurative) batteries topped up"
+    const health = this.props.health
+    const charge = this.props.charge
+    console.log("from LossScreen textToRender: ", this.props.health, charge)
+    let lossMessage
+    if (health <= 0) {
+      lossMessage = `You neglected your health & well-being - developers need to take care of themselves as well as writing sweet code`
+    }
+    else {
+      lossMessage = `You ran out of charge - developers need to keep their (literal AND figurative) batteries topped up`
+    }
+    return lossMessage
   }
 
   render(){
     return (
       <div className="display-screen">
         <div className="display-screen-info">
-          <h1>Oh no, you lost!</h1>
-          <p>It seems your journey as a Web Developer has come to an end</p>
+          <h2>You lost:</h2>
+          <h2>{this.textToRender()}</h2>
           <h2>Maybe it's time to refactor your code?</h2>
         </div>
-        <button className="start-game-button" onClick={this.reloadGame}>`Start new game`</button>
+        <button className="start-game-button" onClick={this.reloadGame}>Start new game</button>
       </div>
     )
   }

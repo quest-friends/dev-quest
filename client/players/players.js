@@ -28,8 +28,8 @@ module.exports = {
 
   Python: {
     type: "Python",
-    health: 40,
-    charge: 100,
+    health: 1,
+    charge: 40,
     xp: 0,
     attack: 3,
     image: "python.gif",

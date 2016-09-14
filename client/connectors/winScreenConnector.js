@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import LossScreen from '../components/lossScreen'
+import WinScreen from '../components/winScreen'
 
 const mapStateToProps = (state) => {
   return {
@@ -9,6 +9,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-const lossScreenConnector = connect(mapStateToProps)(LossScreen)
+const winScreenConnector = connect(mapStateToProps)(WinScreen)
 
-export default lossScreenConnector
+export default winScreenConnector
