@@ -22,9 +22,19 @@ class StartScreen extends React.Component {
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 50</h5>
-              <h5>Attack: 2</h5>
-              <h5>Laptop Charge: 100%</h5>
+              <div className="player-stats-left-align">
+                <h5>Language:</h5>
+                <h5>Health:</h5>
+                <h5>Battery:</h5>
+                <h5>Strength:</h5>
+              </div>
+              <div className="player-stats-left-align">
+                <h5>{players.JavaScript.type}</h5>
+                <h5>{players.JavaScript.health}</h5>
+                <h5>{players.JavaScript.charge}%</h5>
+                <h5>{players.JavaScript.attack}</h5>
+              </div>
+
             </div>
             <button className="start-game-button" >
                     Code in JavaScript
