@@ -12,17 +12,18 @@ class Tile extends React.Component {
 
   displayTileSet(number) {
     const tileType = this.props.tileType
+    var floorClass = (number == 3 ? 'img-background-floor transparent' : 'img-background-floor')
     switch (tileType) {
       case (0):
         return <img src={`./img/background/wall${number}.gif`} alt="wall" className="img-background-wall" />
       case (1):
-        return <img src={`./img/background/floor${number}.png`} alt="floor" className="img-background-floor" />
+        return <div><img src={`./img/background/floor${number}.png`} alt="floor" className={floorClass} /></div>
       case (2):
-        return <img src={`./img/background/floor${number}.png`} alt="hall" className="img-background-floor" />
+        return <div><img src={`./img/background/floor${number}.png`} alt="hall" className={floorClass} /></div>
       case (3):
         return <img src={`./img/background/stairs.png`} alt="stairs" className="img-background" />
       case (4):
-        return <img src={`./img/background/floor${number}.png`} alt="spawn" className="img-background-floor" />
+        return <div><img src={`./img/background/floor${number}.png`} alt="spawn" className={floorClass} /></div>
       default:
         return ""
     }

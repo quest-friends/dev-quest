@@ -32,7 +32,7 @@ class Enemy extends React.Component {
       case ("var"):
         return <div><img src={"./img/enemies/var.gif"} alt="var" className="img-enemy" /></div>
       case ("emeny"):
-        return <div><p>emeny</p></div>
+        return <div><img src={"./img/enemies/typo.gif"} alt="typo" className="img-enemy" /></div>
       case ("comma"):
         return <div><img src={"./img/enemies/comma.gif"} alt="comma" className="img-enemy" /></div>
       case ("bracket"):
