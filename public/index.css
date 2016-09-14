@@ -18,6 +18,7 @@ h3 {
 
 h4 {
   padding-left: 20px;
+  font-family: 'Roboto', sans-serif;
 }
 
 h5 {
@@ -122,7 +123,7 @@ span {
 }
 
 .display-screen {
-  border: 3px solid #635516;
+  border: 5px outset #B89A56;
   height: 97vh;
 }
 

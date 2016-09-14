@@ -3,10 +3,9 @@ module.exports = {
   JavaScript: {
     type: "JavaScript",
     health: 50,
-    charge: 50,
+    charge: 100,
     xp: 0,
     attack: 2,
-    defence: 2,
     image: "player.png",
     messages: {
       messageOnPlayerChoice: "You've chosen to code JavaScript, good choice!",
@@ -17,10 +16,9 @@ module.exports = {
   Ruby: {
     type: "Ruby",
     health: 80,
-    charge: 30,
+    charge: 100,
     xp: 0,
     attack: 1,
-    defence: 3,
     image: "ruby.gif",
     messages: {
       messageOnPlayerChoice: "Hmm coding in Ruby - hope you like playing by the rules...",
@@ -31,10 +29,9 @@ module.exports = {
   Python: {
     type: "Python",
     health: 40,
-    charge: 50,
+    charge: 100,
     xp: 0,
     attack: 3,
-    defence: 1,
     image: "python.gif",
     messages: {
       messageOnPlayerChoice: "Something about Python",

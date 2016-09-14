@@ -8,8 +8,7 @@ const mapStateToProps = (state) => {
     health: state.player.health,
     xp: state.player.xp,
     charge: state.player.charge,
-    attack: state.player.attack,
-    defence: state.player.defence
+    attack: state.player.attack
   }
 }
 

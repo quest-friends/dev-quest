@@ -9,7 +9,7 @@ class ConsoleLog extends React.Component {
     return (
       <div className='ui-console'>
         <div className='ui-heading'>
-          <h2>Dev Quest 2.0</h2>
+          <h3>Dev Quest 2.0</h3>
         </div>
         <div className='ui-terminalLog'>
          {displayedMessages.map( (message, i) => {
