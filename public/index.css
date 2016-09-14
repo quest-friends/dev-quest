@@ -35,6 +35,7 @@ span {
 }
 
 .board-container {
+  margin-top: 0.5%;
   margin-left: 5%;
   width: 60%;
   float: left;
@@ -84,10 +85,10 @@ span {
   width: 100%;
 }
 
-
 .ui-container {
   width: 30%;
-  height: 720px;
+  height: 735px;
+  margin-top: 0.5%;
   float: left;
 }
 
@@ -100,18 +101,23 @@ span {
 
 .ui-heading {
   height: 10%;
+  padding-top: 20px;
+  font-size: 1.3em;
 }
 
 .ui-terminalLog {
   max-height: 60%;
   text-align: left;
   padding-left: 50px;
-  font-size: 1.2em;
 }
 
 .ui-playerStats {
+  background-color: #635516;
   border: 3px solid black;
   height: 40%;
+}
+
+.ui-statsLog {
   text-align: left;
   padding-left: 50px;
 }
