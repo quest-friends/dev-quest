@@ -17,11 +17,11 @@ class PlayerStats extends React.Component {
             </tr>
             <tr>
               <td>Wellbeing:</td>
-              <td>{this.props.health}</td>
+              <td className="attacked">{this.props.health}</td>
             </tr>
             <tr>
               <td>Laptop Charge:</td>
-              <td>{this.props.charge}%</td>
+              <td className="attacked">{this.props.charge}%</td>
             </tr>
             <tr>
               <td>Attack:</td>
