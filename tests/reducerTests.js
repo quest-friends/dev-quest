@@ -502,7 +502,6 @@ test('Enemy dies on Player Attack', function (t) {
      ],
      display: "game",
      currentLevel: 1,
-     enemyCount: 1,
      loggedMessages: []
    }
 
@@ -526,7 +525,6 @@ test('Enemy dies on Player Attack', function (t) {
       ],
       display: "game",
       currentLevel: 1,
-      enemyCount: 0,
       loggedMessages: ['player attacks']
     }
  var actualState = reducer(testState, {type: "PLAYER_ATTACK", payload: testState.enemies[0]})

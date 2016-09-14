@@ -6,9 +6,6 @@ import { startGame } from '../actions/gameRunning'
 
 const mapStateToProps = (state) => {
   return {
-    x: state.player.position.x,
-    y: state.player.position.y,
-    health: state.player.health,
     hasBeenAttacked: state.player.hasBeenAttacked,
     type: state.player.type
     }
@@ -16,8 +13,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setPlayerAttackedToFalse: () => {dispatch(setPlayerAttackedToFalse())},
-    startGame: (player) => {dispatch(startGame(player))}
+    setPlayerAttackedToFalse: () => {dispatch(setPlayerAttackedToFalse())}
   }
 }
 

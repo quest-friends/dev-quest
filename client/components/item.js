@@ -4,6 +4,7 @@ class Item extends React.Component {
 
   getPresentItem() {
     const {items, x, y} = this.props
+    
     let presentItem = items.find( (item) => {
       return item.position.y==y && item.position.x==x
     })
