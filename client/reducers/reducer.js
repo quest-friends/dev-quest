@@ -50,6 +50,10 @@ function reducer (state = initialState, action) {
         }
         return newState
 
+      case 'PLAYER_WAIT':
+        newState.player.charge --
+        return newState
+
     //these are the cases for the player attacking
 
     case 'PLAYER_ATTACK':
