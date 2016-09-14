@@ -130,15 +130,18 @@ p {
 
 .display-screen {
   border: 5px outset #B89A56;
-  height: 97vh;
+  height: 48.6vw;
 }
 
 .display-screen-info {
   font-size: 1.4em;
-  padding: 20px 40px 40px 40px;
+  padding: 0px 40px;
 }
 .display-screen-howToPlay {
   font-size: 1.2em;
+  float: left;
+  width: 100%;
+  padding: 0;
 }
 
 .choose-class-container {
@@ -231,6 +234,11 @@ p {
 
 .no-underline {
   text-decoration: none !important;
+}
+
+.no-padding {
+  margin: 0;
+  padding: 20px 0 0 0;
 }
 
 @keyframes blink {
