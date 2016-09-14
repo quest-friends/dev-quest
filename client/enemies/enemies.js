@@ -29,7 +29,6 @@ module.exports = {
     messages: {
       enemyAttacks: "Internet Explorer makes itself the default browser => well-being- -",
       playerAttacks: "Uninstalling Internet Exploder fixes issue (eventually)",
-      // enemyDefeated: "Outdated Microsoft product dies!"
     }
   },
 
@@ -40,7 +39,6 @@ module.exports = {
     messages: {
       enemyAttacks: "Perfect Apple product doesn't support plug-ins => well-being- -",
       playerAttacks: "Abandoning Apple for Linux gives you nerd cred",
-      // enemyDefeated: "There's only a core left of that apple!"
     }
   },
 
@@ -51,7 +49,6 @@ module.exports = {
     messages: {
       enemyAttacks: "Confusion over variable scope of var => well-being- -",
       playerAttacks: "Learning to use scope correctly improves code",
-      // enemyDefeated: "Your code is safe from ambiguously mutable variables!"
     }
   },
 
@@ -62,7 +59,6 @@ module.exports = {
     messages: {
       enemyAttacks: "Confusion over constant variables, well-being- -",
       playerAttacks: "Learning that variable != varying helps",
-      // enemyDefeated: "Hurrah - no more 'constant' variable weirdness!"
     }
   },
 
