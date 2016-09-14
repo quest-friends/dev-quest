@@ -7,8 +7,7 @@ class LossScreen extends React.Component {
   }
 
   textToRender() {
-    const health = this.props.health
-    const charge = this.props.charge
+    const { health, charge } = this.props
     let lossMessage
     if (health <= 0) {
       lossMessage = "You neglected your health - developers need to take care of themselves as well as writing sweet code"
