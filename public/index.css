@@ -91,7 +91,7 @@ td {
 
 .ui-container {
   width: 30%;
-  height: 735px;
+  height: 94vh;
   margin-top: 0.5%;
   float: left;
 }
@@ -113,7 +113,7 @@ td {
 .ui-terminalLog {
   max-height: 60%;
   text-align: left;
-  padding-left: 50px;
+  padding: 0 50px;
 }
 
 .ui-playerStats {
@@ -191,7 +191,6 @@ td {
   border: 5px outset #B89A56;
   font-size: 1.5em;
   margin: 30px auto 10px auto;
-  position: relative;
   top: 77%;
 }
 
