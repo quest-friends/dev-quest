@@ -29,10 +29,13 @@ p {
   font-family: 'Roboto', sans-serif;
 }
 
-span {
-  float: right;
-  /*position: relative;
-  vertical-align: middle;*/
+table {
+  border-spacing: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+td {
+  padding-right: 20px;
 }
 
 .board-container {
@@ -103,6 +106,7 @@ span {
 .ui-heading {
   height: 10%;
   padding-top: 20px;
+  padding-bottom: 10px;
   font-size: 1.3em;
 }
 
@@ -183,7 +187,7 @@ span {
   width: 260px;
   border: 5px outset #B89A56;
   font-size: 1.5em;
-  margin: 10px auto;
+  margin: 30px auto 10px auto;
   position: relative;
   top: 77%;
 }
