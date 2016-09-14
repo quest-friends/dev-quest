@@ -26,6 +26,20 @@ class Enemy extends React.Component {
         return <div><img src={"./img/enemies/safari.gif"} alt="safari" className="img-enemy" /></div>
       case ("promise"):
         return <div><img src={"./img/enemies/promise.gif"} alt="promise" className="img-enemy" /></div>
+      case ("const"):
+        return <div><p>const</p></div>
+      case ("let"):
+        return <div><p>let</p></div>
+      case ("var"):
+        return <div><p>var</p></div>
+      case ("emeny"):
+        return <div><p>emeny</p></div>
+      case ("comma"):
+        return <div><p>comma</p></div>
+      case ("bracket"):
+        return <div><p>bracket</p></div>
+      case ("async"):
+        return <div><img src={"./img/enemies/async.gif"} alt="async" className="img-enemy" /></div>
       default:
         return ""
       }

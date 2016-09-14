@@ -32,13 +32,7 @@ function reducer (state = initialState, action) {
           newState.player.position.x = action.payload.x
           newState.player.position.y = action.payload.y
         } else if ( nextTile == 3 ) {
-            isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList) //true or false
-            if (newState.tutorialLevel && isExitOpen) {
-              newState.tutorialLevel = false
-              newState = nextLevel(newState, levelList, tileGrids)
-              newState.currentLevel--
-              return newState
-            }
+            isExitOpen = checkIfExitShouldBeOpen(currentLevel, enemies, itemsList)
             if (isExitOpen)
               { newState = nextLevel(newState, levelList, tileGrids) }
             else {
@@ -65,7 +59,7 @@ function reducer (state = initialState, action) {
       newState.loggedMessages = [...newState.loggedMessages, messages.playerAttacks]
 
       if (attackedEnemy.health <= 0) {
-        if(attackedEnemy.type == "promise") {
+        if(attackedEnemy.type == "promise" || attackedEnemy.type == "async") {
           randomiseObjectPositionToFloorTile(newState.tileGrid, attackedEnemy)
           attackedEnemy.health++
         }
@@ -139,9 +133,10 @@ function reducer (state = initialState, action) {
             if (newState.player.health <= 5) {
               newState.loggedMessages = [...newState.loggedMessages, "Your well-being is important - go get some coffee"]
             }
-        } else if (enemy.type == 'chrome') {
+        } else if (enemy.type == 'chrome' || enemy.type == 'let' || enemy.type == 'var' ||
+                    enemy.type == 'comma' || enemy.type == 'bracket' || enemy.type == "promise") {
           moveTowardsPlayer(enemy, newState)
-        } else if (enemy.type == 'firefox') {
+        } else if (enemy.type == 'firefox' || enemy.type == 'emeny' || enemy.type == "async") {
           moveAroundRandomly(enemy, newState)
         }
       })
