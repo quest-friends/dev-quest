@@ -37,10 +37,10 @@ function reducer (state = initialState, action) {
               { newState = nextLevel(newState, levelList, tileGrids) }
             else {
               if (currentLevel == 3) {
-                newState.loggedMessages = [...newState.loggedMessages, "Have you found all the syntax errors?"]
+                newState.loggedMessages = [...newState.loggedMessages, "Have you defeated all the syntax errors?"]
               }
               else {
-                newState.loggedMessages = [...newState.loggedMessages, "Exit locked - and you don't have the key"]
+                newState.loggedMessages = [...newState.loggedMessages, "Exit locked - you don't have the key (yet)"]
               }
             }
           }
@@ -76,7 +76,6 @@ function reducer (state = initialState, action) {
           if (newState.player.xp >= 10) {
             newState.player.attack++
           }
-          newState.loggedMessages = [...newState.loggedMessages, messages.enemyDefeated]
         }
       }
       return newState
@@ -150,7 +149,7 @@ function reducer (state = initialState, action) {
     //these are the cases for game running
     case 'START_GAME':
       newState.display = "game"
-      newState.loggedMessages = [...newState.loggedMessages, action.payload.messages.messageOnPlayerChoice]
+      newState.loggedMessages = [action.payload.messages.messageOnPlayerChoice, ...newState.loggedMessages]
       newState.player.type = action.payload.type
       newState.player.health = action.payload.health
       newState.player.charge = action.payload.charge
