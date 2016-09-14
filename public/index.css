@@ -199,6 +199,16 @@ td {
   height: 100%;
 }
 
+.img-background-wall{
+  width: 110%;
+  height: 110%;
+}
+
+.img-background-floor{
+  width: 110%;
+  height: 110%;
+}
+
 .img-enemy {
   width: 80%;
   height: 80%;
