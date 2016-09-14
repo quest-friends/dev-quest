@@ -35,7 +35,7 @@ class Enemy extends React.Component {
       case ("emeny"):
         return <div><p>emeny</p></div>
       case ("comma"):
-        return <div><p>comma</p></div>
+        return <div><img src={"./img/enemies/comma.gif"} alt="comma" className="img-enemy" /></div>
       case ("bracket"):
         return <div><p>bracket</p></div>
       case ("async"):
