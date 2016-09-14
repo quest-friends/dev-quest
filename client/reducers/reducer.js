@@ -36,7 +36,12 @@ function reducer (state = initialState, action) {
             if (isExitOpen)
               { newState = nextLevel(newState, levelList, tileGrids) }
             else {
-          newState.loggedMessages = [...newState.loggedMessages, "Exit blocked!"]
+              if (currentLevel == 3) {
+                newState.loggedMessages = [...newState.loggedMessages, "Have you found all the syntax errors?"]
+              }
+              else {
+                newState.loggedMessages = [...newState.loggedMessages, "Exit locked - and you don't have the key"]
+              }
             }
           }
         newState.player.charge --

@@ -42,7 +42,7 @@ const initialState = {
   enemyCount: 4,
   enemies: [
     Object.assign({}, enemies.Firefox, {position: { x: 15, y: 10}}),
-    Object.assign({}, enemies.ie6, {position: { x: 2, y: 14}})
+    Object.assign({}, enemies.Ie6, {position: { x: 2, y: 14}})
   ],
   items: [
     Object.assign({}, items.Coffee, {position: { x: 7, y: 3}}),

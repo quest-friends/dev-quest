@@ -14,8 +14,7 @@ class ConsoleLog extends React.Component {
         <div className='ui-terminalLog'>
          {displayedMessages.map( (message, i) => {
             return <p key={i}>
-              >
-              {message}
+              > {message}
               </p>
             })}
             >
