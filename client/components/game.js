@@ -79,12 +79,12 @@ class Game extends React.Component {
   render () {
     return (
       <div className="display-screen">
-        <div className='board-container'>
-          <BoardConnector />
-        </div>
         <div className='ui-container'>
           <ConsoleLogConnector />
           <StatsConnector />
+        </div>
+        <div className='board-container'>
+          <BoardConnector />
         </div>
       </div>
     )
