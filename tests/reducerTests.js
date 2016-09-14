@@ -497,8 +497,7 @@ test('Enemy dies on Player Attack', function (t) {
        { position: { x: 1, y: 1 },
          health: 1,
          type: "chrome",
-         messages: { playerAttacks: "player attacks",
-                      enemyDefeated: "it super died"}
+         messages: { playerAttacks: "player attacks"}
        }
      ],
      display: "game",
