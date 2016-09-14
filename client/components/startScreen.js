@@ -10,8 +10,8 @@ class StartScreen extends React.Component {
       <div className="display-screen">
         <div className="display-screen-info">
           <h1>Dev Quest 2.0</h1>
-          <p>The path to coding mastery is fraught with trials and danger.
-            It will take all of your determination, skill, and coffee to achieve greatness.</p>
+          <h2>The path to coding mastery is fraught with trials and danger.
+            It will take all of your determination, skill, and coffee to achieve greatness.</h2>
           <h2>Are you ready to begin your journey as a junior dev?</h2>
         </div>
 
@@ -22,9 +22,19 @@ class StartScreen extends React.Component {
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 50</h5>
-              <h5>Attack: 2</h5>
-              <h5>Laptop Charge: 100%</h5>
+              <div className="player-stats-left-align">
+                <h5>Language:</h5>
+                <h5>Health:</h5>
+                <h5>Battery:</h5>
+                <h5>Strength:</h5>
+              </div>
+              <div className="player-stats-left-align">
+                <h5>{players.JavaScript.type}</h5>
+                <h5>{players.JavaScript.health}</h5>
+                <h5>{players.JavaScript.charge}%</h5>
+                <h5>{players.JavaScript.attack}</h5>
+              </div>
+
             </div>
             <button className="start-game-button" >
                     Code in JavaScript
@@ -39,10 +49,19 @@ class StartScreen extends React.Component {
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 80</h5>
-              <h5>Attack: 1</h5>
-              <h5>Laptop Charge: 100%</h5>
-            </div>
+                <div className="player-stats-left-align">
+                  <h5>Language:</h5>
+                  <h5>Health:</h5>
+                  <h5>Battery:</h5>
+                  <h5>Strength:</h5>
+                </div>
+                <div className="player-stats-left-align">
+                  <h5>{players.Ruby.type}</h5>
+                  <h5>{players.Ruby.health}</h5>
+                  <h5>{players.Ruby.charge}%</h5>
+                  <h5>{players.Ruby.attack}</h5>
+                </div>
+              </div>
             <button className="start-game-button" >
                     Code in Ruby
             </button>
@@ -56,10 +75,19 @@ class StartScreen extends React.Component {
             </div>
             <div className="class-starting-stats">
               <h3>Beginner Stats</h3>
-              <h5>Wellbeing: 40</h5>
-              <h5>Attack: 3</h5>
-              <h5>Laptop Charge: 100%</h5>
-            </div>
+                <div className="player-stats-left-align">
+                  <h5>Language:</h5>
+                  <h5>Health:</h5>
+                  <h5>Battery:</h5>
+                  <h5>Strength:</h5>
+                </div>
+                <div className="player-stats-left-align">
+                  <h5>{players.Python.type}</h5>
+                  <h5>{players.Python.health}</h5>
+                  <h5>{players.Python.charge}%</h5>
+                  <h5>{players.Python.attack}</h5>
+                </div>
+              </div>
             <button className="start-game-button" >
                     Code in Python
             </button>
@@ -68,9 +96,9 @@ class StartScreen extends React.Component {
 
         <div className="display-screen-howToPlay">
           <h1 className="no-padding">How To Play</h1>
-          <p>Navigation & Attack == Arrow Keys</p>
-          <p>PickUp (Battery) => increases laptop charge</p>
-          <p>PickUp (coffee, freshAir) => increases wellbeing</p>
+          <p>navigation, attack, pickUp === arrow keys</p>
+          <p>pickUp(batteries) => increases charge</p>
+          <p>pickUp(coffee,fresh air) => increases health</p>
         </div>
 
       </div>

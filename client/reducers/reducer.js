@@ -138,7 +138,7 @@ function reducer (state = initialState, action) {
           newState.player.health-= enemy.attack
           newState.player.hasBeenAttacked = true
             if (newState.player.health <= 5) {
-              newState.loggedMessages = [...newState.loggedMessages, "Your well-being is important - go get some coffee"]
+              newState.loggedMessages = [...newState.loggedMessages, "Your health is important - go get some coffee"]
             }
         } else if (enemy.type == 'chrome' || enemy.type == 'let' || enemy.type == 'var' ||
                     enemy.type == 'comma' || enemy.type == 'bracket' || enemy.type == "promise") {
