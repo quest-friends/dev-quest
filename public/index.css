@@ -132,11 +132,10 @@ span {
 
 .choose-class-container {
   background-color: #B3977F;
-  /*height: 300px;*/
 }
 
 .new-player-class {
-  width: 50%;
+  width: 33%;
   float: left;
   margin: auto;
 }
@@ -151,11 +150,21 @@ span {
 
 .class-picture {
   height: 40%;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+  background-color: #B89A56;
+}
+
+.class-img {
+  margin: 25px;
+  background-color: transparent;
+  height: 100px;
 }
 
 .class-starting-stats {
   text-align: left;
-  padding: 20px 30px;
+  padding: 10px 30px;
 }
 
 .start-game-button {
