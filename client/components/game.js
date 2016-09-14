@@ -25,6 +25,14 @@ class Game extends React.Component {
       const {y, x} = this.props.player.position
       const {enemies, items, gotchas, allEnemiesAct} = this.props
 
+      if(evt.keyCode == 32) {
+        setTimeout(function () { allEnemiesAct() }, 50)
+
+        if (this.isPlayerDead()) {
+          this.props.loseGame()
+        }
+      }
+
       if (this.isArrowKey(evt.key)) {
         var nextPosition = {x, y}
         switch (evt.key) {
