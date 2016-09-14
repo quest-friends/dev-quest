@@ -66,6 +66,13 @@ class StartScreen extends React.Component {
           </div>
         </div>
 
+        <div className="display-screen-howToPlay">
+          <h1>How To Play</h1>
+          <p>Navigation & Attack == Arrow Keys</p>
+          <p>PickUp (Battery) => increases laptop charge</p>
+          <p>PickUp (coffee, freshAir) => increases wellbeing</p>
+        </div>
+
       </div>
     )
   }

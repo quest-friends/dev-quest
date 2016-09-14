@@ -137,6 +137,9 @@ p {
   font-size: 1.4em;
   padding: 20px 40px 40px 40px;
 }
+.display-screen-howToPlay {
+  font-size: 1.2em;
+}
 
 .choose-class-container {
   background-color: #B3977F;

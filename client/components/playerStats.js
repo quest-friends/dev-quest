@@ -2,6 +2,12 @@ import React from 'react'
 
 class PlayerStats extends React.Component {
 
+  componentDidMount() {
+    if (this.props.hasBeenAttacked){
+      this.props.setPlayerAttackedToFalse()
+    }
+  }
+
   render(){
     const attackedClass = this.props.hasBeenAttacked ? 'attacked' : ''
     return (
