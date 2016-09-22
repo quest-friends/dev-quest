@@ -1,7 +1,13 @@
 
 # Overall Project Objective
 
+
 # Team Members
+- Hudson Prestidge
+- Cameron Shotted
+- Max Robinson
+- Madeleine Rashbrooke
+- Dylan Hulain
 
 # Learning Objectives
 
