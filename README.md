@@ -1,6 +1,6 @@
 
 # Overall Project Objective
-  As out final project from Dev Academy we wanted to produce a piece of technology which was fully planned, programmed,
+  As our final project from Dev Academy we wanted to produce a piece of technology which was fully planned, programmed,
   and presented which we could be proud of showing off in a 1 week timeframe.
   Our overall team objective in this build was to learn as much as we could, but also being able to experience what it
   is like working in a short term, high intensity work environment. Also we were able to learn about handling a large
