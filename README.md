@@ -6,7 +6,7 @@
   is like working in a short term, high intensity work environment. Also we were able to learn about handling a large
   group and be able to forge strong interpersonal relationships between each other, while also learning
   the skills needed to cope with team conflicts, and stress.
-  
+
 # Team Members
 - Hudson Prestidge
 - Cameron Shotted
