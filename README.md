@@ -8,11 +8,11 @@
   the skills needed to cope with team conflicts, and stress.
 
 # Team Members
-- Hudson Prestidge
-- Cameron Shotted
-- Max Robinson
-- Madeleine Rashbrooke
-- Dylan Hulain
+- Hudson Prestidge - https://github.com/hudson-prestidge
+- Cameron Shotter - https://github.com/cam-shotter
+- Max Robinson - https://github.com/Maxwell-Robinson
+- Madeleine Rashbrooke - https://github.com/madeleine-rashbrooke
+- Dylan Hulain - https://github.com/DylanHul
 
 # Learning Objectives
   See our planning repo: https://github.com/quest-friends/Planning/blob/master/learningObjectives.md
